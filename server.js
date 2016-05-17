@@ -21,8 +21,8 @@ var clientHost = null;
 if (isProduction) {
 } else {
     config.devtool = 'eval'; // Speed up incremental builds
-    config.entry['app'].unshift('webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr');
-    config.output.publicPath = 'http://localhost:8080/Package/Release/';
+    config.entry['app'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr');
+    config.output.publicPath = '/Package/Release/';
     config.plugins.unshift(new webpack.HotModuleReplacementPlugin());
     config.plugins.unshift(new webpack.NoErrorsPlugin());
     config.module.loaders[0].query.presets.push('react-hmre');
