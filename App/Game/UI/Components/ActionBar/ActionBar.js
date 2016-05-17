@@ -1,4 +1,4 @@
-import { Component, PropTypes, StyleSheet } from 'react'; require('../../../../Vendor/ReactFakeNative');
+import { Component, PropTypes, StyleSheet } from 'react'; require('../../../../Vendor/react-universal');
 
 import ActionBarSlot from '../ActionBarSlot';
 

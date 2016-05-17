@@ -8,12 +8,20 @@ module.exports = {
   },
   output: {
     path: __dirname + '/Package/Release',
-    publicPath: path.join(__dirname, 'Package/Release'),
     filename: '[name].bundle.js',
     chunkFilename: '[id].chunk.js'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.json']
+  },
+  externals: {
+    'jsdom': 'window',
+    'react/lib/ReactContext': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/addons': true,
+  },
+  alias: {
+    'cheerio': 'cheerio/lib/cheerio'
   },
   module: {
     loaders: [
@@ -35,7 +43,11 @@ module.exports = {
           'style?sourceMap',
           'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
         ]
-      }
+      },
+      {
+        test: /\.json$/,
+        loader: "json-loader"
+      },
     ]
   },
   plugins: []

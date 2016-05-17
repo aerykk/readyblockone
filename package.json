@@ -4,23 +4,6 @@
   "description": "",
   "dependencies": {
     "babel-cli": "^6.0.0",
-    "brfs": "1.4.3",
-    "css-loader": "0.23.1",
-    "express": "4.13.4",
-    "htmlparser": "git+https://github.com/mobify/node-htmlparser.git#v1.x",
-    "underscore": "~1.3.3",
-    "pg": "*",
-    "memcached": "~0.2.6",
-    "http": "0.0.0",
-    "react": "^0.14.3",
-    "react-css-modules": "3.7.6",
-    "react-demo": "1.2.0",
-    "react-dom": "^0.14.3",
-    "react-list": "0.7.16",
-    "socket.io": "1.4.5",
-    "style-loader": "0.13.1",
-    "transform-loader": "0.2.3",
-    "url": "0.11.0",
     "babel-core": "^6.0.0",
     "babel-eslint": "^4.1.6",
     "babel-jscs": "^2.0.5",
@@ -29,11 +12,33 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-react-hmre": "1.1.1",
     "babel-preset-stage-0": "^6.3.13",
+    "brfs": "1.4.3",
+    "cheerio": "0.20.0",
+    "css-loader": "0.23.1",
+    "express": "4.13.4",
     "grunt": "^0.4.5",
     "grunt-contrib-connect": "git+https://github.com/gruntjs/grunt-contrib-connect.git",
+    "htmlparser": "git+https://github.com/mobify/node-htmlparser.git#v1.x",
+    "http": "0.0.0",
+    "marked": "0.3.5",
+    "memcached": "~0.2.6",
+    "path": "0.12.7",
+    "pg": "*",
+    "react": "^0.14.3",
+    "react-css-modules": "3.7.6",
+    "react-demo": "1.2.0",
+    "react-dom": "^0.14.3",
+    "react-list": "0.7.16",
+    "react-router": "2.4.0",
     "react-styleguidist": "2.1.0",
+    "socket.io": "1.4.5",
+    "style-loader": "0.13.1",
+    "transform-loader": "0.2.3",
+    "underscore": "~1.3.3",
+    "url": "0.11.0",
     "webpack": "1.12.14",
-    "webpack-dev-server": "^1.12.1"
+    "webpack-dev-server": "^1.12.1",
+    "whatwg-fetch": "1.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -48,6 +53,5 @@
     "url": "https://github.com/ericmuyser/dogeify/issues"
   },
   "homepage": "https://github.com/ericmuyser/dogeify#readme",
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

@@ -3,31 +3,31 @@ const webpack = require('webpack');
 const http = require('http');
 const exec = require('child_process').exec;
 const url = require('url');
+const fs = require('fs');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
+const host = isProduction ? '0.0.0.0' : '0.0.0.0';
 const port = isProduction ? process.env.PORT : 8080;
 var app = express();
-
 
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 var clients = [];
-var host = null;
-
-
-const compiler = webpack(config);
+var clientHost = null;
 
 if (isProduction) {
 } else {
     config.devtool = 'eval'; // Speed up incremental builds
     config.entry['app'].unshift('webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr');
-    config.output.publicPath = 'http://localhost:8080/dist/';
+    config.output.publicPath = 'http://localhost:8080/Package/Release/';
     config.plugins.unshift(new webpack.HotModuleReplacementPlugin());
     config.plugins.unshift(new webpack.NoErrorsPlugin());
     config.module.loaders[0].query.presets.push('react-hmre');
+
+    const compiler = webpack(config);
 
     app.use(webpackDevMiddleware(compiler, {
         publicPath: config.output.publicPath,
@@ -47,6 +47,20 @@ if (isProduction) {
     }));
 }
 
+app.get('*', function(req, res, cb) {
+    fs.exists('App/Game/Assets/Pages/' + req.url + '.md', function(exists) {
+        if (exists) {
+            fs.readFile('index.html', function(err, page) {
+                res.writeHead(200, {'Content-Type': 'text/html'});
+                res.write(page);
+                res.end();
+            });
+        } else {
+            cb();
+        }
+    });
+});
+
 app.use(express.static(__dirname));
 
 
@@ -56,7 +70,7 @@ function getRandomInt(min, max) {
 
 var setHost = function(client) {
     console.log('Setting host to player: ' + client.player.id);
-    host = client;
+    clientHost = client;
 };
 
 var findNewHost = function() {
@@ -68,15 +82,15 @@ var findNewHost = function() {
         if (client) {
             setHost(client);
 
-            console.log('New host: ' + host.player.id);
-            io.sockets.emit('setHost', {player: host.player});
+            console.log('New host: ' + clientHost.player.id);
+            io.sockets.emit('setHost', {player: clientHost.player});
         }
     }
 };
 
 var getClientHost = function() {
     if (!clients.length) { return; }
-    return clients.reduce(function(previousClient, currentClient) { if (previousClient && previousClient.player.id === host.player.id) { return previousClient; } else if (currentClient.player.id === host.player.id) { return currentClient; }});
+    return clients.reduce(function(previousClient, currentClient) { if (previousClient && previousClient.player.id === clientHost.player.id) { return previousClient; } else if (currentClient.player.id === clientHost.player.id) { return currentClient; }});
 };
 
 var findClientBySocket = function(socket) {
@@ -97,8 +111,8 @@ var removeClient = function(client) {
 
 // Monitor the clients to make sure they are still defined
 var monitorHost = function() {
-    if (host) {
-        //console.log('Host: ', host.player.id);
+    if (clientHost) {
+        //console.log('Host: ', clientHost.player.id);
     } else {
         findNewHost();
     }
@@ -115,12 +129,12 @@ var parseEvent = function(socket, event) {
         addClient({socket: socket, player: event.info.player});
 
         // If it's the first client or there's no hosts, lets set it as the new host
-        if (!host) {
+        if (!clientHost) {
             setHost(clients[clients.length-1]);
-            console.log('New host: ' + host.player.id);
+            console.log('New host: ' + clientHost.player.id);
         }
 
-        socket.emit('setHost', {player: host.player});
+        socket.emit('setHost', {player: clientHost.player});
     } else {
         //socket.broadcast.emit(event.key, event.info);
     }
@@ -153,8 +167,8 @@ io.sockets.on('connection', function(socket) {
         // and there's at least one more client connected,
         // lets choose a new random host,
         // and broadcast it to everybody
-        if (client.player.id === host.player.id) {
-            host = null;
+        if (client.player.id === clientHost.player.id) {
+            clientHost = null;
             findNewHost();
         }
 
@@ -164,7 +178,7 @@ io.sockets.on('connection', function(socket) {
 
 monitorHost();
 
-server.listen(port, '0.0.0.0', function onStart(err) {
+server.listen(port, host, function onStart(err) {
     if (err) {
         console.log(err);
     }

@@ -1,20 +1,14 @@
 import React from 'react';
+import { View } from '../../Vendor/react-universal';
 
-import LaunchScreen from './Screens/LaunchScreen';
+var routes = require('../routes');
 
-window.UI_state = {
-    screenKey: 'start'
-};
 
 var UI = React.createClass({
-    getInitialState: function() {
-        window.UI_controller = this;
-        return window.UI_state;
-    },
     render: function() {
         return (
             <View style={styles.container}>
-                {this.state.screenKey === 'start' && <LaunchScreen />}
+                {routes}
             </View>
         );
     }
