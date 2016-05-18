@@ -1,1 +1,1 @@
-Stoke Games, bringing you excellent games worth being stoked about.
+Stoke Games, building games worth being stoked about.
