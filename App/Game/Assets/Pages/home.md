@@ -32,37 +32,74 @@
         </table>
       </div>
     </div>
-  </div>  <div class="span6">
-      <div class="box">
-        <div class="tab-header">
-          <a href="/blog/ttt-released-app-store"><i class="icon-th-list"></i> TTT: Trippy Tetra Tiles Released on App Store!</a>
-        </div>
-        <div class="">
-          <table class="table table-striped table-bordered">
-            <tbody>
-              <tr>
-                <td>We've released TTT on the App Store. Huzzah!</td>
-                <td width="150">
-                  <ul>
-                    <li><strong>Date:</strong> April 24, 2016</li>
-                    <li><strong>By:</strong> Eric Muyser</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-            <tfoot>
+  </div>
+  <div class="span6">
+    <div class="box">
+      <div class="tab-header">
+        <a href="/blog/ttt-released-app-store"><i class="icon-th-list"></i> TTT: Trippy Tetra Tiles Released on App Store!</a>
+      </div>
+      <div class="">
+        <table class="table table-striped table-bordered">
+          <tbody>
             <tr>
-              <td colspan="2">
-                <div class="clearfix" style="padding: 0 5px;">
-                  <div class="pull-right">
-                    <a href="/blog/ttt-released-app-store" class="button blue">Read More</a>
-                  </div>
-                </div>
+              <td>We've released TTT on the App Store. Huzzah!</td>
+              <td width="150">
+                <ul>
+                  <li><strong>Date:</strong> April 24, 2016</li>
+                  <li><strong>By:</strong> Eric Muyser</li>
+                </ul>
               </td>
             </tr>
-            </tfoot>
-          </table>
-        </div>
+          </tbody>
+          <tfoot>
+          <tr>
+            <td colspan="2">
+              <div class="clearfix" style="padding: 0 5px;">
+                <div class="pull-right">
+                  <a href="/blog/ttt-released-app-store" class="button blue">Read More</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+          </tfoot>
+        </table>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="row-fluid" style="">
+  <div class="span6">
+    <div class="box">
+      <div class="tab-header">
+        <a href="/blog/looking-for-cofounder"><i class="icon-th-list"></i> Looking for a co-founder</a>
+      </div>
+      <div class="">
+        <table class="table table-striped table-bordered">
+          <tbody>
+            <tr>
+              <td>I'm looking for a cofounder!</td>
+              <td width="150">
+                <ul>
+                  <li><strong>Date:</strong> March 10, 2016</li>
+                  <li><strong>By:</strong> Eric Muyser</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+          <tr>
+            <td colspan="2">
+              <div class="clearfix" style="padding: 0 5px;">
+                <div class="pull-right">
+                  <a href="/blog/looking-for-cofounder" class="button blue">Read More</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

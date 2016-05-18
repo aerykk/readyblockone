@@ -13,9 +13,9 @@ var LaunchScreen = React.createClass({
         var gameList = [
             {title: 'Trippy Tetra Tiles', code: 'ttt'},
             {title: 'Angels of Ascension', code: 'aoa'},
-            {title: 'Tilr', code: 'tilr'},
             {title: 'Hackatron', code: 'hackatron'},
-            {title: 'Tile World', code: 'tile-world'}
+            {title: 'Tile World', code: 'tile-world'},
+            {title: 'Tilr', code: 'tilr'}
         ];
 
         return (

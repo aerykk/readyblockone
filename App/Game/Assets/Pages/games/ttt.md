@@ -27,7 +27,7 @@
 
 TTT is a game about combining blocks to fill lines on the screen.
 
-<div style="background:#fff;border-radius:5px">
+<div style="background:#fff;border-radius:5px;text-align:center">
 ![Screenshot 1](http://a5.mzstatic.com/us/r30/Purple69/v4/17/02/e8/1702e87a-e28f-0f62-2401-36c5d171600e/screen322x572.jpeg)
  ![Screenshot 2](http://a2.mzstatic.com/us/r30/Purple69/v4/13/df/29/13df2988-9b03-0881-fb79-1c1eda135f0d/screen322x572.jpeg)
 </div>
