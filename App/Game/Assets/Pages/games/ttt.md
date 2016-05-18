@@ -1,3 +1,15 @@
+# TTT: Trippy Tetra Tiles
+
+## Breadcrumb
+
+<ul class="breadcrumb">
+    <li><a href="/"><i class="icon-home"></i> Stoke Games</a></li>
+    <li><a href="/games">Games</a></li>
+    <li class="active"><a href="/games/ttt">Trippy Tetra Tiles</a></li>
+</ul>
+
+## Content
+
 <div style="text-align: center;background: #126DA2;border-radius: 5px;">
     <a class="button blue inset" href="https://itunes.apple.com/us/app/ttt-trippy-tetra-tiles/id1092898610?mt=8">Our latest free update includes even more trippy action. Come join and play the brain puzzle game that improves your concentration.</a>
 

@@ -11,7 +11,8 @@ var Markdown = React.createClass({
         return {
             title: '',
             body: '',
-            items: []
+            items: [],
+            options: {}
         };
     },
     fetchPage: function(props) {
@@ -28,12 +29,12 @@ var Markdown = React.createClass({
 
                 if ($content.length) {
                     title = $('#top > h1').text();
-                    body = '<div>' + $content.nextUntil('h2').wrap('<p>').parent().html() + '</div>';
+                    body = $('<div>').append($content.nextUntil('h2')).html();
 
                     $('#top > h2').each(function() {
                         items.push({
                             title: $(this).text(),
-                            body: '<div>' + $(this).nextUntil('h2').wrap('<p>').parent().html() + '</div>'
+                            body: $('<div>').append($(this).nextUntil('h2')).html()
                         });
                     });
                 } else {

@@ -8,7 +8,8 @@ var LaunchScreen = React.createClass({
             page: {
                 title: '',
                 body: '',
-                items: []
+                items: [],
+                options: {}
             }
         };
     },
@@ -32,16 +33,24 @@ var LaunchScreen = React.createClass({
             }
         });
 
+        // TODO: Remove this hack
+        this.state.page.options.slim = (page === 'home');
+
         return (
             <StokeLayout breadcrumb={breadcrumb}>
-                <div className="box">
-                    <div className="tab-header">
-                        {this.state.page.title}
+                {!this.state.page.options.slim && (
+                    <div className="box">
+                        <div className="tab-header">
+                            {this.state.page.title}
+                        </div>
+                        <div className="padded">
+                            <Markdown src={"/App/Game/Assets/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
+                        </div>
                     </div>
-                    <div className="padded">
-                        <Markdown src={"/App/Game/Assets/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
-                    </div>
-                </div>
+                )}
+                {this.state.page.options.slim && (
+                    <Markdown src={"/App/Game/Assets/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
+                )}
             </StokeLayout>
         );
     }
