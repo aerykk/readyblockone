@@ -1,16 +1,14 @@
+<div style="text-align: center;background: #126DA2;border-radius: 5px;">
+    <a class="button blue inset" href="https://itunes.apple.com/us/app/ttt-trippy-tetra-tiles/id1092898610?mt=8">Our latest free update includes even more trippy action. Come join and play the brain puzzle game that improves your concentration.</a>
 
-
-<div style="text-align: center;color: #fff;background: #3598DB;border-radius: 5px;">
-    <p >Our latest free update includes even more trippy action. Come join and play the brain puzzle game that improves your concentration.</p>
-</div>
-
-<div class="nav-menu box">
-    <ul class="nav nav-list">
-        <li class="active">
-            <p>Thanks for playing TTT: Trippy  Tetra Tiles!</p>
-            <p>If you have any questions or concerns, don't hesitate to reach out: <a href="mailto:hello@stokegames.com">hello@stokegames.com</a>.</p>
-        </li>
-    </ul>
+    <div style="text-align: left" class="nav-menu box">
+        <div class="nav nav-list">
+            <div class="active">
+                <p>Thanks for playing TTT: Trippy Tetra Tiles!</p>
+                <p>If you have any questions or concerns, don't hesitate to reach out: <a href="mailto:hello@stokegames.com">hello@stokegames.com</a>.</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 ### Overview
