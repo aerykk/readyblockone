@@ -12466,6 +12466,10 @@ body.games_controller.tile_world_action #game {
 }
 
 @media (max-width: 1024px) {
+  section#main .container-fluid {
+    padding-left: 0;
+  }
+
   /* line 7, ../../app/assets/stylesheets/responsive-max1024.css.scss */
   html {
     overflow: visible;

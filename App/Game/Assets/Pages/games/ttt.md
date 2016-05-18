@@ -1,7 +1,7 @@
 <div style="text-align: center;background: #126DA2;border-radius: 5px;">
     <a class="button blue inset" href="https://itunes.apple.com/us/app/ttt-trippy-tetra-tiles/id1092898610?mt=8">Our latest free update includes even more trippy action. Come join and play the brain puzzle game that improves your concentration.</a>
 
-    <div style="text-align: left" class="nav-menu box">
+    <div style="text-align: left; background: #fff;" class="nav-menu box">
         <div class="nav nav-list">
             <div class="active">
                 <p>Thanks for playing TTT: Trippy Tetra Tiles!</p>
