@@ -1,13 +1,9 @@
 import React from 'react';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Link } from 'react-router';
 
-var LaunchScreen = React.createClass({
+var StokeLayout = React.createClass({
     getInitialState: function() {
         return {};
-    },
-    componentDidMount: function() {
-    },
-    componentWillUnmount: function() {
     },
     render: function() {
         var gameList = [
@@ -26,8 +22,8 @@ var LaunchScreen = React.createClass({
                             <div className="row-fluid search-button-bar-container">
                                 <div className="span12">
                                     <h1 className="pull-left">
-                                      <Link to={"/"}>
-                                        Stoke Games
+                                      <Link to={"/"} className="logo">
+                                          Stoke Games
                                       </Link>
                                     </h1>
                                 </div>
@@ -94,4 +90,4 @@ var LaunchScreen = React.createClass({
 var styles = {
 };
 
-export default LaunchScreen;
+export default StokeLayout;

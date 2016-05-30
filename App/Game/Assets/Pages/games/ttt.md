@@ -17,7 +17,7 @@
         <div class="nav nav-list">
             <div class="active">
                 <p>Thanks for playing TTT: Trippy Tetra Tiles!</p>
-                <p>If you have any questions or concerns, don't hesitate to reach out: <a href="mailto:hello@stokegames.com">hello@stokegames.com</a>.</p>
+                <p>If you have any questions or concerns, don't hesitate to reach out: <a href="mailto:eric@stokegames.com">eric@stokegames.com</a>.</p>
             </div>
         </div>
     </div>

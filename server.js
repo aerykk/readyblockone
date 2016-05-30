@@ -10,7 +10,7 @@ const config = require('./webpack.config.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const host = isProduction ? '0.0.0.0' : '0.0.0.0';
-const port = isProduction ? process.env.PORT : 8080;
+const port = process.env.PORT ? process.env.PORT : 8080;
 var app = express();
 
 var server = http.createServer(app);

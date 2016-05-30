@@ -12591,3 +12591,14 @@ body.games_controller.tile_world_action #game {
     margin-top: -5px;
   }
 }
+
+.logo {
+    background: transparent url(/App/Game/Assets/Other/images/logo.png) no-repeat 0 0;
+    background-size: contain;
+    padding-left: 35px;
+}
+
+#ui {
+    background: transparent url(/App/Game/Assets/Other/images/logo-bg.png) no-repeat -200px 0;
+    background-size: auto 550px;
+}
