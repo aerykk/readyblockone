@@ -21,8 +21,8 @@ var StokeLayout = React.createClass({
                         <div className="container-fluid">
                             <div className="row-fluid search-button-bar-container">
                                 <div className="span12">
-                                    <h1 className="pull-left">
-                                      <Link to={"/"} className="logo">
+                                    <h1 className="pull-left logo">
+                                      <Link to={"/"}>
                                           Stoke Games
                                       </Link>
                                     </h1>

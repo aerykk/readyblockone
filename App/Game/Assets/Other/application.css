@@ -10227,7 +10227,6 @@ button.button.mini {
 }
 /* line 26, ../../app/assets/stylesheets/buttons.css.scss */
 .btn-group .button {
-  white-space: nowrap;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
@@ -10281,7 +10280,6 @@ button.button.mini {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
-  white-space: nowrap;
   display: inline-block;
   text-overflow: ellipsis;
   -webkit-box-sizing: border-box;
@@ -12593,9 +12591,9 @@ body.games_controller.tile_world_action #game {
 }
 
 .logo {
-    background: transparent url(/App/Game/Assets/Other/images/logo.png) no-repeat 0 0;
-    background-size: contain;
-    padding-left: 35px;
+    background: transparent url(/App/Game/Assets/Other/images/logo.png) no-repeat 0 7px;
+    background-size: auto 70%;
+    padding-left: 43px;
 }
 
 #ui {
