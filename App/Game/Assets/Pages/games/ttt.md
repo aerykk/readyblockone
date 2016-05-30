@@ -32,6 +32,10 @@ TTT is a game about combining blocks to fill lines on the screen.
  ![Screenshot 2](http://a2.mzstatic.com/us/r30/Purple69/v4/13/df/29/13df2988-9b03-0881-fb79-1c1eda135f0d/screen322x572.jpeg)
 </div>
 
+<div style="text-align: center;margin-top:10px">
+    <a class="button black large" href="https://itunes.apple.com/us/app/ttt-trippy-tetra-tiles/id1092898610?mt=8">Get it on iOS</a>
+</div>
+
 ### Game Rules
 
 - Look at the shape and place it in the best position.

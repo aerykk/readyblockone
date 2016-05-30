@@ -10362,7 +10362,8 @@ button.button.mini {
 /* line 79, ../../app/assets/stylesheets/buttons.css.scss */
 .button.large {
   border: none;
-  padding: 0 18px;
+  padding: 12px 18px;
+  font-size: 17px;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -12599,4 +12600,8 @@ body.games_controller.tile_world_action #game {
 #ui {
     background: transparent url(/App/Game/Assets/Other/images/logo-bg.png) no-repeat -200px 0;
     background-size: auto 550px;
+}
+
+[hidden] {
+  display: none;
 }

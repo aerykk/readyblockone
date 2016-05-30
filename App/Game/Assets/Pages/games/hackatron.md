@@ -25,7 +25,13 @@
 
 
 
-<p>Hackatron is currently in development. For more information please contact <a class="button mini blue" href="mailto:hello@stokegames.com">hello@stokegames.com</a>.</p>
+<p>Hackatron is currently in development. For more information please contact <a class="button mini blue" href="mailto:eric@stokegames.com">eric@stokegames.com</a>.</p>
+
+<div style="text-align: center;margin-top:10px">
+    <a class="button black large" hidden href="https://apps.facebook.com/233102823719500/">Play it on Facebook</a>
+    <a class="button black large" href="https://hackatron.rocks/">Play it on Web</a>
+    <a class="button black large" hidden href="https://itunes.apple.com/us/app/ttt-trippy-tetra-tiles/id1092898610?mt=8">Play it on iOS</a>
+</div>
 
 ### Overview
 
