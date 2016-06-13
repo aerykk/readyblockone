@@ -18,6 +18,8 @@ var io = require('socket.io').listen(server);
 var clients = [];
 var clientHost = null;
 
+app.use(express.static(__dirname));
+
 if (isProduction) {
 } else {
     config.devtool = 'eval'; // Speed up incremental builds
@@ -73,21 +75,16 @@ function renderFullPage(html, initialState) {
 }
 
 function fetchComponentData(dispatch, components, params) {
-
-  const needs = components.reduce( (prev, current) => {
-
-  	return Object.keys(current).reduce( (acc, key) => {
+  const needs = components.reduce((prev, current) => {
+  	return Object.keys(current).reduce((acc, key) => {
   		return current[key].hasOwnProperty('needs') ? current[key].needs.concat(acc) : acc
   	}, prev)
-
   }, []);
 
   const promises = needs.map(need => dispatch(need(params)));
 
   return Promise.all(promises);
 }
-
-app.use(express.static(__dirname));
 
 // server rendering
 app.use((req, res, next) => {
