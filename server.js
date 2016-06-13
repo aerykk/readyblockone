@@ -20,6 +20,8 @@ app.use(express.static(__dirname));
 
 if (isProduction) {
 } else {
+    require('look').start(11012, '0.0.0.0');
+
     config.devtool = 'eval'; // Speed up incremental builds
     config.entry['game.web'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr');
     config.entry['widget.web'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr');
