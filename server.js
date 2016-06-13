@@ -13,8 +13,6 @@ const host = isProduction ? '0.0.0.0' : '0.0.0.0';
 const port = process.env.PORT ? process.env.PORT : 11010;
 var app = express();
 
-var server = http.createServer(app);
-var io = require('socket.io').listen(server);
 var clients = [];
 var clientHost = null;
 
@@ -146,6 +144,8 @@ app.use((req, res, next) => {
     })
 })
 
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
