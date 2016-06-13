@@ -1,51 +1,53 @@
-"use strict";
-
 var path = require('path');
 var glob = require('glob');
 var webpack = require('webpack');
 
 module.exports = {
-    title: 'Cain Guide',
-    serverPort: process.env.PORT || 8080,
+    title: 'Guide',
+    serverPort: process.env.PORT || 11011,
     serverHost: process.env.HOST || '0.0.0.0',
     assetsDir: path.join(__dirname, 'App'),
     components: function() {
-      return glob.sync(path.resolve(__dirname, 'App/Game/UI/Components/**/*.js')).filter(function(module) {
-        return /\/[A-Z]\w*\.js$/.test(module);
-      });
+        return glob.sync(path.resolve(__dirname, 'App/**/UI/**/*.js')).filter(function(module) {
+            return /\/[A-Z]\w*\.js$/.test(module);
+        });
     },
-    updateWebpackConfig: function(webpackConfig, env) {
-      // Your source files folder or array of folders, should not include node_modules
-      let dir = path.join(__dirname, 'App');
-      webpackConfig.module.loaders.push(
+    updateWebpackConfig: function(config, env) {
+        config.externals = {};
+        config.externals['jsdom'] = 'window';
+        config.externals['react/lib/ReactContext'] = 'window';
+        config.externals['react/lib/ExecutionEnvironment'] = true;
+        config.externals['react/addons'] = true;
+
+        config.alias = {};
+        config.alias.cheerio = 'cheerio/lib/cheerio';
+
+        config.resolve.extensions = ['', '.js', '.jsx', '.json'];
+
         // Babel loader will use your project’s .babelrc
-        {
-          test: /\.js?$/,
-          include: dir,
-          loader: 'babel',
-           query: {
-             presets: ['react', 'es2015', 'stage-0', 'react-hmre']
-           },
-           plugins: [
-               new webpack.HotModuleReplacementPlugin(),
-               new webpack.NoErrorsPlugin()
-           ]
-        }
-      );
+        config.module.loaders.push({
+            test: /\.jsx?$/,
+            include: [path.join(__dirname + '/App'), path.join(__dirname + '/node_modules/react-native-extended-stylesheet')],
+            loader: 'babel',
+            query: {
+                presets: ['react', 'es2015', 'stage-0', 'react-hmre']
+            },
+            plugins: [
+                new webpack.HotModuleReplacementPlugin(),
+                new webpack.NoErrorsPlugin()
+            ]
+        });
+        config.module.loaders.push({
+            test: /\.css$/,
+            include: path.join(__dirname + '/App'),
+            loaders: [
+                'raw'
+            ]
+        });
 
-      webpackConfig.module.loaders.push(
-        {
-          test: /\.css$/,
-          include: path.join(__dirname, 'App'),
-          loaders: [
-            'style?sourceMap',
-            'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
-          ]
-        }
-      );
+        config.plugins.push(new webpack.IgnorePlugin(/^(react-native)$/));
 
-
-      return webpackConfig;
-    },
+        return config;
+    }
    // Put other configuration options here...
 };

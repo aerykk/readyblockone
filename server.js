@@ -10,7 +10,7 @@ const config = require('./webpack.config.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const host = isProduction ? '0.0.0.0' : '0.0.0.0';
-const port = process.env.PORT ? process.env.PORT : 8080;
+const port = process.env.PORT ? process.env.PORT : 11010;
 var app = express();
 
 var server = http.createServer(app);
@@ -21,8 +21,9 @@ var clientHost = null;
 if (isProduction) {
 } else {
     config.devtool = 'eval'; // Speed up incremental builds
-    config.entry['app'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr');
-    config.output.publicPath = '/Package/Release/';
+    config.entry['game.web'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr');
+    config.entry['widget.web'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr');
+    config.output.publicPath = '/Build/Release/';
     config.plugins.unshift(new webpack.HotModuleReplacementPlugin());
     config.plugins.unshift(new webpack.NoErrorsPlugin());
     config.module.loaders[0].query.presets.push('react-hmre');
@@ -47,21 +48,106 @@ if (isProduction) {
     }));
 }
 
-app.get('*', function(req, res, cb) {
-    fs.exists('App/Game/Assets/Pages/' + req.url + '.md', function(exists) {
-        if (exists) {
-            fs.readFile('index.html', function(err, page) {
-                res.writeHead(200, {'Content-Type': 'text/html'});
-                res.write(page);
-                res.end();
-            });
-        } else {
-            cb();
-        }
-    });
+import { Router, RouterContext, match } from 'react-router';
+import { applyMiddleware, createStore } from 'redux';
+import { Provider } from 'react-redux';
+import React from 'react'
+import { renderToString } from 'react-dom/server'
+
+var indexHTML = '';
+
+fs.readFile('index.html', function(err, html) {
+    indexHTML = html.toString();
 });
 
+function renderFullPage(html, initialState) {
+    return indexHTML.replace(
+        `
+            <div id="ui"></div>
+        `.trim(),
+        `
+            <div id="ui">${html}</div>
+            <script>window.$REDUX_STATE = ${initialState}</script>
+        `.trim()
+    );
+}
+
+function fetchComponentData(dispatch, components, params) {
+
+  const needs = components.reduce( (prev, current) => {
+
+  	return Object.keys(current).reduce( (acc, key) => {
+  		return current[key].hasOwnProperty('needs') ? current[key].needs.concat(acc) : acc
+  	}, prev)
+
+  }, []);
+
+  const promises = needs.map(need => dispatch(need(params)));
+
+  return Promise.all(promises);
+}
+
 app.use(express.static(__dirname));
+
+// server rendering
+app.use((req, res, next) => {
+    var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    console.info('Requested: ' + fullUrl)
+    var Router2 = require('./App/Game/Router')(req.get('host'));
+
+    // react-router
+    match({
+        routes: Router2.routes,
+        location: req.url
+    }, (error, redirectLocation, renderProps) => {
+        if (error) {
+            return res.status(500).send(error.message);
+        }
+
+        if (redirectLocation) {
+            return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+        }
+
+        if (renderProps === null) {
+            // return next('err msg: route not found'); // yield control to next middleware to handle the request
+            return res.status(404).send( 'Not found' );
+        }
+
+        // console.log( '\nserver > renderProps: \n', require('util').inspect( renderProps, false, 1, true) )
+        // console.log( '\nserver > renderProps: \n', require('util').inspect( renderProps.components, false, 3, true) )
+
+        // this is where universal rendering happens,
+        // fetchComponentData() will trigger actions listed in static "needs" props in each container component
+        // and wait for all of them to complete before continuing rendering the page,
+        // hence ensuring all data needed was fetched before proceeding
+        //
+        // renderProps: contains all necessary data, e.g: routes, router, history, components...
+        fetchComponentData(
+            Router2.store.dispatch,
+            renderProps.components,
+            renderProps.params
+        )
+        .then(() => {
+            const initView = renderToString((
+                <Provider store={Router2.store}>
+                    <RouterContext {...renderProps} />
+                </Provider>
+            ))
+
+            // console.log('\ninitView:\n', initView);
+
+            let state = JSON.stringify(Router2.store.getState());
+            // console.log( '\nstate: ', state )
+
+            let page = renderFullPage(initView, state)
+            // console.log( '\npage:\n', page );
+
+            return page;
+        })
+        .then(page => res.status(200).send(page))
+        .catch(err => res.end(err.message));
+    })
+})
 
 
 function getRandomInt(min, max) {

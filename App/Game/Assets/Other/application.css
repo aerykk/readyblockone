@@ -4434,6 +4434,7 @@ input[type="submit"].btn.btn-mini {
 /* line 12, ../../app/assets/stylesheets/bootstrap/_breadcrumbs.css.scss */
 .breadcrumb li {
   display: inline-block;
+  margin-left: 6px;
   *display: inline;
   /* IE7 inline-block hack */
   *zoom: 1;
@@ -7910,7 +7911,6 @@ html {
 /* line 10, ../../app/assets/stylesheets/layout.css.scss */
 body {
   width: 100%;
-  background: url(/App/Game/Assets/Other/images/linen-lighter.png);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -8500,7 +8500,7 @@ body {
 /* line 15, ../../app/assets/stylesheets/base.css.scss */
 a {
   cursor: pointer;
-  color: #78808a;
+  color: #585E65;
 }
 
 /* line 20, ../../app/assets/stylesheets/base.css.scss */
@@ -12595,11 +12595,6 @@ body.games_controller.tile_world_action #game {
     background: transparent url(/App/Game/Assets/Other/images/logo.png) no-repeat 0 7px;
     background-size: auto 70%;
     padding-left: 43px;
-}
-
-#ui {
-    background: transparent url(/App/Game/Assets/Other/images/logo-bg.png) no-repeat -200px 0;
-    background-size: auto 550px;
 }
 
 [hidden] {
