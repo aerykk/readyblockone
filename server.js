@@ -158,6 +158,7 @@ app.use((req, res, next) => {
 
             // console.log( '\nstate: ', state )
             
+            let state = Router2.store.getState();
             let initialState = JSON.stringify(state);
             let page = renderFullPage(initView, initialState)
             // console.log( '\npage:\n', page );
