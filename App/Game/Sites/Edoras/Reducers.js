@@ -79,6 +79,7 @@ function site() {
 
     return {
         title: 'Pokelingo',
+        description: '',
         isLocal: isLocal,
         copyright: {
             date: '2014-' + new Date().getFullYear(),

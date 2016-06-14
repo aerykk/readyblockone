@@ -62,8 +62,29 @@ fs.readFile('main.html', function(err, html) {
     indexHTML = html.toString();
 });
 
-function renderFullPage(html, initialState) {
-    return indexHTML.replace(
+function renderFullPage(html, state) {
+    indexHTML = html
+
+    indexHTML.replace(
+        `
+            <title></title>
+        `.trim(),
+        `
+            <title>${state.site.title}</title>
+        `.trim()
+    )
+    
+    indexHTML.replace(
+        `
+            <meta content="" name="description" />
+        `.trim(),
+        `
+            <meta content="${state.site.description}" name="description" />
+        `.trim()
+    )
+    
+    let initialState = JSON.stringify(state);
+    indexHTML.replace(
         `
             <div id="ui"></div>
         `.trim(),
@@ -71,7 +92,9 @@ function renderFullPage(html, initialState) {
             <div id="ui">${html}</div>
             <script>window.$REDUX_STATE = ${initialState}</script>
         `.trim()
-    );
+    )
+
+    return indexHTML
 }
 
 function fetchComponentData(dispatch, components, params) {
@@ -133,10 +156,9 @@ app.use((req, res, next) => {
 
             // console.log('\ninitView:\n', initView);
 
-            let state = JSON.stringify(Router2.store.getState());
             // console.log( '\nstate: ', state )
 
-            let page = renderFullPage(initView, state)
+            let page = renderFullPage(initView, Router2.store.getState())
             // console.log( '\npage:\n', page );
 
             return page;

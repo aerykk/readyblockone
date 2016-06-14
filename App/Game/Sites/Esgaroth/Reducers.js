@@ -84,6 +84,7 @@ function site() {
 
     return {
         title: 'Stoke Games',
+        description: 'Stoke Games, bringing you games worth being stoked about',
         isLocal: isLocal,
         copyright: {
             date: '2013-' + new Date().getFullYear(),
