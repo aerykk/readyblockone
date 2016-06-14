@@ -157,8 +157,9 @@ app.use((req, res, next) => {
             // console.log('\ninitView:\n', initView);
 
             // console.log( '\nstate: ', state )
-
-            let page = renderFullPage(initView, Router2.store.getState())
+            
+            let initialState = JSON.stringify(state);
+            let page = renderFullPage(initView, initialState)
             // console.log( '\npage:\n', page );
 
             return page;
