@@ -58,7 +58,7 @@ import { renderToString } from 'react-dom/server'
 
 var indexHTML = '';
 
-fs.readFile('index.html', function(err, html) {
+fs.readFile('main.html', function(err, html) {
     indexHTML = html.toString();
 });
 
