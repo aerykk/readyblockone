@@ -16,8 +16,6 @@ var app = express();
 var clients = [];
 var clientHost = null;
 
-app.use(express.static(__dirname));
-
 if (isProduction) {
 } else {
     require('look').start(11012, '0.0.0.0');
@@ -49,6 +47,8 @@ if (isProduction) {
         historyApiFallback: true
     }));
 }
+
+app.use(express.static(__dirname));
 
 import { Router, RouterContext, match } from 'react-router';
 import { applyMiddleware, createStore } from 'redux';

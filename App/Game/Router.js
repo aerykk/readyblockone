@@ -4,6 +4,9 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 var SiteRoutes = {
     'stokegames.com': (
         require('./Sites/Esgaroth/Router').default
+    ),
+    'pokelingo.com': (
+        require('./Sites/Edoras/Router').default
     )
 };
 // ,

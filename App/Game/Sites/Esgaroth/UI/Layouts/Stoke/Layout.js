@@ -6,14 +6,12 @@ import { connect } from 'react-redux'
 
 class Layout extends Component {
     static propTypes = {
-        children: PropTypes.element,
         breadcrumb: PropTypes.element,
         games: PropTypes.object.isRequired,
         site: PropTypes.object.isRequired
     }
 
     static defaultProps = {
-        children: null,
         breadcrumb: null,
         games: [],
         site: {}

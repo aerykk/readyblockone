@@ -4,7 +4,7 @@ const {React, ReactDOM, AppWrapper, AppConfig, Platform, Component, AppRegistry,
 import { Link } from 'react-router';
 
 class Layout extends Component {
-    componentDidMount() {return;
+    componentDidMount() {
         $script([
             'https://code.jquery.com/jquery-2.1.1.js',
             '/App/Vendor/ZeroClipboard.min.js'
@@ -600,6 +600,10 @@ class Layout extends Component {
         return (
             <View>
                 <style>{`
+                    body {
+                        font: normal 12px sans-serif;
+                    }
+
                     table {
                         border: 0;
                     }
@@ -662,6 +666,10 @@ class Layout extends Component {
                                 background-color: #5e92ff;
                                 color: #fff;
                             }
+                        
+                        .c-filters__listing-item {
+                            display: block;
+                        }
 
                     .c-filters {
                     }
@@ -868,7 +876,7 @@ class Layout extends Component {
                     <p>Your grand adventure in language translation is about to begin...</p>
                     <div className="c-menu c--shown">
                         <h2>Choose your adventure:</h2>
-                        <a className="js-load-game button large black" data-id="platinum" href="javascript:;">Pokemon Platinum</a>
+                        <button className="js-load-game button large black" data-id="platinum">Pokemon Platinum</button>
                     </div>
                     <div className="c-alert"><strong>Loading...</strong> Please wait, this may take a while (10MB).</div>
                 </div>
