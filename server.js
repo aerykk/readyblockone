@@ -88,7 +88,7 @@ function renderFullPage(html, state) {
             <div id="ui"></div>
         `.trim(),
         `
-            <div id="ui">${html}</div>
+            <div id="ui"><div>${html}</div></div>
             <script>window.$REDUX_STATE = ${initialState}</script>
         `.trim()
     )
@@ -156,7 +156,7 @@ app.use((req, res, next) => {
             // console.log('\ninitView:\n', initView);
 
             let state = Router2.store.getState();
-            console.log( '\nstate: ', state )
+            // console.log( '\nstate: ', state )
             
             let page = renderFullPage(initView, state)
             // console.log( '\npage:\n', page );
