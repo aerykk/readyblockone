@@ -32,7 +32,7 @@ class Screen extends Component {
         const { site, location } = this.props
 
         const content = (
-            <Markdown src={"/App/Game/Sites/Esgaroth/Pages/" + ((location && location.replace('/', '')) || 'home') + ".md"} onChange={(state) => this.onPageChange(state)} />
+            <Markdown src={"/App/Game/Sites/Esgaroth/Pages/" + (location || 'home') + ".md"} onChange={(state) => this.onPageChange(state)} />
         )
 
         const page = this.state.page
@@ -67,9 +67,20 @@ class Screen extends Component {
 function mapStateToProps(state) {
     const { site, routing } = state
 
+    // TODO: Figure out WTF is going on here. Server is string, browser is object
+    var location = null;
+    if (typeof routing.locationBeforeTransitions === 'string') {
+        location = routing.locationBeforeTransitions.replace('/', '')
+    } else if (typeof routing.locationBeforeTransitions === 'object' && routing.locationBeforeTransitions) {
+        location = routing.locationBeforeTransitions.pathname
+    } else if (typeof window !== 'undefined') {
+        location = window.location.pathname.replace('/', '')
+    }
+
+
     return {
         site,
-        location: routing.locationBeforeTransitions && routing.locationBeforeTransitions.pathname
+        location
     }
 }
 

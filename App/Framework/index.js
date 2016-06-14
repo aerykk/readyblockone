@@ -19,7 +19,7 @@ if (typeof process.argv !== 'undefined') {
     Framework.Platform = {
         OS: argv.platform ? argv.platform : 'web',
         Env: {
-            isServer: typeof process !== 'undefined' ? true : false,
+            isServer: typeof window === 'undefined' ? true : false,
             isMobile: false,
             isTablet: false,
             isDesktop: false,

@@ -15,7 +15,7 @@ module.exports = {
         chunkFilename: '[id].chunk.js'
     },
     resolve: {
-        extensions: ['', '.js', '.jsx', '.json', '.md']
+        extensions: ['', '.js', '.jsx', '.json']
     },
     externals: {
         'jsdom': 'window',
@@ -40,13 +40,6 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                include: path.join(__dirname + '/App'),
-                loaders: [
-                    'raw'
-                ]
-            },
-            {
-                test: /\.md$/,
                 include: path.join(__dirname + '/App'),
                 loaders: [
                     'raw'

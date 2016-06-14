@@ -52,7 +52,7 @@ handleRefreshClick(e) {
         this.setState({page: state});
     }
     render() {
-        var page = this.props.location.pathname.replace('/', '');
+        var page = this.props.location;
 
         if (!page) { page = 'home'; }
 
@@ -125,7 +125,7 @@ Screen.propTypes = {
 };
 
 function mapStateToProps(state) {
-    const { selectedSubreddit, postsBySubreddit } = state
+    const { selectedSubreddit, postsBySubreddit, routing } = state
     const {
         isFetching,
         lastUpdated,
@@ -135,11 +135,22 @@ function mapStateToProps(state) {
         items: []
     }
 
+    // TODO: Figure out WTF is going on here. Server is string, browser is object
+    var location = null;
+    if (typeof routing.locationBeforeTransitions === 'string') {
+        location = routing.locationBeforeTransitions.replace('/', '')
+    } else if (typeof routing.locationBeforeTransitions === 'object' && routing.locationBeforeTransitions) {
+        location = routing.locationBeforeTransitions.pathname.replace('/', '')
+    } else if (typeof window !== 'undefined') {
+        location = window.location.pathname.replace('/', '')
+    }
+
     return {
         selectedSubreddit,
         posts,
         isFetching,
-        lastUpdated
+        lastUpdated,
+        location
     }
 }
 

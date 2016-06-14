@@ -116,6 +116,13 @@ app.use((req, res, next) => {
     console.info('Requested: ' + fullUrl)
     var Router2 = require('./App/Game/Router')(req.get('host'));
 
+    // https://github.com/mz026/universal-redux-template/blob/master/app/server/server.js
+    var LOCATION_CHANGE = '@@router/LOCATION_CHANGE';
+    Router2.store.dispatch({
+      type: LOCATION_CHANGE,
+      payload: req.url
+    });
+
     // react-router
     match({
         routes: Router2.routes,
