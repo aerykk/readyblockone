@@ -81,7 +81,7 @@ function renderFullPage(html, state) {
             <meta content="${state.site.description}" name="description" />
         `.trim()
     )
-    
+
     // We need to add an extra <div> wrapper here
     // http://stackoverflow.com/questions/33521047/warning-react-attempted-to-reuse-markup-in-a-container-but-the-checksum-was-inv
     let initialState = JSON.stringify(state);

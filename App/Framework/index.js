@@ -18,10 +18,13 @@ if (typeof process.argv !== 'undefined') {
 
     Framework.Platform = {
         OS: argv.platform ? argv.platform : 'web',
-        isMobile: false,
-        isTablet: false,
-        isDesktop: false,
-        isRetina: false
+        Env: {
+            isServer: typeof process !== 'undefined' ? true : false,
+            isMobile: false,
+            isTablet: false,
+            isDesktop: false,
+            isRetina: false
+        }
     };
 
     Framework.StyleSheet = {
@@ -78,17 +81,18 @@ if (typeof process.argv !== 'undefined') {
     Framework.View = ReactNative.View;
     Framework.TouchableHighlight = ReactNative.TouchableHighlight;
     Framework.WebView = ReactNative.WebView;
+
+    Framework.Platform.Env = {
+        isServer: false,
+        isMobile: false,
+        isTablet: false,
+        isRetina: false
+    };
 }
 
 //===============
 
-Framework.Platform.Env = {
-    isMobile: false,
-    isTablet: false,
-    isRetina: false
-};
-
-console.log('On platform: ' + Framework.Platform.OS)
+console.log('On platform: ' + Framework.Platform.OS + '(Server: ' + Framework.Platform.Env.isServer + ')')
 
 if (Framework.Platform.OS === 'web') {
     Framework.ReactDOM = require('react-dom');

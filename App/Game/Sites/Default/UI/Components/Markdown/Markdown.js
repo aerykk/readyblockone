@@ -26,69 +26,80 @@ class Markdown extends Component {
             options: {}
         }
     }
+    
+    setPage(props, data) {
+        var title = ''
+        var body = ''
+        var items = []
+        var html = marked(data)
+        var $ = cheerio.load('<div id="top">' + html + '</div>')
+        var $content = $('#top > #content')
+        var $title = $('#top > h1')
+
+        if ($title.length) {
+            title = $title.remove().text()
+        }
+
+        if ($content.length) {
+            body = $('<div>').append($content.nextUntil('h2')).html()
+
+            $('#top > h2').each(function() {
+                items.push({
+                    title: $(this).text(),
+                    body: $('<div>').append($(this).nextUntil('h2')).html()
+                })
+            })
+        } else {
+            body = $('#top').html()
+        }
+
+        this.setState({
+            title: title,
+            body: body,
+            items: items
+        })
+
+        props.onChange && props.onChange(this.state)
+
+        this.forceUpdate()
+    }
 
     fetchPage(props) {
+        if (props.src === this.state.src) { return }
+
         this.setState({src: props.src})
 
-        fetch(props.src)
-            .then((res) => {
-                return res.text()
-            })
-            .then((data) => {
-                var title = ''
-                var body = ''
-                var items = []
-                var html = marked(data)
-                var $ = cheerio.load('<div id="top">' + html + '</div>')
-                var $content = $('#top > #content')
-                var $title = $('#top > h1')
-
-                if ($title.length) {
-                    title = $title.remove().text()
-                }
-
-                if ($content.length) {
-                    body = $('<div>').append($content.nextUntil('h2')).html()
-
-                    $('#top > h2').each(function() {
-                        items.push({
-                            title: $(this).text(),
-                            body: $('<div>').append($(this).nextUntil('h2')).html()
-                        })
+        if (Framework.Platform.Env.isServer) {
+            var fs = require('fs')
+            var data = fs.readFileSync(__dirname + '/../../../../../../..' + props.src).toString()
+            
+            this.setPage(props, data)
+        } else {
+            fetch(props.src)
+                .then((res) => {
+                    return res.text()
+                })
+                .then((data) => {
+                    this.setPage(props, data)
+                }).catch((ex) => {
+                    this.setState({
+                        title: 'Not found',
+                        body: 'Could not find that page!',
+                        items: []
                     })
-                } else {
-                    body = $('#top').html()
-                }
 
-                this.setState({
-                    title: title,
-                    body: body,
-                    items: items
+                    props.onChange && props.onChange(this.state)
+
+                    this.forceUpdate()
                 })
-
-                props.onChange && props.onChange(this.state)
-
-                this.forceUpdate()
-            }).catch((ex) => {
-                this.setState({
-                    title: 'Not found',
-                    body: 'Could not find that page!',
-                    items: []
-                })
-
-                props.onChange && props.onChange(this.state)
-
-                this.forceUpdate()
-            })
+        }
     }
 
     componentWillMount() {
-        if (this.props.src === this.state.src) { return }
         this.fetchPage(this.props)
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.src === this.state.src) { return }
         this.fetchPage(nextProps)
     }
 
