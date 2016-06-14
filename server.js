@@ -63,7 +63,7 @@ fs.readFile('main.html', function(err, html) {
 });
 
 function renderFullPage(html, state) {
-    var result = indexHTML;
+    var result = indexHTML + '';
     result = result.replace(
         `
             <title></title>
