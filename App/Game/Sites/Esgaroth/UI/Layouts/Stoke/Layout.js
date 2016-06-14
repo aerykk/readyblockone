@@ -6,9 +6,9 @@ import { connect } from 'react-redux'
 
 class Layout extends Component {
     static propTypes = {
-        children: PropTypes.optionalElement,
-        breadcrumb: PropTypes.optionalElement,
-        games: PropTypes.array.isRequired,
+        children: PropTypes.element,
+        breadcrumb: PropTypes.element,
+        games: PropTypes.object.isRequired,
         site: PropTypes.object.isRequired
     }
 
