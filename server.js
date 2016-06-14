@@ -63,8 +63,6 @@ fs.readFile('main.html', function(err, html) {
 });
 
 function renderFullPage(html, state) {
-    indexHTML = html
-
     indexHTML.replace(
         `
             <title></title>
@@ -159,8 +157,7 @@ app.use((req, res, next) => {
             // console.log( '\nstate: ', state )
             
             let state = Router2.store.getState();
-            let initialState = JSON.stringify(state);
-            let page = renderFullPage(initView, initialState)
+            let page = renderFullPage(initView, state)
             // console.log( '\npage:\n', page );
 
             return page;
