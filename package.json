@@ -1,5 +1,5 @@
 {
-  "name": "esgaroth",
+  "name": "horadric",
   "version": "1.0.0",
   "description": "",
   "dependencies": {
@@ -59,20 +59,21 @@
   "scripts": {
     "start": "babel-node ./server.js",
     "build": "webpack --progress -p",
+    "push": "webpack --progress -p && git add -A && git commit -m \"Rebuid\" && git push",
     "styleguide-server": "styleguidist server",
     "styleguide-build": "styleguidist build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ericmuyser/esgaroth.git"
+    "url": "git+https://github.com/ericmuyser/horadric.git"
   },
   "author": "Stoke Games",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/ericmuyser/esgaroth/issues"
+    "url": "https://github.com/ericmuyser/horadric/issues"
   },
-  "homepage": "https://github.com/ericmuyser/esgaroth#readme",
+  "homepage": "https://github.com/ericmuyser/horadric#readme",
   "devDependencies": {},
   "engines": {
     "node": "5.5.0",
