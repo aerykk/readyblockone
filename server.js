@@ -128,6 +128,10 @@ app.use((req, res, next) => {
         routes: Router2.routes,
         location: req.url
     }, (error, redirectLocation, renderProps) => {
+        console.log('Error:', error ? true : false);
+        console.log('redirectLocation:', redirectLocation ? true : false);
+        console.log('renderProps:', renderProps ? true : false);
+
         if (error) {
             return res.status(500).send(error.message);
         }
@@ -136,9 +140,9 @@ app.use((req, res, next) => {
             return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
         }
 
-        if (renderProps === null) {
+        if (!renderProps) {
             // return next('err msg: route not found'); // yield control to next middleware to handle the request
-            return res.status(404).send( 'Not found' );
+            return res.status(404).send('Not found');
         }
 
         // console.log( '\nserver > renderProps: \n', require('util').inspect( renderProps, false, 1, true) )

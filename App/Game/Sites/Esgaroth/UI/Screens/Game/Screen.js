@@ -87,9 +87,10 @@ function mapStateToProps(state) {
     } else if (typeof window !== 'undefined') {
         location = window.location.pathname.replace('/', '')
     }
-    
-    var game = games.list[0];
 
+    const code = location.replace('/games/', '')
+    const game = games.list.reduce((prev, current) => (prev.code === code && prev) || (current.code === code && current))
+console.log(game)
     return {
         site,
         game,

@@ -1,6 +1,6 @@
 # About
 
-### Our Story
+#### Our Story
 
 <p>
     Founded in 2016 by [Eric Muyser](http://ericmuyser.com), Stoke Games is an independent game development studio based out of Vancouver, Canada. 
@@ -15,14 +15,10 @@
 </p>
 
 <p>
-    Community polls that are actually followed.
-</p>
-
-<p>
     We work for you.
 </p>
 
-### The Stoke Manifesto
+#### The Stoke Manifesto
 
 - Community first, always
 - Player experience above all
@@ -37,5 +33,9 @@
 - Small focused teams are unstoppable
 - Experimentation over argument
 - Excellence is a habit, not an act
-- Ownership starts with your ownself
+- Ownership starts with ownself
 
+#### What does this mean?
+
+- Community polls that are actually followed.
+- We don't do contracted games. We do our games.

@@ -104,28 +104,156 @@ function games() {
                         title: 'Upgrade',
                         state: 'inprogress',
                         color: 'blue'
-                    },
+                    }
                 ]
             },
             {
                 title: 'Angels of Ascension',
                 code: 'aoa',
-                icon: 'lemon'
+                icon: 'lemon',
+                timeline: [
+                    {
+                        title: 'Design',
+                        state: 'completed',
+                        color: 'red'
+                    },
+                    {
+                        title: 'Prototype',
+                        state: 'incompleted',
+                        color: 'orange'
+                    },
+                    {
+                        title: 'Alpha',
+                        state: 'incompleted',
+                        color: 'yellow'
+                    },
+                    {
+                        title: 'Beta',
+                        state: 'incompleted',
+                        color: 'yellow'
+                    },
+                    {
+                        title: 'Release',
+                        state: 'incompleted',
+                        color: 'green'
+                    },
+                    {
+                        title: 'Upgrade',
+                        state: 'incompleted',
+                        color: 'blue'
+                    }
+                ]
             },
             {
                 title: 'Hackatron',
                 code: 'hackatron',
-                icon: 'screenshot'
+                icon: 'screenshot',
+                timeline: [
+                    {
+                        title: 'Design',
+                        state: 'completed',
+                        color: 'red'
+                    },
+                    {
+                        title: 'Prototype',
+                        state: 'completed',
+                        color: 'orange'
+                    },
+                    {
+                        title: 'Alpha',
+                        state: 'completed',
+                        color: 'yellow'
+                    },
+                    {
+                        title: 'Beta',
+                        state: 'completed',
+                        color: 'yellow'
+                    },
+                    {
+                        title: 'Release',
+                        state: 'inprogress',
+                        color: 'green'
+                    },
+                    {
+                        title: 'Upgrade',
+                        state: 'incompleted',
+                        color: 'blue'
+                    }
+                ]
             },
             {
                 title: 'Tile World',
                 code: 'tile-world',
-                icon: 'bookmark'
+                icon: 'bookmark',
+                timeline: [
+                    {
+                        title: 'Design',
+                        state: 'completed',
+                        color: 'red'
+                    },
+                    {
+                        title: 'Prototype',
+                        state: 'incompleted',
+                        color: 'orange'
+                    },
+                    {
+                        title: 'Alpha',
+                        state: 'incompleted',
+                        color: 'yellow'
+                    },
+                    {
+                        title: 'Beta',
+                        state: 'incompleted',
+                        color: 'yellow'
+                    },
+                    {
+                        title: 'Release',
+                        state: 'incompleted',
+                        color: 'green'
+                    },
+                    {
+                        title: 'Upgrade',
+                        state: 'incompleted',
+                        color: 'blue'
+                    }
+                ]
             },
             {
                 title: 'Tilr',
                 code: 'tilr',
-                icon: 'bookmark'
+                icon: 'bookmark',
+                timeline: [
+                    {
+                        title: 'Design',
+                        state: 'completed',
+                        color: 'red'
+                    },
+                    {
+                        title: 'Prototype',
+                        state: 'incompleted',
+                        color: 'orange'
+                    },
+                    {
+                        title: 'Alpha',
+                        state: 'incompleted',
+                        color: 'yellow'
+                    },
+                    {
+                        title: 'Beta',
+                        state: 'incompleted',
+                        color: 'yellow'
+                    },
+                    {
+                        title: 'Release',
+                        state: 'incompleted',
+                        color: 'green'
+                    },
+                    {
+                        title: 'Upgrade',
+                        state: 'incompleted',
+                        color: 'blue'
+                    }
+                ]
             }
         ]
     }

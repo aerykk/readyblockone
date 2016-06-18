@@ -11,7 +11,7 @@ class Screen extends Component {
     render() {
 
         return (
-            <div>Dashboard</div>
+            <div>PageTwo</div>
         );
     }
 }

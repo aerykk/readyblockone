@@ -45,6 +45,16 @@ var App = props => (
     </div>
 )
 
+
+var pages = [
+    'about',
+    'careers',
+    'contact',
+    'games',
+    'news',
+    'blog/hackatron-beta'
+]
+
 var routes = {
     component: App,
     childRoutes: [
@@ -119,7 +129,7 @@ var routes = {
             ]
         },
         {
-            path: '*',
+            path: '/testing',
             getComponent: (nextState, cb) => {
                 // Share the path
                 // Dynamically load the correct component
@@ -128,6 +138,7 @@ var routes = {
                         cb(null, require('./UI/Screens/Dashboard').default)
                     })
                 }
+                
                 return require.ensure([], (require) => {
                     cb(null, require('./UI/Screens/Default').default)
                 })
@@ -148,7 +159,8 @@ var routes = {
                     onEnter: redirectToLogin,
                     childRoutes: [
                         // Protected nested routes for the dashboard
-                        { path: '/page2',
+                        {
+                            path: '/page2',
                             getComponent: (nextState, cb) => {
                                 require.ensure([], (require) => {
                                     cb(null, require('./UI/Screens/User').default)
@@ -162,6 +174,17 @@ var routes = {
         }
     ]
 };
+
+pages.forEach((page) => {
+    routes.childRoutes.push({
+        path: '/' + page,
+        getComponent: (nextState, cb) => {
+            return require.ensure([], (require) => {
+                cb(null, require('./UI/Screens/Default').default)
+            })
+        }
+    })
+})
 
 export default {
     routes: routes,
