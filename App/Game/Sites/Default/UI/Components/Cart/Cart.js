@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import Product from './Product'
+import Product from '../Product'
 
 // export const ADD_TO_CART = 'ADD_TO_CART'
 // export const CHECKOUT_REQUEST = 'CHECKOUT_REQUEST'

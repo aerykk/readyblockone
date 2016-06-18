@@ -575,6 +575,7 @@ a:hover {
 
 /* line 7, ../../app/assets/stylesheets/bootstrap/_layouts.css.scss */
 .container {
+  padding-top: 50px;
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
@@ -8050,7 +8051,7 @@ section#main .container-fluid {
 }
 
 
-section#main ul {
+section#main ul:not([class]) {
   list-style: initial;
   margin-left: 20px;
 }
@@ -10973,6 +10974,10 @@ p {
 
 /* line 5, ../../app/assets/stylesheets/navs.css.scss */
 .top-nav {
+  position: fixed;
+  top: 0;
+  width: 83%;
+      opacity: 0.95;
   -webkit-border-radius: 0 0 5px 5px;
   -moz-border-radius: 0 0 5px 5px;
   -ms-border-radius: 0 0 5px 5px;
@@ -12600,3 +12605,5 @@ body.games_controller.tile_world_action #game {
 [hidden] {
   display: none;
 }
+
+

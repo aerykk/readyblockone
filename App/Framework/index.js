@@ -286,6 +286,7 @@ if (Framework.Platform.OS === 'web') {
 
 var postcss = require('postcss');
 var postcssJs = require('postcss-js');
+var Sass = require('sass.js');
 
 if (Framework.Platform.OS === 'web') { // is web
     var reactlook = require('react-look');
@@ -302,20 +303,22 @@ if (Framework.Platform.OS === 'web') { // is web
         return Object.keys(styles).reduce((classes, selector) => {
           classes[selector] = renderer.default(styles[selector], scope)
           return classes; // eslint-disable-line
-        }, { })
+        }, {})
     };
 
-    Framework.getStyles = function(rawStyles, scope) {
-        var styles = reactlook.StyleSheet.create(
-            postcssJs.objectify(
-                postcss.parse(rawStyles)
-            ),
-            scope
-        );
+    Framework.getStyles = function(rawStyles, scope, cb) {
+        Sass.compile(rawStyles, function() {
+            var styles = reactlook.StyleSheet.create(
+                postcssJs.objectify(
+                    postcss.parse(arguments[0].text)
+                ),
+                scope
+            );
 
-        return styles;
+            cb(styles)
+        });
     };
-} else { // else
+} else { // is not web
     var rnes = require('react-native-extended-stylesheet');
 
     var convertStyles = function(obj) {
@@ -345,7 +348,11 @@ if (Framework.Platform.OS === 'web') { // is web
 
 //===============
 
-Framework.wrapStyles = function(item) {
+Framework.wrapStyles = function(declarations, item) {
+    if (!declarations) {
+        return item
+    }
+
     if (!item.props) {
         return item;
     }
@@ -357,20 +364,59 @@ Framework.wrapStyles = function(item) {
         if (Array.isArray(item.props.children)) {
             item.props.children.forEach(function(child, i) {
                 if (!child) { return; }
-                extension.children[i] = Framework.wrapStyles(child);
+                extension.children[i] = Framework.wrapStyles(declarations, child);
             });
         } else {
-            extension.children[0] = Framework.wrapStyles(item.props.children);
+            extension.children[0] = Framework.wrapStyles(declarations, item.props.children);
         }
     }
 
     if (item.props.styles) {
-        var attr = Framework.Platform.OS === 'web' ? 'className' : 'style';
-        if (item.props[attr]) {
-            extension[attr] = Object.assign({}, item.props[attr], item.props.styles);
-        } else {
-            extension[attr] = item.props.styles;
+        for (var declaration in declarations) {
+            var styles = item.props.styles.split(' ');
+            var declarationClasses = declaration.split('.').slice(1)
+
+            // TODO: optimize this, make it recursive
+            // declarationClasses = ["c-timeline__arrow", "c--completed"]
+            // styles = ["c-timeline__arrow", "c--red", "c--completed"]
+            var declaration1 = declarationClasses[0];
+            if (styles.indexOf(declaration1) === -1) {
+                continue
+            }
+
+            // Check for a straight class match
+            if (declarationClasses.length > 1) {
+                var declaration2 = declarationClasses[1];
+                if (styles.indexOf(declaration2) === -1) {
+                    continue
+                }
+
+                // Check for a combined class match
+                if (declarationClasses.length > 2) {
+                    var declaration3 = declarationClasses[2];
+                    if (styles.indexOf(declaration3) === -1) {
+                        continue
+                    }
+
+                    // We cant handle more than 3 yet
+                    if (declarationClasses.length > 3) {
+                        continue
+                    }
+                }
+            }
+
+            var attr = Framework.Platform.OS === 'web' ? 'className' : 'style';
+            if (extension[attr]) {
+                if (attr === 'className') {
+                    extension[attr] = extension[attr] + ' ' + declarations[declaration]
+                } else if (attr === 'style') {
+                    extension[attr] = Object.assign({}, extension[attr], declarations[declaration]);
+                }
+            } else {
+                extension[attr] = declarations[declaration];
+            }
         }
+
     }
 
     return React.cloneElement(item, extension);

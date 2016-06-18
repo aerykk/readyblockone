@@ -27,7 +27,10 @@ function redirectToDashboard(nextState, replace) {
     }
 }
 const DevTools = createDevTools(
-    <DockMonitor toggleVisibilityKey="ctrl-h" changePositionKey="ctrl-q">
+    <DockMonitor toggleVisibilityKey='ctrl-h'
+                 changePositionKey='ctrl-q'
+                 changeMonitorKey='ctrl-m'
+                 defaultIsVisible={false}>
         <LogMonitor theme="tomorrow" preserveScrollTop={false} />
     </DockMonitor>
 )
@@ -73,7 +76,7 @@ var routes = {
             path: '/games/:key',
             getComponent: (nextState, cb) => {
                 require.ensure([], (require) => {
-                    cb(null, require('./UI/Screens/Default').default)
+                    cb(null, require('./UI/Screens/Game').default)
                 })
             }
         },

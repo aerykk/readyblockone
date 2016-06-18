@@ -20,29 +20,47 @@ class Layout extends Component {
     constructor() {
         super()
 
-        this.state = {}
+        this.state = {
+            showGames: false
+        }
     }
 
     componentDidMount() {
         document.body.style = 'background: #605F65 url(/App/Game/Assets/Other/images/linen-lighter.png);';
         document.getElementById('ui').style = 'background: transparent url(/App/Game/Assets/Other/images/logo-bg.png) no-repeat -200px 0; background-size: auto 550px;';
+    
+        Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Layout.css').toString() : require('./Layout.css'), 'stokelayout-', (styles) => {
+            this.setState({
+                styles: styles
+            })
+        })
     }
 
     render() {
         const { children, breadcrumb, games, site } = this.props
 
-        return (
+        return Framework.wrapStyles(this.state.styles, 
             <View>
                 <div className="container">
                     <div className="top-nav">
                         <div className="container-fluid">
                             <div className="row-fluid search-button-bar-container">
-                                <div className="span12">
+                                <div className="span7">
                                     <h1 className="pull-left logo">
                                       <Link to={"/"}>
                                           {site.title}
                                       </Link>
                                     </h1>
+                                </div>
+                                <div className="span5">
+                                    <ul>
+                                        <li styles="c-nav__item">
+                                            <Link to={"/about"} styles="c-nav__link">OUR STORY</Link>
+                                            <Link to={"/careers"} styles="c-nav__link">CAREERS</Link>
+                                            <Link to={"/games"} styles="c-nav__link">GAMES</Link>
+                                            <Link to={"/news"} styles="c-nav__link">NEWS</Link>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

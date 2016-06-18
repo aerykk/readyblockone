@@ -18,28 +18,26 @@
             <div class="active">
                 <p>Thanks for playing Hackatron!</p>
                 <p>If you have any questions or concerns, don't hesitate to reach out: <a href="mailto:eric@stokegames.com">eric@stokegames.com</a>.</p>
+
+                <div style="text-align: center;margin-top:10px">
+                    <a class="button black large" hidden href="https://apps.facebook.com/233102823719500/">Play it on Facebook</a>
+                    <a class="button black large" href="https://hackatron.rocks/">Play it on Web</a>
+                    <a class="button black large" hidden href="https://itunes.apple.com/us/app/ttt-trippy-tetra-tiles/id1092898610?mt=8">Play it on iOS</a>
+                    <a class="button blue large" href="https://trello.com/b/vMvPo4Ou/hackatron">Check out the Roadmap</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-
-
-<p>Hackatron is currently in development. For more information please contact <a class="button mini blue" href="mailto:eric@stokegames.com">eric@stokegames.com</a>.</p>
-
 ### Overview
 
 Hackatron is a game about having fun trapping your friends with a baddy they don't want to be having fun with.
 
+
 <div style="background:#fff;border-radius:5px">
 ![](http://i.imgur.com/7AKHEyA.png)
 ![](http://i.imgur.com/gfcSRJn.png)
-</div>
-
-<div style="text-align: center;margin-top:10px">
-    <a class="button black large" hidden href="https://apps.facebook.com/233102823719500/">Play it on Facebook</a>
-    <a class="button black large" href="https://hackatron.rocks/">Play it on Web</a>
-    <a class="button black large" hidden href="https://itunes.apple.com/us/app/ttt-trippy-tetra-tiles/id1092898610?mt=8">Play it on iOS</a>
 </div>
 
 ### Game Rules

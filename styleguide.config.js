@@ -38,6 +38,11 @@ module.exports = {
             ]
         });
         config.module.loaders.push({
+            test: /\.json$/,
+            include: path.join(__dirname + '/'), // Thanks cheerio :-/
+            loader: 'json-loader'
+        });
+        config.module.loaders.push({
             test: /\.css$/,
             include: path.join(__dirname + '/App'),
             loaders: [

@@ -1,7 +1,7 @@
 const Framework = require('../../../../../../Framework');
 const {React, ReactDOM, PropTypes, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework;
 
-import StokeLayout from '../../Layouts/Stoke';
+import DefaultLayout from '../../Layouts/Default';
 import Markdown from '../../../../Default/UI/Components/Markdown';
 
 class Screen extends Component {
@@ -40,7 +40,7 @@ class Screen extends Component {
         this.state.page.options.slim = (page === 'home');
 
         return (
-            <StokeLayout breadcrumb={breadcrumb}>
+            <DefaultLayout breadcrumb={breadcrumb}>
                 {!this.state.page.options.slim && (
                     <div className="box">
                         <div className="tab-header">
@@ -54,7 +54,7 @@ class Screen extends Component {
                 {this.state.page.options.slim && (
                     <Markdown src={"/App/Game/Sites/Esgaroth/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
                 )}
-            </StokeLayout>
+            </DefaultLayout>
         );
     }
 }

@@ -70,11 +70,63 @@ function game() {
 function games() {
     return {
         list: [
-            {title: 'Trippy Tetra Tiles', code: 'ttt', icon: 'bookmark'},
-            {title: 'Angels of Ascension', code: 'aoa', icon: 'lemon'},
-            {title: 'Hackatron', code: 'hackatron', icon: 'screenshot'},
-            {title: 'Tile World', code: 'tile-world', icon: 'bookmark'},
-            {title: 'Tilr', code: 'tilr', icon: 'bookmark'}
+            {
+                title: 'Trippy Tetra Tiles',
+                code: 'ttt',
+                icon: 'bookmark',
+                timeline: [
+                    {
+                        title: 'Design',
+                        state: 'completed',
+                        color: 'red'
+                    },
+                    {
+                        title: 'Prototype',
+                        state: 'completed',
+                        color: 'orange'
+                    },
+                    {
+                        title: 'Alpha',
+                        state: 'completed',
+                        color: 'yellow'
+                    },
+                    {
+                        title: 'Beta',
+                        state: 'completed',
+                        color: 'yellow'
+                    },
+                    {
+                        title: 'Release',
+                        state: 'completed',
+                        color: 'green'
+                    },
+                    {
+                        title: 'Upgrade',
+                        state: 'inprogress',
+                        color: 'blue'
+                    },
+                ]
+            },
+            {
+                title: 'Angels of Ascension',
+                code: 'aoa',
+                icon: 'lemon'
+            },
+            {
+                title: 'Hackatron',
+                code: 'hackatron',
+                icon: 'screenshot'
+            },
+            {
+                title: 'Tile World',
+                code: 'tile-world',
+                icon: 'bookmark'
+            },
+            {
+                title: 'Tilr',
+                code: 'tilr',
+                icon: 'bookmark'
+            }
         ]
     }
 }

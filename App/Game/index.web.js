@@ -10,9 +10,11 @@ var Router2 = require('./Router')(window.location.hostname);
 const history = syncHistoryWithStore(browserHistory, Router2.store);
 
 ReactDOM.render((
-    <Provider store={Router2.store}>
-        <div>
-            <Router history={history} routes={Router2.routes} />
-        </div>
-    </Provider>
+    <AppWrapper config={AppConfig}>
+        <Provider store={Router2.store}>
+            <div>
+                <Router history={history} routes={Router2.routes} />
+            </div>
+        </Provider>
+    </AppWrapper>
 ), document.getElementById('ui'));

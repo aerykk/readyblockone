@@ -4,6 +4,8 @@ const {React, ReactDOM, AppWrapper, AppConfig, Platform, Component, AppRegistry,
 import StokeLayout from '../../Layouts/Stoke';
 import Markdown from '../../../../Default/UI/Components/Markdown';
 
+import { connect } from 'react-redux'
+
 class Screen extends Component {
     render() {
 
