@@ -23,7 +23,7 @@ class Screen extends Component {
         }
     }
     
-    componentDidMount() {
+    componentWillMount() {
         Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Screen.css').toString() : require('./Screen.css'), 'stokelayout-', (styles) => {
             this.setState({
                 styles: styles
@@ -39,6 +39,8 @@ class Screen extends Component {
 
     render() {
         const { site, location, game } = this.props
+
+        if (!this.state.styles) { return <div></div> }
 
         const content = (
             <Markdown src={"/App/Game/Sites/Esgaroth/Pages/" + (location || 'home') + ".md"} onChange={(state) => this.onPageChange(state)} />

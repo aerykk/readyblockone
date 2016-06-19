@@ -26,9 +26,11 @@ class Layout extends Component {
     }
 
     componentDidMount() {
-        document.body.style = 'background: #605F65 url(/App/Game/Assets/Other/images/linen-lighter.png);';
-        document.getElementById('ui').style = 'background: transparent url(/App/Game/Assets/Other/images/logo-bg.png) no-repeat -200px 0; background-size: auto 550px;';
-    
+        if (typeof window !== 'undefined') {
+            document.body.style = 'background: #605F65 url(/App/Game/Assets/Other/images/linen-lighter.png);';
+            document.getElementById('ui').style = 'background: transparent url(/App/Game/Assets/Other/images/logo-bg.png) no-repeat -200px 0; background-size: auto 550px;';
+        }
+
         Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Layout.css').toString() : require('./Layout.css'), 'stokelayout-', (styles) => {
             this.setState({
                 styles: styles
@@ -39,30 +41,28 @@ class Layout extends Component {
     render() {
         const { children, breadcrumb, games, site } = this.props
 
+        if (!this.state.styles) { return <div></div>; }
+
         return Framework.wrapStyles(this.state.styles, 
             <View>
                 <div className="container">
-                    <div className="top-nav">
-                        <div className="container-fluid">
-                            <div className="row-fluid search-button-bar-container">
-                                <div className="span7">
-                                    <h1 className="pull-left logo">
-                                      <Link to={"/"}>
-                                          {site.title}
-                                      </Link>
-                                    </h1>
-                                </div>
-                                <div className="span5">
-                                    <ul>
-                                        <li styles="c-nav__item">
-                                            <Link to={"/about"} styles="c-nav__link">OUR STORY</Link>
-                                            <Link to={"/careers"} styles="c-nav__link">CAREERS</Link>
-                                            <Link to={"/games"} styles="c-nav__link">GAMES</Link>
-                                            <Link to={"/news"} styles="c-nav__link">NEWS</Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                    <div styles="c-header">
+                        <div styles="c-header__left">
+                            <h1 styles="c-header__logo">
+                              <Link to={"/"} styles="c-header__title">
+                                  {site.title}
+                              </Link>
+                            </h1>
+                        </div>
+                        <div styles="c-header__right">
+                            <ul styles="c-nav">
+                                <li styles="c-nav__item">
+                                    <Link to={"/about"} styles="c-nav__link">OUR STORY</Link>
+                                    <Link to={"/careers"} styles="c-nav__link">CAREERS</Link>
+                                    <Link to={"/games"} styles="c-nav__link">GAMES</Link>
+                                    <Link to={"/news"} styles="c-nav__link">NEWS</Link>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 

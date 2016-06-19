@@ -1,7 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
 
-module.exports = {
+var config = {
     entry: {
         'game.web': ['./App/Game/index.web.js'],
         'game.ios': ['./App/Game/index.ios.js'],
@@ -58,4 +58,18 @@ module.exports = {
             'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') } 
         })
     ]
-};
+}
+
+if (process.env.NODE_ENV === 'production') {
+    // config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    //     sourceMap: false,
+    //     minimize: true,
+    //     compress: {
+    //         drop_debugger: true,
+    //         warnings: false,
+    //         drop_console: true
+    //     }
+    // }))
+}
+
+module.exports = config

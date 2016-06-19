@@ -6,7 +6,7 @@ const url = require('url');
 const fs = require('fs');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
-const config = require('./webpack.config.js');
+const config = require('../webpack.config.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const host = isProduction ? '0.0.0.0' : '0.0.0.0';
@@ -48,7 +48,7 @@ if (isProduction) {
     }));
 }
 
-app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/../'));
 
 import { Router, RouterContext, match } from 'react-router';
 import { applyMiddleware, createStore } from 'redux';
@@ -58,7 +58,7 @@ import { renderToString } from 'react-dom/server'
 
 var indexHTML = '';
 
-fs.readFile('main.html', function(err, html) {
+fs.readFile(__dirname + '/main.html', function(err, html) {
     indexHTML = html.toString();
 });
 
@@ -114,7 +114,7 @@ function fetchComponentData(dispatch, components, params) {
 app.use((req, res, next) => {
     var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
     console.info('Requested: ' + fullUrl)
-    var Router2 = require('./App/Game/Router')(req.get('host'));
+    var Router2 = require('../App/Game/Router')(req.get('host'));
 
     // https://github.com/mz026/universal-redux-template/blob/master/app/server/server.js
     var LOCATION_CHANGE = '@@router/LOCATION_CHANGE';

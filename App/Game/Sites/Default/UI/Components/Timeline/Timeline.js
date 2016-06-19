@@ -13,7 +13,7 @@ class Timeline extends Component {
         this.state = {}
     }
     
-    componentDidMount() {
+    componentWillMount() {
         Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Timeline.css').toString() : require('./Timeline.css'), 'stokelayout-', (styles) => {
             this.setState({
                 styles: styles
@@ -23,6 +23,8 @@ class Timeline extends Component {
 
     render() {
         const { stages } = this.props
+
+        if (!this.state.styles) { return <div></div>; }
 
         return Framework.wrapStyles(this.state.styles, 
             <ul styles="c-timeline">

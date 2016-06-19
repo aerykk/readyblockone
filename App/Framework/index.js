@@ -306,11 +306,29 @@ if (Framework.Platform.OS === 'web') { // is web
         }, {})
     };
 
+    /* sanitizeMediaQueries
+    Replace this:
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .c-header {
+              left: 7%;
+              width: 86%; } }
+    With this:
+        @media (min-width: 768px) and (max-width: 1023px) {
+          left: 7%;
+          width: 86%;
+        }
+    */
+    var sanitizeMediaQueries = function(rawStyles) {
+        return rawStyles.replace(/\}([^@]*)@media([^\{]*)\{([^\{]*)\{([^\}]*)\}/gi, '@media$2{$4}')
+    }
+
     Framework.getStyles = function(rawStyles, scope, cb) {
-        Sass.compile(rawStyles, function() {
+        Sass.compile(rawStyles, function(rawStyles) {
+            rawStyles = sanitizeMediaQueries(rawStyles.text)
+
             var styles = reactlook.StyleSheet.create(
                 postcssJs.objectify(
-                    postcss.parse(arguments[0].text)
+                    postcss.parse(rawStyles)
                 ),
                 scope
             );
