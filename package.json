@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "start": "babel-node ./WebService/Server.js",
-    "build": "NODE_ENV=production webpack --progress -p",
+    "build": "webpack --display-chunks --optimize-min-chunk-size 10000 --optimize-max-chunks 10 --display-reasons --progress --color",
     "push": "git push",
     "push-rebuild": "NODE_ENV=production webpack --progress -p && git add -A && git commit -m \"Rebuid\" && git push",
     "styleguide-server": "styleguidist server",
