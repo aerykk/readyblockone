@@ -30,7 +30,7 @@ class UI extends Component {
 
     render() {
         return Framework.wrapStyles(this.state.styles, 
-            <div style={{marginBottom: 60, position: 'absolute', top: 0, left: 0}}>
+            <div style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '60px'}}>
                 <div style={{position: 'relative'}}>
                     <div styles="c-nav-bg" />
                     <div styles="c-nav">

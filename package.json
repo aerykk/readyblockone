@@ -32,6 +32,7 @@
     "react-css-modules": "3.7.6",
     "react-demo": "1.2.0",
     "react-dom": "^0.14.3",
+    "react-hotkeys": "0.8.0",
     "react-look": "1.0.0-beta9",
     "react-native": "0.25.1",
     "react-native-extended-stylesheet": "0.2.0",
@@ -58,8 +59,9 @@
   },
   "scripts": {
     "start": "babel-node ./server.js",
-    "build": "webpack --progress -p",
-    "push": "webpack --progress -p && git add -A && git commit -m \"Rebuid\" && git push",
+    "build": "NODE_ENV=production webpack --progress -p",
+    "push": "git push",
+    "push-rebuild": "NODE_ENV=production webpack --progress -p && git add -A && git commit -m \"Rebuid\" && git push",
     "styleguide-server": "styleguidist server",
     "styleguide-build": "styleguidist build",
     "test": "echo \"Error: no test specified\" && exit 1"
