@@ -126,7 +126,7 @@ class Server {
 
         // Web server
         this.app.use(express.static(__dirname + '/../'));
-        
+
         // React app
         this.app.use((req, res, next) => {
             var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;

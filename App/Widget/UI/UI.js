@@ -11,7 +11,7 @@ class UI extends Component {
     }
     
     componentDidMount() {
-        Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/UI.css').toString() : require('./UI.css'), 'stokelayout-', (styles) => {
+        Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/UI.css').toString() : require('./UI.css'), 'stokewidget-', (styles) => {
             this.setState({
                 styles: styles
             })
@@ -29,42 +29,44 @@ class UI extends Component {
     }
 
     render() {
-        if (!this.state.styles) { return }
+        if (!this.state.styles) { return <View></View> }
 
         return Framework.wrapStyles(this.state.styles, 
-            <div style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '60px'}}>
-                <div style={{position: 'relative'}}>
-                    <div styles="c-nav-bg" />
-                    <div styles="c-nav">
+            <View style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '60px'}}>
+                <View style={{position: 'relative'}}>
+                    <View styles="c-nav-bg" />
+                    <View styles="c-nav">
                         <ul styles="c-nav-left">
-                            <li styles="c-nav-left-item"><img styles="c-logo" src="https://stokegames.com/App/Game/Assets/Other/images/logo.png" /></li>
+                            <li styles="c-nav-left-item">
+                                <img styles="c-logo" src="https://stokegames.com/App/Game/Assets/Other/images/logo.png" />
+                            </li>
                             <li styles="c-games">
-                                <div styles="c-link" onClick={()=>this.onToggleGames()}>Games</div>
+                                <View styles="c-link" onClick={()=>this.onToggleGames()}>Games</View>
                                 <ul styles={this.state.showGames ? 'c-games-menu-shown' :'c-games-menu-hidden'}>
-                                    <li><a styles="c-link" href="https://stokegames.com/games/browser">Browser Games</a></li>
-                                    <li><a styles="c-link" href="https://stokegames.com/games/downloadable">Downloadable Games</a></li>
-                                    <li><a styles="c-link" href="https://stokegames.com/games/mobile">Mobile Games</a></li>
-                                    <li><a styles="c-link" href="https://stokegames.com/games">All Games</a></li>
+                                    <li><a styles="c-link" href="https://stokegames.com/games/browser" target="_blank">Browser Games</a></li>
+                                    <li><a styles="c-link" href="https://stokegames.com/games/downloadable" target="_blank">Downloadable Games</a></li>
+                                    <li><a styles="c-link" href="https://stokegames.com/games/mobile" target="_blank">Mobile Games</a></li>
+                                    <li><a styles="c-link" href="https://stokegames.com/games" target="_blank">All Games</a></li>
                                 </ul>
                             </li>
                             <li styles="c-nav-left-item">
-                                <a styles="c-link" href="https://stokegames.com/community">Community</a>
+                                <a styles="c-link" href="https://stokegames.com/community" target="_blank">Community</a>
                             </li>
                             <li styles="c-nav-left-item">
-                                <a styles="c-link" href="https://stokegames.com/support">Support</a>
+                                <a styles="c-link" href="https://stokegames.com/support" target="_blank">Support</a>
                             </li>
                         </ul>
                         <ul styles="c-nav-right">
                             <li styles="c-nav-right-item">
-                                <a styles="c-sign-up-button" href="https://stokegames.com/signup/">Free Sign Up</a>
+                                <a styles="c-sign-up-button" href="https://stokegames.com/signup/" target="_blank">Free Sign Up</a>
                             </li>
                             <li styles="c-nav-right-item">
-                                <a styles="c-login-button" href="https://stokegames.com/login/">Login</a>
+                                <a styles="c-login-button" href="https://stokegames.com/login/" target="_blank">Login</a>
                             </li>
                         </ul>
-                    </div>
-                </div>
-            </div>
+                    </View>
+                </View>
+            </View>
         );
     }
 }

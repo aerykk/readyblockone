@@ -24,6 +24,7 @@ function onReady() {
         </View>
     ), target);
 }
+
 onReady();
 // if (window.document.readyState === 'complete') {
 //     onReady();
