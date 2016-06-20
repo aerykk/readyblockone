@@ -1,6 +1,5 @@
-import { combineReducers } from 'redux';
-
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+const Framework = require('../../../Framework');
+const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, combineReducers, renderToString} = Framework;
 
 import {
     SELECT_SUBREDDIT, INVALIDATE_SUBREDDIT,

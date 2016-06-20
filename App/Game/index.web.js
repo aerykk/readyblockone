@@ -1,20 +1,28 @@
 const Framework = require('../Framework');
-const {React, ReactDOM, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework;
+const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, renderToString} = Framework;
 
-import { Router, Route, Link, browserHistory } from 'react-router';
-import { Provider } from 'react-redux'
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+const SiteRouter = require('./Router')(window.location.hostname);
+const history = syncHistoryWithStore(browserHistory, SiteRouter.store);
 
-var Router2 = require('./Router')(window.location.hostname);
 
-const history = syncHistoryWithStore(browserHistory, Router2.store);
+class App extends React.Component {
+    toString() { '[App]' }
 
-ReactDOM.render((
-    <AppWrapper config={AppConfig}>
-        <Provider store={Router2.store}>
-            <div>
-                <Router history={history} routes={Router2.routes} />
-            </div>
-        </Provider>
-    </AppWrapper>
-), document.getElementById('ui'));
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        return (
+            <AppWrapper config={AppConfig}>
+                <Provider store={SiteRouter.store}>
+                    <div>
+                        <Router history={history} routes={SiteRouter.routes} />
+                    </div>
+                </Provider>
+            </AppWrapper>
+        );
+    }
+}
+
+ReactDOM.render(<App />, document.getElementById('ui'));

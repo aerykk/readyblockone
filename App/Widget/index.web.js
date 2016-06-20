@@ -17,11 +17,11 @@ function onReady() {
     window.document.body.appendChild(target);
 
     ReactDOM.render((
-        <AppWrapper config={AppConfig}>
-            <div>
+        <View>
+            <AppWrapper config={AppConfig}>
                 <UI />
-            </div>
-        </AppWrapper>
+            </AppWrapper>
+        </View>
     ), target);
 }
 onReady();

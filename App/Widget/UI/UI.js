@@ -29,6 +29,8 @@ class UI extends Component {
     }
 
     render() {
+        if (!this.state.styles) { return }
+
         return Framework.wrapStyles(this.state.styles, 
             <div style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '60px'}}>
                 <div style={{position: 'relative'}}>

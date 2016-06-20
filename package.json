@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "start": "babel-node ./WebService/Server.js",
+    "start": "babel-node ./WebService/index.js",
     "build": "webpack --display-chunks --optimize-min-chunk-size 10000 --optimize-max-chunks 10 --display-reasons --progress --color",
     "push": "git push",
     "push-rebuild": "NODE_ENV=production webpack --progress -p && git add -A && git commit -m \"Rebuid\" && git push",

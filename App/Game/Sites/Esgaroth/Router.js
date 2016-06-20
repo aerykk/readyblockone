@@ -1,17 +1,16 @@
-import React from 'react';
-import { Router, Route, Link, browserHistory } from 'react-router';
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
-import { createDevTools } from 'redux-devtools'
+const Framework = require('../../../Framework')
+const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, renderToString} = Framework
+
+import {createDevTools} from 'redux-devtools'
 import LogMonitor from 'redux-devtools-log-monitor'
 import DockMonitor from 'redux-devtools-dock-monitor'
-import { Provider } from 'react-redux'
+import {HotKeys} from 'react-hotkeys'
 import configureStore from './Store'
 import auth from '../../Core/Utils/Auth.js'
-import {HotKeys} from 'react-hotkeys';
 
 // Polyfill for nodejs /w babel
-if(typeof require.ensure !== "function") require.ensure = function(d, c) { c(require) };
-if(typeof require.include !== "function") require.include = function() {};
+if (typeof require.ensure !== "function") require.ensure = function(d, c) { c(require) };
+if (typeof require.include !== "function") require.include = function() {};
 
 function redirectToLogin(nextState, replace) {
     if (!auth.loggedIn()) {
@@ -94,7 +93,6 @@ class App extends React.Component {
 
         const isLocal = typeof window !== 'undefined' && window.location.hostname.indexOf('.local') !== -1
 
-
         return (
             <div>
                 <HotKeys handlers={handlers} keyMap={map}>
@@ -128,7 +126,7 @@ const routes = {
         {path: '/support', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Default').default) }) } },
         {path: '/news', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Default').default) }) } }
     ]
-};
+}
 
 routes.childRoutes.push({
     onEnter: redirectToDashboard,
@@ -151,7 +149,8 @@ routes.childRoutes.push({
     onEnter: redirectToLogin,
     childRoutes: [
         // Protected routes that don't share the dashboard UI
-        { path: '/user/:id',
+        {
+            path: '/user/:id',
             getComponent: (nextState, cb) => {
                 require.ensure([], (require) => {
                     cb(null, require('./UI/Screens/User').default)

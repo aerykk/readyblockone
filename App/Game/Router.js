@@ -1,21 +1,50 @@
-import React from 'react';
-import { Router, Route, Link, browserHistory } from 'react-router';
+const Framework = require('../Framework');
+const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, renderToString} = Framework;
 
-var SiteRoutes = {
-    'stokegames.com': (
-        require('./Sites/Esgaroth/Router').default
-    ),
-    'pokelingo.com': (
-        require('./Sites/Edoras/Router').default
-    )
+// Setup sites
+
+const defaultConfig = {
+    router: require('./Sites/Default/Router').default
+}
+
+const sites = {
+    'orionui.com': {},
+    'nextgenengine.com': {},
+    'vayard.com': {},
+    'muyser.com': {},
+    'ericmuyser.com': {
+        router: require('./Sites/Erebor/Router').default
+    },
+    'stokegames.com': {
+        router: require('./Sites/Esgaroth/Router').default
+    },
+    'acejapanese.com': {},
+    'acekorean.com': {},
+    'aceitalian.com': {},
+    'acefrench.com': {},
+    'aceportuguese.com': {},
+    'acerussian.com': {},
+    'acelearners.com': {},
+    'pokelingo.com': {
+        router: require('./Sites/Edoras/Router').default
+    },
+    'brickbrotherhood.com': {
+        router: require('./Sites/Moria/Router').default
+    },
+    'amazebricks.com': {},
+    'realmofdiablo.com': {},
+    'sacredpoker.com': {},
+    'secretoflumaria.com': {},
+    'singlefacestudios.com': {},
+    'tilearena.rocks': {},
+    'tileworld-game.com': {},
+    'tilr-game.com': {},
+    'angelsofascension.com': {},
+    'connecting.live': {},
+    'manhood-game.com': {},
+    'egic.ca': {},
+    'kannyarou.com': {}
 };
-// ,
-// 'pokelingo.com': (
-//     <Router history={browserHistory} routes={require('./Sites/Edoras/Routes').default} />
-// )
-// var DefaultRouter = (
-//     <Router history={browserHistory} routes={require('./Sites/Default/Routes').default} />
-// );
 
 /* Sites
 
@@ -25,7 +54,7 @@ stokegames.com
         contact
         privacy
         games
-            games/:gameId
+            games/:code
 
 
 pokelingo.com
@@ -101,12 +130,11 @@ hackatron.com
                     x
                     y
 
-
 */
 
 // Setup anchor routing
 
-if (typeof window !== 'undefined' && window.document) {
+if (typeof window !== 'undefined') {
   const dummyLink = document.createElement('a')
 
   const absolutify = function (url) {
@@ -156,41 +184,6 @@ if (typeof window !== 'undefined' && window.document) {
   });
 }
 
-// Setup sites
-
-var defaultConfig = {};
-
-var sites = {
-    'orionui.com': {},
-    'nextgenengine.com': {},
-    'vayard.com': {},
-    'muyser.com': {},
-    'ericmuyser.com': {},
-    'stokegames.com': {},
-    'acejapanese.com': {},
-    'acekorean.com': {},
-    'aceitalian.com': {},
-    'acefrench.com': {},
-    'aceportuguese.com': {},
-    'acerussian.com': {},
-    'acelearners.com': {},
-    'pokelingo.com': {},
-    'brickbrotherhood.com': {},
-    'amazebricks.com': {},
-    'realmofdiablo.com': {},
-    'sacredpoker.com': {},
-    'secretoflumaria.com': {},
-    'singlefacestudios.com': {},
-    'tilearena.rocks': {},
-    'tileworld-game.com': {},
-    'tilr-game.com': {},
-    'angelsofascension.com': {},
-    'connecting.live': {},
-    'manhood-game.com': {},
-    'egic.ca': {},
-    'kannyarou.com': {}
-};
-
 var getUrlParameters = function(search) {
     var a = search.substr(1).split('&');
 
@@ -211,16 +204,11 @@ var getUrlParameters = function(search) {
 
 module.exports = function getRouter(path) {
     // Sanitize the host
-    var host = path.replace('www.', '').replace('.local', '').split(':')[0];
-
-    var config = (host in sites) ? sites[host] : defaultConfig;
+    const host = path.replace('www.', '').replace('.local', '').split(':')[0];
+    const config = (host in sites) ? sites[host] : defaultConfig;
 
     console.log('Matched site: ' + host)
 
-    if (host in SiteRoutes) {
-        return SiteRoutes[host];
-    } else {
-        //return DefaultRouter;
-    }
+    return config.router;
 }
 
