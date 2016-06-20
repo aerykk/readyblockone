@@ -41,7 +41,7 @@ class UI extends Component {
                                 <img styles="c-logo" src="https://stokegames.com/App/Game/Assets/Other/images/logo.png" />
                             </li>
                             <li styles="c-games">
-                                <View styles="c-link" onClick={()=>this.onToggleGames()}>Games</View>
+                                <button styles="c-button" onClick={()=>this.onToggleGames()}>Games</button>
                                 <ul styles={this.state.showGames ? 'c-games-menu-shown' :'c-games-menu-hidden'}>
                                     <li><a styles="c-link" href="https://stokegames.com/games/browser" target="_blank">Browser Games</a></li>
                                     <li><a styles="c-link" href="https://stokegames.com/games/downloadable" target="_blank">Downloadable Games</a></li>
