@@ -110,7 +110,7 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
 
     //===============
 
-    console.log('On platform: ' + Framework.Platform.OS + ' (Server: ' + Framework.Platform.Env.isServer + ', Browser: ' + Framework.Platform.Env.isBrowser + ', ' + Framework.Platform.Env.isNative + ')')
+    console.log('On platform: ' + Framework.Platform.OS + ' (Server: ' + Framework.Platform.Env.isServer + ', Browser: ' + Framework.Platform.Env.isBrowser + ', Native: ' + Framework.Platform.Env.isNative + ')')
 
     if (Framework.Platform.Env.isBrowser) {
         Framework.ReactDOM = require('react-dom');
@@ -289,8 +289,11 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
         };
 
         // In browser
-        if (typeof window !== 'undefined') {
-            Framework.Platform.Env = detect(window.navigator.userAgent);
+        if (Framework.Platform.Env.isBrowser) {
+            var env = detect(window.navigator.userAgent);
+            Framework.Platform.Env.isRetina = env.isRetina
+            Framework.Platform.Env.isMobile = env.isMobile
+            Framework.Platform.Env.isTablet = env.isTablet
         } else { // In node
             //Framework.Platform.Env = detect(window.navigator.userAgent);
         }
