@@ -96,7 +96,7 @@ class App extends React.Component {
 const routes = {
     component: App,
     childRoutes: [
-        {path: '/', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Launch').default) }) } },
+        {path: '/', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Home').default) }) } },
     ]
 }
 

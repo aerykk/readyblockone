@@ -15,6 +15,22 @@ function site() {
         copyright: {
             date: '2013-' + new Date().getFullYear(),
             company: 'My site'
+        },
+        head: {
+            meta: [
+                {name: 'description', content: ''},
+                {charset: 'utf-8'},
+                {property: 'og:site_name', content: ''},
+                {property: 'og:image', content: ''},
+                {property: 'og:locale', content: 'en_US'},
+                {property: 'og:title', content: ''},
+                {property: 'og:description', content: ''},
+                {property: 'og:card', content: 'summary'},
+                {property: 'og:site', content: '@brickbrotherhood'},
+                {property: 'og:creator', content: '@brickbrotherhood'},
+                {property: 'og:image:width', content: '200'},
+                {property: 'og:image:height', content: '200'}
+            ]
         }
     }
 }

@@ -4,6 +4,7 @@ const http = require('http');
 const exec = require('child_process').exec;
 const url = require('url');
 const fs = require('fs');
+const request = require('request');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const webpackConfig = require('../webpack.config.js');
@@ -34,9 +35,55 @@ class Server {
         this.server = http.createServer(this.app);
         this.io = require('socket.io').listen(this.server);
 
-        if (this.env === 'development') {
-            require('look').start(11012, '0.0.0.0');
+        // API proxy
+        this.app.use(function(req, res, next) {
+            console.log('[WebService] Requesting: ' + req.url);
 
+            if(new RegExp('/api/v1/').test(req.url)) {
+                let response = [];
+
+                req.on('data', function(chunk) { 
+                    response.push(chunk);
+                });
+
+                req.on('end',function() {
+                    let params = {
+                        url: 'http://localhost:11013' + req.url.replace('/api/v1/', '/'), 
+                        headers: req.headers
+                    };
+
+                    if (req.method === 'POST' || req.method === 'PUT') {
+                        let body = Buffer.concat(response);
+
+                        if (!body.length) {
+                            console.log('[WebService] Received POST request with no data');
+
+                            res.status(500);
+                            res.render('internalServerError');
+                            return;
+                        }
+
+                        params.body = body;
+                    }
+
+                    console.log('[WebService] Requesting data: ' + req.method + ' ' + params.url + ' ' + params.body);
+
+                    request[req.method.toLowerCase()](params)
+                        .on('error', function(err, response, body) {
+                            console.log('Problem with pipe: ' + err.message);
+
+                            res.status(500);
+                            res.render('internalServerError');
+                        })
+                        .pipe(res);
+                });
+            }
+            else {
+                next && next();
+            }
+        });
+
+        if (this.env === 'development') {
             webpackConfig.devtool = 'eval'; // Speed up incremental builds
             webpackConfig.entry['game.web'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr');
             webpackConfig.entry['widget.web'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr');
@@ -212,6 +259,10 @@ class Server {
     }
 
     start() {
+        if (this.env === 'development') {
+            require('look').start(11012, '0.0.0.0');
+        }
+
         this.io.sockets.on('connection', (socket) => {
             this.onSocketConnect(socket);
 
@@ -223,6 +274,7 @@ class Server {
         this.monitorHost();
 
         setInterval(() => {
+            return; // TODO: do we need this?
             if (!this.hostClient) return console.log('No host');
             if (!this.hostClient.player) return console.log('Host has no player');
 
@@ -232,7 +284,7 @@ class Server {
         this.server.listen(this.port, this.host, (err) => {
             if (err) { console.log(err); }
 
-            console.info('==> Listening on port %s (env: ' + this.env + '). Open up http://0.0.0.0:%s/ in your browser.', this.port, this.port);
+            console.info('==> Web Service running on port %s (env: ' + this.env + '). Open up http://0.0.0.0:%s/ in your browser.', this.port, this.port);
         });
     }
 
