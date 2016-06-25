@@ -27,7 +27,11 @@ function redirectToDashboard(nextState, replace) {
     }
 }
 const DevTools = createDevTools(
-    <DockMonitor toggleVisibilityKey="ctrl-h" changePositionKey="ctrl-q">
+    <DockMonitor
+        toggleVisibilityKey='ctrl-h'
+        changePositionKey='ctrl-q'
+        changeMonitorKey='ctrl-m'
+        defaultIsVisible={false}>
         <LogMonitor theme="tomorrow" preserveScrollTop={false} />
     </DockMonitor>
 )
