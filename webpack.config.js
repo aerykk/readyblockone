@@ -1,5 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
+const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
+//const SiteRouter = require('./App/Game/Router')
 
 var config = {
     entry: {
@@ -61,6 +63,13 @@ var config = {
 }
 
 if (process.env.NODE_ENV === 'production') {
+    config.plugins.push(
+        new StaticSiteGeneratorPlugin('game.web', [
+            '/',
+            '/about/'
+        ])
+        //SiteRouter('stokegames.com').routes)
+    )
     // config.plugins.push(new webpack.optimize.UglifyJsPlugin({
     //     sourceMap: false,
     //     minimize: true,

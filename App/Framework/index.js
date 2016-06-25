@@ -5,9 +5,6 @@ import {Router, Route, Link, browserHistory} from 'react-router'
 import {Provider, connect} from 'react-redux'
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
 
-import fetch from 'isomorphic-fetch'
-
-
 if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
     module.exports = GLOBAL.Framework
 } else {
@@ -34,7 +31,8 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
                 isMobile: false,
                 isTablet: false,
                 isDesktop: false,
-                isRetina: false
+                isRetina: false,
+                isBrowser: typeof window !== 'undefined' ? true : false
             }
         };
 
@@ -103,7 +101,8 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
             isServer: false,
             isMobile: false,
             isTablet: false,
-            isRetina: false
+            isRetina: false,
+            isBrowser: false
         }
         
         Framework.renderToString = function() { throw 'Wrong context for renderToString' }
@@ -111,9 +110,9 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
 
     //===============
 
-    console.log('On platform: ' + Framework.Platform.OS + '(Server: ' + Framework.Platform.Env.isServer + ')')
+    console.log('On platform: ' + Framework.Platform.OS + ' (Server: ' + Framework.Platform.Env.isServer + ', Browser: ' + Framework.Platform.Env.isBrowser + ', ' + Framework.Platform.Env.isNative + ')')
 
-    if (Framework.Platform.OS === 'web') {
+    if (Framework.Platform.Env.isBrowser) {
         Framework.ReactDOM = require('react-dom');
 
         var _parseVersion = function(version) {
@@ -305,9 +304,10 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
 
     var postcss = require('postcss');
     var postcssJs = require('postcss-js');
-    var Sass = require('sass.js');
 
-    if (Framework.Platform.OS === 'web') { // is web
+    if (Framework.Platform.Env.isBrowser) { // is web
+        var Sass = require('sass.js');
+
         var reactlook = require('react-look');
         var _ = require('lodash');
 
@@ -355,7 +355,7 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
                 cb(styles)
             });
         };
-    } else { // is not web
+    } else if (Framework.Platform.Env.isNative) {
         var rnes = require('react-native-extended-stylesheet');
 
         var convertStyles = function(obj) {
@@ -491,7 +491,13 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
 
     //===============
 
-    Framework.fetch = fetch
+    if (typeof GLOBAL === 'undefined') {
+        Framework.fetch = require('isomorphic-fetch')
+    } else {
+        Framework.fetch = function() {
+            console.error('fetch() not implemented on server side')
+        }
+    }
 
     //===============
 

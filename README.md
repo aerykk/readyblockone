@@ -29,3 +29,10 @@ module: {
 
 resolve: {
     extensions: ['', '.js', '.jsx', '.json']
+
+
+Hacks:
+![](http://i.imgur.com/rOUHNqu.png)
+![](http://i.imgur.com/WJxAhH2.png)
+and here ![](http://i.imgur.com/WWYXqHW.png)
+and here ![](http://i.imgur.com/00T6xgh.png)

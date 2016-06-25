@@ -1,4 +1,6 @@
-if(typeof localStorage !== "object") localStorage = {token: 'nodejs'};
+if (typeof localStorage !== 'object') {
+    var localStorage = {token: 'nodejs'};
+}
 
 module.exports = {
     login(email, pass, cb) {

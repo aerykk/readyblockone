@@ -202,9 +202,9 @@ var getUrlParameters = function(search) {
 
 //var queries = getUrlParameters(window.location.search);
 
-module.exports = function getRouter(path) {
+module.exports = function getRouter(uri) {
     // Sanitize the host
-    const host = path.replace('www.', '').replace('.local', '').split(':')[0];
+    const host = uri.replace('www.', '').replace('.local', '').split(':')[0];
     const config = (host in sites) ? sites[host] : defaultConfig;
 
     console.log('Matched site: ' + host)
