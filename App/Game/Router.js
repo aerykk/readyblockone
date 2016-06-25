@@ -18,6 +18,9 @@ const sites = {
     'stokegames.com': {
         router: require('./Sites/Esgaroth/Router').default
     },
+    'free.stokegames.com': {
+        router: require('./Sites/Erech/Router').default
+    },
     'acejapanese.com': {},
     'acekorean.com': {},
     'aceitalian.com': {},
