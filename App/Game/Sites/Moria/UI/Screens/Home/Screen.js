@@ -47,12 +47,12 @@ class Screen extends Component {
                             {this.state.page.title}
                         </div>
                         <div className="padded">
-                            <Markdown src={"/App/Game/Sites/Esgaroth/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
+                            <Markdown src={"/App/Game/Sites/Moria/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
                         </div>
                     </div>
                 )}
                 {this.state.page.options.slim && (
-                    <Markdown src={"/App/Game/Sites/Esgaroth/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
+                    <Markdown src={"/App/Game/Sites/Moria/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
                 )}
             </DefaultLayout>
         );

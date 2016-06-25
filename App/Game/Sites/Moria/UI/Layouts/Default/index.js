@@ -1,1 +1,1 @@
-export { default } from './Default.js';
+export { default } from './Layout.js';
