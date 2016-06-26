@@ -6,7 +6,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const webpackConfig = require('../../webpack.config.js')
 
-const Framework = require('../../App/Framework')
+const Framework = require('../../Framework')
 const {AppWrapper, AppConfig} = Framework
 
 import React from 'react'
@@ -85,7 +85,7 @@ class Server {
 
         if (this.env === 'development') {
             webpackConfig.devtool = 'eval' // Speed up incremental builds
-            webpackConfig.entry['game.web'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr')
+            webpackConfig.entry['site.web'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr')
             webpackConfig.entry['widget.web'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr')
             webpackConfig.output.publicPath = '/Build/Release/'
             webpackConfig.plugins.unshift(new webpack.HotModuleReplacementPlugin())
@@ -125,7 +125,7 @@ class Server {
             const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl
             console.info('[WebService] Requested: ' + fullUrl)
 
-            const SiteRouter = require('../../App/Game/Router')(req.get('host'))
+            const SiteRouter = require('../../Apps/Site/Router')(req.get('host'))
 
             const data = {}
             const memoryHistory = createHistory(req.originalUrl)

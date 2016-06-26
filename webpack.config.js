@@ -1,14 +1,13 @@
 const path = require('path')
 const webpack = require('webpack')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
-//const SiteRouter = require('./App/Game/Router')
 
 var config = {
     entry: {
-        'game.web': ['./App/Game/index.web.js'],
-        'game.ios': ['./App/Game/index.ios.js'],
-        'game.android': ['./App/Game/index.android.js'],
-        'widget.web': ['./App/Widget/index.web.js']
+        'site.web': ['./Apps/Site/index.web.js'],
+        'site.ios': ['./Apps/Site/index.ios.js'],
+        'site.android': ['./Apps/Site/index.android.js'],
+        'widget.web': ['./Apps/Widget/index.web.js']
     },
     output: {
         path: __dirname + '/Build/Release',
@@ -34,7 +33,8 @@ var config = {
                 test: /\.js?$/,
                 loader: 'babel',
                 include: [
-                    path.join(__dirname + '/App'),
+                    path.join(__dirname + '/Framework'),
+                    path.join(__dirname + '/Apps'),
                     path.join(__dirname + '/Services'),
                     path.join(__dirname + '/node_modules/react-native-extended-stylesheet')
                 ],
@@ -46,7 +46,7 @@ var config = {
             },
             {
                 test: /\.css$/,
-                include: path.join(__dirname + '/App'),
+                include: path.join(__dirname + '/Apps'),
                 loaders: [
                     'raw'
                 ]
@@ -68,7 +68,7 @@ var config = {
 
 if (process.env.NODE_ENV === 'production') {
     config.plugins.push(
-        new StaticSiteGeneratorPlugin('game.web', [
+        new StaticSiteGeneratorPlugin('site.web', [
             '/',
             '/about/'
         ])

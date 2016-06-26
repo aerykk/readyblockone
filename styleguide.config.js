@@ -6,9 +6,9 @@ module.exports = {
     title: 'Guide',
     serverPort: process.env.PORT || 11011,
     serverHost: process.env.HOST || '0.0.0.0',
-    assetsDir: path.join(__dirname, 'App'),
+    assetsDir: path.join(__dirname, 'Apps'),
     components: function() {
-        return glob.sync(path.resolve(__dirname, 'App/**/UI/**/*.js')).filter(function(module) {
+        return glob.sync(path.resolve(__dirname, 'Apps/**/UI/**/*.js')).filter(function(module) {
             return /\/[A-Z]\w*\.js$/.test(module);
         });
     },
@@ -27,7 +27,7 @@ module.exports = {
         // Babel loader will use your project’s .babelrc
         config.module.loaders.push({
             test: /\.jsx?$/,
-            include: [path.join(__dirname + '/App'), path.join(__dirname + '/node_modules/react-native-extended-stylesheet')],
+            include: [path.join(__dirname + '/Apps'), path.join(__dirname + '/node_modules/react-native-extended-stylesheet')],
             loader: 'babel',
             query: {
                 presets: ['react', 'es2015', 'stage-0', 'react-hmre']
@@ -44,7 +44,7 @@ module.exports = {
         });
         config.module.loaders.push({
             test: /\.css$/,
-            include: path.join(__dirname + '/App'),
+            include: path.join(__dirname + '/Apps'),
             loaders: [
                 'raw'
             ]

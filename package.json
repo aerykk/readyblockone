@@ -20,7 +20,7 @@
     "start": "./node_modules/.bin/babel-node index.js",
     "start-web-server": "./node_modules/.bin/babel-node ./Services/WebService/index.js",
     "start-data-server": "./node_modules/.bin/babel-node ./Services/DataService/index.js",
-    "lint": "./node_modules/.bin/eslint -c .eslintrc App/Framework Services",
+    "lint": "./node_modules/.bin/eslint -c .eslintrc Framework Services",
     "pack": "npm prune && npm dedupe && npm shrinkwrap --dev && shrinkpack",
     "webpack": "./node_modules/.bin/babel-node ./node_modules/.bin/webpack --progress --colors",
     "build": "./node_modules/.bin/webpack --display-chunks --optimize-min-chunk-size 10000 --optimize-max-chunks 10 --display-reasons --progress --color",
