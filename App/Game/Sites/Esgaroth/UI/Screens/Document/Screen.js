@@ -1,8 +1,8 @@
-const Framework = require('../../../../../../Framework');
-const {React, PropTypes, ReactDOM, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework;
+const Framework = require('../../../../../../Framework')
+const {React, PropTypes, ReactDOM, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework
 
-import StokeLayout from '../../Layouts/Stoke';
-import Markdown from '../../../../Default/UI/Components/Markdown';
+import Layout from '../../Layouts/Stoke'
+import Markdown from '../../../../Default/UI/Components/Markdown'
 
 import { connect } from 'react-redux'
 import { selectSubreddit, fetchPostsIfNeeded, invalidateSubreddit } from '../../../Actions'
@@ -25,7 +25,7 @@ class Screen extends Component {
     onPageChange(state) {
         this.setState({
             page: state
-        });
+        })
     }
 
     render() {
@@ -45,22 +45,22 @@ class Screen extends Component {
         )
 
         return (
-            <StokeLayout breadcrumb={breadcrumb}>
+            <Layout breadcrumb={breadcrumb}>
                 {!page.slim && (
-                    <div className="box">
-                        <div className="tab-header">
+                    <View className="box">
+                        <View className="tab-header">
                             {page.title}
-                        </div>
-                        <div className="padded">
+                        </View>
+                        <View className="padded">
                             {content}
-                        </div>
-                    </div>
+                        </View>
+                    </View>
                 )}
                 {page.slim && (
                     content
                 )}
-            </StokeLayout>
-        );
+            </Layout>
+        )
     }
 }
 
@@ -68,7 +68,7 @@ function mapStateToProps(state) {
     const { site, routing } = state
 
     // TODO: Figure out WTF is going on here. Server is string, browser is object
-    var location = null;
+    var location = null
     if (typeof routing.locationBeforeTransitions === 'string') {
         location = routing.locationBeforeTransitions.replace('/', '')
     } else if (typeof routing.locationBeforeTransitions === 'object' && routing.locationBeforeTransitions) {
@@ -84,4 +84,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Screen);
+export default connect(mapStateToProps)(Screen)

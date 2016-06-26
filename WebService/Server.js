@@ -9,79 +9,130 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const webpackConfig = require('../webpack.config.js');
 
-import { Router, RouterContext, match } from 'react-router';
-import { applyMiddleware, createStore } from 'redux';
-import { Provider } from 'react-redux';
+const Framework = require('../App/Framework')
+const {AppWrapper, AppConfig} = Framework
+
 import React from 'react'
-import { renderToString } from 'react-dom/server'
+import {renderToString} from 'react-dom/server'
+import {createStore, applyMiddleware, compose} from 'redux';
+import {ReduxAsyncConnect, loadOnServer} from 'redux-connect';
+import {Provider} from 'react-redux';
+import {Router, RouterContext, match} from 'react-router';
+import {routerMiddleware, syncHistoryWithStore} from 'react-router-redux'
+import createHistory from 'react-router/lib/createMemoryHistory';
+import DataClient from './DataClient'
+import httpProxy from 'http-proxy';
+import HTML from './HTML'
+import clientMiddleware from './middleware/clientMiddleware';
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+const config = require('../config')
 
 class Server {
     constructor() {
         this.env = process.env.NODE_ENV ? process.env.NODE_ENV : 'development';
-        this.host = process.env.HOST ? process.env.HOST : '0.0.0.0';
-        this.port = process.env.PORT ? process.env.PORT : 11010;
+        this.host = process.env.HOST ? process.env.HOST : config.webService.host;
+        this.port = process.env.PORT ? process.env.PORT : config.webService.port;
         this.events = [];
         this.clients = [];
         this.hostClient = null;
+        this.proxy = httpProxy.createProxyServer({
+            target: 'http://' + config.dataService.host + ':' + config.dataService.port,
+            ws: true
+        })
+    }
+    
+    initProxies() {    
+        // Proxy to API server
+        this.app.use('/api', (req, res) => {
+            this.proxy.web(req, res, {target: targetUrl});
+        });
+
+        // Proxy web sockets
+        this.app.use('/ws', (req, res) => {
+            this.proxy.web(req, res, {target: targetUrl + '/ws'});
+        });
+
+        // Proxy upgrade to web sockets
+        this.server.on('upgrade', (req, socket, head) => {
+            this.proxy.ws(req, socket, head);
+        });
+
+        // Added the error handling to avoid issue
+        // https://github.com/nodejitsu/node-http-proxy/issues/527
+        this.proxy.on('error', (error, req, res) => {
+            let json = null;
+
+            if (error.code !== 'ECONNRESET') {
+                console.error('proxy error', error);
+            }
+            if (!res.headersSent) {
+                res.writeHead(500, {'content-type': 'application/json'});
+            }
+
+            json = {error: 'proxy_error', reason: error.message};
+            res.end(JSON.stringify(json));
+        })
+
+        // 
+        // // API proxy
+        // this.app.use(function(req, res, next) {
+        //     console.log('[WebService] Requesting: ' + req.url);
+        // 
+        //     if(new RegExp('/api/v1/').test(req.url)) {
+        //         let response = [];
+        // 
+        //         req.on('data', function(chunk) { 
+        //             response.push(chunk);
+        //         });
+        // 
+        //         req.on('end',function() {
+        //             let params = {
+        //                 url: 'http://localhost:11013' + req.url.replace('/api/v1/', '/'), 
+        //                 headers: req.headers
+        //             };
+        // 
+        //             if (req.method === 'POST' || req.method === 'PUT') {
+        //                 let body = Buffer.concat(response);
+        // 
+        //                 if (!body.length) {
+        //                     console.log('[WebService] Received POST request with no data');
+        // 
+        //                     res.status(500);
+        //                     res.render('internalServerError');
+        //                     return;
+        //                 }
+        // 
+        //                 params.body = body;
+        //             }
+        // 
+        //             console.log('[WebService] Requesting data: ' + req.method + ' ' + params.url + ' ' + params.body);
+        // 
+        //             request[req.method.toLowerCase()](params)
+        //                 .on('error', function(err, response, body) {
+        //                     console.log('Problem with pipe: ' + err.message);
+        // 
+        //                     res.status(500);
+        //                     res.render('internalServerError');
+        //                 })
+        //                 .pipe(res);
+        //         });
+        //     }
+        //     else {
+        //         next && next();
+        //     }
+        // });
     }
 
     init() {
         this.app = express();
         this.server = http.createServer(this.app);
-        this.io = require('socket.io').listen(this.server);
-
-        // API proxy
-        this.app.use(function(req, res, next) {
-            console.log('[WebService] Requesting: ' + req.url);
-
-            if(new RegExp('/api/v1/').test(req.url)) {
-                let response = [];
-
-                req.on('data', function(chunk) { 
-                    response.push(chunk);
-                });
-
-                req.on('end',function() {
-                    let params = {
-                        url: 'http://localhost:11013' + req.url.replace('/api/v1/', '/'), 
-                        headers: req.headers
-                    };
-
-                    if (req.method === 'POST' || req.method === 'PUT') {
-                        let body = Buffer.concat(response);
-
-                        if (!body.length) {
-                            console.log('[WebService] Received POST request with no data');
-
-                            res.status(500);
-                            res.render('internalServerError');
-                            return;
-                        }
-
-                        params.body = body;
-                    }
-
-                    console.log('[WebService] Requesting data: ' + req.method + ' ' + params.url + ' ' + params.body);
-
-                    request[req.method.toLowerCase()](params)
-                        .on('error', function(err, response, body) {
-                            console.log('Problem with pipe: ' + err.message);
-
-                            res.status(500);
-                            res.render('internalServerError');
-                        })
-                        .pipe(res);
-                });
-            }
-            else {
-                next && next();
-            }
-        });
+        this.dataClient = new DataClient();
+        
+        this.initProxies()
 
         if (this.env === 'development') {
             webpackConfig.devtool = 'eval'; // Speed up incremental builds
@@ -110,158 +161,90 @@ class Server {
                 hot: true,
                 historyApiFallback: true
             }));
-            
-            // Web server
-            this.app.use(express.static(__dirname + '/../'));
-
-            this.app.get('/', (req, res, cb) => {
-                fs.readFile(__dirname + '/main.html', (err, page) => {
-                    res.writeHead(200, {'Content-Type': 'text/html'});
-                    res.write(page);
-                    res.end();
-                });
-            });
-        } else {
-            var indexHTML = '';
-
-            fs.readFile(__dirname + '/main.html', function(err, html) {
-                indexHTML = html.toString();
-            });
-
-            function renderFullPage(html, state) {
-                var result = indexHTML + '';
-                result = result.replace(
-                    `
-                        <title></title>
-                    `.trim(),
-                    `
-                        <title>${state.site.title}</title>
-                    `.trim()
-                )
-                
-                result = result.replace(
-                    `
-                        <meta content="" name="description" />
-                    `.trim(),
-                    `
-                        <meta content="${state.site.description}" name="description" />
-                    `.trim()
-                )
-
-                // We need to add an extra <div> wrapper here
-                // http://stackoverflow.com/questions/33521047/warning-react-attempted-to-reuse-markup-in-a-container-but-the-checksum-was-inv
-                let initialState = JSON.stringify(state);
-                result = result.replace(
-                    `
-                        <div id="ui"></div>
-                    `.trim(),
-                    `
-                        <div id="ui"><div>${html}</div></div>
-                        <script>window.$REDUX_STATE = ${initialState}</script>
-                    `.trim()
-                )
-
-                return result
-            }
-
-            function fetchComponentData(dispatch, components, params) {
-                const needs = components.reduce((prev, current) => {
-                  	return Object.keys(current).reduce((acc, key) => {
-                  		  return current[key].hasOwnProperty('needs') ? current[key].needs.concat(acc) : acc
-                  	}, prev)
-                }, []);
-
-                const promises = needs.map(need => dispatch(need(params)));
-
-                return Promise.all(promises);
-            }
-    
-            // Facebook Canvas needs to send a POST request
-            this.app.post('/', (req, res, next) => {
-                req.pipe(request.get('http://' + this.host + ':' + this.port + '/')).pipe(res);
-            });
-            
-            // Web server
-            this.app.use(express.static(__dirname + '/../'));
-
-            // Server-side rendering
-            this.app.use((req, res, next) => {
-                var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-                console.info('Requested: ' + fullUrl)
-                var Router2 = require('../App/Game/Router')(req.get('host'));
-
-                // https://github.com/mz026/universal-redux-template/blob/master/app/server/server.js
-                var LOCATION_CHANGE = '@@router/LOCATION_CHANGE';
-                Router2.store.dispatch({
-                  type: LOCATION_CHANGE,
-                  payload: req.url
-                });
-
-                // react-router
-                match({
-                    routes: Router2.routes,
-                    location: req.url
-                }, (error, redirectLocation, renderProps) => {
-                    console.log('Error:', error ? true : false);
-                    console.log('redirectLocation:', redirectLocation ? true : false);
-                    console.log('renderProps:', renderProps ? true : false);
-
-                    if (error) {
-                        return res.status(500).send(error.message);
-                    }
-
-                    if (redirectLocation) {
-                        return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-                    }
-
-                    if (!renderProps) {
-                        // return next('err msg: route not found'); // yield control to next middleware to handle the request
-                        return res.status(404).send('Not found');
-                    }
-
-                    // console.log( '\nserver > renderProps: \n', require('util').inspect( renderProps, false, 1, true) )
-                    // console.log( '\nserver > renderProps: \n', require('util').inspect( renderProps.components, false, 3, true) )
-
-                    // this is where universal rendering happens,
-                    // fetchComponentData() will trigger actions listed in static "needs" props in each container component
-                    // and wait for all of them to complete before continuing rendering the page,
-                    // hence ensuring all data needed was fetched before proceeding
-                    //
-                    // renderProps: contains all necessary data, e.g: routes, router, history, components...
-                    fetchComponentData(
-                        Router2.store.dispatch,
-                        renderProps.components,
-                        renderProps.params
-                    )
-                    .then(() => {
-                        const initView = renderToString((
-                            <Provider store={Router2.store}>
-                                <RouterContext {...renderProps} />
-                            </Provider>
-                        ))
-
-                        // console.log('\ninitView:\n', initView);
-
-                        let state = Router2.store.getState();
-                        // console.log( '\nstate: ', state )
-                        
-                        let page = renderFullPage(initView, state)
-                        // console.log( '\npage:\n', page );
-
-                        return page;
-                    })
-                    .then(page => res.status(200).send(page))
-                    .catch(err => res.end(err.message));
-                })
-            })
         }
 
+        // Web server
+        this.app.use(express.static(__dirname + '/../'));
+
+        // Facebook Canvas needs to send a POST request
+        this.app.post('/', (req, res, next) => {
+            req.pipe(request.get('http://' + this.host + ':' + this.port + '/')).pipe(res);
+        });
+        
+        // Web server
+        this.app.use(express.static(__dirname + '/../'));
+
+        // Server-side rendering
+        this.app.use((req, res, next) => {
+            var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+            console.info('[WebService] Requested: ' + fullUrl)
+
+            var SiteRouter = require('../App/Game/Router')(req.get('host'));
+
+            const data = null;
+            const memoryHistory = createHistory(req.originalUrl);
+            const reduxRouterMiddleware = routerMiddleware(memoryHistory);
+            const reducers = {...SiteRouter.reducers};
+            const middleware = [clientMiddleware(this.dataClient), reduxRouterMiddleware, ...SiteRouter.middleware]
+            const finalStore = SiteRouter.store.configure(reducers, middleware);
+            const history = syncHistoryWithStore(memoryHistory, finalStore);
+
+            // React router
+            match({
+                history: history,
+                routes: SiteRouter.routes,
+                location: req.originalUrl
+            }, (error, redirectLocation, renderProps) => {
+                if (error) {
+                    return res.status(500).send(error.message);
+                }
+
+                if (redirectLocation) {
+                    return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+                }
+
+                if (!renderProps) {
+                    // return next('err msg: route not found'); // yield control to next middleware to handle the request
+                    return res.status(404).send('Not found');
+                }
+
+                // Setup the data client handlers
+                this.dataClient.run(req)
+
+                loadOnServer({...renderProps, store: finalStore, helpers: {client: this.dataClient}})
+                .then(() => {
+                    class App extends React.Component {
+                        toString() {'[App]'}
+
+                        render() {
+                            return (
+                                <AppWrapper config={AppConfig}>
+                                    <Provider store={finalStore} key="provider">
+                                        <Router render={(props) =>
+                                            <ReduxAsyncConnect {...props} {...renderProps} />
+                                            } history={history} routes={SiteRouter.routes}>
+                                        </Router>
+                                    </Provider>
+                                </AppWrapper>
+                            );
+                        }
+                    }
+
+                    let page = renderToString(<HTML view={<App />} store={finalStore} />)
+                    
+                    res.status(200).send('<!doctype html>\n' + page);
+                })
+                .catch(err => res.end(err.message));
+            })
+        })
     }
 
     start() {
         if (this.env === 'development') {
-            require('look').start(11012, '0.0.0.0');
+            require('look').start(config.profilerService.port, config.profilerService.host);
         }
+
+        this.io = require('socket.io').listen(this.server);
 
         this.io.sockets.on('connection', (socket) => {
             this.onSocketConnect(socket);

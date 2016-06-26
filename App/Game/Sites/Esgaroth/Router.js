@@ -1,19 +1,20 @@
 const Framework = require('../../../Framework')
 const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, renderToString} = Framework
 
-import {createDevTools} from 'redux-devtools'
-import LogMonitor from 'redux-devtools-log-monitor'
-import DockMonitor from 'redux-devtools-dock-monitor'
 import {HotKeys} from 'react-hotkeys'
-import configureStore from './Store'
-import auth from '../../Core/Utils/Auth.js'
+import Auth from '../../Core/Utils/Auth'
+import DevTools from '../Default/UI/Components/DevTools'
+import store from './Store'
+import reducers from './Reducers'
 
 // Polyfill for nodejs /w babel
-if (typeof require.ensure !== "function") require.ensure = function(d, c) { c(require) };
-if (typeof require.include !== "function") require.include = function() {};
+if (typeof require.ensure !== "function") require.ensure = function(d, c) { c(require) }
+if (typeof require.include !== "function") require.include = function() {}
+
+let middleware = []
 
 function redirectToLogin(nextState, replace) {
-    if (!auth.loggedIn()) {
+    if (!Auth.loggedIn()) {
         replace({
             pathname: '/login',
             state: { nextPathname: nextState.location.pathname }
@@ -22,24 +23,13 @@ function redirectToLogin(nextState, replace) {
 }
 
 function redirectToDashboard(nextState, replace) {
-    if (auth.loggedIn()) {
+    if (Auth.loggedIn()) {
         replace('/')
     }
 }
 
-const DevTools = createDevTools(
-    <DockMonitor
-        toggleVisibilityKey='ctrl-h'
-        changePositionKey='ctrl-q'
-        changeMonitorKey='ctrl-m'
-        defaultIsVisible={false}>
-        <LogMonitor theme="tomorrow" preserveScrollTop={false} />
-    </DockMonitor>
-)
 
-const store = configureStore(DevTools.instrument())
-
-class Toolbar extends React.Component {
+class Toolbar extends Component {
     render() {
         return (
             <ul style={{
@@ -59,11 +49,11 @@ class Toolbar extends React.Component {
                     <a href="http://ttt.stokegames.com.local:10010/">Go to TTT</a>
                 </li>
             </ul>
-        );
+        )
     }
 }
 
-class App extends React.Component {
+class App extends Component {
     constructor() {
         super()
 
@@ -85,11 +75,11 @@ class App extends React.Component {
     render() {
         const handlers = {
             'toggleToolbar': this.toggleToolbar
-        };
+        }
 
         const map = {
             'toggleToolbar': 'ctrl+n'
-        };
+        }
 
         const isLocal = typeof window !== 'undefined' && window.location.hostname.indexOf('.local') !== -1
 
@@ -103,7 +93,7 @@ class App extends React.Component {
                     </div>
                 </HotKeys>
             </div>
-        );
+        )
     }
 }
 
@@ -111,20 +101,20 @@ class App extends React.Component {
 const routes = {
     component: App,
     childRoutes: [
-        {path: '/', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Launch').default) }) } },
+        {path: '/', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Home').default) }) } },
         {path: '/games', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Games').default) }) } },
         {path: '/games/browser', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Games').default) }) } },
         {path: '/games/downloadable', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Games').default) }) } },
         {path: '/games/mobile', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Games').default) }) } },
         {path: '/games/:key', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Game').default) }) } },
-        {path: '/blog/:key', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Default').default) }) } },
+        {path: '/blog/:key', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
         {path: '/logout', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Logout').default) }) } },
-        {path: '/about', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Default').default) }) } },
-        {path: '/careers', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Default').default) }) } },
-        {path: '/contact', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Default').default) }) } },
-        {path: '/community', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Default').default) }) } },
-        {path: '/support', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Default').default) }) } },
-        {path: '/news', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Default').default) }) } }
+        {path: '/about', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
+        {path: '/careers', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
+        {path: '/contact', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
+        {path: '/community', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
+        {path: '/support', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
+        {path: '/news', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } }
     ]
 }
 
@@ -166,20 +156,20 @@ routes.childRoutes.push({
     getComponent: (nextState, cb) => {
         // Share the path
         // Dynamically load the correct component
-        if (auth.loggedIn()) {
+        if (Auth.loggedIn()) {
             return require.ensure([], (require) => {
                 cb(null, require('./UI/Screens/Dashboard').default)
             })
         }
         
         return require.ensure([], (require) => {
-            cb(null, require('./UI/Screens/Default').default)
+            cb(null, require('./UI/Screens/Document').default)
         })
     },
     indexRoute: {
         getComponent: (nextState, cb) => {
             // Only load if we're logged in
-            if (auth.loggedIn()) {
+            if (Auth.loggedIn()) {
                 return require.ensure([], (require) => {
                     cb(null, require('./UI/Screens/User'))
                 })
@@ -208,5 +198,7 @@ routes.childRoutes.push({
 
 export default {
     routes: routes,
-    store: store
+    store: store,
+    middleware: middleware,
+    reducers: reducers
 }

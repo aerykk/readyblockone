@@ -32,7 +32,9 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
                 isTablet: false,
                 isDesktop: false,
                 isRetina: false,
-                isBrowser: typeof window !== 'undefined' ? true : false
+                isBrowser: typeof window !== 'undefined' ? true : false,
+                isDevelopment: typeof process !== 'undefined' ? process.env.NODE_ENV === 'development' : true, // isDevelopment if process is defined and NODE_ENV is development, or if process is not defined
+                isProduction: typeof process !== 'undefined' && process.env.NODE_ENV === 'production' ? true : false
             }
         };
 
@@ -102,9 +104,11 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
             isMobile: false,
             isTablet: false,
             isRetina: false,
-            isBrowser: false
+            isBrowser: false,
+            isDevelopment: false, // TODO: how do we get this?
+            isProduction: false // TODO: how do we get this?
         }
-        
+
         Framework.renderToString = function() { throw 'Wrong context for renderToString' }
     }
 
@@ -384,6 +388,10 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
 
             return styles;
         };
+    } else if (Framework.Platform.Env.isServer) {
+        Framework.getStyles = function() {
+            return {}
+        }
     }
 
     //===============

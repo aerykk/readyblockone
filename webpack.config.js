@@ -33,7 +33,12 @@ var config = {
             {
                 test: /\.js?$/,
                 loader: 'babel',
-                include: [path.join(__dirname + '/App'), path.join(__dirname + '/node_modules/react-native-extended-stylesheet')],
+                include: [
+                    path.join(__dirname + '/App'),
+                    path.join(__dirname + '/WebService'),
+                    path.join(__dirname + '/DataService'),
+                    path.join(__dirname + '/node_modules/react-native-extended-stylesheet')
+                ],
                 query: {
                     cacheDirectory: true,
                     plugins: [],

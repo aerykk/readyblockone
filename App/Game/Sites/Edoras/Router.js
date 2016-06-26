@@ -1,59 +1,94 @@
-import React from 'react';
-import { Router, Route, Link, browserHistory } from 'react-router';
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
-import { createDevTools } from 'redux-devtools'
-import LogMonitor from 'redux-devtools-log-monitor'
-import DockMonitor from 'redux-devtools-dock-monitor'
-import { Provider } from 'react-redux'
-import configureStore from './Store'
-import auth from '../../Core/Utils/Auth.js'
+const Framework = require('../../../Framework')
+const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, renderToString} = Framework
+
+import {HotKeys} from 'react-hotkeys'
+import Auth from '../../Core/Utils/Auth'
+import DevTools from '../Default/UI/Components/DevTools'
+import store from './Store'
+import reducers from './Reducers'
 
 // Polyfill for nodejs /w babel
-if(typeof require.ensure !== "function") require.ensure = function(d, c) { c(require) };
-if(typeof require.include !== "function") require.include = function() {};
+if(typeof require.ensure !== "function") require.ensure = function(d, c) { c(require) }
+if(typeof require.include !== "function") require.include = function() {}
 
-function redirectToLogin(nextState, replace) {
-    if (!auth.loggedIn()) {
-        replace({
-            pathname: '/login',
-            state: { nextPathname: nextState.location.pathname }
+let middleware = []
+
+class Toolbar extends Component {
+    render() {
+        return (
+            <ul style={{
+                    position: 'fixed',
+                    left: '0',
+                    top: '0',
+                    height: '100%',
+                    width: '20%',
+                    background: '#000',
+                    color: '#fff',
+                    zIndex: 100
+                }}>
+                <li>
+                    <a href="http://hackatron.rocks.local:10020/">Go to Hackatron</a>
+                </li>
+                <li>
+                    <a href="http://ttt.stokegames.com.local:10010/">Go to TTT</a>
+                </li>
+            </ul>
+        )
+    }
+}
+
+class App extends Component {
+    constructor() {
+        super()
+
+        this.toggleToolbar = this.toggleToolbar.bind(this)
+
+        this.state = {
+            toolbarActive: false
+        }
+    }
+
+    toggleToolbar() {
+        console.log('toggleToolbar')
+
+        this.setState({
+            toolbarActive: !this.state.toolbarActive
         })
     }
-}
 
-function redirectToDashboard(nextState, replace) {
-    if (auth.loggedIn()) {
-        replace('/')
+    render() {
+        const handlers = {
+            'toggleToolbar': this.toggleToolbar
+        }
+
+        const map = {
+            'toggleToolbar': 'ctrl+n'
+        }
+
+        const isLocal = typeof window !== 'undefined' && window.location.hostname.indexOf('.local') !== -1
+
+        return (
+            <div>
+                <HotKeys handlers={handlers} keyMap={map}>
+                    <div>
+                        {this.props.children}
+                        {isLocal && <DevTools />}
+                        {isLocal && this.state.toolbarActive && <Toolbar />}
+                    </div>
+                </HotKeys>
+            </div>
+        )
     }
 }
-const DevTools = createDevTools(
-    <DockMonitor
-        toggleVisibilityKey='ctrl-h'
-        changePositionKey='ctrl-q'
-        changeMonitorKey='ctrl-m'
-        defaultIsVisible={false}>
-        <LogMonitor theme="tomorrow" preserveScrollTop={false} />
-    </DockMonitor>
-)
 
-const store = configureStore(DevTools.instrument())
-
-const isLocal = typeof window !== 'undefined' && window.location.hostname.indexOf('.local') !== -1
-
-var App = props => (
-    <div>{props.children}
-        {isLocal && <DevTools />}
-    </div>
-)
-
-var routes = {
+const routes = {
     component: App,
     childRoutes: [
         {
             path: '/',
             getComponent: (nextState, cb) => {
                 require.ensure([], (require) => {
-                    cb(null, require('./UI/Screens/Launch').default)
+                    cb(null, require('./UI/Screens/Home').default)
                 })
             }
         },
@@ -61,14 +96,16 @@ var routes = {
             path: '*',
             getComponent: (nextState, cb) => {
                 return require.ensure([], (require) => {
-                    cb(null, require('./UI/Screens/Launch').default)
+                    cb(null, require('./UI/Screens/Home').default)
                 })
             }
         }
     ]
-};
+}
 
 export default {
     routes: routes,
-    store: store
+    store: store,
+    middleware: middleware,
+    reducers: reducers
 }

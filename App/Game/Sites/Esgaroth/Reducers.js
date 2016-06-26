@@ -1,10 +1,10 @@
-const Framework = require('../../../Framework');
-const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, combineReducers, renderToString} = Framework;
+const Framework = require('../../../Framework')
+const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, combineReducers, renderToString} = Framework
 
 import {
     SELECT_SUBREDDIT, INVALIDATE_SUBREDDIT,
     REQUEST_POSTS, RECEIVE_POSTS
-} from './Actions';
+} from './Actions'
 
 function posts(state = {
     isFetching: false,
@@ -272,17 +272,19 @@ function site() {
     }
 }
 
-var reducers = {
+const reducers = {
     postsBySubreddit,
     selectedSubreddit,
     games,
     game,
     site
-};
+}
 
-const rootReducer = combineReducers({
-    ...reducers,
-    routing: routerReducer
-})
+import {reducer as reduxAsyncConnect} from 'redux-connect'
+import {reducer as form} from 'redux-form'
 
-export default rootReducer
+export default {
+    routing: routerReducer,
+    reduxAsyncConnect,
+    ...reducers
+}
