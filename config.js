@@ -3,12 +3,16 @@ module.exports = {
         host: '0.0.0.0',
         port: 11010
     },
-    dataService: {
+    styleguideService: {
         host: '0.0.0.0',
-        port: 11013
+        port: 11011
     },
     profilerService: {
         host: '0.0.0.0',
         port: 11012
+    },
+    dataService: {
+        host: '0.0.0.0',
+        port: 11013
     }
 }
