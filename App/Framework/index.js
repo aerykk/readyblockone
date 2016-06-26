@@ -39,51 +39,48 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
         }
 
         Framework.StyleSheet = {
-            create: function(styles) {
+            create: (styles) => {
                 return styles
             }
         }
 
-        Framework.View = React.createClass({
-            displayName: 'View',
-
-            render: function render() {
+        Framework.View = class View extends React.Component {
+            static propTypes = { children: React.PropTypes.node }
+            render() {
                 return React.createElement(
                     'div',
                     this.props,
                     this.props.children
                 )
             }
-        })
+        }
 
-        Framework.Text = React.createClass({
-            displayName: 'Text',
-
-            render: function render() {
+        Framework.Text = class Text extends React.Component {
+            static propTypes = { children: React.PropTypes.node }
+            render() {
                 return React.createElement(
                     'div',
                     this.props,
                     this.props.children
                 )
             }
-        })
+        }
 
-        Framework.Img = React.createClass({
-            displayName: 'Img',
-
-            render: function render() {
+        Framework.Img = class Img extends React.Component {
+            static propTypes = { children: React.PropTypes.node }
+            render() {
                 return React.createElement(
                     'img',
                     this.props
                 )
             }
-        })
+        }
 
         const {renderToString} = require('react-dom/server')
 
         Framework.renderToString = renderToString
     } else {
-        var ReactNative = require('react-native')
+        const ReactNative = require('react-native')
 
         Framework.ReactNative = ReactNative
         Framework.Platform = ReactNative.Platform
@@ -109,7 +106,7 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
             isProduction: false // TODO: how do we get this?
         }
 
-        Framework.renderToString = function() { throw 'Wrong context for renderToString' }
+        Framework.renderToString = function renderToString() { throw new Error('Wrong context for renderToString') }
     }
 
     // ===============
@@ -119,10 +116,10 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
     if (Framework.Platform.Env.isBrowser) {
         Framework.ReactDOM = require('react-dom')
 
-        var _parseVersion = function(version) {
+        const parseVersion = function parseVersion(version) {
             if (!version) return {}
 
-            var parts = version.split('.')
+            const parts = version.split('.')
 
             return {
                 version: version,
@@ -134,15 +131,14 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
 
         let device
         // This ratio is less than 1 because it accommodates when keyboards are activated.
-        let compareRatio = 0.8
+        const compareRatio = 0.8
 
-        /*jshint maxstatements:120 */
-        let detect = function(ua) {
+        const detect = function detect(ua) {
             let browserVersion
             let osVersion
             let os = {}
             let browser = {}
-            let cssClasses = []
+            const cssClasses = []
 
             const webkit = ua.match(/Web[kK]it[\/]{0,1}([\d.]+)/)
             const android = ua.match(/(Android);?[\s\/]+([\d.]+)?/)
@@ -256,8 +252,8 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
                 cssClasses.push('webview')
             }
 
-            os = Object.assign({}, os, _parseVersion(osVersion))
-            browser = Object.assign({}, browser, _parseVersion(browserVersion))
+            os = Object.assign({}, os, parseVersion(osVersion))
+            browser = Object.assign({}, browser, parseVersion(browserVersion))
 
 
             if ('querySelector' in document &&
@@ -285,7 +281,9 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
 
             // http://stackoverflow.com/questions/19689715/what-is-the-best-way-to-detect-retina-support-on-a-device-using-javascript
             os.isRetina = ((window.matchMedia && (window.matchMedia('only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 75.6dpcm)').matches || window.matchMedia('only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)').matches)) || (window.devicePixelRatio && window.devicePixelRatio > 2)) && os.ios
-            os.isRetina && cssClasses.push('retina')
+            if (os.isRetina) {
+                cssClasses.push('retina')
+            }
 
             cssClasses.push(os.isTablet ? 'tablet' : (os.isMobile ? 'mobile' : 'desktop'))
 
@@ -294,12 +292,12 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
 
         // In browser
         if (Framework.Platform.Env.isBrowser) {
-            var env = detect(window.navigator.userAgent)
+            const env = detect(window.navigator.userAgent)
             Framework.Platform.Env.isRetina = env.isRetina
             Framework.Platform.Env.isMobile = env.isMobile
             Framework.Platform.Env.isTablet = env.isTablet
         } else { // In node
-            //Framework.Platform.Env = detect(window.navigator.userAgent)
+            // Framework.Platform.Env = detect(window.navigator.userAgent)
         }
     } else {
         Framework.ReactDOM = null
@@ -317,7 +315,7 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
         const _ = require('lodash')
 
         const renderer = require('../../node_modules/react-look/lib/core/renderer')
-        reactlook.StyleSheet.create = function(styles, scope) {
+        reactlook.StyleSheet.create = (styles, scope) => {
             // flat style object without selectors
             const firstKey = styles[Object.keys(styles)[0]]
             if (!_.isPlainObject(firstKey) && !_.isFunction(firstKey)) {
@@ -325,7 +323,7 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
             }
 
             return Object.keys(styles).reduce((classes, selector) => {
-                classes[selector] = renderer.default(styles[selector], scope)
+                classes[selector] = renderer.default(styles[selector], scope) // eslint-disable-line
                 return classes // eslint-disable-line
             }, {})
         }
@@ -346,13 +344,13 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
             return rawStyles.replace(/\}([^@]*)@media([^\{]*)\{([^\{]*)\{([^\}]*)\}/gi, '@media$2{$4}')
         }
 
-        Framework.getStyles = function(rawStyles, scope, cb) {
-            Sass.compile(rawStyles, function(rawStyles) {
-                rawStyles = sanitizeMediaQueries(rawStyles.text)
+        Framework.getStyles = (rawStyles1, scope, cb) => {
+            Sass.compile(rawStyles1, (rawStyles2) => {
+                rawStyles2 = sanitizeMediaQueries(rawStyles2.text) // eslint-disable-line
 
                 const styles = reactlook.StyleSheet.create(
                     postcssJs.objectify(
-                        postcss.parse(rawStyles)
+                        postcss.parse(rawStyles2)
                     ),
                     scope
                 )
@@ -363,23 +361,21 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
     } else if (Framework.Platform.Env.isNative) {
         const rnes = require('react-native-extended-stylesheet')
 
-        const convertStyles = function(obj) {
+        const convertStyles = (obj) => {
             if (typeof obj === 'object') {
-                for (const key in obj) {
-                    if (!obj.hasOwnProperty(key)) continue
-
-                    obj[key] = convertStyles(obj[key])
+                for (const key of Object.keys(obj)) {
+                    obj[key] = convertStyles(obj[key]) // eslint-disable-line
                 }
                 return obj
-            } else {
-                if (parseInt(obj) == obj) { // eslint-disable-line eqeqeq
-                    return parseInt(obj)
-                }
+            }
+
+            if (parseInt(obj) == obj) { // eslint-disable-line eqeqeq
+                return parseInt(obj)
             }
         }
 
-        Framework.getStyles = function(rawStyles, extendedStyles = {}) {
-            var styles = postcssJs.objectify(postcss.parse(rawStyles))
+        Framework.getStyles = (rawStyles, extendedStyles = {}) => {
+            let styles = postcssJs.objectify(postcss.parse(rawStyles))
             styles = convertStyles(styles)
             styles = Object.assign(styles, extendedStyles)
             styles = rnes.default.create(styles)
@@ -387,14 +383,14 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
             return styles
         }
     } else if (Framework.Platform.Env.isServer) {
-        Framework.getStyles = function() {
+        Framework.getStyles = () => {
             return { }
         }
     }
 
     // ===============
 
-    Framework.wrapStyles = function(declarations, item) {
+    Framework.wrapStyles = (declarations, item) => {
         if (!declarations) {
             return item
         }
@@ -403,7 +399,7 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
             return item
         }
 
-        let extension = {}
+        const extension = {}
 
         if (item.props.children) {
             extension.children = []
@@ -418,7 +414,7 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
         }
 
         if (item.props.styles) {
-            for (let declaration in declarations) {
+            for (const declaration of Object.keys(declarations)) {
                 const styles = item.props.styles.split(' ')
                 const declarationClasses = declaration.split('.').slice(1)
 
@@ -462,7 +458,6 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
                     extension[attr] = declarations[declaration]
                 }
             }
-
         }
 
         return React.cloneElement(item, extension)
@@ -471,7 +466,7 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
     // On web, we want a React Look wrapper so we can inject the styles
     // On other platforms we will use inline styles, so it isn't necessary
     if (Framework.Platform.OS === 'web') {
-        var reactlook = require('react-look')
+        const reactlook = require('react-look')
         Framework.AppWrapper = reactlook.LookRoot
         Framework.AppConfig = reactlook.Presets['react-dom']
         Framework.AppConfig.styleElementId = '_nextgen-engine-stylesheet-' + 'horadric'
@@ -503,7 +498,7 @@ if (typeof GLOBAL !== 'undefined' && GLOBAL.Framework) {
     if (typeof GLOBAL === 'undefined') {
         Framework.fetch = require('isomorphic-fetch')
     } else {
-        Framework.fetch = function() {
+        Framework.fetch = function fetch() {
             console.error('fetch() not implemented on server side')
         }
     }
