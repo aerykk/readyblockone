@@ -1,0 +1,17 @@
+{
+    "name": "Horadric",
+    "description": "Example of the infinite",
+    "repository": "https://github.com/stokegames/horadric",
+    "logo": "http://node-js-sample.herokuapp.com/node.svg",
+    "keywords": [
+        "react",
+        "webpack",
+        "express",
+        "hot reloading",
+        "redux",
+        "universal",
+        "isomorphic",
+        "starter",
+        "boilerplate"
+    ]
+}

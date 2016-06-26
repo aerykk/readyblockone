@@ -25,12 +25,12 @@ if (typeof document !== 'undefined') {
     // 
     // global.socket = initSocket()
 
-    const dest = document
+    const container = document
 
     if (process.env.NODE_ENV !== 'production') {
         window.React = React // enable debugger
 
-        if (!dest || !dest.firstChild || !dest.firstChild.attributes || !dest.firstChild.attributes['data-react-checksum']) {
+        if (!container || !container.children.length || !container.children[0].attributes || !container.children[0].attributes['data-react-checksum']) {
             console.error('Server-side React render was discarded. Make sure that your initial render does not contain any client-side code.')
         }
     }
@@ -42,9 +42,7 @@ if (typeof document !== 'undefined') {
     const finalStore = SiteRouter.store.configure(reducers, middleware, window.__data)
     const history = syncHistoryWithStore(browserHistory, finalStore)
 
-    class App extends React.Component {
-        toString() {'[App]'}
-
+    class UI extends Component {
         render() {
             return (
                 <AppWrapper config={AppConfig}>
@@ -58,8 +56,8 @@ if (typeof document !== 'undefined') {
             )
         }
     }
-    // React.createElement(HTML, {view: {<App />}, store: {finalStore}}).children
-    ReactDOM.render(<HTML view={<App />} store={finalStore} />, dest)
+    // createElement(HTML, {view: {<UI />}, store: {finalStore}}).children
+    ReactDOM.render(<HTML ui={<UI />} store={finalStore} />, container)
 }
 
 
@@ -76,9 +74,7 @@ export default (locals, callback) => {
         routes: SiteRouter.routes,
         location: location
     }, function(error, redirectLocation, renderProps) {
-        class App extends React.Component {
-            toString() {'[App]'}
-
+        class UI extends Component {
             render() {
                 return (
                     <AppWrapper config={AppConfig}>
@@ -92,8 +88,6 @@ export default (locals, callback) => {
             }
         }
 
-        callback(null, '<!DOCTYPE html>' + ReactDOMServer.renderToString(
-            <App />
-        ))
+        callback(null, '<!DOCTYPE html>' + ReactDOMServer.renderToString(<UI />))
     })
 }

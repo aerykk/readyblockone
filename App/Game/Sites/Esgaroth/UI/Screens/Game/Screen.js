@@ -92,7 +92,7 @@ function mapStateToProps(state) {
 
     const code = location.replace('/games/', '')
     const game = games.list.reduce((prev, current) => (prev.code === code && prev) || (current.code === code && current))
-console.log(game)
+
     return {
         site,
         game,

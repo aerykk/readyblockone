@@ -8,9 +8,6 @@ import http from 'http'
 import SocketIo from 'socket.io'
 
 class Server {
-    constructor() {
-    }
-    
     init() {
         this.apiHost = process.env.API_HOST || 'localhost'
         this.apiPort = process.env.API_PORT || 11013
@@ -27,7 +24,7 @@ class Server {
         }))
 
         this.app.use(bodyParser.json())
-        
+
         const pretty = new PrettyError()
 
         this.app.use((req, res) => {
@@ -67,7 +64,7 @@ class Server {
         }
 
         this.io.on('connection', (socket) => {
-            socket.emit('news', {msg: `'Hello World!' from server`})
+            socket.emit('news', {msg: 'Hello from the server'})
 
             socket.on('history', () => {
                 for (let index = 0; index < bufferSize; index++) {
@@ -79,7 +76,8 @@ class Server {
                 }
             })
 
-            socket.on('msg', (data) => {
+            socket.on('msg', (rawData) => {
+                const data = rawData
                 data.id = messageIndex
                 messageBuffer[messageIndex % bufferSize] = data
                 messageIndex++
@@ -87,7 +85,7 @@ class Server {
             })
         })
     }
-    
+
     start() {
         const runnable = this.app.listen(this.apiPort, (err) => {
             if (err) {

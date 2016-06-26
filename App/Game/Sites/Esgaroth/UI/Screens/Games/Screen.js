@@ -28,7 +28,6 @@ class Screen extends Component {
                 <div style={{padding: "20px"}}>
                   <ul className="games">
                       {games.list.map((item, i) => {
-                          console.log(arguments)
                           var posList = [
                               '0% 40%',
                               '100% 40%',

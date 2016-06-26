@@ -1,1 +1,1 @@
-export isValid from './isValid';
+export isValid from './isValid'

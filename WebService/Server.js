@@ -1,9 +1,6 @@
 const express = require('express')
 const webpack = require('webpack')
 const http = require('http')
-const exec = require('child_process').exec
-const url = require('url')
-const fs = require('fs')
 const request = require('request')
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware')
@@ -14,10 +11,9 @@ const {AppWrapper, AppConfig} = Framework
 
 import React from 'react'
 import {renderToString} from 'react-dom/server'
-import {createStore, applyMiddleware, compose} from 'redux'
 import {ReduxAsyncConnect, loadOnServer} from 'redux-connect'
 import {Provider} from 'react-redux'
-import {Router, RouterContext, match} from 'react-router'
+import {Router, match} from 'react-router'
 import {routerMiddleware, syncHistoryWithStore} from 'react-router-redux'
 import createHistory from 'react-router/lib/createMemoryHistory'
 import DataClient from './DataClient'
@@ -31,6 +27,8 @@ function getRandomInt(min, max) {
 
 const config = require('../config')
 
+const dataServiceEndpoint = 'http://' + config.dataService.host + ':' + config.dataService.port
+
 class Server {
     constructor() {
         this.env = process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
@@ -40,20 +38,20 @@ class Server {
         this.clients = []
         this.hostClient = null
         this.proxy = httpProxy.createProxyServer({
-            target: 'http://' + config.dataService.host + ':' + config.dataService.port,
+            target: dataServiceEndpoint,
             ws: true
         })
     }
-    
-    initProxies() {    
+
+    initProxies() {
         // Proxy to API server
         this.app.use('/api', (req, res) => {
-            this.proxy.web(req, res, {target: targetUrl})
+            this.proxy.web(req, res, {target: dataServiceEndpoint})
         })
 
         // Proxy web sockets
         this.app.use('/ws', (req, res) => {
-            this.proxy.web(req, res, {target: targetUrl + '/ws'})
+            this.proxy.web(req, res, {target: dataServiceEndpoint + '/ws'})
         })
 
         // Proxy upgrade to web sockets
@@ -76,62 +74,13 @@ class Server {
             json = {error: 'proxy_error', reason: error.message}
             res.end(JSON.stringify(json))
         })
-
-        // 
-        // // API proxy
-        // this.app.use(function(req, res, next) {
-        //     console.log('[WebService] Requesting: ' + req.url)
-        // 
-        //     if(new RegExp('/api/v1/').test(req.url)) {
-        //         let response = []
-        // 
-        //         req.on('data', function(chunk) { 
-        //             response.push(chunk)
-        //         })
-        // 
-        //         req.on('end',function() {
-        //             let params = {
-        //                 url: 'http://localhost:11013' + req.url.replace('/api/v1/', '/'), 
-        //                 headers: req.headers
-        //             }
-        // 
-        //             if (req.method === 'POST' || req.method === 'PUT') {
-        //                 let body = Buffer.concat(response)
-        // 
-        //                 if (!body.length) {
-        //                     console.log('[WebService] Received POST request with no data')
-        // 
-        //                     res.status(500)
-        //                     res.render('internalServerError')
-        //                     return
-        //                 }
-        // 
-        //                 params.body = body
-        //             }
-        // 
-        //             console.log('[WebService] Requesting data: ' + req.method + ' ' + params.url + ' ' + params.body)
-        // 
-        //             request[req.method.toLowerCase()](params)
-        //                 .on('error', function(err, response, body) {
-        //                     console.log('Problem with pipe: ' + err.message)
-        // 
-        //                     res.status(500)
-        //                     res.render('internalServerError')
-        //                 })
-        //                 .pipe(res)
-        //         })
-        //     }
-        //     else {
-        //         next && next()
-        //     }
-        // })
     }
 
     init() {
         this.app = express()
         this.server = http.createServer(this.app)
         this.dataClient = new DataClient()
-        
+
         this.initProxies()
 
         if (this.env === 'development') {
@@ -167,26 +116,26 @@ class Server {
         this.app.use(express.static(__dirname + '/../'))
 
         // Facebook Canvas needs to send a POST request
-        this.app.post('/', (req, res, next) => {
+        this.app.post('/', (req, res) => {
             req.pipe(request.get('http://' + this.host + ':' + this.port + '/')).pipe(res)
         })
-        
+
         // Web server
         this.app.use(express.static(__dirname + '/../'))
 
         // Server-side rendering
-        this.app.use((req, res, next) => {
-            var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl
+        this.app.use((req, res) => {
+            const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl
             console.info('[WebService] Requested: ' + fullUrl)
 
-            var SiteRouter = require('../App/Game/Router')(req.get('host'))
+            const SiteRouter = require('../App/Game/Router')(req.get('host'))
 
-            const data = null
+            const data = {}
             const memoryHistory = createHistory(req.originalUrl)
             const reduxRouterMiddleware = routerMiddleware(memoryHistory)
             const reducers = {...SiteRouter.reducers}
             const middleware = [clientMiddleware(this.dataClient), reduxRouterMiddleware, ...SiteRouter.middleware]
-            const finalStore = SiteRouter.store.configure(reducers, middleware)
+            const finalStore = SiteRouter.store.configure(reducers, middleware, data)
             const history = syncHistoryWithStore(memoryHistory, finalStore)
 
             // React router
@@ -211,11 +160,15 @@ class Server {
                 // Setup the data client handlers
                 this.dataClient.run(req)
 
-                loadOnServer({...renderProps, store: finalStore, helpers: {client: this.dataClient}})
+                loadOnServer({
+                    ...renderProps,
+                    store: finalStore,
+                    helpers: {
+                        client: this.dataClient
+                    }
+                })
                 .then(() => {
-                    class App extends React.Component {
-                        toString() {'[App]'}
-
+                    class UI extends React.Component {
                         render() {
                             return (
                                 <AppWrapper config={AppConfig}>
@@ -230,9 +183,9 @@ class Server {
                         }
                     }
 
-                    let page = renderToString(<HTML view={<App />} store={finalStore} />)
-                    
-                    res.status(200).send('<!doctype html>\n' + page)
+                    const page = renderToString(<HTML ui={<UI />} store={finalStore} />)
+
+                    res.status(200).send('<!DOCTYPE html>\n' + page)
                 })
                 .catch(err => res.end(err.message))
             })
@@ -256,13 +209,13 @@ class Server {
 
         this.monitorHost()
 
-        setInterval(() => {
-            return // TODO: do we need this?
-            if (!this.hostClient) return console.log('No host')
-            if (!this.hostClient.player) return console.log('Host has no player')
-
-            console.log('Host: ', this.hostClient.player.id)
-        }, 2000)
+        // TODO: do we need this?
+        // setInterval(() => {
+        //     if (!this.hostClient) return console.log('No host')
+        //     if (!this.hostClient.player) return console.log('Host has no player')
+        //
+        //     console.log('Host: ', this.hostClient.player.id)
+        // }, 2000)
 
         this.server.listen(this.port, this.host, (err) => {
             if (err) { console.log(err) }
@@ -278,8 +231,8 @@ class Server {
 
     findNewHost() {
         if (this.clients.length > 0) {
-            var i = getRandomInt(0, this.clients.length-1)
-            var client = this.clients[i]
+            const i = getRandomInt(0, this.clients.length - 1)
+            const client = this.clients[i]
 
             // Make sure client had time to initialize the player
             if (client) {
@@ -328,19 +281,19 @@ class Server {
 
             // If it's the first client or there's no hosts, lets set it as the new host
             if (!this.hostClient) {
-                this.setHost(this.clients[this.clients.length-1])
+                this.setHost(this.clients[this.clients.length - 1])
                 console.log('New host: ' + this.hostClient.player.id)
             }
 
             this.fireEvent(socket, {key: 'setHost', info: {player: this.hostClient.player}})
         } else if (event.key === 'this.findNewHost') {
-            console.log("Finding new host....")
-            var client = this.findClientBySocket(socket)
+            console.log('Finding new host....')
+            const client = this.findClientBySocket(socket)
             this.removeClient(client)
             this.hostClient = null
             this.findNewHost()
         } else {
-            //socket.broadcast.emit(event.key, event.info)
+            // socket.broadcast.emit(event.key, event.info)
         }
     }
 
@@ -349,9 +302,9 @@ class Server {
 
         // TODO: give them 10 seconds to identify as a newPlayer, or cut them off
 
-        socket.on('events', (data) => {
-            //console.log('Incoming events: ' + data)
-            data = JSON.parse(data)
+        socket.on('events', (rawData) => {
+            // console.log('Incoming events: ' + rawData)
+            const data = JSON.parse(rawData)
 
             data.events.forEach((event) => { this.parseEvent(socket, event) })
 
@@ -360,7 +313,7 @@ class Server {
     }
 
     onSocketDisconnect(socket) {
-        var client = this.findClientBySocket(socket)
+        const client = this.findClientBySocket(socket)
 
         if (!client) { return }
 
