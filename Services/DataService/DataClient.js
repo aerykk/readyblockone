@@ -1,8 +1,8 @@
-const Framework = require('../App/Framework')
+const Framework = require('../../App/Framework')
 const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, renderToString} = Framework
 
 
-const config = require('../config')
+const config = require('../../config')
 const methods = ['get', 'post', 'put', 'patch', 'del']
 
 const superagent = require('superagent')

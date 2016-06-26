@@ -35,8 +35,7 @@ var config = {
                 loader: 'babel',
                 include: [
                     path.join(__dirname + '/App'),
-                    path.join(__dirname + '/WebService'),
-                    path.join(__dirname + '/DataService'),
+                    path.join(__dirname + '/Services'),
                     path.join(__dirname + '/node_modules/react-native-extended-stylesheet')
                 ],
                 query: {
@@ -61,8 +60,8 @@ var config = {
     },
     plugins: [
         new webpack.IgnorePlugin(/^(react-native)$/),
-        new webpack.DefinePlugin({ 
-            'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') } 
+        new webpack.DefinePlugin({
+            'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
         })
     ]
 }

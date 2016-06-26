@@ -2,14 +2,14 @@ const Framework = require('../Framework')
 const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, renderToString} = Framework
 
 const SiteRouter = require('./Router')(typeof window !== 'undefined' ? window.location.hostname : 'stokegames.com')
-import DataClient from '../../WebService/DataClient'
+import DataClient from '../../Services/DataService/DataClient'
 import {ReduxAsyncConnect} from 'redux-connect'
 import {routerMiddleware} from 'react-router-redux'
-import clientMiddleware from '../../WebService/middleware/clientMiddleware'
-import HTML from '../../WebService/HTML'
+import clientMiddleware from '../../Services/WebService/middleware/clientMiddleware'
+import HTML from '../../Services/WebService/HTML'
 
 if (typeof document !== 'undefined') {
-    // 
+    //
     // function initSocket() {
     //   const socket = io('', {path: '/ws'})
     //   socket.on('news', (data) => {
@@ -19,10 +19,10 @@ if (typeof document !== 'undefined') {
     //   socket.on('msg', (data) => {
     //     console.log(data)
     //   })
-    // 
+    //
     //   return socket
     // }
-    // 
+    //
     // global.socket = initSocket()
 
     const container = document

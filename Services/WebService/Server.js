@@ -4,9 +4,9 @@ const http = require('http')
 const request = require('request')
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware')
-const webpackConfig = require('../webpack.config.js')
+const webpackConfig = require('../../webpack.config.js')
 
-const Framework = require('../App/Framework')
+const Framework = require('../../App/Framework')
 const {AppWrapper, AppConfig} = Framework
 
 import React from 'react'
@@ -16,7 +16,7 @@ import {Provider} from 'react-redux'
 import {Router, match} from 'react-router'
 import {routerMiddleware, syncHistoryWithStore} from 'react-router-redux'
 import createHistory from 'react-router/lib/createMemoryHistory'
-import DataClient from './DataClient'
+import DataClient from '../DataService/DataClient'
 import httpProxy from 'http-proxy'
 import HTML from './HTML'
 import clientMiddleware from './middleware/clientMiddleware'
@@ -25,7 +25,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-const config = require('../config')
+const config = require('../../config')
 
 const dataServiceEndpoint = 'http://' + config.dataService.host + ':' + config.dataService.port
 
@@ -113,22 +113,19 @@ class Server {
         }
 
         // Web server
-        this.app.use(express.static(__dirname + '/../'))
+        this.app.use(express.static(__dirname + '/../../'))
 
         // Facebook Canvas needs to send a POST request
         this.app.post('/', (req, res) => {
             req.pipe(request.get('http://' + this.host + ':' + this.port + '/')).pipe(res)
         })
 
-        // Web server
-        this.app.use(express.static(__dirname + '/../'))
-
         // Server-side rendering
         this.app.use((req, res) => {
             const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl
             console.info('[WebService] Requested: ' + fullUrl)
 
-            const SiteRouter = require('../App/Game/Router')(req.get('host'))
+            const SiteRouter = require('../../App/Game/Router')(req.get('host'))
 
             const data = {}
             const memoryHistory = createHistory(req.originalUrl)

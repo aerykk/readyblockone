@@ -1,2 +1,2 @@
-import WebService from './WebService'
-import DataService from './DataService'
+import WebService from './Services/WebService'
+import DataService from './Services/DataService'
