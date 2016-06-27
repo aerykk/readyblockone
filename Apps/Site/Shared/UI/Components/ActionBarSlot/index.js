@@ -1,1 +1,1 @@
-export { default } from './ActionBarSlot.js';
+export {default} from './ActionBarSlot'
