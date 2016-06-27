@@ -1,14 +1,11 @@
 const Framework = require('../../../../../../../Framework')
-const {React, ReactDOM, PropTypes, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework
-
-import { Link } from 'react-router'
-import { connect } from 'react-redux'
+const {React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
 
 class Layout extends Component {
     static propTypes = {
-        breadcrumb: PropTypes.element,
-        games: PropTypes.object.isRequired,
-        site: PropTypes.object.isRequired
+        breadcrumb: T.element,
+        games: T.object.isRequired,
+        site: T.object.isRequired
     }
 
     static defaultProps = {
@@ -43,7 +40,7 @@ class Layout extends Component {
 
         if (!this.state.styles) { return <div></div>; }
 
-        return Framework.wrapStyles(this.state.styles, 
+        return Framework.wrapStyles(this.state.styles,
             <View>
                 <div className="container">
                     <div styles="c-header">

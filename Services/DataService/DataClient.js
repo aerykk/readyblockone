@@ -1,7 +1,6 @@
 const Framework = require('../../Framework')
 const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, renderToString} = Framework
 
-
 const config = require('../../config')
 const methods = ['get', 'post', 'put', 'patch', 'del']
 
@@ -10,11 +9,11 @@ const superagent = require('superagent')
 function formatUrl(path) {
     const adjustedPath = path[0] !== '/' ? '/' + path : path
     if (Framework.Platform.Env.isServer) {
-        // Prepend host and port of the API server to the path.
+        // Prepend host and port of the API server to the path
         return 'http://' + config.apiHost + ':' + config.apiPort + adjustedPath
     }
-    // Prepend `/api` to relative URL, to proxy to API server.
-    return '/api' + adjustedPath
+    // Prepend `/api/v1` to relative URL, to proxy to API server
+    return '/api/v1' + adjustedPath
 }
 
 class DataClient {

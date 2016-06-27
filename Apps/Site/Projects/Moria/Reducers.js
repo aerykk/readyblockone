@@ -1,9 +1,9 @@
-const Framework = require('../../../../Framework');
-const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, combineReducers, renderToString} = Framework;
+const Framework = require('../../../../Framework')
+const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, combineReducers, renderToString} = Framework
 
 import {
     TEST_STUFF
-} from './Actions';
+} from './Actions'
 
 function site() {
     const isLocal = typeof window !== 'undefined' && window.location.hostname.indexOf('.local') !== -1
@@ -35,13 +35,15 @@ function site() {
     }
 }
 
-var reducers = {
+const reducers = {
     site
-};
+}
 
-const rootReducer = combineReducers({
-    ...reducers,
-    routing: routerReducer
-})
+import {reducer as reduxAsyncConnect} from 'redux-connect'
+import {reducer as form} from 'redux-form'
 
-export default rootReducer
+export default {
+    routing: routerReducer,
+    reduxAsyncConnect,
+    ...reducers
+}

@@ -1,11 +1,9 @@
 const Framework = require('../../../../../../Framework')
-const {React, ReactDOM, PropTypes, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework
-
-import { Link } from 'react-router'
+const {React, ReactDOM, ReactNative, PropTypes, T, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
 
 class Layout extends Component {
     static propTypes = {
-        test: PropTypes.number
+        test: T.number
     }
 
     static defaultProps = {
@@ -17,8 +15,10 @@ class Layout extends Component {
 
         this.state = {}
     }
+
     componentWillMount() {
     }
+
     render() {
         return (
             <View>

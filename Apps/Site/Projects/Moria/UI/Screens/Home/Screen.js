@@ -1,12 +1,12 @@
-const Framework = require('../../../../../../../Framework');
-const {React, ReactDOM, PropTypes, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework;
+const Framework = require('../../../../../../../Framework')
+const {React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
 
-import DefaultLayout from '../../Layouts/Default';
-import Markdown from '../../../../../Shared/UI/Components/Markdown';
+import Layout from '../../Layouts/Default'
+import Markdown from '../../../../../Shared/UI/Components/Markdown'
 
 class Screen extends Component {
     constructor() {
-        super();
+        super()
         this.state = {
             page: {
                 title: '',
@@ -14,33 +14,35 @@ class Screen extends Component {
                 items: [],
                 options: {}
             }
-        };
+        }
     }
+
     onPageChange(state) {
         if (JSON.stringify(this.state.page) === JSON.stringify(state)) {
-            return;
+            return
         }
 
-        this.setState({page: state});
+        this.setState({page: state})
     }
+
     render() {
-        var page = this.props.location.pathname.replace('/', '');
+        var page = this.props.location.pathname.replace('/', '')
 
-        if (!page) { page = 'home'; }
+        if (!page) { page = 'home' }
 
-        var breadcrumb = null;
+        var breadcrumb = null
 
         this.state.page.items.forEach(function(item) {
             if (item.title === 'Breadcrumb') {
-                breadcrumb = item.body;
+                breadcrumb = item.body
             }
-        });
+        })
 
         // TODO: Remove this hack
-        this.state.page.options.slim = (page === 'home');
+        this.state.page.options.slim = (page === 'home')
 
         return (
-            <DefaultLayout breadcrumb={breadcrumb}>
+            <Layout breadcrumb={breadcrumb}>
                 {!this.state.page.options.slim && (
                     <div className="box">
                         <div className="tab-header">
@@ -54,9 +56,9 @@ class Screen extends Component {
                 {this.state.page.options.slim && (
                     <Markdown src={"/Apps/Site/Projects/Moria/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
                 )}
-            </DefaultLayout>
-        );
+            </Layout>
+        )
     }
 }
 
-export default Screen;
+export default Screen

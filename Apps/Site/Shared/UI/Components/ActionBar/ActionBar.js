@@ -1,7 +1,10 @@
-const Framework = require('../../../../../../../Framework');
-const {React, ReactDOM, PropTypes, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework;
+const Framework = require('../../../../../../Framework')
+const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
+
 
 import ActionBarSlot from '../ActionBarSlot';
+
+import styles from './ActionBar.css';
 
 class ActionBar extends Component {
     static propTypes = {
@@ -22,10 +25,10 @@ class ActionBar extends Component {
         });
 
         return (
-            <View>
+            <View className={styles.container}>
                 {actions.map((action, i) => {
                     if (!action) { action = {}; }
-                    return <View key={i}><ActionBarSlot {...action} key={i} /></View>;
+                    return <View className={styles.slot} key={i}><ActionBarSlot {...action} key={i} /></View>;
                 })}
             </View>
         );

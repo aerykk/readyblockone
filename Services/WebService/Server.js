@@ -45,7 +45,7 @@ class Server {
 
     initProxies() {
         // Proxy to API server
-        this.app.use('/api', (req, res) => {
+        this.app.use('/api/v1', (req, res) => {
             this.proxy.web(req, res, {target: dataServiceEndpoint})
         })
 
@@ -185,9 +185,9 @@ class Server {
 
                     res.status(200).send('<!DOCTYPE html>\n' + page)
                 })
-                .catch((err) => {
-                    console.log(err.stack)
-                    res.end(err.message)
+                .catch((err2) => {
+                    console.log(err2.stack)
+                    res.end(err2.message)
                 })
             })
         })

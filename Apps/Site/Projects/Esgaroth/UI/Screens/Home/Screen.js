@@ -1,15 +1,22 @@
-const Framework = require('../../../../../../../Framework');
-const {React, PropTypes, ReactDOM, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework;
+const Framework = require('../../../../../../../Framework')
+const {React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
 
-import StokeLayout from '../../Layouts/Stoke';
-import Markdown from '../../../../../Shared/UI/Components/Markdown';
+import StokeLayout from '../../Layouts/Stoke'
+import Markdown from '../../../../../Shared/UI/Components/Markdown'
 
-import { connect } from 'react-redux'
 import { selectSubreddit, fetchPostsIfNeeded, invalidateSubreddit } from '../../../Actions'
 
 class Screen extends Component {
+    static propTypes = {
+        selectedSubreddit: T.string.isRequired,
+        posts: T.array.isRequired,
+        isFetching: T.bool.isRequired,
+        lastUpdated: T.number,
+        dispatch: T.func.isRequired
+    }
+
     constructor() {
-        super();
+        super()
         this.state = {
             page: {
                 title: '',
@@ -17,7 +24,7 @@ class Screen extends Component {
                 items: [],
                 options: {}
             }
-        };
+        }
         this.handleChange = this.handleChange.bind(this)
         this.handleRefreshClick = this.handleRefreshClick.bind(this)
     }
@@ -46,26 +53,26 @@ handleRefreshClick(e) {
 }
     onPageChange(state) {
         if (JSON.stringify(this.state.page) === JSON.stringify(state)) {
-            return;
+            return
         }
 
-        this.setState({page: state});
+        this.setState({page: state})
     }
     render() {
-        var page = this.props.location;
+        var page = this.props.location
 
-        if (!page) { page = 'home'; }
+        if (!page) { page = 'home' }
 
-        var breadcrumb = null;
+        var breadcrumb = null
 
         this.state.page.items.forEach(function(item) {
             if (item.title === 'Breadcrumb') {
-                breadcrumb = item.body;
+                breadcrumb = item.body
             }
-        });
+        })
 
         // TODO: Remove this hack
-        this.state.page.options.slim = (page === 'home');
+        this.state.page.options.slim = (page === 'home')
 
         const { selectedSubreddit, posts, isFetching, lastUpdated } = this.props
 
@@ -112,17 +119,9 @@ handleRefreshClick(e) {
                     }
                 </div>
             </StokeLayout>
-        );
+        )
     }
 }
-
-Screen.propTypes = {
-    selectedSubreddit: PropTypes.string.isRequired,
-    posts: PropTypes.array.isRequired,
-    isFetching: PropTypes.bool.isRequired,
-    lastUpdated: PropTypes.number,
-    dispatch: PropTypes.func.isRequired
-};
 
 function mapStateToProps(state) {
     const { selectedSubreddit, postsBySubreddit, routing } = state
@@ -136,7 +135,7 @@ function mapStateToProps(state) {
     }
 
     // TODO: Figure out WTF is going on here. Server is string, browser is object
-    var location = null;
+    var location = null
     if (typeof routing.locationBeforeTransitions === 'string') {
         location = routing.locationBeforeTransitions.replace('/', '')
     } else if (typeof routing.locationBeforeTransitions === 'object' && routing.locationBeforeTransitions) {
@@ -154,4 +153,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Screen);
+export default connect(mapStateToProps)(Screen)

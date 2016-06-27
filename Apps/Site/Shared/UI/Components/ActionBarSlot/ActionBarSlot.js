@@ -1,5 +1,8 @@
-const Framework = require('../../../../../../../Framework');
-const {React, ReactDOM, PropTypes, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework;
+const Framework = require('../../../../../../Framework')
+const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
+
+
+import styles from './ActionBarSlot.css';
 
 class ActionBarSlot extends Component {
     static propTypes = {
@@ -36,9 +39,9 @@ class ActionBarSlot extends Component {
         };
 
         return (
-            <View>
-                {this.props.skillId && <View style={{'background-position': positions[this.props.skillId]}} />}
-                <View></View>
+            <View className={styles.container}>
+                {this.props.skillId && <View className={styles.overlay} style={{'background-position': positions[this.props.skillId]}} />}
+                <View className={styles[type]}></View>
             </View>
         );
     }

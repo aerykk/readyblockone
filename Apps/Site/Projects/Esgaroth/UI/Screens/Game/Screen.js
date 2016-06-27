@@ -1,20 +1,19 @@
-const Framework = require('../../../../../../../Framework');
-const {React, PropTypes, ReactDOM, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework;
+const Framework = require('../../../../../../../Framework')
+const {React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
 
-import StokeLayout from '../../Layouts/Stoke';
+import Layout from '../../Layouts/Stoke';
 import Markdown from '../../../../../Shared/UI/Components/Markdown';
 import Timeline from '../../../../../Shared/UI/Components/Timeline';
 
-import { connect } from 'react-redux'
 import { selectSubreddit, fetchPostsIfNeeded, invalidateSubreddit } from '../../../Actions'
 
 class Screen extends Component {
     static propTypes = {
     }
-    
+
     constructor() {
         super()
-        
+
         this.state = {
             page: {
                 title: '',
@@ -22,7 +21,7 @@ class Screen extends Component {
             }
         }
     }
-    
+
     componentWillMount() {
         Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Screen.css').toString() : require('./Screen.css'), 'stokelayout-', (styles) => {
             this.setState({
@@ -30,7 +29,7 @@ class Screen extends Component {
             })
         })
     }
-    
+
     onPageChange(state) {
         this.setState({
             page: state
@@ -40,7 +39,7 @@ class Screen extends Component {
     render() {
         const { site, location, game } = this.props
 
-        if (!this.state.styles) { return <div></div> }
+        if (!this.state.styles) { return <View></View> }
 
         const content = (
             <Markdown src={"/Apps/Site/Projects/Esgaroth/Pages/" + (location || 'home') + ".md"} onChange={(state) => this.onPageChange(state)} />
@@ -56,23 +55,23 @@ class Screen extends Component {
             </ul>
         )
 
-        return Framework.wrapStyles(this.state.styles, 
-            <StokeLayout breadcrumb={breadcrumb}>
+        return Framework.wrapStyles(this.state.styles,
+            <Layout breadcrumb={breadcrumb}>
                 {!page.slim && (
-                    <div className="box">
-                        <div className="tab-header">
+                    <View className="box">
+                        <View className="tab-header">
                             {page.title}
-                        </div>
-                        <div className="padded">
+                        </View>
+                        <View className="padded">
                             {game.timeline && <Timeline stages={game.timeline} />}
                             {content}
-                        </div>
-                    </div>
+                        </View>
+                    </View>
                 )}
                 {page.slim && (
                     content
                 )}
-            </StokeLayout>
+            </Layout>
         );
     }
 }

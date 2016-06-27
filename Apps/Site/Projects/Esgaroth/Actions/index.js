@@ -1,4 +1,4 @@
-// import * as types from '../constants/ActionTypes';
+// import * as types from '../constants/ActionTypes'
 //
 // export function addContact(firstName, lastName, avatarUrl, phone) {
 //     return {
@@ -7,7 +7,7 @@
 //         lastName,
 //         avatarUrl,
 //         phone,
-//     };
+//     }
 // }
 //
 // export function addCall(timestamp, duration, receiverId) {
@@ -16,7 +16,7 @@
 //         timestamp,
 //         duration,
 //         receiverId,
-//     };
+//     }
 // }
 
 import fetch from 'isomorphic-fetch'

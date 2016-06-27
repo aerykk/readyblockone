@@ -17,6 +17,7 @@ if (typeof global !== 'undefined' && global.Framework) {
     Framework.React = React
     Framework.Component = React.Component
     Framework.PropTypes = React.PropTypes
+    Framework.T = React.PropTypes
 
     // ===============
 

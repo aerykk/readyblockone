@@ -27,6 +27,9 @@ const sites = {
     'aceportuguese.com': {},
     'acerussian.com': {},
     'acelearners.com': {},
+    'volunteering.mobify.com': {
+        router: require('./Projects/Lorien/Router').default
+    },
     'pokelingo.com': {
         router: require('./Projects/Edoras/Router').default
     },

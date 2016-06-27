@@ -3,10 +3,10 @@
 ## Breadcrumb
 
 <ul class="breadcrumb">
-    <li><a href="/"><i class="icon-home"></i> Stoke Games</a></li>
+    <li><a href="/"><i class="icon-home"></i> Brick Brotherhood</a></li>
     <li class="active"><a href="/about">About</a></li>
 </ul>
 
 ## Content
 
-<p>Stoke Games is a game studio based out of Vancouver, Canada.</p>
+<p>Brick Brotherhood is a LEGO expert based out of Vancouver, Canada.</p>
