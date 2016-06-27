@@ -1,1 +1,1 @@
-export { default } from './Tab.js';
+export {default} from './Tab'

@@ -1,1 +1,1 @@
-export { default } from './SkillBar.js';
+export {default} from './SkillBar'
