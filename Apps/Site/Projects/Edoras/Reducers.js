@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux'
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+const Framework = require('../../../../Framework');
+const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, fetch, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, combineReducers, renderToString} = Framework;
 
 import {
     TEST
@@ -42,7 +42,10 @@ var reducers = {
     site
 }
 
+import {reducer as reduxAsyncConnect} from 'redux-connect'
+
 export default {
-    ...reducers,
-    routing: routerReducer
+    routing: routerReducer,
+    reduxAsyncConnect,
+    ...reducers
 }

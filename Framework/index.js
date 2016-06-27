@@ -1,6 +1,6 @@
 import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
-import {createStore, combineReducers, applyMiddleware} from 'redux'
+import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
 import {Router, Route, Link, browserHistory} from 'react-router'
 import {Provider, connect} from 'react-redux'
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
@@ -480,6 +480,7 @@ if (typeof global !== 'undefined' && global.Framework) {
     Framework.thunkMiddleware = thunkMiddleware
     Framework.createLogger = createLogger
     Framework.createStore = createStore
+    Framework.compose = compose
     Framework.combineReducers = combineReducers
     Framework.applyMiddleware = applyMiddleware
     Framework.Router = Router

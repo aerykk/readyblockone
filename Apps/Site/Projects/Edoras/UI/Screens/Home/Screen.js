@@ -42,14 +42,14 @@ class Screen extends Component {
         return (
             <BasicLayout breadcrumb={breadcrumb}>
                 {!this.state.page.options.slim && (
-                    <div className="box">
-                        <div className="tab-header">
+                    <View className="box">
+                        <View className="tab-header">
                             {this.state.page.title}
-                        </div>
-                        <div className="padded">
+                        </View>
+                        <View className="padded">
                             <Markdown src={"/Apps/Site/Projects/Edoras/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
-                        </div>
-                    </div>
+                        </View>
+                    </View>
                 )}
                 {this.state.page.options.slim && (
                     <Markdown src={"/Apps/Site/Projects/Edoras/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />

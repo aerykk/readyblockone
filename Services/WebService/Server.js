@@ -140,9 +140,10 @@ class Server {
                 history: history,
                 routes: SiteRouter.routes,
                 location: req.originalUrl
-            }, (error, redirectLocation, renderProps) => {
-                if (error) {
-                    return res.status(500).send(error.message)
+            }, (err, redirectLocation, renderProps) => {
+                if (err) {
+                    console.log(err.stack)
+                    return res.status(500).send(err.message)
                 }
 
                 if (redirectLocation) {
@@ -184,7 +185,10 @@ class Server {
 
                     res.status(200).send('<!DOCTYPE html>\n' + page)
                 })
-                .catch(err => res.end(err.message))
+                .catch((err) => {
+                    console.log(err.stack)
+                    res.end(err.message)
+                })
             })
         })
     }

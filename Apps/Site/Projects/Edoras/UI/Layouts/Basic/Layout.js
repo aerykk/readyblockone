@@ -135,7 +135,7 @@ class Layout extends Component {
                         if(foundList.length) {
                             $status.html("Found " + foundList.length + " results").addClass('c--active')
 
-                            for(var i = 0, l = foundList.length i < l ++i) {
+                            for(var i = 0, l = foundList.length; i < l; ++i) {
                                 var id = foundList[i]
 
                                 $listing.children().eq(id).addClass('c--shown')
@@ -159,7 +159,7 @@ class Layout extends Component {
 
                     $listing.empty()
 
-                    for(var i = 0, l = lang.en.messages.length i < l ++i) {
+                    for(var i = 0, l = lang.en.messages.length; i < l; ++i) {
                         var enMessages = lang.en.messages[i]
                         var $option = $('<a class="c-filters__listing-item c--shown" href="javascript:"></a>')
 
@@ -228,7 +228,7 @@ class Layout extends Component {
                     var enMessages = lang.en.messages[sectionId]
                     var jpMessages = lang.jp.messages[sectionId]
 
-                    for(var j = 0, k = enMessages.length j < k ++j) {
+                    for(var j = 0, k = enMessages.length; j < k; ++j) {
                         var enMessage = enMessages[j]
 
                         var $row = $tr.clone()
