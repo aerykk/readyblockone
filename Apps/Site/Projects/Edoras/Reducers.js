@@ -32,6 +32,14 @@ function site() {
         copyright: {
             date: '2014-' + new Date().getFullYear(),
             company: 'Pokelingo'
+        },
+        analytics: {
+            GA: {
+                id: 'UA-51024992-1'
+            }
+        },
+        support: {
+            isEnabled: true
         }
     }
 }

@@ -85,6 +85,8 @@ class App extends Component {
 
         return (
             <div>
+                <link href="/Apps/Site/Shared/Assets/Other/app.css" media="screen" rel="stylesheet" type="text/css" />
+
                 <HotKeys handlers={handlers} keyMap={map}>
                     <div>
                         {this.props.children}
@@ -106,15 +108,15 @@ const routes = {
         {path: '/games/browser', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Games').default) }) } },
         {path: '/games/downloadable', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Games').default) }) } },
         {path: '/games/mobile', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Games').default) }) } },
-        {path: '/games/:key', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Game').default) }) } },
-        {path: '/blog/:key', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
+        {path: '/games/:key', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/GameDetails').default) }) } },
+        {path: '/news', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } }
+        {path: '/news/:key', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
         {path: '/logout', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Logout').default) }) } },
         {path: '/about', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
         {path: '/careers', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
         {path: '/contact', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
         {path: '/community', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
         {path: '/support', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
-        {path: '/news', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } }
     ]
 }
 
@@ -161,7 +163,7 @@ routes.childRoutes.push({
                 cb(null, require('./UI/Screens/Dashboard').default)
             })
         }
-        
+
         return require.ensure([], (require) => {
             cb(null, require('./UI/Screens/Document').default)
         })

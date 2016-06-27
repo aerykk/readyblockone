@@ -9,12 +9,17 @@ function site() {
     const isLocal = typeof window !== 'undefined' && window.location.hostname.indexOf('.local') !== -1
 
     return {
-        title: 'My site',
-        description: 'Stuff and stuff',
+        title: 'Brick Brotherhood',
+        description: 'Bricks rock',
         isLocal: isLocal,
         copyright: {
-            date: '2013-' + new Date().getFullYear(),
-            company: 'My site'
+            date: '2015-' + new Date().getFullYear(),
+            company: 'Brick Brotherhood'
+        },
+        analytics: {
+            GA: {
+                id: ''
+            }
         },
         head: {
             meta: [

@@ -3,7 +3,7 @@
   <div class="span6">
     <div class="box">
       <div class="tab-header">
-        <a href="/blog/hackatron-beta"><i class="icon-th-list"></i> Launching Hackatron Beta!</a>
+        <a href="/news/hackatron-beta"><i class="icon-th-list"></i> Launching Hackatron Beta!</a>
       </div>
       <div class="">
         <table class="table table-striped table-bordered">
@@ -23,7 +23,7 @@
             <td colspan="2">
               <div class="clearfix" style="padding: 0 5px;">
                 <div class="pull-right">
-                  <a href="/blog/hackatron-beta" class="button blue">Read More</a>
+                  <a href="/news/hackatron-beta" class="button blue">Read More</a>
                 </div>
               </div>
             </td>
@@ -36,7 +36,7 @@
   <div class="span6">
     <div class="box">
       <div class="tab-header">
-        <a href="/blog/ttt-released-app-store"><i class="icon-th-list"></i> TTT: Trippy Tetra Tiles Released on App Store!</a>
+        <a href="/news/ttt-released-app-store"><i class="icon-th-list"></i> TTT: Trippy Tetra Tiles Released on App Store!</a>
       </div>
       <div class="">
         <table class="table table-striped table-bordered">
@@ -56,7 +56,7 @@
             <td colspan="2">
               <div class="clearfix" style="padding: 0 5px;">
                 <div class="pull-right">
-                  <a href="/blog/ttt-released-app-store" class="button blue">Read More</a>
+                  <a href="/news/ttt-released-app-store" class="button blue">Read More</a>
                 </div>
               </div>
             </td>
@@ -72,7 +72,7 @@
   <div class="span6">
     <div class="box">
       <div class="tab-header">
-        <a href="/blog/looking-for-cofounder"><i class="icon-th-list"></i> Looking for a co-founder</a>
+        <a href="/news/looking-for-cofounder"><i class="icon-th-list"></i> Looking for a co-founder</a>
       </div>
       <div class="">
         <table class="table table-striped table-bordered">
@@ -92,7 +92,7 @@
             <td colspan="2">
               <div class="clearfix" style="padding: 0 5px;">
                 <div class="pull-right">
-                  <a href="/blog/looking-for-cofounder" class="button blue">Read More</a>
+                  <a href="/news/looking-for-cofounder" class="button blue">Read More</a>
                 </div>
               </div>
             </td>

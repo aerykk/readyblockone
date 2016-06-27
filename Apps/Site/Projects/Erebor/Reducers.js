@@ -15,6 +15,9 @@ function site() {
         copyright: {
             date: '2013-' + new Date().getFullYear(),
             company: 'My site'
+        },
+        support: {
+            isEnabled: true
         }
     }
 }

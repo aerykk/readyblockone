@@ -268,6 +268,17 @@ function site() {
         copyright: {
             date: '2013-' + new Date().getFullYear(),
             company: 'Stoke Games'
+        },
+        analytics: {
+            GA: {
+                id: 'UA-37708346-1'
+            }
+        },
+        support: {
+            isEnabled: true
+        },
+        styles: {
+            body: ''
         }
     }
 }
