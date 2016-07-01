@@ -84,15 +84,15 @@ class App extends Component {
         const isLocal = typeof window !== 'undefined' && window.location.hostname.indexOf('.local') !== -1
 
         return (
-            <div>
+            <View>
                 <HotKeys handlers={handlers} keyMap={map}>
-                    <div>
+                    <View>
                         {this.props.children}
                         {isLocal && <DevTools />}
                         {isLocal && this.state.toolbarActive && <Toolbar />}
-                    </div>
+                    </View>
                 </HotKeys>
-            </div>
+            </View>
         )
     }
 }
@@ -101,11 +101,19 @@ class App extends Component {
 const routes = {
     component: App,
     childRoutes: [
-        {path: '/', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Home').default) }) } },
+        {
+            path: '/',
+                getComponent: (nextState, cb) => {
+                return require.ensure([], (require) => {
+                    cb(null, require('./UI/Screens/Home').default)
+                })
+            }
+        },
         {path: '/sets', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Sets').default) }) } },
         {path: '/set/:key', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/SetDetails').default) }) } },
-        {path: '/news', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } }
+        {path: '/news', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
         {path: '/news/:key', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
+        {path: '/login', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Login').default) }) } },
         {path: '/logout', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Logout').default) }) } },
         {path: '/about', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
         {path: '/careers', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },

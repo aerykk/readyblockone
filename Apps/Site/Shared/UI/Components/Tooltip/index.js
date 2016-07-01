@@ -1,1 +1,2 @@
-export {default} from './Tooltip'
+exports.Tooltip = require('./Tooltip');
+exports.TooltipRegion = require('./TooltipRegion');

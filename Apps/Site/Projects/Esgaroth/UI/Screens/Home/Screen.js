@@ -1,7 +1,7 @@
 const Framework = require('../../../../../../../Framework')
 const {React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
 
-import StokeLayout from '../../Layouts/Stoke'
+import Layout from '../../Layouts/Stoke'
 import Markdown from '../../../../../Shared/UI/Components/Markdown'
 
 import { selectSubreddit, fetchPostsIfNeeded, invalidateSubreddit } from '../../../Actions'
@@ -77,7 +77,7 @@ handleRefreshClick(e) {
         const { selectedSubreddit, posts, isFetching, lastUpdated } = this.props
 
         return (
-            <StokeLayout breadcrumb={breadcrumb}>
+            <Layout breadcrumb={breadcrumb}>
                 {!this.state.page.options.slim && (
                     <div className="box">
                         <div className="tab-header">
@@ -118,7 +118,7 @@ handleRefreshClick(e) {
                         </div>
                     }
                 </div>
-            </StokeLayout>
+            </Layout>
         )
     }
 }

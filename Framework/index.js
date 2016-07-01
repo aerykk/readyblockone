@@ -357,6 +357,10 @@ if (typeof global !== 'undefined' && global.Framework) {
                 cb(styles)
             })
         }
+
+        Framework.findStyles = (path, cb) => {console.log(path, cb)
+            Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(path).toString() : require(path), 'framework-', cb)
+        }
     } else if (Framework.Platform.Env.isNative) {
         const rnes = require('react-native-extended-stylesheet')
 

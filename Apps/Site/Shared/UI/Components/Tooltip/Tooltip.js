@@ -1,13 +1,34 @@
-const Framework = require('../../../../../../Framework')
-const {React, ReactDOM, ReactNative, PropTypes, T, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
+const React = require('react');
+const {PropTypes} = React;
+const {findDOMNode} = require('react-dom');
+const createTooltip = require('./createTooltip');
 
+class Tooltip extends React.Component {
+  static propTypes = {
+    content: PropTypes.string.isRequired,
+    children: PropTypes.element.isRequired,
+    position: PropTypes.string
+  };
 
-class Tooltip extends Component {
-    render() {
-        return (
-            <View></View>
-        )
-    }
+  static defaultProps = {
+    position: 'top center'
+  };
+
+  componentDidMount() {
+    this.destroyTooltip = createTooltip(
+      findDOMNode(this),
+      this.props.content,
+      this.props.position
+    );
+  }
+
+  componentWillUnmount() {
+    this.destroyTooltip();
+  }
+
+  render() {
+    return this.props.children;
+  }
 }
 
-export default Tooltip
+module.exports = Tooltip;

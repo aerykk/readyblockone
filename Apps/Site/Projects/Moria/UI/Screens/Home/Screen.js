@@ -1,5 +1,6 @@
 const Framework = require('../../../../../../../Framework')
 const {React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
+const {Code, CodeBlock} = require('../../../../../Shared/UI/Components')
 
 import Layout from '../../Layouts/Default'
 import Markdown from '../../../../../Shared/UI/Components/Markdown'
@@ -30,32 +31,11 @@ class Screen extends Component {
 
         if (!page) { page = 'home' }
 
-        var breadcrumb = null
-
-        this.state.page.items.forEach(function(item) {
-            if (item.title === 'Breadcrumb') {
-                breadcrumb = item.body
-            }
-        })
-
-        // TODO: Remove this hack
-        this.state.page.options.slim = (page === 'home')
-
         return (
-            <Layout breadcrumb={breadcrumb}>
-                {!this.state.page.options.slim && (
-                    <div className="box">
-                        <div className="tab-header">
-                            {this.state.page.title}
-                        </div>
-                        <div className="padded">
-                            <Markdown src={"/Apps/Site/Projects/Moria/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
-                        </div>
-                    </div>
-                )}
-                {this.state.page.options.slim && (
-                    <Markdown src={"/Apps/Site/Projects/Moria/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
-                )}
+            <Layout>
+                <p>Look at this <Code>inline code</Code>!</p>
+                <CodeBlock>And this code block!</CodeBlock>
+                <Markdown src={"/Apps/Site/Projects/Moria/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
             </Layout>
         )
     }

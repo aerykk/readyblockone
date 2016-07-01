@@ -47,8 +47,7 @@ class Layout extends Component {
                             <ul styles="c-nav">
                                 <li styles="c-nav__item">
                                     <Link to={"/about"} styles="c-nav__link">OUR STORY</Link>
-                                    <Link to={"/careers"} styles="c-nav__link">CAREERS</Link>
-                                    <Link to={"/games"} styles="c-nav__link">GAMES</Link>
+                                    <Link to={"/sets"} styles="c-nav__link">SETS</Link>
                                     <Link to={"/news"} styles="c-nav__link">NEWS</Link>
                                 </li>
                             </ul>
