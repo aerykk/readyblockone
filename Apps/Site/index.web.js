@@ -1,5 +1,5 @@
 const Framework = require('../../Framework')
-const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, renderToString} = Framework
+const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, match, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, renderToString} = Framework
 
 const SiteRouter = require('./Router')(typeof window !== 'undefined' ? window.location.hostname : 'stokegames.com')
 import DataClient from '../../Services/DataService/DataClient'
@@ -7,6 +7,7 @@ import {ReduxAsyncConnect} from 'redux-connect'
 import {routerMiddleware} from 'react-router-redux'
 import clientMiddleware from '../../Services/WebService/middleware/clientMiddleware'
 import HTML from '../../Services/WebService/HTML'
+import UI from '../../Apps/Site/UI'
 
 if (typeof document !== 'undefined') {
     //
@@ -25,7 +26,7 @@ if (typeof document !== 'undefined') {
     //
     // global.socket = initSocket()
 
-    const container = document
+    const container = document.getElementById('ui')
 
     if (process.env.NODE_ENV !== 'production') {
         window.React = React // enable debugger
@@ -35,36 +36,31 @@ if (typeof document !== 'undefined') {
         }
     }
 
+    const routes = SiteRouter.routes
+    const location = document.location.pathname
     const dataClient = new DataClient()
     const reduxRouterMiddleware = routerMiddleware(browserHistory)
     const reducers = {...SiteRouter.reducers}
     const middleware = [clientMiddleware(dataClient), reduxRouterMiddleware, ...SiteRouter.middleware]
-    const finalStore = SiteRouter.store.configure(reducers, middleware, window.__data)
-    const history = syncHistoryWithStore(browserHistory, finalStore)
+    const store = SiteRouter.store.configure(reducers, middleware, window.__data)
+    const history = syncHistoryWithStore(browserHistory, store)
 
-    class UI extends Component {
-        render() {
-            return (
-                <AppWrapper config={AppConfig}>
-                    <Provider store={finalStore} key="provider">
-                        <Router render={(props) =>
-                            <ReduxAsyncConnect {...props} helpers={{client: dataClient}} filter={item => !item.deferred} />
-                            } history={history} routes={SiteRouter.routes}>
-                        </Router>
-                    </Provider>
-                </AppWrapper>
-            )
-        }
-    }
-    // createElement(HTML, {view: {<UI />}, store: {finalStore}}).children
-    ReactDOM.render(<HTML ui={<UI />} store={finalStore} />, container)
+    match({
+        history: history,
+        routes: routes,
+        location: location
+    }, (err, redirectLocation, renderProps) => {
+        // {{helpers: {client: dataClient}, filter: item => !item.deferred}}
+        ReactDOM.render(<UI AppConfig={AppConfig} store={store} history={history} routes={routes} renderProps={renderProps} />, container)
+    });
+
 }
 
 
 export default (locals, callback) => {
     const ReactDOMServer = require('react-dom/server')
-    const { createHistory, createMemoryHistory } = require('history')
-    const { Router, RoutingContext, match } = require('react-router')
+    const {createHistory, createMemoryHistory} = require('history')
+    const {Router, RoutingContext, match} = require('react-router')
 
     const history = createMemoryHistory()
     const location = history.createLocation(locals.path)
@@ -74,20 +70,6 @@ export default (locals, callback) => {
         routes: SiteRouter.routes,
         location: location
     }, function(error, redirectLocation, renderProps) {
-        class UI extends Component {
-            render() {
-                return (
-                    <AppWrapper config={AppConfig}>
-                        <Provider store={SiteRouter.store}>
-                            <div>
-                                <RoutingContext {...renderProps} />
-                            </div>
-                        </Provider>
-                    </AppWrapper>
-                )
-            }
-        }
-
-        callback(null, '<!DOCTYPE html>' + ReactDOMServer.renderToString(<UI />))
+        callback(null, '<!DOCTYPE html>' + ReactDOMServer.renderToString(<UI AppConfig={AppConfig} store={store} history={history} routes={routes} renderProps={renderProps} />))
     })
 }

@@ -7,19 +7,14 @@ const webpackHotMiddleware = require('webpack-hot-middleware')
 const webpackConfig = require('../../webpack.config.js')
 
 const Framework = require('../../Framework')
-const {AppWrapper, AppConfig} = Framework
+const {AppWrapper, AppConfig, React, Provider, Router, match, routerMiddleware, syncHistoryWithStore, ReduxAsyncConnect, loadOnServer, renderToString} = Framework
 
-import React from 'react'
-import {renderToString} from 'react-dom/server'
-import {ReduxAsyncConnect, loadOnServer} from 'redux-connect'
-import {Provider} from 'react-redux'
-import {Router, match} from 'react-router'
-import {routerMiddleware, syncHistoryWithStore} from 'react-router-redux'
-import createHistory from 'react-router/lib/createMemoryHistory'
-import DataClient from '../DataService/DataClient'
-import httpProxy from 'http-proxy'
-import HTML from './HTML'
-import clientMiddleware from './middleware/clientMiddleware'
+const createHistory = require('react-router/lib/createMemoryHistory')
+const DataClient = require('../DataService/DataClient')
+const httpProxy = require('http-proxy')
+const HTML = require('./HTML').default
+const UI = require('../../Apps/Site/UI').default
+const clientMiddleware = require('./middleware/clientMiddleware').default
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -120,6 +115,11 @@ class Server {
             req.pipe(request.get('http://' + this.host + ':' + this.port + '/')).pipe(res)
         })
 
+        // Favicon
+        this.app.get('/favicon.ico', (req, res) => {
+            res.status(404).send('Not found')
+        })
+
         // Server-side rendering
         this.app.use((req, res) => {
             const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl
@@ -132,14 +132,16 @@ class Server {
             const reduxRouterMiddleware = routerMiddleware(memoryHistory)
             const reducers = {...SiteRouter.reducers}
             const middleware = [clientMiddleware(this.dataClient), reduxRouterMiddleware, ...SiteRouter.middleware]
-            const finalStore = SiteRouter.store.configure(reducers, middleware, data)
-            const history = syncHistoryWithStore(memoryHistory, finalStore)
+            const store = SiteRouter.store.configure(reducers, middleware, data)
+            const history = syncHistoryWithStore(memoryHistory, store)
+            const routes = SiteRouter.routes
+            const location = req.originalUrl
 
             // React router
             match({
                 history: history,
-                routes: SiteRouter.routes,
-                location: req.originalUrl
+                routes: routes,
+                location: location
             }, (err, redirectLocation, renderProps) => {
                 if (err) {
                     console.log(err.stack)
@@ -160,28 +162,14 @@ class Server {
 
                 loadOnServer({
                     ...renderProps,
-                    store: finalStore,
+                    store: store,
                     helpers: {
                         client: this.dataClient
                     }
                 })
                 .then(() => {
-                    class UI extends React.Component {
-                        render() {
-                            return (
-                                <AppWrapper config={AppConfig}>
-                                    <Provider store={finalStore} key="provider">
-                                        <Router render={(props) =>
-                                            <ReduxAsyncConnect {...props} {...renderProps} />
-                                            } history={history} routes={SiteRouter.routes}>
-                                        </Router>
-                                    </Provider>
-                                </AppWrapper>
-                            )
-                        }
-                    }
-
-                    const page = renderToString(<HTML ui={<UI />} store={finalStore} />)
+                    const ui = <UI AppConfig={AppConfig} store={store} history={history} routes={SiteRouter.routes} renderProps={renderProps} />
+                    const page = renderToString(<HTML ui={ui} store={store} />)
 
                     res.status(200).send('<!DOCTYPE html>\n' + page)
                 })

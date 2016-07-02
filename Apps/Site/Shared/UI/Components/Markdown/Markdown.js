@@ -71,7 +71,7 @@ class Markdown extends Component {
 
         if (Framework.Platform.Env.isServer) {
             var fs = require('fs')
-            var data = fs.readFileSync(__dirname + '/../../../../../../..' + props.src).toString()
+            var data = fs.readFileSync(__dirname + '/../../../../../..' + props.src).toString()
 
             this.setPage(props, data)
         } else {

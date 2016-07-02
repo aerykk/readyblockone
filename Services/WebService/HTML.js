@@ -1,4 +1,6 @@
-import React, {Component, PropTypes} from 'react'
+const Framework = require('../../Framework')
+const {AppWrapper, AppConfig, React, Provider, Component, T, Router, match, routerMiddleware, syncHistoryWithStore, ReduxAsyncConnect, loadOnServer, renderToString} = Framework
+
 import serialize from 'serialize-javascript'
 
 /**
@@ -12,8 +14,7 @@ import serialize from 'serialize-javascript'
  */
 class HTML extends Component {
     static propTypes = {
-        ui: PropTypes.node,
-        store: PropTypes.object
+        store: T.object
     }
 
     render() {
@@ -23,26 +24,27 @@ class HTML extends Component {
         return (
             <html lang="en">
                 <head>
-                    <link rel="shortcut icon" href="/favicon.ico" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1" />
+                    <title>{state.site.title}</title>
 
-                    <meta charSet="utf-8" />
-                    <meta content="IE=edge,chrome=1" httpEquiv="X-UA-Compatible" />
+                    {state.site.head.meta && state.site.head.meta.map((attributes) => {
+                        return <meta {...attributes} />
+                    })}
 
-                    <title></title>
-                    <meta content="" name="description" />
+                    {state.site.head.link && state.site.head.link.map((attributes) => {
+                        return <link {...attributes} />
+                    })}
 
-                    <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-
-                    <meta content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" name="viewport" />
+                    {state.site.head.script && state.site.head.script.map((attributes) => {
+                        return <script {...attributes} />
+                    })}
                 </head>
 
                 <body className={state.site.styles ? state.site.styles.body : ''}>
-                    <div id="ui">{ui}</div>
+                    {Framework.Platform.Env.isServer && <div id="ui" dangerouslySetInnerHTML={{__html: renderToString(ui)}} />}
+                    {!Framework.Platform.Env.isServer && <div id="ui">{ui}</div>}
 
-                    <script dangerouslySetInnerHTML={{__html: `window.__data=${serialize(store.getState())};`}} charSet="UTF-8" />
+                    <script dangerouslySetInnerHTML={{__html: `window.__data=${serialize(store.getState())};`}} />
 
-                    <script src="/Apps/Site/Vendor/script.min.js"></script>
                     <script src="/Build/Release/site.web.bundle.js"></script>
 
                     {state.site.support && state.site.support.isEnabled && (
@@ -51,7 +53,7 @@ class HTML extends Component {
                         `}} />
                     )}
 
-                    {state.site.analytics && (
+                    {state.site.analytics && state.site.analytics.isEnabled && (
                         <script dangerouslySetInnerHTML={{__html: `
                           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

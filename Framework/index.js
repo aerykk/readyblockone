@@ -1,9 +1,11 @@
 import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
-import {Router, Route, Link, browserHistory} from 'react-router'
+import {Router, Route, Link, browserHistory, match} from 'react-router'
 import {Provider, connect} from 'react-redux'
-import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
+import {syncHistoryWithStore, routerReducer, routerMiddleware} from 'react-router-redux'
+import {ReduxAsyncConnect, loadOnServer} from 'redux-connect'
+
 
 if (typeof global !== 'undefined' && global.Framework) {
     module.exports = global.Framework
@@ -77,9 +79,8 @@ if (typeof global !== 'undefined' && global.Framework) {
             }
         }
 
-        const {renderToString} = require('react-dom/server')
-
-        Framework.renderToString = renderToString
+        Framework.ReactDOMServer = require('react-dom/server')
+        Framework.renderToString = Framework.ReactDOMServer.renderToString
     } else {
         const ReactNative = require('react-native')
 
@@ -496,6 +497,10 @@ if (typeof global !== 'undefined' && global.Framework) {
     Framework.connect = connect
     Framework.syncHistoryWithStore = syncHistoryWithStore
     Framework.routerReducer = routerReducer
+    Framework.routerMiddleware = routerMiddleware
+    Framework.ReduxAsyncConnect = ReduxAsyncConnect
+    Framework.loadOnServer = loadOnServer
+    Framework.match = match
 
     // ===============
 
