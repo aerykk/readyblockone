@@ -10,11 +10,10 @@ function site() {
 
     return {
         title: 'Eric Muyser',
-        slogan: 'producer/consumer ftw',
         isLocal: isLocal,
         copyright: {
             date: '2011-' + new Date().getFullYear(),
-            company: 'Eric Muyser'
+            company: 'Eric Muyser | Dreamer'
         },
         analytics: {
             isEnabled: true,
@@ -54,8 +53,6 @@ function site() {
                 {src: 'http://ericmuyser.disqus.com/embed.js'},
                 {src: '/Apps/Site/Vendor/script.min.js'},
                 {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/jquery.js'},
-                {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/jquery-ui-1.8.17.custom.min.js'},
-                {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/wp.js'},
                 {src: '/Apps/Site/Projects/Erebor/Assets/Other/js/config.js'},
                 {src: '/Apps/Site/Projects/Erebor/Assets/Other/js/menu.js'},
                 {src: '/Apps/Site/Projects/Erebor/Assets/Other/js/main.js'},
@@ -65,19 +62,7 @@ function site() {
                 {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/jquery.jscrollpane.js'},
                 {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/jquery.address-1.4.js'},
                 {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/jquery.scrollTo-1.4.2-min.js'},
-                {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/bootstrap/js/bootstrap-transition.js'},
-                {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/bootstrap/js/bootstrap-alert.js'},
-                {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/bootstrap/js/bootstrap-modal.js'},
                 {src: '/Apps/Site/Projects/Erebor/Assets/Other/js/bootstrap-dropdown.js'},
-                {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/bootstrap/js/bootstrap-scrollspy.js'},
-                {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/bootstrap/js/bootstrap-tab.js'},
-                {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/bootstrap/js/bootstrap-tooltip.js'},
-                {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/bootstrap/js/bootstrap-popover.js'},
-                {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/bootstrap/js/bootstrap-button.js'},
-                {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/bootstrap/js/bootstrap-collapse.js'},
-                {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/bootstrap/js/bootstrap-carousel.js'},
-                {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/bootstrap/js/bootstrap-typeahead.js'},
-                {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/bootstrap/js/bootstrap-tab.js'},
                 {src: '/Apps/Site/Projects/Erebor/Assets/Other/extra/bootstrap/docs/assets/js/google-code-prettify/prettify.js'}
             ]
         }

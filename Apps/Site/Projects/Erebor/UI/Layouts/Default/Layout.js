@@ -16,7 +16,42 @@ class Layout extends Component {
         super()
 
         this.state = {
+            slogan: this.getRandomSlogan()
         }
+    }
+
+    getRandomSlogan() {
+        let slogans = [
+            '"Be the change that you wish to see in the world" - Mahatma Gandhi',
+            '"Success is the progressive realization of a worthy ideal" - Napoleon Hill',
+            '"Whatever you are, be a good one." - Abraham Lincoln',
+            '"People buy into the leader before they buy into the vision." - John Maxwell',
+            '"An eye for an eye would make the whole world blind" - Gandhi',
+            '"What I did tell you is dont talk about it, be about it" - Eric Thomas',
+            '"The last excuse I made was yesterday" - Eric Thomas',
+            '"Thoughts are things, so why not choose great ones?" - Napoleon Hill',
+            '"If you FAIL, never give up because FAIL means "First Attempt In Learning"',
+            '"What I want for myself, I want for others" - Wallace D Wattles',
+            '"We invented the word luck to express the known effects of unknown causes" - Voltaire',
+            '"Poor People Spend First Then Invest What’s Left, Rich People Invest First Then Spend What’s Left“ - Jim Rohn',
+            '"Money doesnt talk, but it sure as hell can hear. and if you call, it’ll come." - Ray Stanford',
+            '"The law of attraction is a secondary law. The law of vibration is the primary law." - Bob Proctor',
+            '"Our thoughts control our feeelings. and our feelings control our actions." - Napoleon Hill',
+            '"Innovation is rewarded. Execution is worshipped." – Eric Thomas',
+            '"We are what we repeatedly do. Excellence then, is not an act, but a habit." - Aristotle',
+            '"The two most important days in your life are the day you are born... and the day you find out why." - Mark Twain',
+            '"Those who can see the invisible, can do the impossible"',
+            '"To do unreasonable things, you need to be unreasonable"',
+            '"Everybody thats had a shower has had a great idea, its the ones that dry off that make a difference"',
+        ]
+
+        return slogans[Math.floor(Math.random()*slogans.length)]
+    }
+
+    setRandomSlogan() {
+        this.setState({slogan: this.getRandomSlogan()})
+
+        setTimeout(() => this.setRandomSlogan(), 5000)
     }
 
     componentDidMount() {
@@ -25,18 +60,20 @@ class Layout extends Component {
                 styles: styles
             })
         })
+
+        this.setRandomSlogan()
     }
 
     render() {
         const { children, site } = this.props
 
-        //if (!Framework.Platform.Env.isServer && !this.state.styles) { return <div></div> }
-
         return Framework.wrapStyles(this.state.styles,
             <View>
                 <nav id="navigation-social" className="box-2">
                     <ul className="style-2">
-                        <li className="first"><a href="javascript:;">&nbsp;</a></li>
+                        <li className="first">
+                            <a href="javascript:;">&nbsp;</a>
+                        </li>
                         <li>
                             <a href="http://ericmuyser.com" title="Go home" target="_blank">
                                 <span className="icon">&nbsp;</span>
@@ -243,37 +280,54 @@ class Layout extends Component {
                 <div className="subnav web">
                     <nav className="menu-main-header-container">
                         <ul id="menu-main-header" className="nav nav-pills">
-                            <li id="menu-item-715" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-715 active"><a href="/" address="true">Home</a>
+                            <li className="menu-item">
+                                <a href="/">Home</a>
                             </li>
-                            <li id="menu-item-27" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="/about/" address="true">About</a>
+                            <li className="menu-item">
+                                <a href="/about/">About</a>
                             </li>
-                            <li id="menu-item-35" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="/contact/" address="true">Contact</a>
+                            <li className="menu-item">
+                                <a href="/contact/">Contact</a>
                             </li>
-                            <li id="menu-item-714" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-714"><a href="/interests/" address="true">Interests</a>
+                            <li className="menu-item">
+                                <a href="/interests/">Interests</a>
                             </li>
-                            <li id="menu-item-713" className="menu-item menu-item-type-post_type menu-item-object-page dropdown menu-item-713"><a href="/work/" data-target="#dropdown-menu-572adb37bd73f" className="dropdown-toggle" data-toggle="dropdown" address="true">Work <b className="caret"></b></a>
+                            <li id="menu-item-713" className="menu-item dropdown">
+                                <a href="/work/" data-target="#dropdown-menu-572adb37bd73f" className="dropdown-toggle" data-toggle="dropdown">
+                                    Work <b className="caret"></b>
+                                </a>
                                 <ul id="dropdown-menu-572adb37bd73f" className="dropdown-menu">
-                                    <li id="menu-item-763" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-763"><a href="/work/nodejs/" data-target="#dropdown-menu-572adb37bd73f" address="true">Node.js</a>
+                                    <li className="menu-item">
+                                        <a href="/work/nodejs/">Node.js</a>
                                     </li>
-                                    <li id="menu-item-727" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-727"><a href="/work/php/" data-target="#dropdown-menu-572adb37bd73f" address="true">PHP</a>
+                                    <li className="menu-item">
+                                        <a href="/work/php/">PHP</a>
                                     </li>
-                                    <li id="menu-item-1314" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1314"><a href="/work/ruby-rails/" data-target="#dropdown-menu-572adb37bd73f" address="true">Ruby / Rails</a>
+                                    <li className="menu-item">
+                                        <a href="/work/ruby-rails/">Ruby / Rails</a>
                                     </li>
-                                    <li id="menu-item-767" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-767"><a href="/work/python/" data-target="#dropdown-menu-572adb37bd73f" address="true">Python</a>
+                                    <li className="menu-item">
+                                        <a href="/work/python/">Python</a>
                                     </li>
-                                    <li id="menu-item-766" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-766"><a href="/work/jquery/" data-target="#dropdown-menu-572adb37bd73f" address="true">jQuery</a>
+                                    <li className="menu-item">
+                                        <a href="/work/jquery/">jQuery</a>
                                     </li>
-                                    <li id="menu-item-765" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-765"><a href="/work/flash/" data-target="#dropdown-menu-572adb37bd73f" address="true">Flash</a>
+                                    <li className="menu-item">
+                                        <a href="/work/flash/">Flash</a>
                                     </li>
-                                    <li id="menu-item-764" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-764"><a href="/work/cpp/" data-target="#dropdown-menu-572adb37bd73f" address="true">C++</a>
+                                    <li className="menu-item">
+                                        <a href="/work/cpp/">C++</a>
                                     </li>
-                                    <li id="menu-item-768" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-768"><a href="/work/titanium/" data-target="#dropdown-menu-572adb37bd73f" address="true">Titanium</a>
+                                    <li className="menu-item">
+                                        <a href="/work/titanium/">Titanium</a>
                                     </li>
-                                    <li id="menu-item-771" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-771"><a href="/work/lemonstand/" data-target="#dropdown-menu-572adb37bd73f" address="true">LemonStand</a>
+                                    <li className="menu-item">
+                                        <a href="/work/lemonstand/">LemonStand</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li id="menu-item-712" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-712"><a href="/resume/" address="true">Resume</a>
+                            <li className="menu-item">
+                                <a href="/resume/">Resume</a>
                             </li>
                         </ul>
                     </nav>
@@ -285,7 +339,7 @@ class Layout extends Component {
                             <section id="home" className="active">
                                 <div className="content-header">
                                     <h1>{site.title}</h1>
-                                    <h2>{site.slogan}</h2>
+                                    <h2>{this.state.slogan}</h2>
                                 </div>
                                 <div className="content-body-wrapper box-1">
                                     <div className="content-body">

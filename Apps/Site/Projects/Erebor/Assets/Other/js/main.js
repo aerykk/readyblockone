@@ -91,14 +91,18 @@ jQuery(document).ready(function($) {
         }
     })
 
-    $('#navigation-social > ul > li > a').hover(
-        function() {
-            $(this).animate({'background-color': '#111'}, 500)
-        },
-        function() {
-            $(this).stop().animate({'background-color': '#262626'}, 500, function() {    })
-        }
-    )
+    // Doesnt work
+    // $('#navigation-social > ul > li > a').hover(
+    //     function() {
+    //         $(this).animate({'background-color': '#111'}, 500)
+    //     },
+    //     function() {
+    //         $(this).stop().animate({'background-color': '#262626'}, 500, function() {})
+    //     }
+    // )
+
+    // Init top menu dropdowns
+    $('.dropdown-toggle').on('mouseover', $.fn.dropdown.Constructor.prototype.toggle)
 
     window.site.onResize = function(params) {
         params = $.extend({
