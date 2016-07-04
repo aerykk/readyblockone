@@ -41,7 +41,7 @@ class Markdown extends Component {
         }
 
         if ($content.length) {
-            body = $('<div>').append($content.nextUntil('h2')).html()
+            body = $('<div>').append($content.nextAll()).html()
 
             $('#top > h2').each(function() {
                 items.push({
