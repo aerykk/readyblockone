@@ -5,7 +5,7 @@
 <ul class="breadcrumb">
     <li><a href="/"><i class="icon-home"></i> Stoke Games</a></li>
     <li><a href="/games">Games</a></li>
-    <li class="active"><a href="/games/aoa">Angels of Ascension</a></li>
+    <li class="active"><a href="/game/aoa">Angels of Ascension</a></li>
 </ul>
 
 ## Content

@@ -15,9 +15,9 @@ class UI extends Component {
         return (
             <AppWrapper config={AppConfig}>
                 <Provider store={store} key="provider">
-                    <Router history={history} routes={routes} render={(props) =>
-                        <ReduxAsyncConnect {...props} {...renderProps} />
-                    }>
+                    <Router history={history} routes={routes} render={(props) => {
+                        return <ReduxAsyncConnect {...props} />
+                    }}>
                     </Router>
                 </Provider>
             </AppWrapper>

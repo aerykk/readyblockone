@@ -1,4 +1,15 @@
-# StokeGames.com
+# Horadric
+
+Alcyone - Hackatron.rocks
+Edoras - 
+Electra - TTT.StokeGames.com
+Erebor - EricMuyser.com
+Esgaroth - StokeGames.com
+Erech - 
+Lorien - 
+Moria - 
+Odyssey - 
+Rushey - 
 
 
 ## Port Guide

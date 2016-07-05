@@ -1,11 +1,7 @@
 const Framework = require('../../../../../../../Framework')
 const {React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
 
-
-import StokeLayout from '../../Layouts/Stoke';
-import Markdown from '../../../../../Shared/UI/Components/Markdown';
-
-import { selectSubreddit, fetchPostsIfNeeded, invalidateSubreddit } from '../../../Actions'
+import Layout from '../../Layouts/Stoke';
 
 class Screen extends Component {
     static propTypes = {
@@ -23,7 +19,7 @@ class Screen extends Component {
         );
 
         return (
-            <StokeLayout breadcrumb={breadcrumb}>
+            <Layout breadcrumb={breadcrumb}>
                 <div style={{padding: "20px"}}>
                   <ul className="games">
                       {games.list.map((item, i) => {
@@ -37,7 +33,7 @@ class Screen extends Component {
                           var pos = posList[i]
                           return (
                               <li>
-                                  <Link to={"/games/" + item.code} className="button large" style={{background: "url(http://wallpapercave.com/wp/oE14KTB.jpg) no-repeat " + pos, color: "#fff", boxShadow: "0 1px 32px rgba(0, 0, 0, 0.7), inset 0 1px 18px rgba(255, 255, 255, 0.5)", border: "1px solid #444"}}>
+                                  <Link to={"/game/" + item.code} className="button large" style={{background: "url(http://wallpapercave.com/wp/oE14KTB.jpg) no-repeat " + pos, color: "#fff", boxShadow: "0 1px 32px rgba(0, 0, 0, 0.7), inset 0 1px 18px rgba(255, 255, 255, 0.5)", border: "1px solid #444"}}>
                                       <i className={"icon-" + item.icon}></i>
                                       <span>{item.title}</span>
                                   </Link>
@@ -46,7 +42,7 @@ class Screen extends Component {
                       })}
                   </ul>
                 </div>
-            </StokeLayout>
+            </Layout>
         );
     }
 }

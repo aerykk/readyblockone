@@ -263,7 +263,6 @@ function site() {
 
     return {
         title: 'Stoke Games',
-        description: 'Stoke Games, bringing you games worth being stoked about',
         isLocal: isLocal,
         copyright: {
             date: '2013-' + new Date().getFullYear(),
@@ -279,6 +278,33 @@ function site() {
         },
         styles: {
             body: ''
+        },
+        head: {
+            meta: [
+                {property: 'og:site_name', content: 'Stoke Games'},
+                {property: 'og:image', content: ''},
+                {property: 'og:locale', content: 'en_US'},
+                {property: 'og:title', content: ''},
+                {property: 'og:description', content: ''},
+                {property: 'og:card', content: 'summary'},
+                {property: 'og:site', content: '@stokegames'},
+                {property: 'og:creator', content: '@stokegames'},
+                {property: 'og:image:width', content: '200'},
+                {property: 'og:image:height', content: '200'}
+            ],
+            link: [
+                {name: 'description', content: 'Stoke Games, bringing you games worth being stoked about'},
+                {charSet: 'utf-8'},
+                {content: 'IE=edge,chrome=1', httpEquiv: 'X-UA-Compatible'},
+                {name: 'viewport', content: 'width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0'},
+                {rel: 'shortcut icon', href: '/Apps/Site/Projects/Esgaroth/Assets/Other/ico/favicon.ico'},
+                {rel: 'apple-touch-icon-precomposed', sizes: '114x114', href: '/Apps/Site/Projects/Esgaroth/Assets/Other/ico/favicon.png'},
+                {rel: 'apple-touch-icon-precomposed', sizes: '72x72', href: '/Apps/Site/Projects/Esgaroth/Assets/Other/ico/favicon.png'},
+                {rel: 'apple-touch-icon-precomposed', href: '/Apps/Site/Projects/Esgaroth/Assets/Other/ico/favicon.png'},
+                {rel: 'stylesheet', type: 'text/css', media: 'all', href: '/Apps/Site/Projects/Esgaroth/Assets/Other/app.css'}
+            ],
+            script: [
+            ]
         }
     }
 }

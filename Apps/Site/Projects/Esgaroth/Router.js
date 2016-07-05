@@ -85,8 +85,6 @@ class App extends Component {
 
         return (
             <div>
-                <link href="/Apps/Site/Shared/Assets/Other/app.css" media="screen" rel="stylesheet" type="text/css" />
-
                 <HotKeys handlers={handlers} keyMap={map}>
                     <div>
                         {this.props.children}
@@ -108,7 +106,7 @@ const routes = {
         {path: '/games/browser', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Games').default) }) } },
         {path: '/games/downloadable', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Games').default) }) } },
         {path: '/games/mobile', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Games').default) }) } },
-        {path: '/games/:key', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/GameDetails').default) }) } },
+        {path: '/game/:key', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/GameDetails').default) }) } },
         {path: '/news', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
         {path: '/news/:key', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
         {path: '/logout', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Logout').default) }) } },

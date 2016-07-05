@@ -504,12 +504,10 @@ if (typeof global !== 'undefined' && global.Framework) {
 
     // ===============
 
-    if (typeof global === 'undefined') {
+    if (Framework.Platform.Env.isServer) {
         Framework.fetch = require('isomorphic-fetch')
     } else {
-        Framework.fetch = function fetch() {
-            console.error('fetch() not implemented on server side')
-        }
+        Framework.fetch = window.fetch
     }
 
     // ===============

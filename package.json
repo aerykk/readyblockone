@@ -18,6 +18,7 @@
   "private": true,
   "scripts": {
     "start": "./node_modules/.bin/babel-node index.js",
+    "start-prod": "NODE_ENV=production ./node_modules/.bin/babel-node index.js",
     "start-web-server": "./node_modules/.bin/babel-node ./Services/WebService/index.js",
     "start-data-server": "./node_modules/.bin/babel-node ./Services/DataService/index.js",
     "lint": "./node_modules/.bin/eslint -c .eslintrc Framework Services",

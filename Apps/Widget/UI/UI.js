@@ -38,7 +38,7 @@ class UI extends Component {
                     <View styles="c-nav">
                         <ul styles="c-nav-left">
                             <li styles="c-nav-left-item">
-                                <img styles="c-logo" src="https://stokegames.com/Apps/Site/Shared/Assets/Other/images/logo.png" />
+                                <img styles="c-logo" src="https://stokegames.com/Apps/Site/Projects/Esgaroth/Assets/Other/images/logo.png" />
                             </li>
                             <li styles="c-games">
                                 <button styles="c-button" onClick={()=>this.onToggleGames()}>Games</button>

@@ -139,7 +139,7 @@ function mapStateToProps(state) {
     if (typeof routing.locationBeforeTransitions === 'string') {
         location = routing.locationBeforeTransitions.replace('/', '')
     } else if (typeof routing.locationBeforeTransitions === 'object' && routing.locationBeforeTransitions) {
-        location = routing.locationBeforeTransitions.pathname.replace('/', '')
+        location = routing.locationBeforeTransitions.pathname.replace(/^\//, '').replace(/\/$/, '')
     } else if (typeof window !== 'undefined') {
         location = window.location.pathname.replace('/', '')
     }

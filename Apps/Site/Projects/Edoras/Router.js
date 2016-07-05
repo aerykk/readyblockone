@@ -91,14 +91,6 @@ const routes = {
                     cb(null, require('./UI/Screens/Home').default)
                 })
             }
-        },
-        {
-            path: '*',
-            getComponent: (nextState, cb) => {
-                return require.ensure([], (require) => {
-                    cb(null, require('./UI/Screens/Home').default)
-                })
-            }
         }
     ]
 }

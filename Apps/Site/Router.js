@@ -137,57 +137,6 @@ hackatron.com
 
 */
 
-// Setup anchor routing
-
-if (typeof window !== 'undefined') {
-  const dummyLink = document.createElement('a')
-
-  const absolutify = function (url) {
-      dummyLink.href = url
-      return dummyLink
-  }
-
-  // http://stackoverflow.com/questions/30880757/javascript-equivalent-to-on
-  function delegate(el, evt, sel, handler) {
-      el.addEventListener(evt, function(event) {
-          var t = event.target;
-          while (t && t !== this) {
-              if (t.matches(sel)) {
-                  handler.call(t, event);
-              }
-              t = t.parentNode;
-          }
-      });
-  }
-
-  delegate(document, 'click', 'a', function(e) {
-      const anchor = this
-      var href = anchor.attributes.href.nodeValue
-
-      if (!href) { return }
-
-      // Don't process hash changes
-      if (href[0] === '#') { return }
-
-      const parsed = absolutify(href)
-      href = parsed.href
-
-      if (!href) { return }
-
-      const siteUrl = window.location.origin
-
-      if (href.substr(0, siteUrl.length) === siteUrl) {
-          const path = parsed.pathname
-
-          if (!path) { return }
-
-          e.preventDefault()
-
-          //ReactRouter.HistoryLocation.push(path)
-          browserHistory.push(path)
-      }
-  });
-}
 
 var getUrlParameters = function(search) {
     var a = search.substr(1).split('&');

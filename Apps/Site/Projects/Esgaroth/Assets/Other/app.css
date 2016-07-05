@@ -7238,27 +7238,27 @@ table.dataTable thead .sorting_desc_disabled {
 
 /* line 37, ../../app/assets/stylesheets/dataTables/jquery.dataTables.bootstrap.css.scss */
 table.dataTable thead .sorting {
-  background: url(/Apps/Site/Shared/Assets/Other/images/dataTables/sort_both.png) no-repeat center right;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/dataTables/sort_both.png) no-repeat center right;
 }
 
 /* line 38, ../../app/assets/stylesheets/dataTables/jquery.dataTables.bootstrap.css.scss */
 table.dataTable thead .sorting_asc {
-  background: url(/Apps/Site/Shared/Assets/Other/images/dataTables/sort_asc.png) no-repeat center right;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/dataTables/sort_asc.png) no-repeat center right;
 }
 
 /* line 39, ../../app/assets/stylesheets/dataTables/jquery.dataTables.bootstrap.css.scss */
 table.dataTable thead .sorting_desc {
-  background: url(/Apps/Site/Shared/Assets/Other/images/dataTables/sort_desc.png) no-repeat center right;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/dataTables/sort_desc.png) no-repeat center right;
 }
 
 /* line 41, ../../app/assets/stylesheets/dataTables/jquery.dataTables.bootstrap.css.scss */
 table.dataTable thead .sorting_asc_disabled {
-  background: url(/Apps/Site/Shared/Assets/Other/images/dataTables/sort_asc_disabled.png) no-repeat center right;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/dataTables/sort_asc_disabled.png) no-repeat center right;
 }
 
 /* line 42, ../../app/assets/stylesheets/dataTables/jquery.dataTables.bootstrap.css.scss */
 table.dataTable thead .sorting_desc_disabled {
-  background: url(/Apps/Site/Shared/Assets/Other/images/dataTables/sort_desc_disabled.png) no-repeat center right;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/dataTables/sort_desc_disabled.png) no-repeat center right;
 }
 
 /* line 44, ../../app/assets/stylesheets/dataTables/jquery.dataTables.bootstrap.css.scss */
@@ -7343,7 +7343,7 @@ table.dataTable th:active {
   width: 12px;
   height: 13px;
   font-size: 1px;
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) right top no-repeat;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) right top no-repeat;
 }
 /* line 73, ../../app/assets/stylesheets/chosen.css.sass */
 .chzn-container-single .chzn-single abbr:hover {
@@ -7364,7 +7364,7 @@ table.dataTable th:active {
 }
 /* line 84, ../../app/assets/stylesheets/chosen.css.sass */
 .chzn-container-single .chzn-single div b {
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat 0 0;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat 0 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -7379,12 +7379,12 @@ table.dataTable th:active {
 }
 /* line 95, ../../app/assets/stylesheets/chosen.css.sass */
 .chzn-container-single .chzn-search input {
-  background: white url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat 100% -22px;
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat 100% -22px, -webkit-gradient(linear, 0 0, 0 100%, color-stop(1%, #eeeeee), color-stop(15%, white));
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat 100% -22px, -webkit-linear-gradient(top, #eeeeee 1%, white 15%);
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat 100% -22px, -moz-linear-gradient(top, #eeeeee 1%, white 15%);
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat 100% -22px, -o-linear-gradient(top, #eeeeee 1%, white 15%);
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat 100% -22px, linear-gradient(#eeeeee 1%, #ffffff 15%);
+  background: white url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat 100% -22px;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat 100% -22px, -webkit-gradient(linear, 0 0, 0 100%, color-stop(1%, #eeeeee), color-stop(15%, white));
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat 100% -22px, -webkit-linear-gradient(top, #eeeeee 1%, white 15%);
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat 100% -22px, -moz-linear-gradient(top, #eeeeee 1%, white 15%);
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat 100% -22px, -o-linear-gradient(top, #eeeeee 1%, white 15%);
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat 100% -22px, linear-gradient(#eeeeee 1%, #ffffff 15%);
   margin: 1px 0;
   padding: 4px 20px 4px 5px;
   outline: 0;
@@ -7510,7 +7510,7 @@ table.dataTable th:active {
   width: 12px;
   height: 13px;
   font-size: 1px;
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) right top no-repeat;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) right top no-repeat;
 }
 /* line 208, ../../app/assets/stylesheets/chosen.css.sass */
 .chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
@@ -7617,11 +7617,11 @@ table.dataTable th:active {
 }
 /* line 283, ../../app/assets/stylesheets/chosen.css.sass */
 .chzn-container .chzn-results-scroll-down span {
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat -4px -3px;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat -4px -3px;
 }
 /* line 285, ../../app/assets/stylesheets/chosen.css.sass */
 .chzn-container .chzn-results-scroll-up span {
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat -22px -3px;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat -22px -3px;
 }
 
 /* @end */
@@ -7747,12 +7747,12 @@ table.dataTable th:active {
 }
 /* line 376, ../../app/assets/stylesheets/chosen.css.sass */
 .chzn-rtl .chzn-search input {
-  background: white url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat -38px -22px;
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat -38px -22px, -webkit-gradient(linear, 0 0, 0 100%, color-stop(1%, #eeeeee), color-stop(15%, white));
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat -38px -22px, -webkit-linear-gradient(top, #eeeeee 1%, white 15%);
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat -38px -22px, -moz-linear-gradient(top, #eeeeee 1%, white 15%);
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat -38px -22px, -o-linear-gradient(top, #eeeeee 1%, white 15%);
-  background: url(/Apps/Site/Shared/Assets/Other/images/chosen-sprite.png) no-repeat -38px -22px, linear-gradient(#eeeeee 1%, #ffffff 15%);
+  background: white url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat -38px -22px;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat -38px -22px, -webkit-gradient(linear, 0 0, 0 100%, color-stop(1%, #eeeeee), color-stop(15%, white));
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat -38px -22px, -webkit-linear-gradient(top, #eeeeee 1%, white 15%);
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat -38px -22px, -moz-linear-gradient(top, #eeeeee 1%, white 15%);
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat -38px -22px, -o-linear-gradient(top, #eeeeee 1%, white 15%);
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/chosen-sprite.png) no-repeat -38px -22px, linear-gradient(#eeeeee 1%, #ffffff 15%);
   padding: 4px 5px 4px 20px;
   direction: rtl;
 }
@@ -8003,7 +8003,7 @@ nav#secondary {
   float: left;
   width: 200px;
   height: 100%;
-  background: url(/Apps/Site/Shared/Assets/Other/images/linen-gray.png);
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/linen-gray.png);
   -webkit-box-shadow: -2px 0px 15px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: -2px 0px 15px rgba(0, 0, 0, 0.4);
   box-shadow: -2px 0px 15px rgba(0, 0, 0, 0.4);
@@ -8108,7 +8108,7 @@ section#main ul:not([class]) {
 }
 /* line 34, ../../app/assets/stylesheets/mixin_helpers.css.scss */
 .black-box.tex {
-  background: url(/Apps/Site/Shared/Assets/Other/images/linen-light.png);
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/linen-light.png);
 }
 /* line 41, ../../app/assets/stylesheets/mixin_helpers.css.scss */
 .black-box .separator a {
@@ -8393,7 +8393,7 @@ textarea {
 /* line 177, ../../app/assets/stylesheets/form_elements.css.scss */
 .normal-check + label:before {
   content: "";
-  background: url(/Apps/Site/Shared/Assets/Other/images/checkbox2.png) no-repeat;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/checkbox2.png) no-repeat;
   background-position: 0 0;
   height: 19px;
   width: 18px;
@@ -8428,7 +8428,7 @@ textarea {
 /* line 177, ../../app/assets/stylesheets/form_elements.css.scss */
 .normal-radio + label:before {
   content: "";
-  background: url(/Apps/Site/Shared/Assets/Other/images/radio.png) no-repeat;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/radio.png) no-repeat;
   background-position: 0 0;
   height: 19px;
   width: 18px;
@@ -8733,7 +8733,7 @@ div.dataTables_paginate .ui-state-disabled, div.dataTables_paginate .ui-state-di
   height: 22px;
   width: 32px;
   float: right;
-  background: url(/Apps/Site/Shared/Assets/Other/images/icons/calendar_right.png) center center no-repeat;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/icons/calendar_right.png) center center no-repeat;
   margin-right: 5px;
   margin-top: 5px;
 }
@@ -8748,7 +8748,7 @@ div.dataTables_paginate .ui-state-disabled, div.dataTables_paginate .ui-state-di
   float: left;
   height: 22px;
   width: 32px;
-  background: url(/Apps/Site/Shared/Assets/Other/images/icons/calendar_left.png) center center no-repeat;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/icons/calendar_left.png) center center no-repeat;
   margin-left: 5px;
 }
 /* line 33, ../../app/assets/stylesheets/widgets/datepicker.css.scss */
@@ -8894,7 +8894,7 @@ div.dataTables_paginate .ui-state-disabled, div.dataTables_paginate .ui-state-di
 
 /* line 25, ../../app/assets/stylesheets/widgets/login.css.scss */
 body.login {
-  background: url(/Apps/Site/Shared/Assets/Other/images/linen-light.png) repeat;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/linen-light.png) repeat;
   overflow: auto;
 }
 
@@ -8951,7 +8951,7 @@ body.login {
   -o-border-radius: 4px;
   border-radius: 4px;
   border: 1px solid #1d1e21;
-  background: url(/Apps/Site/Shared/Assets/Other/images/linen-gray.png);
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/linen-gray.png);
   -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -9018,7 +9018,7 @@ body.login {
 
 /* line 4, ../../app/assets/stylesheets/modals.css.scss */
 .modal.black-box {
-  background: url(/Apps/Site/Shared/Assets/Other/images/linen-light.png);
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/linen-light.png);
   color: #fff;
   text-shadow: 0 1px rgba(0, 0, 0, 0.5);
 }
@@ -9078,8 +9078,8 @@ body.login {
     */
 @font-face {
   font-family: "FontAwesome";
-  src: url(/Apps/Site/Shared/Assets/Other/fonts/fontawesome-webfont.eot);
-  src: url(/Apps/Site/Shared/Assets/Other/fonts/fontawesome-webfont.eot?#iefix) format('eot'), url(/Apps/Site/Shared/Assets/Other/fonts/fontawesome-webfont.woff) format('woff'), url(/Apps/Site/Shared/Assets/Other/fonts/fontawesome-webfont.ttf) format('truetype'), url(/Apps/Site/Shared/Assets/Other/fonts/fontawesome-webfont.svg#FontAwesomeRegular) format('svg');
+  src: url(/Apps/Site/Projects/Esgaroth/Assets/Other/fonts/fontawesome-webfont.eot);
+  src: url(/Apps/Site/Projects/Esgaroth/Assets/Other/fonts/fontawesome-webfont.eot?#iefix) format('eot'), url(/Apps/Site/Projects/Esgaroth/Assets/Other/fonts/fontawesome-webfont.woff) format('woff'), url(/Apps/Site/Projects/Esgaroth/Assets/Other/fonts/fontawesome-webfont.ttf) format('truetype'), url(/Apps/Site/Projects/Esgaroth/Assets/Other/fonts/fontawesome-webfont.svg#FontAwesomeRegular) format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -10791,14 +10791,14 @@ label.checky span {
   -moz-transition: margin-left 0.3s;
   -o-transition: margin-left 0.3s;
   transition: margin-left 0.3s;
-  background: url(/Apps/Site/Shared/Assets/Other/images/checkbox.png) no-repeat;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/checkbox.png) no-repeat;
   display: block;
   height: 100%;
   margin-left: -30px;
 }
 /* line 31, ../../app/assets/stylesheets/checkboxes.css.scss */
 label.checky.green span {
-  background: url(/Apps/Site/Shared/Assets/Other/images/checkbox_green.png) no-repeat;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/checkbox_green.png) no-repeat;
 }
 
 /* line 36, ../../app/assets/stylesheets/checkboxes.css.scss */
@@ -11083,7 +11083,7 @@ p {
 }
 /* line 34, ../../app/assets/stylesheets/mixin_helpers.css.scss */
 .tab-header .options .btn-group > a:hover.tex, .tab-header .options .btn-group.open > a.tex {
-  background: url(/Apps/Site/Shared/Assets/Other/images/linen-light.png);
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/linen-light.png);
 }
 /* line 41, ../../app/assets/stylesheets/mixin_helpers.css.scss */
 .tab-header .options .btn-group > a:hover .separator a, .tab-header .options .btn-group.open > a .separator a {
@@ -11195,7 +11195,7 @@ p {
   -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2), inset 0px 10px 10px -5px rgba(255, 255, 255, 0.2);
   -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2), inset 0px 10px 10px -5px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2), inset 0px 10px 10px -5px rgba(255, 255, 255, 0.2);
-  background: url(/Apps/Site/Shared/Assets/Other/images/linen-light.png);
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/linen-light.png);
   border-bottom: 1px solid #42424a;
 }
 /* line 142, ../../app/assets/stylesheets/navs.css.scss */
@@ -11206,7 +11206,7 @@ p {
 }
 /* line 155, ../../app/assets/stylesheets/navs.css.scss */
 .tabbable.black-box .tab-content {
-  background: url(/Apps/Site/Shared/Assets/Other/images/linen-light.png);
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/linen-light.png);
   border-top: none;
   -webkit-box-shadow: inset 1px 0px 0px rgba(255, 255, 255, 0.1), inset -1px 0px 0px rgba(255, 255, 255, 0.1), inset 0px -1px 0px rgba(255, 255, 255, 0.1);
   -moz-box-shadow: inset 1px 0px 0px rgba(255, 255, 255, 0.1), inset -1px 0px 0px rgba(255, 255, 255, 0.1), inset 0px -1px 0px rgba(255, 255, 255, 0.1);
@@ -12278,7 +12278,7 @@ table.box .button i {
 
 /* line 63, ../../app/assets/stylesheets/bootstrap_image_gallery.css.scss */
 .modal-loading .modal-image {
-  background: url(/Apps/Site/Shared/Assets/Other/images/loading.gif) center no-repeat;
+  background: url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/loading.gif) center no-repeat;
 }
 
 /* line 66, ../../app/assets/stylesheets/bootstrap_image_gallery.css.scss */
@@ -12594,7 +12594,7 @@ body.games_controller.tile_world_action #game {
 }
 
 .logo {
-    background: transparent url(/Apps/Site/Shared/Assets/Other/images/logo.png) no-repeat 0 7px;
+    background: transparent url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/logo.png) no-repeat 0 7px;
     background-size: auto 70%;
     padding-left: 43px;
 }
@@ -12602,5 +12602,3 @@ body.games_controller.tile_world_action #game {
 [hidden] {
   display: none;
 }
-
-

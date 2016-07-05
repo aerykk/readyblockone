@@ -27,8 +27,8 @@ class Layout extends Component {
 
     componentDidMount() {
         if (typeof window !== 'undefined') {
-            document.body.style = 'background: #605F65 url(/Apps/Site/Shared/Assets/Other/images/linen-lighter.png);';
-            document.getElementById('ui').style = 'background: transparent url(/Apps/Site/Shared/Assets/Other/images/logo-bg.png) no-repeat -200px 0; background-size: auto 550px;';
+            document.body.style = 'background: #605F65 url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/linen-lighter.png);';
+            document.getElementById('ui').style = 'background: transparent url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/logo-bg.png) no-repeat -200px 0; background-size: auto 550px;';
         }
 
         Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Layout.css').toString() : require('./Layout.css'), 'stokelayout-', (styles) => {
