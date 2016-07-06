@@ -10,13 +10,16 @@ class UI extends Component {
     }
 
     render() {
-        const {AppConfig, store, history, routes, renderProps} = this.props
+        const {AppConfig, store, history, routes} = this.props
 
         return (
             <AppWrapper config={AppConfig}>
                 <Provider store={store} key="provider">
                     <Router history={history} routes={routes} render={(props) => {
-                        return <ReduxAsyncConnect {...props} />
+                        let renderProps = this.props.renderProps || props // The server usually provides renderProps, but the client does not
+                        let extraProps = this.props.extraProps || {} // The client usually provides extraProps, but the server does not
+
+                        return <ReduxAsyncConnect {...renderProps} {...extraProps} />
                     }}>
                     </Router>
                 </Provider>

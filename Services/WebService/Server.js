@@ -74,7 +74,6 @@ class Server {
     init() {
         this.app = express()
         this.server = http.createServer(this.app)
-        this.dataClient = new DataClient()
 
         this.initProxies()
 
@@ -101,10 +100,7 @@ class Server {
                 }
             }))
 
-            this.app.use(webpackHotMiddleware(compiler, {
-                hot: true,
-                historyApiFallback: true
-            }))
+            this.app.use(webpackHotMiddleware(compiler))
         }
 
         // Web server
@@ -128,10 +124,11 @@ class Server {
             const SiteRouter = require('../../Apps/Site/Router')(req.get('host'))
 
             const data = {}
+            const dataClient = new DataClient()
             const memoryHistory = createHistory(req.originalUrl)
             const reduxRouterMiddleware = routerMiddleware(memoryHistory)
             const reducers = {...SiteRouter.reducers}
-            const middleware = [clientMiddleware(this.dataClient), reduxRouterMiddleware, ...SiteRouter.middleware]
+            const middleware = [clientMiddleware(dataClient), reduxRouterMiddleware, ...SiteRouter.middleware]
             const store = SiteRouter.store.configure(reducers, middleware, data)
             const history = syncHistoryWithStore(memoryHistory, store)
             const routes = SiteRouter.routes
@@ -157,14 +154,11 @@ class Server {
                     return res.status(404).send('Not found')
                 }
 
-                // Setup the data client handlers
-                this.dataClient.run(req)
-
                 loadOnServer({
                     ...renderProps,
                     store: store,
                     helpers: {
-                        client: this.dataClient
+                        client: dataClient
                     }
                 })
                 .then(() => {

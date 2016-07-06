@@ -309,16 +309,21 @@ function site() {
     }
 }
 
+import {reducer as reduxAsyncConnect} from 'redux-connect'
+import {reducer as form} from 'redux-form'
+import {reducer as auth} from './Reducers/auth'
+import {reducer as info} from './Reducers/info'
+//import widgets from './Reducers/widgets'
+debugger
 const reducers = {
     postsBySubreddit,
     selectedSubreddit,
     games,
     game,
-    site
+    site,
+    auth,
+    info
 }
-
-import {reducer as reduxAsyncConnect} from 'redux-connect'
-import {reducer as form} from 'redux-form'
 
 export default {
     routing: routerReducer,

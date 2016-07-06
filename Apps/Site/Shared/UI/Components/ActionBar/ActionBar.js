@@ -8,7 +8,7 @@ class ActionBar extends Component {
     static propTypes = {
         items: T.array,
         maxItems: T.number
-    }
+    } 
 
     static defaultProps = {
         items: [],

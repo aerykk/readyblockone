@@ -101,9 +101,10 @@ if (typeof document !== 'undefined') {
         history: history,
         routes: routes,
         location: location
-    }, (err, redirectLocation, renderProps) => {
-        // {{helpers: {client: dataClient}, filter: item => !item.deferred}}
-        ReactDOM.render(<UI AppConfig={AppConfig} store={store} history={history} routes={routes} renderProps={renderProps} />, container)
+    }, (err, redirectLocation) => {
+        let extraProps = {helpers: {client: dataClient}, filter: item => !item.deferred}
+
+        ReactDOM.render(<UI AppConfig={AppConfig} store={store} history={history} routes={routes} extraProps={extraProps} />, container)
     });
 }
 

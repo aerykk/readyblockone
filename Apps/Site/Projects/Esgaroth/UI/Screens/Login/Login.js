@@ -1,26 +1,54 @@
-const Framework = require('../../../../../../../Framework');
-const {React, ReactDOM, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework;
+const Framework = require('../../../../../../../Framework')
+const {React, ReactDOM, AppWrapper, AppConfig, Platform, T, connect, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework
 
-import StokeLayout from '../../Layouts/Stoke';
-import Markdown from '../../../../../Shared/UI/Components/Markdown';
-
-import { connect } from 'react-redux'
+import Layout from '../../Layouts/Stoke'
+import * as authActions from '../../../Reducers/auth'
+import { bindActionCreators } from 'redux'
+import { asyncConnect } from 'redux-connect'
 
 class Screen extends Component {
-    render() {
+    static propTypes = {
+        user: T.object,
+        login: T.func,
+        logout: T.func
+    }
 
+    render() {
         return (
-            <div>Login</div>
-        );
+            <Layout>
+                Logged in as: {this.props.user}
+            </Layout>
+        )
     }
 }
 
-Screen.propTypes = {
-};
-
 function mapStateToProps(state) {
-  return {
-  }
+    return {
+        user: state.auth.user
+    }
 }
 
-export default connect(mapStateToProps)(Screen);
+function mapDispatchToProps(dispatch) {
+  return { actions: bindActionCreators(authActions, dispatch) }
+}
+
+import { isLoaded as isInfoLoaded, load as loadInfo } from '../../../Reducers/info'
+import { isLoaded as isAuthLoaded, load as loadAuth, login, logout } from '../../../Reducers/auth'
+
+let asyncItems = [{
+    key: 'login',
+    promise: ({store: {dispatch, getState}, helpers: {client}}) => {
+        const promises = []
+
+        if (!isInfoLoaded(getState())) {
+            promises.push(dispatch(loadInfo(client)))
+        }
+        if (!isAuthLoaded(getState())) {
+            promises.push(dispatch(loadAuth()))
+        }
+
+        return Promise.all(promises)
+    }
+}]
+
+export default asyncConnect(asyncItems, mapStateToProps, mapDispatchToProps)(Screen)

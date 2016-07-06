@@ -24,7 +24,7 @@ function redirectToLogin(nextState, replace) {
 
 function redirectToDashboard(nextState, replace) {
     if (Auth.loggedIn()) {
-        replace('/')
+        replace('/dashboard')
     }
 }
 
@@ -115,6 +115,7 @@ const routes = {
         {path: '/contact', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
         {path: '/community', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
         {path: '/support', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
+        {path: '/dashboard', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Dashboard').default) }) } },
     ]
 }
 

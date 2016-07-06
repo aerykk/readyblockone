@@ -1,26 +1,21 @@
-const Framework = require('../../../../../../../Framework');
-const {React, ReactDOM, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework;
+const Framework = require('../../../../../../../Framework')
+const {React, ReactDOM, AppWrapper, AppConfig, Platform, connect, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework
 
-import StokeLayout from '../../Layouts/Stoke';
-import Markdown from '../../../../../Shared/UI/Components/Markdown';
+import Layout from '../../Layouts/Stoke'
+import * as authActions from '../../../Reducers/auth'
 
-import { connect } from 'react-redux'
 class Screen extends Component {
-
     render() {
-
         return (
-            <div>Userrr</div>
-        );
+            <div>Logged in as: {this.props.user}</div>
+        )
     }
 }
 
-Screen.propTypes = {
-};
-
 function mapStateToProps(state) {
-  return {
-  }
+    return {
+        user: state.auth.user
+    }
 }
 
-export default connect(mapStateToProps)(Screen);
+export default connect(mapStateToProps, authActions)(Screen)

@@ -24,8 +24,8 @@ class Layout extends Component {
 
     componentDidMount() {
         if (typeof window !== 'undefined') {
-            document.body.style = 'background: #605F65 url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/linen-lighter.png);';
-            document.getElementById('ui').style = 'background: transparent url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/logo-bg.png) no-repeat -200px 0; background-size: auto 550px;';
+            document.body.style = 'background: #605F65 url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/linen-lighter.png);'
+            document.getElementById('ui').style = 'background: transparent url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/logo-bg.png) no-repeat -200px 0; background-size: auto 550px;'
         }
 
         Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Layout.css').toString() : require('./Layout.css'), 'stokelayout-', (styles) => {
@@ -59,6 +59,7 @@ class Layout extends Component {
                                         <Link to={"/careers"} styles="c-nav__link">CAREERS</Link>
                                         <Link to={"/games"} styles="c-nav__link">GAMES</Link>
                                         <Link to={"/news"} styles="c-nav__link">NEWS</Link>
+                                        <Link to={"/login"} styles="c-nav__link">LOGIN</Link>
                                     </li>
                                 </ul>
                             </View>
@@ -104,7 +105,7 @@ class Layout extends Component {
                                         <li key={item.code}>
                                             <Link to={"/game/" + item.code}>{item.title}</Link>
                                         </li>
-                                    );
+                                    )
                                 })}
                             </ul>
                         </View>
@@ -128,7 +129,7 @@ class Layout extends Component {
                     </section>
                 </View>
             </View>
-        );
+        )
     }
 }
 
