@@ -63,7 +63,7 @@ $desktop-width: 1024px;
 
 .c-header__logo {
     margin: 0;
-    background: transparent url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/logo.png) no-repeat 0 7px;
+    background: transparent url(/Apps/Site/Projects/Moria/Assets/Other/images/logo.png) no-repeat 0 7px;
     background-size: auto 70%;
     padding-left: 43px;
 }
@@ -75,7 +75,7 @@ $desktop-width: 1024px;
 
 
 .c-nav {
-  
+
 }
 
 .c-nav__item {

@@ -1,24 +1,24 @@
 .c-code {
-  display: inline-block;
-  font-family: monaco, Consolas, "Lucida Console", monospace;
-  font-size: 0.9em;
-  background: #ddd;
-  color: #434148;
-  border-radius: 2px;
-  padding: 0.05em 0.3em;
+    display: inline-block;
+    font-family: monaco, Consolas, "Lucida Console", monospace;
+    font-size: 0.9em;
+    background: #ddd;
+    color: #434148;
+    border-radius: 2px;
+    padding: 0.05em 0.3em;
 }
 
 .c-code__block {
-  border: 1px solid #bbb;
-  background: #ddd;
-  padding: 0.5em 1em;
-  border-radius: 2px;
+    border: 1px solid #bbb;
+    background: #ddd;
+    padding: 0.5em 1em;
+    border-radius: 2px;
 }
 
 .c-code__block .c-code {
-  background: none;
-  border: none;
-  color: inherit;
-  padding: 0;
-  border-radius: 0;
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
 }

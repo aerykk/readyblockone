@@ -20,7 +20,7 @@ class Screen extends Component {
 
         return (
             <Layout breadcrumb={breadcrumb}>
-                <div style={{padding: "20px"}}>
+                <View style={{padding: "20px"}}>
                   <ul className="games">
                       {games.list.map((item, i) => {
                           var posList = [
@@ -41,9 +41,9 @@ class Screen extends Component {
                           )
                       })}
                   </ul>
-                </div>
+              </View>
             </Layout>
-        );
+        )
     }
 }
 

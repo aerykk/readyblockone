@@ -1,5 +1,5 @@
 const Framework = require('../../../../../../../Framework')
-const {React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
+const {React, ReactDOM, ReactNative, dispatch, asyncConnect, bindActionCreators, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
 
 import Layout from '../../Layouts/Stoke'
 import Markdown from '../../../../../Shared/UI/Components/Markdown'
@@ -51,6 +51,7 @@ handleRefreshClick(e) {
     dispatch(invalidateSubreddit(selectedSubreddit))
     dispatch(fetchPostsIfNeeded(selectedSubreddit))
 }
+
     onPageChange(state) {
         if (JSON.stringify(this.state.page) === JSON.stringify(state)) {
             return
@@ -58,12 +59,13 @@ handleRefreshClick(e) {
 
         this.setState({page: state})
     }
+
     render() {
-        var page = this.props.location
+        let page = this.props.location
 
         if (!page) { page = 'home' }
 
-        var breadcrumb = null
+        let breadcrumb = null
 
         this.state.page.items.forEach(function(item) {
             if (item.title === 'Breadcrumb') {
@@ -79,19 +81,19 @@ handleRefreshClick(e) {
         return (
             <Layout breadcrumb={breadcrumb}>
                 {!this.state.page.options.slim && (
-                    <div className="box">
-                        <div className="tab-header">
+                    <View className="box">
+                        <View className="tab-header">
                             {this.state.page.title}
-                        </div>
-                        <div className="padded">
+                        </View>
+                        <View className="padded">
                             <Markdown src={"/Apps/Site/Projects/Esgaroth/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
-                        </div>
-                    </div>
+                        </View>
+                    </View>
                 )}
                 {this.state.page.options.slim && (
                     <Markdown src={"/Apps/Site/Projects/Esgaroth/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
                 )}
-                <div>
+                <View>
                     <p>
                         {lastUpdated &&
                         <span>
@@ -113,15 +115,17 @@ handleRefreshClick(e) {
                         <p>Empty.</p>
                     }
                     {posts.length > 0 &&
-                        <div style={{ opacity: isFetching ? 0.5 : 1 }} hidden>
+                        <View style={{ opacity: isFetching ? 0.5 : 1 }} hidden>
                             {posts.length}
-                        </div>
+                        </View>
                     }
-                </div>
+                </View>
             </Layout>
         )
     }
 }
+
+import * as authActions from '../../../Reducers/auth'
 
 function mapStateToProps(state) {
     const { selectedSubreddit, postsBySubreddit, routing } = state
@@ -145,6 +149,7 @@ function mapStateToProps(state) {
     }
 
     return {
+        user: state.auth.user,
         selectedSubreddit,
         posts,
         isFetching,
@@ -153,4 +158,30 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Screen)
+function mapDispatchToProps(dispatch) {
+    return {
+        dispatch: dispatch,
+        actions: bindActionCreators(authActions, dispatch)
+    }
+}
+
+const info = require('../../../Reducers/info')
+const auth = require('../../../Reducers/auth')
+
+let asyncItems = [{
+    key: 'page',
+    promise: ({store: {dispatch, getState}, helpers: {client}}) => {
+        const promises = []
+debugger
+        if (!info.isLoaded(getState())) {
+            promises.push(dispatch(info.load()))
+        }
+        if (!auth.isLoaded(getState())) {
+            promises.push(dispatch(auth.load()))
+        }
+
+        return Promise.all(promises)
+    }
+}]
+
+export default asyncConnect(asyncItems, mapStateToProps, mapDispatchToProps)(Screen)

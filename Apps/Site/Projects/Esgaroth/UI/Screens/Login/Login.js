@@ -1,10 +1,7 @@
 const Framework = require('../../../../../../../Framework')
-const {React, ReactDOM, AppWrapper, AppConfig, Platform, T, connect, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework
+const {React, ReactDOM, AppWrapper, AppConfig, bindActionCreators, asyncConnect, Platform, T, connect, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework
 
 import Layout from '../../Layouts/Stoke'
-import * as authActions from '../../../Reducers/auth'
-import { bindActionCreators } from 'redux'
-import { asyncConnect } from 'redux-connect'
 
 class Screen extends Component {
     static propTypes = {
@@ -22,6 +19,8 @@ class Screen extends Component {
     }
 }
 
+import * as authActions from '../../../Reducers/auth'
+
 function mapStateToProps(state) {
     return {
         user: state.auth.user
@@ -29,22 +28,24 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(authActions, dispatch) }
+    return {
+        actions: bindActionCreators(authActions, dispatch)
+    }
 }
 
-import { isLoaded as isInfoLoaded, load as loadInfo } from '../../../Reducers/info'
-import { isLoaded as isAuthLoaded, load as loadAuth, login, logout } from '../../../Reducers/auth'
+const info = require('../../../Reducers/info')
+const auth = require('../../../Reducers/auth')
 
 let asyncItems = [{
     key: 'login',
     promise: ({store: {dispatch, getState}, helpers: {client}}) => {
         const promises = []
 
-        if (!isInfoLoaded(getState())) {
-            promises.push(dispatch(loadInfo(client)))
+        if (!info.isLoaded(getState())) {
+            promises.push(dispatch(info.load()))
         }
-        if (!isAuthLoaded(getState())) {
-            promises.push(dispatch(loadAuth()))
+        if (!auth.isLoaded(getState())) {
+            promises.push(dispatch(auth.load()))
         }
 
         return Promise.all(promises)

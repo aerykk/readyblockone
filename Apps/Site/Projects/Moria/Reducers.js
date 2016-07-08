@@ -40,12 +40,18 @@ function site() {
     }
 }
 
-const reducers = {
-    site
-}
-
 import {reducer as reduxAsyncConnect} from 'redux-connect'
 import {reducer as form} from 'redux-form'
+import {reducer as auth} from './Reducers/auth'
+import {reducer as info} from './Reducers/info'
+import {reducer as news} from './Reducers/news'
+
+const reducers = {
+    site,
+    auth,
+    info,
+    news
+}
 
 export default {
     routing: routerReducer,

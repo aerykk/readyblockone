@@ -10,7 +10,7 @@ function formatUrl(path) {
     const adjustedPath = path[0] !== '/' ? '/' + path : path
     if (Framework.Platform.Env.isServer) {
         // Prepend host and port of the API server to the path
-        return 'http://' + config.apiHost + ':' + config.apiPort + adjustedPath
+        return 'http://' + config.dataService.host + ':' + config.dataService.port + adjustedPath
     }
     // Prepend `/api/v1` to relative URL, to proxy to API server
     return '/api/v1' + adjustedPath
@@ -20,7 +20,10 @@ class DataClient {
     constructor(req) {
         methods.forEach((method) => {
             this[method] = (path, {params, data} = {}) => new Promise((resolve, reject) => {
-                const request = superagent[method](formatUrl(path))
+                const url = formatUrl(path)
+                const request = superagent[method](url)
+
+                console.log('[DataClient] Requesting: ' + url)
 
                 if (params) {
                     request.query(params)

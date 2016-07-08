@@ -314,7 +314,7 @@ import {reducer as form} from 'redux-form'
 import {reducer as auth} from './Reducers/auth'
 import {reducer as info} from './Reducers/info'
 //import widgets from './Reducers/widgets'
-debugger
+
 const reducers = {
     postsBySubreddit,
     selectedSubreddit,

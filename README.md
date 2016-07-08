@@ -1,15 +1,15 @@
 # Horadric
 
 Alcyone - Hackatron.rocks
-Edoras - 
+Edoras -
 Electra - TTT.StokeGames.com
 Erebor - EricMuyser.com
 Esgaroth - StokeGames.com
-Erech - 
-Lorien - 
-Moria - 
-Odyssey - 
-Rushey - 
+Erech - FreeFlashGames.com?
+Lorien - MobifyVolunteering.com
+Moria - BrickBrotherhood.com
+Odyssey - MobifyPerformance.com
+Rushey -
 
 
 ## Port Guide
@@ -37,7 +37,7 @@ module: {
             ],
             loader: 'raw'
         },
-        
+
 +
 
 

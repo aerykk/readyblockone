@@ -28,11 +28,7 @@ class Layout extends Component {
             document.getElementById('ui').style = 'background: transparent url(/Apps/Site/Projects/Esgaroth/Assets/Other/images/logo-bg.png) no-repeat -200px 0; background-size: auto 550px;'
         }
 
-        Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Layout.css').toString() : require('./Layout.css'), 'stokelayout-', (styles) => {
-            this.setState({
-                styles: styles
-            })
-        })
+        Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Layout.css').toString() : require('./Layout.css'), 'stokelayout-', (styles) => { this.setState({styles: styles}) })
     }
 
     render() {

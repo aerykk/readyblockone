@@ -23,11 +23,7 @@ class Screen extends Component {
     }
 
     componentWillMount() {
-        Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Screen.css').toString() : require('./Screen.css'), 'stokelayout-', (styles) => {
-            this.setState({
-                styles: styles
-            })
-        })
+        Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Screen.css').toString() : require('./Screen.css'), 'stokelayout-', (styles) => { this.setState({styles: styles}) })
     }
 
     onPageChange(state) {

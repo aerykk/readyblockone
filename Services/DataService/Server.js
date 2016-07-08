@@ -1,7 +1,7 @@
 import express from 'express'
 import session from 'express-session'
 import bodyParser from 'body-parser'
-import * as actions from './actions/index'
+import * as actions from './Actions/Index'
 import {mapUrl} from './utils/url'
 import PrettyError from 'pretty-error'
 import http from 'http'

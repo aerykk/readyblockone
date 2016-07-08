@@ -1,10 +1,10 @@
 import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
-import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
+import {createStore, combineReducers, applyMiddleware, compose, bindActionCreators} from 'redux'
 import {Router, Route, Link, browserHistory, match} from 'react-router'
 import {Provider, connect} from 'react-redux'
 import {syncHistoryWithStore, routerReducer, routerMiddleware} from 'react-router-redux'
-import {ReduxAsyncConnect, loadOnServer} from 'redux-connect'
+import {ReduxAsyncConnect, loadOnServer, asyncConnect} from 'redux-connect'
 
 
 if (typeof global !== 'undefined' && global.Framework) {
@@ -346,6 +346,10 @@ if (typeof global !== 'undefined' && global.Framework) {
 
         Framework.getStyles = (rawStyles1, scope, cb) => {
             Sass.compile(rawStyles1, (rawStyles2) => {
+                if (rawStyles2.status !== 0) {
+                    throw new Error(rawStyles2.message)
+                }
+
                 rawStyles2 = sanitizeMediaQueries(rawStyles2.text) // eslint-disable-line
 
                 const styles = reactlook.StyleSheet.create(
@@ -501,6 +505,8 @@ if (typeof global !== 'undefined' && global.Framework) {
     Framework.ReduxAsyncConnect = ReduxAsyncConnect
     Framework.loadOnServer = loadOnServer
     Framework.match = match
+    Framework.bindActionCreators = bindActionCreators
+    Framework.asyncConnect = asyncConnect
 
     // ===============
 

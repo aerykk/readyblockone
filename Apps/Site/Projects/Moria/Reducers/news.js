@@ -1,6 +1,6 @@
-const LOAD = 'app/info/LOAD'
-const LOAD_SUCCESS = 'app/info/LOAD_SUCCESS'
-const LOAD_FAIL = 'app/info/LOAD_FAIL'
+const LOAD = 'app/news/LOAD'
+const LOAD_SUCCESS = 'app/news/LOAD_SUCCESS'
+const LOAD_FAIL = 'app/news/LOAD_FAIL'
 
 const initialState = {
     loaded: false
@@ -33,12 +33,12 @@ export function reducer(state = initialState, action = {}) {
 }
 
 export function isLoaded(globalState) {
-    return globalState.info && globalState.info.loaded
+    return globalState.news && globalState.news.loaded
 }
 
 export function load() {
     return {
         types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
-        promise: (client) => client.get('/loadInfo')
+        promise: (client) => client.get('/news')
     }
 }

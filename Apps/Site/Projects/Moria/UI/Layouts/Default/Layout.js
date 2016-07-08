@@ -20,17 +20,13 @@ class Layout extends Component {
     }
 
     componentDidMount() {
-        Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Layout.css').toString() : require('./Layout.css'), 'stokelayout-', (styles) => {
-            this.setState({
-                styles: styles
-            })
-        })
+        Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Layout.css').toString() : require('./Layout.css'), 'stokelayout-', (styles) => { this.setState({styles: styles}) })
     }
 
     render() {
         const { children, breadcrumb, games, site } = this.props
 
-        if (!this.state.styles) { return <div></div>; }
+        //if (!this.state.styles) { return <div></div>; }
 
         return Framework.wrapStyles(this.state.styles,
             <View>
@@ -104,7 +100,7 @@ class Layout extends Component {
                     </section>
                 </div>
             </View>
-        );
+        )
     }
 }
 

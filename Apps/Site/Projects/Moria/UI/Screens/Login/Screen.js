@@ -1,22 +1,53 @@
 const Framework = require('../../../../../../../Framework')
-const {React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
+const {React, ReactDOM, AppWrapper, AppConfig, bindActionCreators, asyncConnect, Platform, T, connect, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework
 
 import Layout from '../../Layouts/Default'
 
-class Screen extends Component {
-    constructor() {
-        super()
-        this.state = {
-        }
+export const Screen = class Screen extends Component {
+    static propTypes = {
+        user: T.object,
+        login: T.func,
+        logout: T.func
     }
 
     render() {
         return (
             <Layout>
-                Test
+                Logged in as: {this.props.user}
             </Layout>
         )
     }
 }
 
-export default Screen
+function mapStateToProps(state) {
+    return {
+        user: state.auth.user
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(authActions, dispatch)
+    }
+}
+
+import { isLoaded as isInfoLoaded, load as loadInfo } from '../../../Reducers/info'
+import { isLoaded as isAuthLoaded, load as loadAuth, login, logout } from '../../../Reducers/auth'
+
+let asyncItems = [{
+    key: 'login',
+    promise: ({store: {dispatch, getState}, helpers: {client}}) => {
+        const promises = []
+
+        if (!isInfoLoaded(getState())) {
+            promises.push(dispatch(loadInfo(client)))
+        }
+        if (!isAuthLoaded(getState())) {
+            promises.push(dispatch(loadAuth()))
+        }
+
+        return Promise.all(promises)
+    }
+}]
+
+export default asyncConnect(asyncItems, mapStateToProps, mapDispatchToProps)(Screen)

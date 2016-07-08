@@ -65,8 +65,6 @@ class App extends Component {
     }
 
     toggleToolbar() {
-        console.log('toggleToolbar')
-
         this.setState({
             toolbarActive: !this.state.toolbarActive
         })
@@ -84,15 +82,15 @@ class App extends Component {
         const isLocal = typeof window !== 'undefined' && window.location.hostname.indexOf('.local') !== -1
 
         return (
-            <div>
+            <View>
                 <HotKeys handlers={handlers} keyMap={map}>
-                    <div>
+                    <View>
                         {this.props.children}
                         {isLocal && <DevTools />}
                         {isLocal && this.state.toolbarActive && <Toolbar />}
-                    </div>
+                    </View>
                 </HotKeys>
-            </div>
+            </View>
         )
     }
 }
