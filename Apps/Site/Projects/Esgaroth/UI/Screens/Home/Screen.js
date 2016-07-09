@@ -96,9 +96,9 @@ handleRefreshClick(e) {
                 <View>
                     <p>
                         {lastUpdated &&
-                        <span>
-                            Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
-                            {' '}
+                            <span>
+                                Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
+                                {' '}
                             </span>
                         }
                         {!isFetching &&
@@ -172,7 +172,7 @@ let asyncItems = [{
     key: 'page',
     promise: ({store: {dispatch, getState}, helpers: {client}}) => {
         const promises = []
-debugger
+
         if (!info.isLoaded(getState())) {
             promises.push(dispatch(info.load()))
         }

@@ -40,6 +40,7 @@ class Screen extends Component {
             <Layout>
                 <p>Look at this <Code>inline code</Code>!</p>
                 <CodeBlock>And this code block!</CodeBlock>
+                <View>Amazing <Link to="/set/10179-1/mf">10179</Link></View>
                 {news && news.rows.map((row) => {
                     return (
                         <View>

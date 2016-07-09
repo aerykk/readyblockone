@@ -15,11 +15,17 @@ export default {
             otherMiddleware.push(persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/)))
         }
 
+        let appliedMiddleware = []
+        appliedMiddleware.push(thunkMiddleware)
+
+        if (Platform.Env.isBrowser) {
+            appliedMiddleware.push(loggerMiddleware)
+        }
+
         let createFinalStore = compose(
             applyMiddleware(
                 ...middleware,
-                thunkMiddleware,
-                loggerMiddleware
+                ...appliedMiddleware
             ),
             ...otherMiddleware
         )(createStore)

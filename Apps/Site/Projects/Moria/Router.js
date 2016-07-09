@@ -110,7 +110,7 @@ const routes = {
             }
         },
         {path: '/sets', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Sets').default) }) } },
-        {path: '/set/:key', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/SetDetails').default) }) } },
+        {path: '/set/:key/:slug', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/SetDetails').default) }) } },
         {path: '/news', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
         {path: '/news/:key', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Document').default) }) } },
         {path: '/login', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Login').default) }) } },
