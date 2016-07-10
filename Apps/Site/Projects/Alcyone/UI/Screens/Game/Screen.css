@@ -29,11 +29,6 @@
     border: 3px solid #1583C8;
     color: #fff;
     font-family: Helvetica, sans-serif;
-
-    @media (min-width: 450px) {
-        top: 60px;
-        right: 20px;
-    }
 }
 
 .c-other-character-chooser {

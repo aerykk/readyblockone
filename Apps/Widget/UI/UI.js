@@ -31,6 +31,14 @@ class UI extends Component {
     render() {
         if (!this.state.styles) { return <View></View> }
 
+        let host = null
+
+        if (window.location.hostname.indexOf('.local') === -1) {
+            host = 'https://stokegames.com'
+        } else {
+            host = 'http://stokegames.com.local:11010'
+        }
+
         return Framework.wrapStyles(this.state.styles,
             <View style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '60px'}}>
                 <View style={{position: 'relative'}}>
@@ -38,30 +46,30 @@ class UI extends Component {
                     <View styles="c-nav">
                         <ul styles="c-nav-left">
                             <li styles="c-nav-left-item">
-                                <img styles="c-logo" src="https://stokegames.com/Apps/Site/Projects/Esgaroth/Assets/Other/images/logo.png" />
+                                <img styles="c-logo" src={host + "/Apps/Site/Projects/Esgaroth/Assets/Other/images/logo.png"} />
                             </li>
                             <li styles="c-games">
                                 <button styles="c-button" onClick={()=>this.onToggleGames()}>Games</button>
                                 <ul styles={this.state.showGames ? 'c-games-menu-shown' :'c-games-menu-hidden'}>
-                                    <li><a styles="c-link" href="https://stokegames.com/games/browser" target="_blank">Browser Games</a></li>
-                                    <li><a styles="c-link" href="https://stokegames.com/games/downloadable" target="_blank">Downloadable Games</a></li>
-                                    <li><a styles="c-link" href="https://stokegames.com/games/mobile" target="_blank">Mobile Games</a></li>
-                                    <li><a styles="c-link" href="https://stokegames.com/games" target="_blank">All Games</a></li>
+                                    <li><a styles="c-link" href={host + "/games/browser"} target="_blank">Browser Games</a></li>
+                                    <li><a styles="c-link" href={host + "/games/downloadable"} target="_blank">Downloadable Games</a></li>
+                                    <li><a styles="c-link" href={host + "/games/mobile"} target="_blank">Mobile Games</a></li>
+                                    <li><a styles="c-link" href={host + "/games"} target="_blank">All Games</a></li>
                                 </ul>
                             </li>
                             <li styles="c-nav-left-item">
-                                <a styles="c-link" href="https://stokegames.com/community" target="_blank">Community</a>
+                                <a styles="c-link" href={host + "/community"} target="_blank">Community</a>
                             </li>
                             <li styles="c-nav-left-item">
-                                <a styles="c-link" href="https://stokegames.com/support" target="_blank">Support</a>
+                                <a styles="c-link" href={host + "/support"} target="_blank">Support</a>
                             </li>
                         </ul>
                         <ul styles="c-nav-right">
                             <li styles="c-nav-right-item">
-                                <a styles="c-sign-up-button" href="https://stokegames.com/signup/" target="_blank">Free Sign Up</a>
+                                <a styles="c-sign-up-button" href={host + "/signup"} target="_blank">Free Sign Up</a>
                             </li>
                             <li styles="c-nav-right-item">
-                                <a styles="c-login-button" href="https://stokegames.com/login/" target="_blank">Login</a>
+                                <a styles="c-login-button" href={host + "/login"} target="_blank">Login</a>
                             </li>
                         </ul>
                     </View>

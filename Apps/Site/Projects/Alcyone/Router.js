@@ -74,10 +74,10 @@ class App extends React.Component {
 
         return (
             <View>
-                <View id="game"></View>
-
                 <HotKeys handlers={handlers} keyMap={map}>
                     <View>
+                        <View id="game"></View>
+
                         {this.props.children}
                         {isLocal && <DevTools />}
                         {isLocal && this.state.toolbarActive && <Toolbar />}

@@ -185,7 +185,7 @@ class Game {
     }
 
     initEvents() {
-        //this.eventsInterval = setInterval(this.broadcastEvents.bind(this), 100);
+        this.eventsInterval = setInterval(this.broadcastEvents.bind(this), 100);
 
         var lastUpdateInfo = null;
 
