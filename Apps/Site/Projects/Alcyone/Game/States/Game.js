@@ -7,7 +7,7 @@ import Gameover from '../Objects/Gameover';
 import Powerup from '../Objects/Powerup';
 import AI from '../Core/AI';
 
-const Framework = require('../../Framework');
+const Framework = require('../../../../../../Framework');
 const {React, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework;
 
 import Projectile from '../Components/Projectile';

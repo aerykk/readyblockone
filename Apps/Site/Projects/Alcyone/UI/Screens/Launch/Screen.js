@@ -23,12 +23,9 @@ class Screen extends Component {
     }
 
     componentDidMount() {
+        Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Screen.css').toString() : require('./Screen.css'), 'alcyone-', (styles) => { this.setState({styles: styles})})
+
         this.interval = setInterval(this.tick.bind(this), 1000)
-        Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Screen.css').toString() : require('./Screen.css'), 'alcyone-', (styles) => {
-            this.setState({
-                styles: styles
-            })
-        })
 
         Hackatron.loader.state.start('Boot')
     }
@@ -54,7 +51,7 @@ class Screen extends Component {
     render() {
         if (!this.state.styles) { return <View></View> }
 
-        return Framework.wrapStyles(this.state.styles, 
+        return Framework.wrapStyles(this.state.styles,
             <View styles="container">
                 <View styles="instantActionButton" onClick={()=>this.clickInstantAction()}>INSTANT ACTION</View>
                 <View styles="countdown"><br />Instant action in... {this.state.instantActionTimer + ''}</View>

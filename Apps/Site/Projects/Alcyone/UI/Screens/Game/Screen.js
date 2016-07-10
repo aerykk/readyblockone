@@ -66,11 +66,11 @@ class Screen extends Component {
     render() {
         if (!this.state.styles || !Hackatron.game || !Hackatron.game.player) { return <View></View> }
 
-        var otherElements = null
+        let otherElements = null
 
         if (this.state.showOthers) {
-            var otherCharacters = this.state.allCharacters.slice(0)
-            var index = otherCharacters.indexOf(this.state.currentCharacter)
+            let otherCharacters = this.state.allCharacters.slice(0)
+            let index = otherCharacters.indexOf(this.state.currentCharacter)
             otherCharacters.splice(index, 1)
 
             otherElements = (
@@ -82,15 +82,15 @@ class Screen extends Component {
             )
         }
 
-        var players = []
+        let players = []
 
         players.push({name: Hackatron.game.player.name, points: Hackatron.game.player.points})
-        for (var id in Hackatron.game.players) {
-            var player = Hackatron.game.players[id]
+        for (let id in Hackatron.game.players) {
+            let player = Hackatron.game.players[id]
             players.push({name: player.name, points: '?'})
         }
 
-        return Framework.wrapStyles(this.state.styles, 
+        return Framework.wrapStyles(this.state.styles,
             <View>
                 <View styles="c-character-chooser">
                     <View style={{width: 32, height: 32, background: '#01242C url(/Assets/GFX/characters/' + this.state.currentCharacter + '/walkDown-0002.png) no-repeat 0 0'}} onClick={()=>this.clickCharacter()}></View>

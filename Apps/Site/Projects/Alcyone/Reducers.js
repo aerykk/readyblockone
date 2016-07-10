@@ -51,10 +51,18 @@ function site() {
                 {rel: 'stylesheet', type: 'text/css', media: 'all', href: '/Apps/Site/Projects/Esgaroth/Assets/Other/app.css'}
             ],
             script: [
+                {src: '/Apps/Site/Projects/Alcyone/Assets/Vendor/easystar-0.1.7.min.js'},
+                {src: '/Apps/Site/Projects/Alcyone/Assets/Vendor/pixi.js'},
+                {src: '/Apps/Site/Projects/Alcyone/Assets/Vendor/phaser-arcade-physics.js'},
+                {src: '/Apps/Site/Projects/Alcyone/Assets/Vendor/phaser-tiled.js'},
+                {src: '/Apps/Site/Projects/Alcyone/Assets/Vendor/phaser-debug.js'},
+                {src: '/Apps/Site/Projects/Alcyone/Assets/Vendor/phaser-camera-shake.js'},
+                {src: '/Apps/Site/Projects/Alcyone/Assets/main.js'}
             ]
         }
     }
 }
+
 
 import {reducer as reduxAsyncConnect} from 'redux-connect'
 
