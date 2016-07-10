@@ -1,4 +1,4 @@
-const Framework = require('../../../Framework')
+const Framework = require('../../../../../../../Framework')
 const {React, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework
 
 class Screen extends Component {
@@ -54,13 +54,17 @@ class Screen extends Component {
             }
         })
 
-        Hackatron.screen = 'Game'
-
-        if (Hackatron.ready) {
-            Hackatron.loader.state.start('Game')
-        } else {
-            Hackatron.loader.state.start('Boot')
+        if (typeof window.Hackatron === 'undefined') {
+            // TODO: make this better
+            window.location = '/'
         }
+        // Hackatron.screen = 'Game'
+        //
+        // if (Hackatron.ready) {
+        //     Hackatron.loader.state.start('Game')
+        // } else {
+        //     Hackatron.loader.state.start('Boot')
+        // }
     }
 
     render() {
@@ -76,7 +80,7 @@ class Screen extends Component {
             otherElements = (
                 <View styles="c-other-character-chooser">
                     {otherCharacters.map((key) => {
-                        return <View style={{width: 32, height: 32, marginBottom: 10, background: 'transparent url(/Assets/GFX/characters/' + key + '/walkDown-0002.png) no-repeat 0 0'}} onClick={()=>this.changeCharacter(key)}></View>
+                        return <View style={{width: 32, height: 32, marginBottom: 10, background: 'transparent url(/Apps/Site/Projects/Alcyone/Assets/GFX/characters/' + key + '/walkDown-0002.png) no-repeat 0 0'}} onClick={()=>this.changeCharacter(key)}></View>
                     })}
                 </View>
             )
@@ -93,7 +97,7 @@ class Screen extends Component {
         return Framework.wrapStyles(this.state.styles,
             <View>
                 <View styles="c-character-chooser">
-                    <View style={{width: 32, height: 32, background: '#01242C url(/Assets/GFX/characters/' + this.state.currentCharacter + '/walkDown-0002.png) no-repeat 0 0'}} onClick={()=>this.clickCharacter()}></View>
+                    <View style={{width: 32, height: 32, background: '#01242C url(/Apps/Site/Projects/Alcyone/Assets/GFX/characters/' + this.state.currentCharacter + '/walkDown-0002.png) no-repeat 0 0'}} onClick={()=>this.clickCharacter()}></View>
                     {this.state.showOthers && otherElements}
                 </View>
                 <View styles="c-scoreboard">

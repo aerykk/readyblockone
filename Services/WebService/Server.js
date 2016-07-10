@@ -59,15 +59,19 @@ class Server {
         this.proxy.on('error', (error, req, res) => {
             let json = null
 
-            if (error.code !== 'ECONNRESET') {
-                console.error('proxy error', error)
-            }
-            if (!res.headersSent) {
-                res.writeHead(500, {'content-type': 'application/json'})
-            }
+            try {
+                if (error.code !== 'ECONNRESET') {
+                    console.error('proxy error', error)
+                }
+                if (!res.headersSent) {
+                    res.writeHead(500, {'content-type': 'application/json'})
+                }
 
-            json = {error: 'proxy_error', reason: error.message}
-            res.end(JSON.stringify(json))
+                json = {error: 'proxy_error', reason: error.message}
+                res.end(JSON.stringify(json))
+            } catch (e) {
+                console.log(e)
+            }
         })
     }
 

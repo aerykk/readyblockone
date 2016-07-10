@@ -137,7 +137,7 @@ class Game {
     create() {
         Hackatron.game = this;
 
-        window.document.body.style['background'] = '#000 url(/Assets/UI/Screens/game.jpg) no-repeat 0 0'
+        window.document.body.style['background'] = '#000 url(/Apps/Site/Projects/Alcyone/Assets/UI/Screens/game.jpg) no-repeat 0 0'
         window.document.body.style['background-size'] = 'auto 100%'
         window.document.body.style['overflow'] = 'hidden'
 
@@ -167,9 +167,6 @@ class Game {
 
         this.game.stage.disableVisibilityChange = true;
 
-        window.UI_state.screenKey = 'game';
-        window.UI_controller.setState(window.UI_state);
-
         this.components['Multiplayer'].joinGame();
     }
 
@@ -188,7 +185,7 @@ class Game {
     }
 
     initEvents() {
-        this.eventsInterval = setInterval(this.broadcastEvents.bind(this), 100);
+        //this.eventsInterval = setInterval(this.broadcastEvents.bind(this), 100);
 
         var lastUpdateInfo = null;
 

@@ -25,9 +25,6 @@ class Menu {
         this.startKey = this.input.keyboard.addKey(Phaser.Keyboard.ENTER);
         this.musicKey = this.input.keyboard.addKey(Phaser.Keyboard.M);
 
-        window.UI_state.screenKey = 'start';
-        window.UI_controller.setState(window.UI_state);
-
         this.game.music = this.game.add.audio('audio/bg-0002', 1, true);
         this.game.music.play('', 0, 1, true);
         this.game.music.mute = true;

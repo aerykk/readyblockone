@@ -46,7 +46,7 @@
     position: absolute;
     top: 90px;
     right: 50px;
-    background: #00191F url(/Assets/UI/Buttons/left-arrow.png) no-repeat 3px 3px;
+    background: #00191F url(/Apps/Site/Projects/Alcyone/Assets/UI/Buttons/left-arrow.png) no-repeat 3px 3px;
     background-size: 27px auto;
     width: 37px;
     height: 30px;
@@ -63,7 +63,7 @@
     position: absolute;
     top: 90px;
     right: 10px;
-    background: #00191F url(/Assets/UI/Buttons/right-arrow.png) no-repeat 3px 3px;
+    background: #00191F url(/Apps/Site/Projects/Alcyone/Assets/UI/Buttons/right-arrow.png) no-repeat 3px 3px;
     background-size: 27px auto;
     width: 37px;
     height: 30px;
@@ -80,7 +80,7 @@
     position: absolute;
     top: 50px;
     right: 33px;
-    background: #00191F url(/Assets/UI/Buttons/up-arrow.png) no-repeat 3px 3px;
+    background: #00191F url(/Apps/Site/Projects/Alcyone/Assets/UI/Buttons/up-arrow.png) no-repeat 3px 3px;
     background-size: auto 27px;
     width: 30px;
     height: 37px;
@@ -97,7 +97,7 @@
     position: absolute;
     top: 123px;
     right: 33px;
-    background: #00191F url(/Assets/UI/Buttons/down-arrow.png) no-repeat 3px 3px;
+    background: #00191F url(/Apps/Site/Projects/Alcyone/Assets/UI/Buttons/down-arrow.png) no-repeat 3px 3px;
     background-size: auto 27px;
     width: 30px;
     height: 37px;
@@ -114,7 +114,7 @@
     position: absolute;
     top: 123px;
     right: 66px;
-    background: #00191F url(/Assets/UI/Buttons/attack.png) no-repeat 3px 3px;
+    background: #00191F url(/Apps/Site/Projects/Alcyone/Assets/UI/Buttons/attack.png) no-repeat 3px 3px;
     background-size: auto 27px;
     width: 95px;
     height: 37px;
