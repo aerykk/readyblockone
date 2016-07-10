@@ -2,13 +2,16 @@ const Framework = require('../../../../Framework')
 const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, renderToString} = Framework
 
 import {HotKeys} from 'react-hotkeys'
+import Auth from '../../Core/Utils/Auth'
+import DevTools from '../../Shared/UI/Components/DevTools'
 import store from './Store'
-import auth from '../../Core/Utils/Auth.js'
 import reducers from './Reducers'
 
 // Polyfill for nodejs /w babel
 if (typeof require.ensure !== "function") require.ensure = function(d, c) { c(require) };
 if (typeof require.include !== "function") require.include = function() {};
+
+let middleware = []
 
 class Toolbar extends React.Component {
     render() {
@@ -90,5 +93,6 @@ const routes = {
 export default {
     routes: routes,
     store: store,
+    middleware: middleware,
     reducers: reducers
 }

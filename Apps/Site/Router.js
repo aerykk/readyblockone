@@ -10,6 +10,9 @@ const sites = {
     'orionui.com': {},
     'nextgenengine.com': {},
     'vayard.com': {},
+    'hackatron.rocks':  {
+        router: require('./Projects/Alcyone/Router').default
+    },
     'muyser.com': {},
     'ericmuyser.com': {
         router: require('./Projects/Erebor/Router').default

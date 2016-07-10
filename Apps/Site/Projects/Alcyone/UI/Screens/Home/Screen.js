@@ -1,5 +1,6 @@
-const Framework = require('../../../Framework')
+const Framework = require('../../../../../../../Framework')
 const {React, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Dimensions} = Framework
+
 
 if (Platform.Env.isNative) {
     // var Button = require('react-native-button')
@@ -44,7 +45,7 @@ class Screen extends Component {
             //             height: Dimensions.get('window').height
             //         }
             //     })
-            // 
+            //
             //     this.setState({
             //         styles: styles
             //     })
@@ -69,7 +70,7 @@ class Screen extends Component {
             host = 'http://localhost:8080'
         }
 
-        return Framework.wrapStyles(this.state.styles, 
+        return Framework.wrapStyles(this.state.styles,
             <View styles="container">
                 {Platform.Env.isNative && (
                     <WebView
