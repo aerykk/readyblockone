@@ -4,7 +4,7 @@ class Tron extends Character {
     toString() { '[Tron]' }
 
     init(params) {
-        params = Object.assign(params, {characterKey: 'tron', defaultFrameKey: 'walkDown-0002', emitterKey: 'gfx/emitters/blueball'});
+        params = Object.assign(params, {characterKey: 'default', defaultFrameKey: 'walkDown-0002', emitterKey: 'gfx/emitters/blueball'});
 
         super.init(params);
 
