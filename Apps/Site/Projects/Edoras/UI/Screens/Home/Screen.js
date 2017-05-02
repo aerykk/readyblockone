@@ -13,7 +13,7 @@ class Screen extends Component {
         return (
             <Layout>
                 <div className="c-intro c--shown">
-                    <p>Your grand adventure in language translation is about to begin...</p>
+                    <p>Your grand adventure in language translation is about to begin....</p>
                     <div className="c-menu c--shown">
                         <h2>Choose your adventure:</h2>
                         <button className="js-load-game button large black" data-id="platinum">Pokemon Platinum</button>
