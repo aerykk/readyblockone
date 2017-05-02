@@ -1,0 +1,145 @@
+.c-scoreboard {
+    position: absolute;
+    top: 60px;
+    left: 70px;
+    width: 100px;
+    font-size: 12px;
+    color: #fff;
+    background: #00191F;
+    text-align: center;
+    box-shadow: 2px 1px #000;
+    border: 2px solid #fff;
+    opacity: 0.6;
+    padding: 5px;
+
+    @media (min-width: 450px) {
+        width: 40%;
+    }
+}
+
+.c-character-chooser {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    width: 50px;
+    padding: 5px;
+    opacity: 0.8;
+    box-shadow: 2px 1px #000;
+    background: #00191F;
+    border: 3px solid #1583C8;
+    color: #fff;
+    font-family: Helvetica, sans-serif;
+}
+
+.c-other-character-chooser {
+    color: #fff;
+    padding: 15px 0 0 5px;
+    font-family: Helvetica, sans-serif;
+}
+
+.c-left-control {
+    position: absolute;
+    top: 90px;
+    right: 50px;
+    background: #00191F url(/Apps/Site/Projects/Alcyone/Assets/UI/Buttons/left-arrow.png) no-repeat 3px 3px;
+    background-size: 27px auto;
+    width: 37px;
+    height: 30px;
+    opacity: 0.4;
+    padding: 5px;
+    box-shadow: 2px 1px #000;
+    border: 2px solid #fff;
+    color: #fff;
+    font-family: Helvetica, sans-serif;
+    user-select: none;
+}
+
+.c-right-control {
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    background: #00191F url(/Apps/Site/Projects/Alcyone/Assets/UI/Buttons/right-arrow.png) no-repeat 3px 3px;
+    background-size: 27px auto;
+    width: 37px;
+    height: 30px;
+    opacity: 0.4;
+    padding: 5px;
+    box-shadow: 2px 1px #000;
+    border: 2px solid #fff;
+    color: #fff;
+    font-family: Helvetica, sans-serif;
+    user-select: none;
+}
+
+.c-top-control {
+    position: absolute;
+    top: 50px;
+    right: 33px;
+    background: #00191F url(/Apps/Site/Projects/Alcyone/Assets/UI/Buttons/up-arrow.png) no-repeat 3px 3px;
+    background-size: auto 27px;
+    width: 30px;
+    height: 37px;
+    opacity: 0.4;
+    padding: 5px;
+    box-shadow: 2px 1px #000;
+    border: 2px solid #fff;
+    color: #fff;
+    font-family: Helvetica, sans-serif;
+    user-select: none;
+}
+
+.c-bottom-control {
+    position: absolute;
+    top: 123px;
+    right: 33px;
+    background: #00191F url(/Apps/Site/Projects/Alcyone/Assets/UI/Buttons/down-arrow.png) no-repeat 3px 3px;
+    background-size: auto 27px;
+    width: 30px;
+    height: 37px;
+    opacity: 0.4;
+    padding: 5px;
+    box-shadow: 2px 1px #000;
+    border: 2px solid #fff;
+    color: #fff;
+    font-family: Helvetica, sans-serif;
+    user-select: none;
+}
+
+.c-attack-control {
+    position: absolute;
+    top: 123px;
+    right: 66px;
+    background: #00191F url(/Apps/Site/Projects/Alcyone/Assets/UI/Buttons/attack.png) no-repeat 3px 3px;
+    background-size: auto 27px;
+    width: 95px;
+    height: 37px;
+    opacity: 0.4;
+    padding: 5px;
+    box-shadow: 2px 1px #000;
+    border: 2px solid #fff;
+    color: #fff;
+    font-family: Helvetica, sans-serif;
+    user-select: none;
+}
+
+.c-menu-button {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+}
+
+.c-menu {
+    position: absolute;
+    top: 70px;
+    left: 30px;
+    width: 200px;
+    height: 300px;
+    opacity: 0.8;
+    box-shadow: 2px 1px #000;
+    background: #00191F;
+    border: 3px solid #1583C8;
+    color: #fff;
+    font-family: Helvetica, sans-serif;
+}

@@ -1,0 +1,145 @@
+.c-nav {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    border-bottom: 2px solid #ccc;
+    display: flex;
+    -webkit-box-flex: 0;
+    flex-flow: row;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.c-nav-bg {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+}
+
+.c-nav-left {
+    box-sizing: border-box;
+    list-style: none;
+    display: flex;
+    flex-basis: 70%;
+    flex-flow: row;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 10px 0;
+    max-width: 500px;
+}
+
+.c-nav-right {
+    box-sizing: border-box;
+    display: flex;
+    list-style: none;
+    flex-flow: row;
+    flex-basis: 30%;
+    margin: 10px 0;
+    max-width: 300px;
+}
+
+.c-nav-left-item {
+    flex-grow: 1;
+}
+
+.c-nav-right-item {
+    flex-grow: 1;
+}
+
+.c-games {
+    flex-grow: 1;
+    position: relative;
+}
+
+.c-games-menu-hidden {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    background: #fff;
+    padding: 10px;
+    list-style: none;
+}
+
+.c-games-menu-shown {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    background: #fff;
+    padding: 10px;
+    list-style: none;
+    box-shadow: 2px 2px 0 #ccc;
+}
+
+.c-logo {
+    width: 40px;
+}
+
+.c-button {
+    display: block;
+    padding: 8px 5px;
+    color: #0a233f;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    border: 0;
+    background: transparent;
+}
+
+.c-link {
+    display: block;
+    padding: 8px 5px;
+    color: #0a233f;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.c-login-button {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 40px;
+    text-decoration: none;
+    width: 100px;
+    height: 39px;
+    background: -444px -152px #fff;
+    border: 1px solid #ccd7dc;
+    border-radius: 3px;
+    margin: 0;
+    color: #0a233f;
+    box-shadow: 0 2px 2px 0 rgba(50,50,50,.1);
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.c-sign-up-button {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 40px;
+    text-decoration: none;
+    width: 120px;
+    height: 40px;
+    background-color: #ee4982;
+    border-radius: 5px;
+    background-position: -444px -66px;
+    margin: 0;
+    color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(50,50,50,.1);
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}

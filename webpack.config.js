@@ -1,12 +1,13 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
+const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 
-module.exports = {
+var config = {
     entry: {
-        'game.web': ['./App/Game/index.web.js'],
-        'game.ios': ['./App/Game/index.ios.js'],
-        'game.android': ['./App/Game/index.android.js'],
-        'widget.web': ['./App/Widget/index.web.js']
+        'site.web': ['./Apps/Site/index.web.js'],
+        'site.ios': ['./Apps/Site/index.ios.js'],
+        'site.android': ['./Apps/Site/index.android.js'],
+        'widget.web': ['./Apps/Widget/index.web.js']
     },
     output: {
         path: __dirname + '/Build/Release',
@@ -31,7 +32,12 @@ module.exports = {
             {
                 test: /\.js?$/,
                 loader: 'babel',
-                include: [path.join(__dirname + '/App'), path.join(__dirname + '/node_modules/react-native-extended-stylesheet')],
+                include: [
+                    path.join(__dirname + '/Framework'),
+                    path.join(__dirname + '/Apps'),
+                    path.join(__dirname + '/Services'),
+                    path.join(__dirname + '/node_modules/react-native-extended-stylesheet')
+                ],
                 query: {
                     cacheDirectory: true,
                     plugins: [],
@@ -40,7 +46,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                include: path.join(__dirname + '/App'),
+                include: path.join(__dirname + '/Apps'),
                 loaders: [
                     'raw'
                 ]
@@ -54,8 +60,29 @@ module.exports = {
     },
     plugins: [
         new webpack.IgnorePlugin(/^(react-native)$/),
-        new webpack.DefinePlugin({ 
-            'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') } 
+        new webpack.DefinePlugin({
+            'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
         })
     ]
-};
+}
+
+if (process.env.NODE_ENV === 'production') {
+    config.plugins.push(
+        new StaticSiteGeneratorPlugin('site.web', [
+            '/',
+            '/about/'
+        ])
+        //SiteRouter('stokegames.com').routes)
+    )
+    // config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    //     sourceMap: false,
+    //     minimize: true,
+    //     compress: {
+    //         drop_debugger: true,
+    //         warnings: false,
+    //         drop_console: true
+    //     }
+    // }))
+}
+
+module.exports = config
