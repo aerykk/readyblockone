@@ -17,6 +17,9 @@ const sites = {
     'ericmuyser.com': {
         router: require('./Projects/Erebor/Router').default
     },
+    'staging.ericmuyser.com': {
+        router: require('./Projects/Erebor/Router').default
+    },
     'stokegames.com': {
         router: require('./Projects/Esgaroth/Router').default
     },
