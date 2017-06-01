@@ -42,7 +42,9 @@
         <p>My holdings of Mobify Research &amp; Development Inc. to Allan Angus. Current shares: 750. Estimated value if they IPO: $50,000.</p>
         <p>My holdings of Hootsuite Media Inc. to Allan Angus. Current shares: none (awaiting vesting). Estimated value if they IPO: unknown.</p>
         <p>Everything else to my mother Denise Muyser, who I trust to divide reasonably and fairly.</p>
-        <p>Notes: the key to my safety deposit box is in my fake book on my shelf in my apartment. Combination is 604. The safety deposit box is at TD in downtown vancouver (700 W Georgia St). Box #192.
+        <p>Notes:</p>
+        <p>- The key to my safety deposit box is in my fake book on my shelf in my apartment. Combination is 604. The safety deposit box is at TD in downtown vancouver (700 W Georgia St). Box #192.</p>
+        <p>- In the event I pass away, the go to guy is Roger Sharma. Make sure he's compensated well for his consultation.</p>
         <p></p>
     </div>
 </div>
