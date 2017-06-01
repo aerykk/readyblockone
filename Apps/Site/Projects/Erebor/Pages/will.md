@@ -30,6 +30,8 @@
         <p>My cryptocurrency holdings to Akari Watanabe. Current value: $5,000. Public address: X. Secret keys are in my safety deposit box.</p>
         <p>My Amazon account and business to my best friend Don Peterson. Details (URL, username and passwords) are in my safety deposit box.</p>
         <p>My holdings of Skyward Arts, and all related internet properties (domains, hosting), and intellectual properties, to Chris Adamowicz.</p>
+        <p>My holdings of Mobify Research &amp; Development Inc. to Allan Angus. Current shares: 750. Estimated value if they IPO: $50,000.</p>
+        <p>My holdings of Hootsuite Media Inc. to Allan Angus. Current shares: X. Estimated value if they IPO: ?</p>
         <p>Everything else to my mother Denise Muyser, who I trust to divide reasonably and fairly.</p>
         <p>Notes: the key to my safety deposit box is in my fake book on my shelf in my apartment. Combination is 604. The safety deposit box is at TD in downtown vancouver (700 W Georgia St). Box #192.
         <p></p>
