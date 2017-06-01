@@ -2,7 +2,7 @@
     <li><a href="/" address="true">Home</a>
     </li>
     <li><span class="divider">/</span> </li>
-    <li class="active">Will</li>
+    <li class="active">Will and testament</li>
     <li class="pagination">
         <div class="pagination">
             <ul>
@@ -15,20 +15,20 @@
 <div class="post-2 page type-page status-publish hentry row-fluid" id="post-2">
     <meta name="robots" content="noindex">
     <div class="span3">
-        <p>Main point of contact: Roger Sharma, Financial Advisor.</p>
-        <p>Roger Sharma - Roger.Sharma@investorsgroup.com - 778 875 6537</p>
-        <p>Denise Muyser - dmuyser@gmail.com - </p>
-        <p>Akari Watanabe - aw1287803@gmail.com</p>
-        <p>Don Peterson - donpeterson87@gmail.com - 778 344 4186</p>
-        <p>Chris Adamowicz - chrisadamowicz@gmail.com - 778 847 3459</p>
-        <p>Allan Angus - Allan.Angus@outlook.com - 778 953 1135</p>
-        <p>Andrew Pace - Andrew.Pace@freedom55financial.com - 778 688 1780</p>
-        <p>Hao Keng Harry Lee - pochuenlee29@hotmail.com - 604 721 3320</p>
-        <p>Erin Rogers - erin.rogers@hootsuite.com - 604 681 4668</p>
+        <p style="text-align: initial;">Main point of contact: Roger Sharma, Financial Advisor.</p>
+        <p style="text-align: initial;">Roger Sharma <br /> Roger.Sharma@investorsgroup.com <br /> 778 875 6537</p>
+        <p style="text-align: initial;">Denise Muyser <br /> dmuyser@gmail.com <br /> 604 217 8536</p>
+        <p style="text-align: initial;">Akari Watanabe <br /> aw1287803@gmail.com</p>
+        <p style="text-align: initial;">Don Peterson <br /> donpeterson87@gmail.com <br /> 778 344 4186</p>
+        <p style="text-align: initial;">Chris Adamowicz <br /> chrisadamowicz@gmail.com <br /> 778 847 3459</p>
+        <p style="text-align: initial;">Allan Angus <br /> Allan.Angus@outlook.com <br /> 778 953 1135</p>
+        <p style="text-align: initial;">Andrew Pace <br /> Andrew.Pace@freedom55financial.com <br /> 778 688 1780</p>
+        <p style="text-align: initial;">Hao Keng Harry Lee <br /> pochuenlee29@hotmail.com <br /> 604 721 3320</p>
+        <p style="text-align: initial;">Erin Rogers <br /> erin.rogers@hootsuite.com <br /> 604 681 4668</p>
     </div>
     <div class="span8">
         <p></p>
-        <p>I, Eric Muyser, legally Eric Jayson Hansen, leave the following...</p>
+        <p>This is the will and testament of Eric Jayson Hansen (also known as Eric Muyser). I leave...</p>
         <p>My laptop, computer, phone and all other devices to my best friend Don Peterson.</p>
         <p>My bank account, safety deposit box, TD WebBroker account, to my wife Akari Watanabe. Stock value: $15,000. Debt: -$12,000.</p>
         <p>My whole life insurance with Freedom 55 to my mother Denise Muyser. Current insurance: $300,000. Policy #E0262683. Contact: Andrew Pace.</p>
