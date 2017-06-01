@@ -34,11 +34,11 @@
         <p>My whole life insurance with Freedom 55 to my mother Denise Muyser. Current insurance: $300,000. Policy #E0262683. Contact: Andrew Pace.</p>
         <p>My term insurance with Manulife to my wife Akari Watanabe. Current insurance: TODO. Policy # TODO. Contact: Roger Sharma. (not setup yet, WIP)</p>
         <p>My life insurance with my employer Hootsuite to my mother Denise Muyser. Current insurance: $100,000. Contact: Erin Rogers (or Hootsuite HQ).</p>
-        <p>My disability insurance to my mother Denise Muyser. Policy #h 913 0628. Value: maybe none. Contact: Roger Sharma.</p>
-        <p>My leveraged investment with Equitable Life of Canada to my mother Denise Muyser. Current value: $30,000. Policy #600087092. Contact: Hao Keng Harry Lee.</p>
+        <p>My disability insurance to my mother Denise Muyser. Policy: h 913 0628. Value: maybe none. Contact: Roger Sharma.</p>
+        <p>My leveraged investment with Equitable Life of Canada to my mother Denise Muyser. Current value: $33,000. Debt: $30,000. Policy #600087092. Contact: Hao Keng Harry Lee.</p>
         <p>My cryptocurrency holdings to Akari Watanabe. Current value: $5,000. Bitcoin address: X. Ethereum address: X. Secret keys are in my safety deposit box.</p>
         <p>My Amazon account and business to my best friend Don Peterson. Details (URL, username and passwords) are in my safety deposit box.</p>
-        <p>My holdings of Skyward Arts, and all related internet properties (domains, hosting), and intellectual properties, to Chris Adamowicz.</p>
+        <p>My holdings of Skyward Arts Inc. to Chris Adamowicz, including all related internet properties (domains, hosting) and intellectual properties.</p>
         <p>My holdings of Mobify Research &amp; Development Inc. to Allan Angus. Current shares: 750. Estimated value if they IPO: $50,000.</p>
         <p>My holdings of Hootsuite Media Inc. to Allan Angus. Current shares: none (awaiting vesting). Estimated value if they IPO: unknown.</p>
         <p>Everything else to my mother Denise Muyser, who I trust to divide reasonably and fairly.</p>
