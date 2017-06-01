@@ -9,7 +9,6 @@ const defaultConfig = {
 const sites = {
     'orionui.com': {},
     'nextgenengine.com': {},
-    'vayard.com': {},
     'hackatron.rocks':  {
         router: require('./Projects/Alcyone/Router').default
     },
@@ -26,13 +25,6 @@ const sites = {
     'free.stokegames.com': {
         router: require('./Projects/Erech/Router').default
     },
-    'acejapanese.com': {},
-    'acekorean.com': {},
-    'aceitalian.com': {},
-    'acefrench.com': {},
-    'aceportuguese.com': {},
-    'acerussian.com': {},
-    'acelearners.com': {},
     'volunteering.mobify.com': {
         router: require('./Projects/Lorien/Router').default
     },
@@ -46,13 +38,8 @@ const sites = {
     'realmofdiablo.com': {},
     'sacredpoker.com': {},
     'secretoflumaria.com': {},
-    'singlefacestudios.com': {},
-    'tilearena.rocks': {},
-    'tileworld-game.com': {},
-    'tilr-game.com': {},
     'angelsofascension.com': {},
     'connecting.live': {},
-    'manhood-game.com': {},
     'egic.ca': {},
     'kannyarou.com': {}
 };
