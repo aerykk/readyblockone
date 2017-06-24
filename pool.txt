@@ -1,3 +1,4 @@
+globaldriver amdgpu
 globalminer claymore
 maxgputemp 85
 stratumproxy enabled
