@@ -59,31 +59,31 @@ globalfan 85
 # pool:                 only used with stratumproxy disabled, use this if you have a network proxy or getwork pool (example: http://pool.com:port/WORKER )
 #
 # PER-RIG STYLE CONFIG SETTINGS THAT APPLY TO INDIVIDUAL RIGS (AND THEIR RESPECTIVE INDIVIDUAL GPUS)
-# NOTICE: c94e13 is a SAMPLE rig/[worker]/hostname, change it to the rig/[worker]/hostname of YOUR RIG
+# NOTICE: f51423 is a SAMPLE rig/[worker]/hostname, change it to the rig/[worker]/hostname of YOUR RIG
 # NOTICE: Your rig/[worker]/hostname names are assigned automatically by the OS, do not change them
 #
 # SAMPLE FORMAT: 
 # [type] [worker] [gpu0 value] [gpu1 value] [gpu2 value] [gpu3 value] [gpu4 value]
 # ------------------------------------------------------
-# cor c94e13 950 1000 1050 1025 980
-# mem c94e13 1250 1500 1500 1250 1250
-# fan c94e13 90 80 85 100 70
-# pwr c94e13 10 20 15 15 20
-# vlt c94e13 0 1.118 0 0 1.118
+# cor f51423 950 1000 1050 1025 980
+# mem f51423 1250 1500 1500 1250 1250
+# fan f51423 90 80 85 100 70
+# pwr f51423 10 20 15 15 20
+# vlt f51423 0 1.118 0 0 1.118
 # ------------------------------------------------------
 #
 # SAMPLE FORMAT: 
 # [type] [worker] [value]
 # ------------------------------------------------------
-# miner c94e13 ethminer
-# flg c94e13 --cl-local-work 256 --cl-global-work 8192 --farm-recheck 200
-# mxt c94e13 70
-# reb c94e13 1
-# loc c94e13 d3
-# sel c94e13 1 2 4
-# off c94e13 
-# driverless c94e13 enabled
-# desktop c94e13 disabled
+# miner f51423 ethminer
+# flg f51423 --cl-local-work 256 --cl-global-work 8192 --farm-recheck 200
+# mxt f51423 70
+reb f51423 1
+# loc f51423 d3
+# sel f51423 1 2 4
+# off f51423 
+# driverless f51423 enabled
+# desktop f51423 disabled
 # ------------------------------------------------------
 #
 # EXPLANATION OF SETTINGS FOR INDIVIDUAL RIGS
@@ -131,9 +131,9 @@ globalfan 85
 # SAMPLE PER-RIG CONFIG FOR AMDGPU (for a 6-gpu rig)
 # NOTE: pwr is DPM state range 0-7, set lower for lower power usage, set higher if overclocking.
 # ------------------------------------------------------
-# cor c94e13 1180 1180 1180 1180 1180 1180
-# mem c94e13 2150 2150 2150 2150 2150 2150
-# pwr c94e13 7 7 7 7 7 7
+# cor f51423 1180 1180 1180 1180 1180 1180
+# mem f51423 2150 2150 2150 2150 2150 2150
+# pwr f51423 7 7 7 7 7 7
 # ------------------------------------------------------
 #
 # IN MULTI-RIG MODE, EXAMPLES OF MULTIPLE POOLS/WALLETS/PASSWORDS
