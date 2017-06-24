@@ -3,7 +3,7 @@ stratumproxy enabled
 proxywallet 0xf70333f0914fc32f5221273e72a661af4ea7d610
 proxypool1 us2.ethermine.org:4444
 proxypool2 us1.ethermine.org:4444
-flags --cl-global-work 8192 --farm-recheck 200
+flags --cl-global-work 8192 --farm-recheck 200 -G -S us2.ethermine.org:4444 -FS us1.ethermine.org:4444 -O 0xf70333f0914fc32f5221273e72a661af4ea7d610.Rig2
 globalfan 85
 
 # ethOS Pool: ethosdistro.com/pool
@@ -78,7 +78,7 @@ globalfan 85
 # miner f51423 ethminer
 # flg f51423 --cl-local-work 256 --cl-global-work 8192 --farm-recheck 200
 # mxt f51423 70
-reb f51423 1
+reb f51423 2
 # loc f51423 d3
 # sel f51423 1 2 4
 # off f51423 
