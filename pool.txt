@@ -80,7 +80,7 @@ globalfan 85
 miner f51423 claymore
 flg f51423 --cl-local-work 256 --cl-global-work 8192 --farm-recheck 200
 # mxt f51423 70
-reb f51423 2
+reb f51423 3
 # loc f51423 d3
 # sel f51423 1 2 4
 # off f51423 
