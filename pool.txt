@@ -77,8 +77,8 @@ globalfan 85
 # SAMPLE FORMAT: 
 # [type] [worker] [value]
 # ------------------------------------------------------
-# miner f51423 ethminer
-# flg f51423 --cl-local-work 256 --cl-global-work 8192 --farm-recheck 200
+miner f51423 claymore
+flg f51423 --cl-local-work 256 --cl-global-work 8192 --farm-recheck 200
 # mxt f51423 70
 reb f51423 2
 # loc f51423 d3
