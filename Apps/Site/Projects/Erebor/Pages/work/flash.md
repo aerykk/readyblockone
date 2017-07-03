@@ -2,9 +2,7 @@
     <ul class="breadcrumb">
         <li><a href="/" address="true">Home</a>
         </li>
-
         <li><span class="divider">/</span> </li>
-
         <li><a href="/work/" address="true">Work</a>
         </li> <span class="divider">/</span>
         <li class="active">Flash</li>
@@ -14,12 +12,11 @@
                     <li class="active"><a href="#">1</a>
                     </li>
                 </ul>
-
             </div>
         </li>
     </ul>
     <div class="post-744 page type-page status-publish hentry row-fluid" id="post-744">
-        <p>I’ve been working with Adobe Flash since it was owned by Macromedia back in Flash 5. The customizability and ease of deployment had always attracted me, until JavaScript started gaining traction. Most of my public code can be found over at&nbsp;<a href="http://github.com/ericmuyser/" target="_blank">GitHub</a>. I’m currently hacking Flash at Stoke Games.</p>
+        <p>It's 2013, I’ve been working with Adobe Flash since it was owned by Macromedia back in Flash 5. The customizability and ease of deployment had always attracted me, until JavaScript started gaining traction. Most of my public code can be found over at&nbsp;<a href="http://github.com/ericmuyser/" target="_blank">GitHub</a>. I’m currently hacking Flash at Stoke Games.</p>
         <p>&nbsp;</p>
         <p><strong>Projects I maintain:</strong>
         </p>

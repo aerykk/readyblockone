@@ -2,9 +2,7 @@
     <ul class="breadcrumb">
         <li><a href="/" address="true">Home</a>
         </li>
-
         <li><span class="divider">/</span> </li>
-
         <li><a href="/work/" address="true">Work</a>
         </li> <span class="divider">/</span>
         <li class="active">Node.js</li>
@@ -14,12 +12,11 @@
                     <li class="active"><a href="#">1</a>
                     </li>
                 </ul>
-
             </div>
         </li>
     </ul>
     <div class="post-741 page type-page status-publish hentry row-fluid" id="post-741">
-        <p>I’m primarily coding CSJS/SSJS compatible CoffeeScript (Appcelerator + Browserify = Love). I’m working towards my Node Ninja badge.</p>
+        <p>It's 2011, I’m primarily coding CSJS/SSJS compatible CoffeeScript (Appcelerator + Browserify = Love). I’m working towards my Node Ninja badge.</p>
         <p>Most of my&nbsp;<strong>public</strong>&nbsp;code can be found over at&nbsp;<a href="http://github.com/ericmuyser/" target="_blank">GitHub</a>.</p>
         <p>&nbsp;</p>
         <p><strong>Projects I maintain:</strong>

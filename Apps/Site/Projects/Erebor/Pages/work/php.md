@@ -2,9 +2,7 @@
     <ul class="breadcrumb">
         <li><a href="/" address="true">Home</a>
         </li>
-
         <li><span class="divider">/</span> </li>
-
         <li><a href="/work/" address="true">Work</a>
         </li> <span class="divider">/</span>
         <li class="active">PHP</li>
@@ -14,12 +12,11 @@
                     <li class="active"><a href="#">1</a>
                     </li>
                 </ul>
-
             </div>
         </li>
     </ul>
     <div class="post-725 page type-page status-publish hentry row-fluid" id="post-725">
-        <p>I’ve worked as a PHP programmer by day since 2005.</p>
+        <p>It's 2012, I've been working as a PHP programmer since 2005.</p>
         <p>Most of my <strong>public</strong> code can be found over at <a href="http://github.com/ericmuyser/" target="_blank">GitHub</a>.</p>
         <p>&nbsp;</p>
         <p><strong>Projects I maintain:</strong>
