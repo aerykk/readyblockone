@@ -7,7 +7,7 @@ let localStorage = null
 if (Framework.Platform.Env.isServer) {
     localStorage = {token: 'nodejs'}
 } else {
-    localStorage = window.localStorage
+    localStorage = typeof window !== 'undefined' ? window.localStorage : null
 }
 
 module.exports = {
