@@ -43,10 +43,10 @@ class Toolbar extends Component {
                     zIndex: 100
                 }}>
                 <li>
-                    <a href="http://hackatron.rocks.local:10020/">Go to Hackatron</a>
+                    <a href="http://readyblock.one.local:10020/">Go to Ready Block One</a>
                 </li>
                 <li>
-                    <a href="http://ttt.stokegames.com.local:10010/">Go to TTT</a>
+                    <a href="http://litecoin-ltc.review.local:10010/">Go to Litecoin Review</a>
                 </li>
             </ul>
         )
