@@ -25,8 +25,6 @@ class Layout extends Component {
                 styles: styles
             })
         })
-
-        this.setRandomSlogan()
     }
 
     render() {

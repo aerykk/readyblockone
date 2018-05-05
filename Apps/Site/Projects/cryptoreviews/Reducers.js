@@ -18,7 +18,7 @@ function site() {
         analytics: {
             isEnabled: true,
             GA: {
-                id: ''
+                id: 'UA-118765145-1'
             }
         },
         head: {

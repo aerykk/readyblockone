@@ -9,16 +9,16 @@ function site() {
     const isLocal = typeof window !== 'undefined' && window.location.hostname.indexOf('.local') !== -1
 
     return {
-        title: 'Brick Brotherhood',
-        description: 'Bricks rock',
+        title: 'in5mins',
+        description: '',
         isLocal: isLocal,
         copyright: {
-            date: '2015-' + new Date().getFullYear(),
-            company: 'Brick Brotherhood'
+            date: '2017-' + new Date().getFullYear(),
+            company: 'in5mins'
         },
         analytics: {
             GA: {
-                id: ''
+                id: 'UA-118766057-1'
             }
         },
         head: {
@@ -31,8 +31,8 @@ function site() {
                 {property: 'og:title', content: ''},
                 {property: 'og:description', content: ''},
                 {property: 'og:card', content: 'summary'},
-                {property: 'og:site', content: '@brickbrotherhood'},
-                {property: 'og:creator', content: '@brickbrotherhood'},
+                { property: 'og:site', content: '@in5mins'},
+                { property: 'og:creator', content: '@in5mins'},
                 {property: 'og:image:width', content: '200'},
                 {property: 'og:image:height', content: '200'}
             ]

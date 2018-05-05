@@ -1,34 +1,3 @@
-/*
-
-Template: COINEX - Crypto Currency HTML Template 
-Author: iqonicthemes.in
-Version: 1.0
-Design and Developed by: iqonicthemes.in
-
-*/
-
-/*================================================
-[  Table of contents  ]
-================================================
-
-:: Page loader
-:: Back to top
-:: search
-:: Charts
-:: Header
-:: wow
-:: jarallax
-:: counter
-:: Progress Bar
-:: countdown
-:: owl carousel
-:: Magnific Popup
-::widget
-
-======================================
-[ End table content ]
-======================================*/
-
 "use strict";
 
 /*************************
