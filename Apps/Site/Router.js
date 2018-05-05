@@ -16,6 +16,9 @@ const sites = {
     'litecoin-ltc.review': {
         router: require('./Projects/cryptoreviews/Router').default
     },
+    'aelf-elf.review': {
+        router: require('./Projects/cryptoreviews/Router').default
+    },
 };
 
 var getUrlParameters = function(search) {
