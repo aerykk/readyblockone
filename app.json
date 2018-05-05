@@ -1,7 +1,7 @@
 {
     "name": "Horadric",
     "description": "Example of the infinite",
-    "repository": "https://github.com/stokegames/horadric",
+    "repository": "https://github.com/readyblockone/horadric",
     "logo": "http://node-js-sample.herokuapp.com/node.svg",
     "keywords": [
         "react",
