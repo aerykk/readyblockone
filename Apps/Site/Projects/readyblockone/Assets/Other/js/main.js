@@ -1,190 +1,121 @@
-window.site = jQuery.extend(true, window.site ? window.site : {}, {
-    ajaxMode: true,
-    slideMode: true,
-    slideExistingSpeed: 200,
-    slideNonexistingSpeed: 1000,
-    slideBufferSize: 2
-})
+$(document).ready(function () {
+	"use strict";
 
-jQuery.fn.extend({
-    random: function() {
-        return this.get(Math.floor(this.length * (Math.random() % 1)))
-    },
-    randomBetween: function(min, max) {
-        return this.get(min + jQuery.random(max - min + 1))
-    }
-})
+	/*==============================
+	Header
+	==============================*/
+	$(window).on('scroll', function () {
+		if ($(this).scrollTop() > 0){
+			$('.header').addClass("header--active");
+		} else {
+			$('.header').removeClass("header--active");
+		}
+	});
 
-let random = 0
+	/*==============================
+	Mobile navigation
+	==============================*/
+	$('.header__menu').on('click', function() {
+		$(this).toggleClass('header__menu--active');
+		$('.header__nav').toggleClass('header__nav--active');
+		$('.header__btns').toggleClass('header__btns--active');
+	});
 
-jQuery.extend(jQuery.expr[':'], {
-    random: function(a, i, m, r) {
-        if (i == 0) {
-            random = Math.floor(Math.random() * r.length)
-        }
+	/*==============================
+	Partners slider
+	==============================*/
+	$('.partners__slider').owlCarousel({
+		mouseDrag: false,
+		dots: false,
+		loop: true,
+		autoplay: true,
+		autoplayTimeout: 5000,
+		smartSpeed: 500,
+		responsive : {
+			0 : {
+				items: 2,
+				margin: 20
+			},
+			576 : {
+				items: 3,
+				margin: 20
+			},
+			768 : {
+				items: 4,
+				margin: 20
+			},
+			992 : {
+				items: 5,
+				margin: 25
+			},
+			1200 : {
+				items: 6,
+				margin: 30
+			}
+		}
+	});
 
-        return i == random
-    }
-})
+	/*==============================
+	Testimonial slider
+	==============================*/
+	$('.testimonial-slider').owlCarousel({
+		mouseDrag: false,
+		dots: true,
+		loop: true,
+		autoplay: true,
+		autoplayTimeout: 5000,
+		smartSpeed: 500,
+		margin: 0,
+		responsive : {
+			0 : {
+				items: 1,
+				margin: 15,
+			},
+			576 : {
+				items: 1,
+				margin: 0,
+			},
+			992 : {
+				items: 2,
+			},
+			1200 : {
+				items: 3,
+			}
+		}
+	});
 
-let showLoadingIndicator = function() {
-    jQuery('#loading').animate({'right': '+=' + (jQuery('#loading').width() - 5) + 'px'}, 300)
-}
+	/*==============================
+	Section background img
+	==============================*/
+	$('.section--bg').each(function(){
+		if ($(this).attr('data-bg')){
+			$(this).css({
+				'background': 'url(' + $(this).data('bg') + ')',
+				'background-position': 'center center',
+				'background-repeat': 'no-repeat',
+				'background-size': 'cover'
+			});
+		}
+	});
 
-let hideLoadingIndicator = function() {
-    jQuery('#loading').animate({'right': '-=' + (jQuery('#loading').width() + 5) + 'px'}, 300)
-}
+	/*==============================
+	Smooth scroll
+	==============================*/
+	var scroll = new SmoothScroll('[data-scroll]', {
+		ignore: '[data-scroll-ignore]',
+		header: '.header',
+		speed: 600,
+		offset: 0,
+		easing: 'easeInOutCubic',
+	});
 
-
-
-jQuery(document).ready(function($) {
-    $('#loading').css({'right': '-' + ($('#loading').width() + 5) + 'px'}).show()
-
-    $(document)
-      .bind('ajaxStart', function() {
-          showLoadingIndicator()
-      })
-      .bind('ajaxStop', function() {
-          hideLoadingIndicator()
-      })
-
-
-    // make code pretty
-    window.prettyPrint && prettyPrint()
-})
-
-function reloadSyntaxHighlighting() {
-  prettyPrint()
-}
-
-function reloadCommentingSystem(path) {
-    try {
-        DISQUS.reset({
-            reload: true,
-            config: function () {
-                var url = window.location.protocol + '//' + window.location.host + path
-                var identifier = $.base64.encode(url)
-                identifier = identifier.substr(0, identifier.length - 2)
-
-                this.page.identifier = identifier
-                this.page.url = url
-            }
-        })
-    } catch(ex) {}
-}
-
-jQuery(document).ready(function($) {
-  setTimeout(function() {
-    let location = new String(window.location)
-    let paneTarget = $('#content')
-    let lastHashChange = null
-
-    let onHashChange = function() {
-        reloadCommentingSystem(name)
-
-        window.site.onResize({reposition: false})
-    }
-
-    $('#navigation-social').menu({
-        on_click: function(a, callback) {
-            callback()
-        }
-    })
-
-    // Doesnt work
-    // $('#navigation-social > ul > li > a').hover(
-    //     function() {
-    //         $(this).animate({'background-color': '#111'}, 500)
-    //     },
-    //     function() {
-    //         $(this).stop().animate({'background-color': '#262626'}, 500, function() {})
-    //     }
-    // )
-
-    // Init top menu dropdowns
-    $('.dropdown-toggle').on('mouseover', $.fn.dropdown.Constructor.prototype.toggle)
-
-    window.site.onResize = function(params) {
-        params = $.extend({
-            reposition: true
-        }, params)
-
-        $('section.active .content-body-wrapper', paneTarget).css('height', function() {
-            return $(window).height() - $('section.active .content-header', paneTarget).height() - 70 - 20 - 20 - 40 // 20 padding/margin
-        })
-
-        $('#navigation-social').css('height', function() {
-            return $(window).height() - 10 - 20 // 20 padding/margin
-        })
-
-        $('.pane > ul').css({
-            width: parseInt($(window).width()) * 5 + 'px',
-            height: parseInt($(window).height()) * 5 + 'px'
-        })
-
-        $('.pane > ul > li').each(function() {
-            $(this).css({
-                width: $(window).width(),
-                height: $(window).height()
-            })
-        })
-
-        $('section.active .content-body', paneTarget).jScrollPane()
-
-        if(!$('section.active .content-fade').length) // already init?
-            $('section.active .content-body .jspContainer').prepend('<div class="content-fade top"></div>').append('<div class="content-fade bottom"></div>')
-
-        if(params.reposition) {
-            let sectionTarget = $('section.active', paneTarget)
-
-            paneTarget.scrollTo(sectionTarget.parent())
-        }
-    }
-
-    $(window).bind('resize', window.site.onResize)
-
-    if(!site.ajaxMode) {
-        return
-    }
-
-    let initializeAjaxMode = function() {
-        $('#commenting-system').appendTo($('.comment-container', $('section', paneTarget))) // assume one
-
-        window.site.onResize({reposition: false})
-
-        // Monkey patch history pushState
-        var pushState = window.history.pushState
-        window.history.pushState = function(state) {
-            console.log('History change')
-            onHashChange()
-
-            return pushState.apply(window.history, arguments)
-        }
-
-        $(window).load(function() {
-            onHashChange()
-        })
-
-        let dsq_height = 0
-
-        let checkComments = function() {
-            if(!window['DISQUS'])
-                return setTimeout(checkComments, 50)
-
-            let height = $('#commenting-system').height()
-
-            if(height != dsq_height) {
-                $('section.active .content-body', paneTarget).jScrollPane()
-
-                dsq_height = height
-            }
-
-            setTimeout(checkComments, 50)
-        }
-
-        setTimeout(checkComments, 50)
-    }
-
-    initializeAjaxMode()
-  }, 1000)
-})
+	/*==============================
+	Modal
+	==============================*/
+	$('.section__video').magnificPopup({
+		removalDelay: 200,
+		type: 'iframe',
+		preloader: false,
+		mainClass: 'mfp-fade',
+	});
+});
