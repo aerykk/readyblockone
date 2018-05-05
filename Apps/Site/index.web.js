@@ -1,7 +1,7 @@
 const Framework = require('../../Framework')
 const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, match, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, renderToString} = Framework
 
-const SiteRouter = require('./Router')(typeof window !== 'undefined' ? window.location.hostname : 'stokegames.com')
+const SiteRouter = require('./Router')(typeof window !== 'undefined' ? window.location.hostname : 'in5mins.com')
 import DataClient from '../../Services/DataService/DataClient'
 import {ReduxAsyncConnect} from 'redux-connect'
 import {routerMiddleware} from 'react-router-redux'
@@ -9,7 +9,7 @@ import clientMiddleware from '../../Services/WebService/middleware/clientMiddlew
 import HTML from '../../Services/WebService/HTML'
 import UI from '../../Apps/Site/UI'
 
-if (typeof document !== 'undefined') {
+if (typeof document !== 'undefined' && typeof window !== 'undefined') {
     //
     // function initSocket() {
     //   const socket = io('', {path: '/ws'})
