@@ -58,7 +58,7 @@ class Screen extends Component {
                         </View>
                     )
                 })}
-                <Markdown src={"/Apps/Site/Projects/Moria/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
+                <Markdown src={"/Apps/Site/Projects/in5mins/Pages/" + page + ".md"} onChange={(state) => this.onPageChange(state)} />
             </Layout>
         )
     }

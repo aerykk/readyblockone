@@ -6,15 +6,15 @@ export default function news() {
                     style: 1,
                     items: [
                         {
-                            title: 'Welcome to the Brick Brotherhood',
-                            author: 'Eric Muyser',
+                            title: 'Welcome to the site',
+                            author: 'Anon',
                             category: 'General',
                             image: 'emmet.png',
                             date: Date.now()
                         },
                         {
-                            title: 'Newest LEGO Movie set to be produced out of Vancouver, BC in Canada',
-                            author: 'Eric Muyser',
+                            title: 'Stuff and things',
+                            author: 'Anon',
                             category: 'Entertainment',
                             image: null,
                             date: Date.now()
@@ -25,15 +25,15 @@ export default function news() {
                     style: 2,
                     items: [
                         {
-                            title: 'Welcome to the Brick Brotherhood',
-                            author: 'Eric Muyser',
+                            title: 'Welcome to the site',
+                            author: 'Anon',
                             category: 'General',
                             image: 'emmet.png',
                             date: Date.now()
                         },
                         {
-                            title: 'Newest LEGO Movie set to be produced out of Vancouver, BC in Canada',
-                            author: 'Eric Muyser',
+                            title: 'Stuff and things',
+                            author: 'Anon',
                             category: 'Entertainment',
                             image: 'heroes.png',
                             date: Date.now()

@@ -9,16 +9,16 @@ function site() {
     const isLocal = typeof window !== 'undefined' && window.location.hostname.indexOf('.local') !== -1
 
     return {
-        title: 'Eric Muyser',
+        title: ' | Crypto Reviews',
         isLocal: isLocal,
         copyright: {
-            date: '2011-' + new Date().getFullYear(),
-            company: 'Eric Muyser | Dreamer'
+            date: '2017-' + new Date().getFullYear(),
+            company: 'Crypto Reviews | Ready Block One'
         },
         analytics: {
             isEnabled: true,
             GA: {
-                id: 'UA-16494747-9'
+                id: ''
             }
         },
         head: {
@@ -29,8 +29,8 @@ function site() {
                 {property: 'og:title', content: ''},
                 {property: 'og:description', content: ''},
                 {property: 'og:card', content: 'summary'},
-                {property: 'og:site', content: '@ericmuyser'},
-                {property: 'og:creator', content: '@ericmuyser'},
+                {property: 'og:site', content: '@readyblockone'},
+                { property: 'og:creator', content: '@readyblockone'},
                 {property: 'og:image:width', content: '200'},
                 {property: 'og:image:height', content: '200'}
             ],
@@ -50,7 +50,6 @@ function site() {
                 {rel: 'stylesheet', type: 'text/css', media: 'all', href: 'http://fonts.googleapis.com/css?family=Ubuntu'}
             ],
             script: [
-                {src: 'http://ericmuyser.disqus.com/embed.js'},
                 {src: '/Apps/Site/Vendor/script.min.js'},
                 {src: '/Apps/Site/Projects/cryptoreviews/Assets/Other/extra/jquery.js'},
                 {src: '/Apps/Site/Projects/cryptoreviews/Assets/Other/js/config.js'},

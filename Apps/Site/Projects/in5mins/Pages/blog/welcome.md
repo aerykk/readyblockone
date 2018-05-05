@@ -6,5 +6,5 @@
 
 <ul>
     <li>Date: June 26, 2016</li>
-    <li>By: Eric Muyser</li>
+    <li>By: in5mins</li>
 </ul>
