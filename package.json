@@ -8,15 +8,14 @@
   "license": "PROPRIETARY",
   "private": true,
   "scripts": {
-    "start": "./node_modules/.bin/babel-node index.js",
-    "start-prod": "NODE_ENV=production ./node_modules/.bin/babel-node index.js",
-    "start-web-server": "./node_modules/.bin/babel-node ./Services/WebService/index.js",
-    "start-data-server": "./node_modules/.bin/babel-node ./Services/DataService/index.js",
+    "start": "yarn run babel-node -- index.js",
+    "start-prod": "NODE_ENV=production yarn run babel-node -- index.js",
+    "start-web-server": "yarn run babel-node -- ./Services/WebService/index.js",
+    "start-data-server": "yarn run babel-node -- ./Services/DataService/index.js",
     "lint": "./node_modules/.bin/eslint -c .eslintrc Framework Services",
-    "webpack": "./node_modules/.bin/babel-node ./node_modules/.bin/webpack --progress --colors",
-    "build": "./node_modules/.bin/babel-node ./node_modules/.bin/webpack --progress --color --display-reasons --display-chunks --optimize-min-chunk-size 10000 --optimize-max-chunks 20",
-    "push": "git push",
-    "push-rebuild": "NODE_ENV=production yarn build && git add -A && git commit -m \"Rebuild\" && git push",
+    "webpack": "yarn run babel-node -- ./node_modules/.bin/webpack --progress --colors",
+    "build": "yarn run babel-node -- ./node_modules/.bin/webpack --progress --color --display-reasons --display-chunks --optimize-min-chunk-size 10000 --optimize-max-chunks 20",
+    "push": "NODE_ENV=production yarn build && git add -A && git commit -m \"Rebuild\" && git push",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,7 +30,6 @@
     "yarn": "1.6.0"
   },
   "dependencies": {
-    "babel": "^6.23.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-jscs": "^3.0.0-beta1",
