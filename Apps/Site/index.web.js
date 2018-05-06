@@ -28,10 +28,6 @@ if (typeof document !== 'undefined' && typeof window !== 'undefined') {
     // global.socket = initSocket()
     const container = document.getElementById('ui')
 
-    if (process.env.NODE_ENV !== 'production') {
-        window.React = React // enable debugger
-    }
-
     // if (!container || !container.children.length || !container.children[0].attributes || !container.children[0].attributes['data-react-checksum']) {
     //     console.error('Server-side React render was discarded. Make sure that your initial render does not contain any client-side code.')
     // }

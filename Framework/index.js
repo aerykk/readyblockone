@@ -357,7 +357,7 @@ if (typeof global !== 'undefined' && global.Framework) {
     if (Framework.Platform.Env.isServer) {
         Framework.fetch = require('isomorphic-fetch')
     } else {
-        Framework.fetch = window.fetch
+        Framework.fetch = typeof window === 'undefined' ? window.fetch : () => { console.info('Error') }
     }
 
     // ===============

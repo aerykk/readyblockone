@@ -14,7 +14,8 @@ var config = {
         path: __dirname + '/Build/Release',
         publicPath: '/Build/Release/',
         filename: '[name].bundle.js',
-        chunkFilename: '[id].chunk.js'
+        chunkFilename: '[id].chunk.js',
+        globalObject: 'this'
     },
     resolve: {
         extensions: ['.js', '.jsx', '.json']
@@ -46,17 +47,17 @@ var config = {
                     cacheDirectory: true,
                     presets: ['es2015', 'react', 'stage-0'],
                     plugins: [
-                        "transform-do-expressions",
-                        "transform-function-bind",
-                        "transform-class-constructor-call",
-                        "transform-export-extensions",
-                        "syntax-trailing-function-commas",
-                        "transform-exponentiation-operator",
-                        "syntax-dynamic-import",
+                        'transform-do-expressions',
+                        'transform-function-bind',
+                        'transform-class-constructor-call',
+                        'transform-export-extensions',
+                        'syntax-trailing-function-commas',
+                        'transform-exponentiation-operator',
+                        'syntax-dynamic-import',
                         [
-                            "import-inspector",
+                            'import-inspector',
                             {
-                                "serverSideRequirePath": true
+                                'serverSideRequirePath': true
                             }
                         ]
                     ]
@@ -86,13 +87,13 @@ var config = {
     ]
 }
 
-if (process.env.NODE_ENV === 'production') {
-    config.plugins.push(
-        new StaticSiteGeneratorPlugin('site.web', [
-            '/',
-            '/about/'
-        ])
-    )
-}
+// if (process.env.NODE_ENV === 'production') {
+//     config.plugins.push(
+//         new StaticSiteGeneratorPlugin('site.web', [
+//             '/',
+//             '/about/'
+//         ])
+//     )
+// }
 
 module.exports = config

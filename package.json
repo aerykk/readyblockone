@@ -14,9 +14,9 @@
     "start-data-server": "./node_modules/.bin/babel-node ./Services/DataService/index.js",
     "lint": "./node_modules/.bin/eslint -c .eslintrc Framework Services",
     "webpack": "./node_modules/.bin/babel-node ./node_modules/.bin/webpack --progress --colors",
-    "build": "./node_modules/.bin/babel-node ./node_modules/.bin/webpack --display-chunks --optimize-min-chunk-size 10000 --optimize-max-chunks 10 --display-reasons --progress --color",
+    "build": "./node_modules/.bin/babel-node ./node_modules/.bin/webpack --progress --color --display-reasons --display-chunks --optimize-min-chunk-size 10000 --optimize-max-chunks 20",
     "push": "git push",
-    "push-rebuild": "NODE_ENV=production ./node_modules/.bin/babel ./node_modules/.bin/webpack --progress -p && git add -A && git commit -m \"Rebuild\" && git push",
+    "push-rebuild": "NODE_ENV=production ./node_modules/.bin/webpack --progress -p && git add -A && git commit -m \"Rebuild\" && git push",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
