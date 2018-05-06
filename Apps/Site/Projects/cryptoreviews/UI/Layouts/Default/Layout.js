@@ -30,7 +30,7 @@ class Layout extends Component {
     render() {
         const { children, site } = this.props
 
-        return Framework.wrapStyles(this.state.styles,
+        return (
             <View>
                 <header className="simpal">
                     <div className="iq-header">
@@ -317,7 +317,6 @@ class Layout extends Component {
                     </div>
                 </section>
                 <div className="main-content">
-                    {this.props.children}
                     <section className="overview-block-ptb iq-need">
                         <div className="container">
                             <div className="row">

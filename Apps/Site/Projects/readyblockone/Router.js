@@ -1,11 +1,13 @@
 const Framework = require('../../../../Framework')
 const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, renderToString} = Framework
+const path = require('path')
 
-import {HotKeys} from 'react-hotkeys'
+import Loadable from 'react-loadable'
 import Auth from '../../Core/Utils/Auth'
 import DevTools from '../../Shared/UI/Components/DevTools'
 import store from './Store'
 import reducers from './Reducers'
+import { report } from 'import-inspector'
 
 // Polyfill for nodejs /w babel
 if (typeof require.ensure !== "function") require.ensure = function(d, c) { c(require) }
@@ -29,102 +31,27 @@ function redirectToDashboard(nextState, replace) {
 }
 
 
-class Toolbar extends Component {
-    render() {
-        return (
-            <ul style={{
-                    position: 'fixed',
-                    left: '0',
-                    top: '0',
-                    height: '100%',
-                    width: '20%',
-                    background: '#000',
-                    color: '#fff',
-                    zIndex: 100
-                }}>
-                <li>
-                    <a href="http://hackatron.rocks.local:10020/">Go to Hackatron</a>
-                </li>
-                <li>
-                    <a href="http://ttt.stokegames.com.local:10010/">Go to TTT</a>
-                </li>
-            </ul>
-        )
-    }
-}
+const Loading = () => <div>Loading</div>
 
-class App extends Component {
-    constructor() {
-        super()
-
-        this.toggleToolbar = this.toggleToolbar.bind(this)
-
-        this.state = {
-            toolbarActive: false
-        }
-    }
-
-    toggleToolbar() {
-        console.log('toggleToolbar')
-
-        this.setState({
-            toolbarActive: !this.state.toolbarActive
+const routes = [
+    {
+        path: '/',
+        component: Loadable({
+            loader: function loader() {
+                return report(new Promise((resolve) => {
+                    return require.ensure([], (require) => {
+                        resolve(require('./UI/Screens/Home').default)
+                    })
+                }), {
+                        currentModuleFileName: path.join(__dirname, './Router.js'),
+                        importedModulePath: './UI/Screens/Home',
+                        serverSideRequirePath: path.join(__dirname, './UI/Screens/Home')
+                    });
+            },
+            loading: Loading
         })
-    }
-
-    render() {
-        const handlers = {
-            'toggleToolbar': this.toggleToolbar
-        }
-
-        const map = {
-            'toggleToolbar': 'ctrl+n'
-        }
-
-        const isLocal = typeof window !== 'undefined' && window.location.hostname.indexOf('.local') !== -1
-
-        return (
-            <View>
-                <HotKeys handlers={handlers} keyMap={map}>
-                    <View>
-                        {this.props.children}
-                        {isLocal && <DevTools />}
-                        {isLocal && this.state.toolbarActive && <Toolbar />}
-                    </View>
-                </HotKeys>
-
-                {this.props.site.analytics && this.props.site.analytics.isEnabled && (
-                    <script dangerouslySetInnerHTML={{
-                        __html: `
-                          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                          ga('create', '${this.props.site.analytics.GA.id}', 'auto');
-                          ga('send', 'pageview');
-                        `}} />
-                )}
-            </View>
-        )
-    }
-}
-
-
-const routes = {
-    component: App,
-    childRoutes: [
-        {
-            path: '/',
-                getComponent: (nextState, cb) => {
-                return require.ensure([], (require) => {
-                    cb(null, require('./UI/Screens/Home').default)
-                })
-            }
-        },
-        {path: '*', getComponent: (nextState, cb) => { return require.ensure([], (require) => { cb(null, require('./UI/Screens/Home').default) }) } },
-    ]
-}
+    },
+]
 
 export default {
     routes: routes,

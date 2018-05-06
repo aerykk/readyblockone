@@ -1,11 +1,19 @@
 {
-    "presets": [ "react-native" ], /* https://github.com/facebook/react-native/issues/4844#issuecomment-204035720 */
+    "presets": [ "es2015", "react", "stage-0" ], 
     "plugins": [
         "transform-do-expressions",
         "transform-function-bind",
         "transform-class-constructor-call",
         "transform-export-extensions",
         "syntax-trailing-function-commas",
-        "transform-exponentiation-operator"
+        "transform-exponentiation-operator",
+        "dynamic-import-node",
+        "syntax-dynamic-import",
+        [
+            "import-inspector",
+            {
+                "serverSideRequirePath": true
+            }
+        ]
     ]
 }

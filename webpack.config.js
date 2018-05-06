@@ -3,10 +3,11 @@ const webpack = require('webpack')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 
 var config = {
+    stats: {
+        warnings: false
+    },
     entry: {
         'site.web': ['./Apps/Site/index.web.js'],
-        'site.ios': ['./Apps/Site/index.ios.js'],
-        'site.android': ['./Apps/Site/index.android.js'],
         'widget.web': ['./Apps/Widget/index.web.js']
     },
     output: {
@@ -16,45 +17,64 @@ var config = {
         chunkFilename: '[id].chunk.js'
     },
     resolve: {
-        extensions: ['', '.js', '.jsx', '.json']
+        extensions: ['.js', '.jsx', '.json']
     },
     externals: {
         'jsdom': 'window',
         'react/lib/ReactContext': 'window',
         'react/lib/ExecutionEnvironment': true,
         'react/addons': true,
+        'jquery': true,
+        'TweenLite': true
     },
-    alias: {
-        'cheerio': 'cheerio/lib/cheerio'
+    resolve: {
+        alias: {
+            'cheerio': 'cheerio/lib/cheerio'
+        }
     },
     module: {
-        loaders: [
+        rules: [
             {
-                test: /\.js?$/,
-                loader: 'babel',
+                test: /\.js(x?)$/,
                 include: [
                     path.join(__dirname + '/Framework'),
                     path.join(__dirname + '/Apps'),
-                    path.join(__dirname + '/Services'),
-                    path.join(__dirname + '/node_modules/react-native-extended-stylesheet')
+                    path.join(__dirname + '/Services')
                 ],
+                loader: 'babel-loader',
                 query: {
                     cacheDirectory: true,
-                    plugins: [],
-                    presets: ['react', 'es2015', 'stage-0']
+                    presets: ['es2015', 'react', 'stage-0'],
+                    plugins: [
+                        "transform-do-expressions",
+                        "transform-function-bind",
+                        "transform-class-constructor-call",
+                        "transform-export-extensions",
+                        "syntax-trailing-function-commas",
+                        "transform-exponentiation-operator",
+                        "syntax-dynamic-import",
+                        [
+                            "import-inspector",
+                            {
+                                "serverSideRequirePath": true
+                            }
+                        ]
+                    ]
                 }
             },
             {
                 test: /\.css$/,
                 include: path.join(__dirname + '/Apps'),
-                loaders: [
-                    'raw'
-                ]
+                loader: 'raw-loader',
             },
             {
                 test: /\.json$/,
-                include: path.join(__dirname + '/'), // Thanks cheerio :-/
-                loader: 'json-loader'
+                include: [
+                    path.join(__dirname + '/Framework'),
+                    path.join(__dirname + '/Apps'),
+                    path.join(__dirname + '/Services'),
+                ],
+                loader: 'json-loader',
             },
         ]
     },
@@ -72,17 +92,7 @@ if (process.env.NODE_ENV === 'production') {
             '/',
             '/about/'
         ])
-        //SiteRouter('stokegames.com').routes)
     )
-    // config.plugins.push(new webpack.optimize.UglifyJsPlugin({
-    //     sourceMap: false,
-    //     minimize: true,
-    //     compress: {
-    //         drop_debugger: true,
-    //         warnings: false,
-    //         drop_console: true
-    //     }
-    // }))
 }
 
 module.exports = config

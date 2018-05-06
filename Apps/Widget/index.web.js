@@ -2,6 +2,7 @@ const Framework = require('../../Framework')
 const {React, ReactDOM, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView} = Framework
 
 import UI from './UI'
+import { BrowserRouter } from 'react-router-dom'
 
 function bindEvent(element, type, handler) {
     if (element.addEventListener) {
@@ -13,7 +14,7 @@ function bindEvent(element, type, handler) {
 
 function onReady() {
     let target = window.document.createElement('div')
-    target.id = 'stoke-widget'
+    target.id = 'readyblockone-widget'
     window.document.body.appendChild(target)
 
     ReactDOM.render((

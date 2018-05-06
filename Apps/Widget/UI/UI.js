@@ -34,12 +34,12 @@ class UI extends Component {
         let host = null
 
         if (window.location.hostname.indexOf('.local') === -1) {
-            host = 'https://stokegames.com'
+            host = 'https://readyblock.one'
         } else {
-            host = 'http://stokegames.com.local:11010'
+            host = 'http://readyblock.one.local:11010'
         }
 
-        return Framework.wrapStyles(this.state.styles,
+        return (
             <View style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '60px'}}>
                 <View style={{position: 'relative'}}>
                     <View styles="c-nav-bg" />

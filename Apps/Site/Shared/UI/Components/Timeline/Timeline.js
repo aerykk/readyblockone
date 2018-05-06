@@ -26,7 +26,7 @@ class Timeline extends Component {
 
         if (!this.state.styles) { return <div></div> }
 
-        return Framework.wrapStyles(this.state.styles,
+        return (
             <ul styles="c-timeline">
                 {stages.map((stage, i) => {
                     const {title, state, color} = stage

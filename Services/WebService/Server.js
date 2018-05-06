@@ -1,3 +1,6 @@
+import createMemoryHistory from 'history/createMemoryHistory'
+import { StaticRouter } from 'react-router'
+
 const express = require('express')
 const webpack = require('webpack')
 const http = require('http')
@@ -9,7 +12,6 @@ const webpackConfig = require('../../webpack.config.js')
 const Framework = require('../../Framework')
 const {AppWrapper, AppConfig, React, Provider, Router, match, routerMiddleware, syncHistoryWithStore, ReduxAsyncConnect, loadOnServer, renderToString} = Framework
 
-const createHistory = require('react-router/lib/createMemoryHistory')
 const DataClient = require('../DataService/DataClient')
 const httpProxy = require('http-proxy')
 const HTML = require('./HTML').default
@@ -80,15 +82,18 @@ class Server {
         this.server = http.createServer(this.app)
 
         this.initProxies()
+        
+        webpackConfig.mode = this.env
 
         if (this.env === 'development') {
             webpackConfig.devtool = 'eval' // Speed up incremental builds
-            webpackConfig.entry['site.web'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr')
-            webpackConfig.entry['widget.web'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr')
+            // webpackConfig.entry['site.web'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr')
+            // webpackConfig.entry['widget.web'].unshift('webpack-hot-middleware/client?path=/__webpack_hmr')
             webpackConfig.output.publicPath = '/Build/Release/'
-            webpackConfig.plugins.unshift(new webpack.HotModuleReplacementPlugin())
-            webpackConfig.plugins.unshift(new webpack.NoErrorsPlugin())
-            webpackConfig.module.loaders[0].query.presets.push('react-hmre')
+            webpackConfig.plugins.unshift(new webpack.NoEmitOnErrorsPlugin())
+
+            // webpackConfig.plugins.unshift(new webpack.HotModuleReplacementPlugin())
+            // webpackConfig.module.rules[0].use[0].query.presets.push('react-hmre')
 
             const compiler = webpack(webpackConfig)
 
@@ -129,53 +134,39 @@ class Server {
 
             const data = {}
             const dataClient = new DataClient()
-            const memoryHistory = createHistory(req.originalUrl)
-            const reduxRouterMiddleware = routerMiddleware(memoryHistory)
+            const history = createMemoryHistory(req.originalUrl)
+            const reduxRouterMiddleware = routerMiddleware(history)
             const reducers = {...SiteRouter.reducers}
             const middleware = [clientMiddleware(dataClient), reduxRouterMiddleware, ...SiteRouter.middleware]
             const store = SiteRouter.store.configure(reducers, middleware, data)
-            const history = syncHistoryWithStore(memoryHistory, store)
+            //const history = syncHistoryWithStore(memoryHistory, store)
             const routes = SiteRouter.routes
             const location = req.originalUrl
 
-            // React router
-            match({
-                history: history,
-                routes: routes,
-                location: location
-            }, (err, redirectLocation, renderProps) => {
-                if (err) {
-                    console.log(err.stack)
-                    return res.status(500).send(err.message)
-                }
+            const context = {}
+            const ui = renderToString(
+                <StaticRouter
+                    location={location}
+                    context={context}
+                >
+                    <UI store={store} history={history} routes={routes} />
+                </StaticRouter>
+            )
 
-                if (redirectLocation) {
-                    return res.redirect(302, redirectLocation.pathname + redirectLocation.search)
-                }
+            const page = renderToString(
+                <HTML ui={ui} store={store} />
+            )
 
-                if (!renderProps) {
-                    // return next('err msg: route not found') // yield control to next middleware to handle the request
-                    return res.status(404).send('Not found')
-                }
-
-                loadOnServer({
-                    ...renderProps,
-                    store: store,
-                    helpers: {
-                        client: dataClient
-                    }
+            if (context.url) {
+                res.writeHead(301, {
+                    Location: context.url
                 })
-                .then(() => {
-                    const ui = <UI AppConfig={AppConfig} store={store} history={history} routes={SiteRouter.routes} renderProps={renderProps} />
-                    const page = renderToString(<HTML ui={ui} store={store} />)
-
-                    res.status(200).send('<!DOCTYPE html>\n' + page)
-                })
-                .catch((err2) => {
-                    console.log(err2.stack)
-                    res.end(err2.message)
-                })
-            })
+                res.end()
+            } else {
+                res.status(200)
+                res.write('<!DOCTYPE html>\n' + page)
+                res.end()
+            }
         })
     }
 

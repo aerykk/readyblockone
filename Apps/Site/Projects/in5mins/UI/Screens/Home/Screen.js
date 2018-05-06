@@ -36,7 +36,7 @@ class Screen extends Component {
 
         if (!page) { page = 'home' }
 
-        return Framework.wrapStyles(this.state.styles,
+        return (
             <Layout>
                 <p>Look at this <Code>inline code</Code>!</p>
                 <CodeBlock>And this code block!</CodeBlock>

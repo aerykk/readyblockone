@@ -1,1 +1,1 @@
-(c) Copyright 2016 Stoke Games. All rights reserved.
+(c) Copyright 2018 Ready Block One. All rights reserved.

@@ -28,7 +28,7 @@ class Layout extends Component {
 
         //if (!this.state.styles) { return <div></div>; }
 
-        return Framework.wrapStyles(this.state.styles,
+        return (
             <View>
                 <div className="container">
                     <div styles="c-header">

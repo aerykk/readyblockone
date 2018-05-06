@@ -6,6 +6,7 @@ import DataClient from '../../Services/DataService/DataClient'
 import {ReduxAsyncConnect} from 'redux-connect'
 import {routerMiddleware} from 'react-router-redux'
 import clientMiddleware from '../../Services/WebService/middleware/clientMiddleware'
+import { BrowserRouter } from 'react-router-dom'
 import HTML from '../../Services/WebService/HTML'
 import UI from '../../Apps/Site/UI'
 
@@ -29,11 +30,11 @@ if (typeof document !== 'undefined' && typeof window !== 'undefined') {
 
     if (process.env.NODE_ENV !== 'production') {
         window.React = React // enable debugger
-
-        if (!container || !container.children.length || !container.children[0].attributes || !container.children[0].attributes['data-react-checksum']) {
-            console.error('Server-side React render was discarded. Make sure that your initial render does not contain any client-side code.')
-        }
     }
+
+    // if (!container || !container.children.length || !container.children[0].attributes || !container.children[0].attributes['data-react-checksum']) {
+    //     console.error('Server-side React render was discarded. Make sure that your initial render does not contain any client-side code.')
+    // }
 
     const routes = SiteRouter.routes
     const location = document.location.pathname
@@ -42,7 +43,7 @@ if (typeof document !== 'undefined' && typeof window !== 'undefined') {
     const reducers = {...SiteRouter.reducers}
     const middleware = [clientMiddleware(dataClient), reduxRouterMiddleware, ...SiteRouter.middleware]
     const store = SiteRouter.store.configure(reducers, middleware, window.__data)
-    const history = syncHistoryWithStore(browserHistory, store)
+    const history = browserHistory // syncHistoryWithStore(browserHistory, store)
 
     // Setup anchor routing
 
@@ -97,31 +98,11 @@ if (typeof document !== 'undefined' && typeof window !== 'undefined') {
 
     setupDynamicLinking()
 
-    match({
-        history: history,
-        routes: routes,
-        location: location
-    }, (err, redirectLocation) => {
-        let extraProps = {helpers: {client: dataClient}, filter: item => !item.deferred}
-
-        ReactDOM.render(<UI AppConfig={AppConfig} store={store} history={history} routes={routes} extraProps={extraProps} />, container)
-    });
+    ReactDOM.render((
+        <BrowserRouter>
+            <UI store={store} history={history} routes={routes} />
+        </BrowserRouter>
+    ), container)
 }
 
 
-export default (locals, callback) => {
-    const ReactDOMServer = require('react-dom/server')
-    const {createHistory, createMemoryHistory} = require('history')
-    const {Router, RoutingContext, match} = require('react-router')
-
-    const history = createMemoryHistory()
-    const location = history.createLocation(locals.path)
-    const dataClient = new DataClient()
-
-    match({
-        routes: SiteRouter.routes,
-        location: location
-    }, function(error, redirectLocation, renderProps) {
-        callback(null, '<!DOCTYPE html>' + ReactDOMServer.renderToString(<UI AppConfig={AppConfig} store={store} history={history} routes={routes} renderProps={renderProps} />))
-    })
-}

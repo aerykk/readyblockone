@@ -1,10 +1,11 @@
 import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
 import {createStore, combineReducers, applyMiddleware, compose, bindActionCreators} from 'redux'
-import {Router, Route, Link, browserHistory, match} from 'react-router'
+import { Router, Route, Link, browserHistory, matchPath} from 'react-router'
 import {Provider, connect} from 'react-redux'
 import {syncHistoryWithStore, routerReducer, routerMiddleware} from 'react-router-redux'
-import {ReduxAsyncConnect, loadOnServer, asyncConnect} from 'redux-connect'
+import { ReduxAsyncConnect, loadOnServer, asyncConnect } from 'redux-connect'
+import PropTypes from 'prop-types'
 
 
 if (typeof global !== 'undefined' && global.Framework) {
@@ -18,8 +19,8 @@ if (typeof global !== 'undefined' && global.Framework) {
 
     Framework.React = React
     Framework.Component = React.Component
-    Framework.PropTypes = React.PropTypes
-    Framework.T = React.PropTypes
+    Framework.PropTypes = PropTypes
+    Framework.T = PropTypes
 
     // ===============
 
@@ -48,7 +49,6 @@ if (typeof global !== 'undefined' && global.Framework) {
         }
 
         Framework.View = class View extends React.Component {
-            static propTypes = { children: React.PropTypes.node }
             render() {
                 return React.createElement(
                     'div',
@@ -59,7 +59,6 @@ if (typeof global !== 'undefined' && global.Framework) {
         }
 
         Framework.Text = class Text extends React.Component {
-            static propTypes = { children: React.PropTypes.node }
             render() {
                 return React.createElement(
                     'div',
@@ -70,7 +69,6 @@ if (typeof global !== 'undefined' && global.Framework) {
         }
 
         Framework.Img = class Img extends React.Component {
-            static propTypes = { children: React.PropTypes.node }
             render() {
                 return React.createElement(
                     'img',
@@ -305,90 +303,13 @@ if (typeof global !== 'undefined' && global.Framework) {
 
     // ===============
 
-    const postcss = require('postcss')
-    const postcssJs = require('postcss-js')
-
     if (Framework.Platform.Env.isBrowser) {
-        const Sass = require('sass.js')
-
-        const reactlook = require('react-look')
-        const _ = require('lodash')
-
-        const renderer = require('../node_modules/react-look/lib/core/renderer')
-        reactlook.StyleSheet.create = (styles, scope) => {
-            // flat style object without selectors
-            const firstKey = styles[Object.keys(styles)[0]]
-            if (!_.isPlainObject(firstKey) && !_.isFunction(firstKey)) {
-                return renderer.default(styles, scope)
-            }
-
-            return Object.keys(styles).reduce((classes, selector) => {
-                classes[selector] = renderer.default(styles[selector], scope) // eslint-disable-line
-                return classes // eslint-disable-line
-            }, {})
-        }
-
-        /* sanitizeMediaQueries
-        Replace this:
-            @media (min-width: 768px) and (max-width: 1023px) {
-                .c-header {
-                  left: 7%;
-                  width: 86%; } }
-        With this:
-            @media (min-width: 768px) and (max-width: 1023px) {
-              left: 7%;
-              width: 86%;
-            }
-        */
-        const sanitizeMediaQueries = (rawStyles) => {
-            return rawStyles.replace(/\}([^@]*)@media([^\{]*)\{([^\{]*)\{([^\}]*)\}/gi, '@media$2{$4}')
-        }
-
-        Framework.getStyles = (rawStyles1, scope, cb) => {
-            Sass.compile(rawStyles1, (rawStyles2) => {
-                if (rawStyles2.status !== 0) {
-                    throw new Error(rawStyles2.message)
-                }
-
-                rawStyles2 = sanitizeMediaQueries(rawStyles2.text) // eslint-disable-line
-
-                const styles = reactlook.StyleSheet.create(
-                    postcssJs.objectify(
-                        postcss.parse(rawStyles2)
-                    ),
-                    scope
-                )
-
-                cb(styles)
-            })
-        }
-
-        Framework.findStyles = (path, cb) => {console.log(path, cb)
-            Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(path).toString() : require(path), 'framework-', cb)
+        Framework.getStyles = () => {
+            return {}
         }
     } else if (Framework.Platform.Env.isNative) {
-        const rnes = require('react-native-extended-stylesheet')
-
-        const convertStyles = (obj) => {
-            if (typeof obj === 'object') {
-                for (const key of Object.keys(obj)) {
-                    obj[key] = convertStyles(obj[key]) // eslint-disable-line
-                }
-                return obj
-            }
-
-            if (parseInt(obj) == obj) { // eslint-disable-line eqeqeq
-                return parseInt(obj)
-            }
-        }
-
-        Framework.getStyles = (rawStyles, extendedStyles = {}) => {
-            let styles = postcssJs.objectify(postcss.parse(rawStyles))
-            styles = convertStyles(styles)
-            styles = Object.assign(styles, extendedStyles)
-            styles = rnes.default.create(styles)
-
-            return styles
+        Framework.getStyles = () => {
+            return {}
         }
     } else if (Framework.Platform.Env.isServer) {
         Framework.getStyles = () => {
@@ -396,88 +317,11 @@ if (typeof global !== 'undefined' && global.Framework) {
         }
     }
 
-    // ===============
-
-    Framework.wrapStyles = (declarations, item) => {
-        if (!declarations) {
-            return item
-        }
-
-        if (!item.props) {
-            return item
-        }
-
-        const extension = {}
-
-        if (item.props.children) {
-            extension.children = []
-            if (Array.isArray(item.props.children)) {
-                item.props.children.forEach((child, i) => {
-                    if (!child) { return }
-                    extension.children[i] = Framework.wrapStyles(declarations, child)
-                })
-            } else {
-                extension.children[0] = Framework.wrapStyles(declarations, item.props.children)
-            }
-        }
-
-        if (item.props.styles) {
-            for (const declaration of Object.keys(declarations)) {
-                const styles = item.props.styles.split(' ')
-                const declarationClasses = declaration.split('.').slice(1)
-
-                // TODO: optimize this, make it recursive
-                // declarationClasses = ["c-timeline__arrow", "c--completed"]
-                // styles = ["c-timeline__arrow", "c--red", "c--completed"]
-                const declaration1 = declarationClasses[0]
-                if (styles.indexOf(declaration1) === -1) {
-                    continue
-                }
-
-                // Check for a straight class match
-                if (declarationClasses.length > 1) {
-                    const declaration2 = declarationClasses[1]
-                    if (styles.indexOf(declaration2) === -1) {
-                        continue
-                    }
-
-                    // Check for a combined class match
-                    if (declarationClasses.length > 2) {
-                        const declaration3 = declarationClasses[2]
-                        if (styles.indexOf(declaration3) === -1) {
-                            continue
-                        }
-
-                        // We cant handle more than 3 yet
-                        if (declarationClasses.length > 3) {
-                            continue
-                        }
-                    }
-                }
-
-                const attr = Framework.Platform.OS === 'web' ? 'className' : 'style'
-                if (extension[attr]) {
-                    if (attr === 'className') {
-                        extension[attr] = extension[attr] + ' ' + declarations[declaration]
-                    } else if (attr === 'style') {
-                        extension[attr] = Object.assign({}, extension[attr], declarations[declaration])
-                    }
-                } else {
-                    extension[attr] = declarations[declaration]
-                }
-            }
-        }
-
-        return React.cloneElement(item, extension)
-    }
-
     // On web, we want a React Look wrapper so we can inject the styles
     // On other platforms we will use inline styles, so it isn't necessary
     if (Framework.Platform.OS === 'web') {
-        const reactlook = require('react-look')
-        Framework.AppWrapper = reactlook.LookRoot
-        Framework.AppConfig = reactlook.Presets['react-dom']
-        Framework.AppConfig.styleElementId = '_nextgen-engine-stylesheet-' + 'horadric'
+        Framework.AppWrapper = <div></div>
+        Framework.AppConfig = {}
     } else {
         Framework.AppWrapper = <div></div>
         Framework.AppConfig = {}
@@ -504,7 +348,7 @@ if (typeof global !== 'undefined' && global.Framework) {
     Framework.routerMiddleware = routerMiddleware
     Framework.ReduxAsyncConnect = ReduxAsyncConnect
     Framework.loadOnServer = loadOnServer
-    Framework.match = match
+    Framework.match = matchPath
     Framework.bindActionCreators = bindActionCreators
     Framework.asyncConnect = asyncConnect
 

@@ -13,7 +13,7 @@ class Code extends Component {
     }
 
     render() {
-        return Framework.wrapStyles(this.state.styles, (
+        return ( (
             <code className="cf-code">
                 {this.props.children}
             </code>
