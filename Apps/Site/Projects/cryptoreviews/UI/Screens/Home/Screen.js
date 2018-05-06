@@ -29,8 +29,10 @@ class Screen extends Component {
     render() {
         const { site, location } = this.props
 
+        const token = 'litecoin'
+
         const content = (
-            <Markdown src={"/Apps/Site/Projects/cryptoreviews/Pages/" + (location || 'home') + ".md"} onChange={(state) => this.onPageChange(state)} />
+            <Markdown src={"/Apps/Site/Projects/cryptoreviews/Pages/" + token + "/" + (location || 'home') + ".md"} onChange={(state) => this.onPageChange(state)} />
         )
 
         const page = this.state.page

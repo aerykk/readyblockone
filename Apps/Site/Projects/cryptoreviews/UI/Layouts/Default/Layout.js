@@ -20,11 +20,6 @@ class Layout extends Component {
     }
 
     componentDidMount() {
-        Framework.getStyles(Framework.Platform.Env.isServer ? require('fs').readFileSync(__dirname + '/Layout.css').toString() : require('./Layout.css'), 'stokelayout-', (styles) => {
-            this.setState({
-                styles: styles
-            })
-        })
     }
 
     render() {
@@ -54,7 +49,7 @@ class Layout extends Component {
                                             </li>
                                             <li><a href="javascript:void(0)">Pages</a>
                                                 <ul className="sub-menu">
-                                                    <li><a href="about-us.html">About Us</a></li>
+                                                    <li><a href="/about">About Us</a></li>
                                                     <li><a href="javascript:void(0)">Services <i className="fa fa-angle-right" aria-hidden="true"></i></a>
                                                         <ul>
                                                             <li><a href="services-1.html">Services 1</a></li>
@@ -74,37 +69,6 @@ class Layout extends Component {
                                                             <li><a href="team-details.html">Team Details</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a href="javascript:void(0)">Pricing <i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                        <ul>
-                                                            <li><a href="pricing.html">Pricing 1</a></li>
-                                                            <li><a href="pricing-1.html">Pricing 2</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="javascript:void(0)">Faq <i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                        <ul>
-                                                            <li><a href="faqs-1.html">Faq 1</a></li>
-                                                            <li><a href="faqs-2.html">Faq 2</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="javascript:void(0)">Coming Soon <i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                        <ul>
-                                                            <li><a href="coming-soon-1.html">Coming Soon 1</a></li>
-                                                            <li><a href="coming-soon-2.html">Coming Soon 2</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="javascript:void(0)">Error <i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                        <ul>
-                                                            <li><a href="error-404-1.html">Error 404 1</a></li>
-                                                            <li><a href="error-404-2.html">Error 404 2</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="javascript:void(0)">Breadcrumb <i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                        <ul>
-                                                            <li><a href="breadcrumb-left.html">Breadcrumb left</a></li>
-                                                            <li><a href="breadcrumb-right.html">Breadcrumb Right</a></li>
-                                                            <li><a href="breadcrumb-center.html">Breadcrumb Center</a></li>
-                                                        </ul>
-                                                    </li>
                                                     <li><a href="video.html">Video</a></li>
                                                 </ul>
                                             </li>
@@ -114,27 +78,6 @@ class Layout extends Component {
                                                     <li><a href="wallet.html">WallEt</a></li>
                                                     <li><a href="buy-sell.html">buy & sell</a></li>
                                                     <li><a href="exchange.html">Exchange</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="javascript:void(0)">Blog</a>
-                                                <ul className="sub-menu">
-                                                    <li><a href="blog-2-columns.html">2 Columns</a></li>
-                                                    <li><a href="blog-3-columns.html">3 Columns</a></li>
-                                                    <li><a href="blog-fullwidth.html">Full Width</a></li>
-                                                    <li><a href="blog-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a href="blog-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a href="blog-single.html">Single Page</a></li>
-                                                    <li><a href="blog-single-left-sidebar.html">Single Right Sidebar</a></li>
-                                                    <li><a href="blog-single-right-sidebar.html">Single Left Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="javascript:void(0)">Shop</a>
-                                                <ul className="sub-menu">
-                                                    <li><a href="shop.html">Shop</a></li>
-                                                    <li><a href="shop-2-columns.html">Shop 2 columns</a></li>
-                                                    <li><a href="shop-single.html">Shop Single</a></li>
-                                                    <li><a href="shop-cart.html">Shop Cart</a></li>
-                                                    <li><a href="checkout.html">checkout</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="javascript:void(0)">Contact</a>
@@ -170,7 +113,7 @@ class Layout extends Component {
                                         <div className="calculator iq-mtb-25">
                                             <img className="img-fluid" src="http://via.placeholder.com/800x300" alt="" />
                                         </div>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typeasetting industry. Lorem Ipsum has been the. </p>
+                                        <p>Bitcoin is the father of cryptocurrency. Created in 2008 by Satoshi Nakamoto, it was built as an alternative to traditional currency.</p>
                                         <a href="#" className="button dark iq-mt-10">Buy Now!</a>
                                     </div>
                                 </div>
@@ -610,18 +553,15 @@ class Layout extends Component {
                         <div className="row">
                             <div className="col-sm-5">
                                 <div className="logo iq-mt-0 iq-mb-20"><img className="img-fluid" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/logo-white.png" alt="#" /> </div>
-                                <p className="iq-font-white">Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                <p className="iq-font-white">The world is changing. Are you ready?</p>
                             </div>
                             <div className="col-sm-7">
                                 <ul className="iq-menu">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Portfolio</a></li>
-                                    <li><a href="#">Faqs</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="http://readyblock.one/">Home</a></li>
+                                    <li><a href="http://readyblock.one/network">Network</a></li>
+                                    <li><a href="http://readyblock.one/services">Services</a></li>
                                 </ul>
-                                <div className="contact iq-font-white">+0123 456 789 | mail@coinex.com </div>
+                                <div className="contact iq-font-white">hello@readyblock.one</div>
                             </div>
                         </div>
                         <div className="row">
@@ -639,7 +579,7 @@ class Layout extends Component {
                                 </ul>
                             </div>
                             <div className="col-sm-6 text-right">
-                                <div className="iq-copyright iq-mt-10">Copyright <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> <a href="#"><span className="iq-font-yellow">Ready Block One</span>.</a> All Rights Reserved.</div>
+                                <div className="iq-copyright iq-mt-10">Copyright <span id="copyright">2018</span> <a href="http://readyblock.one"><span className="iq-font-yellow">Ready Block One</span></a></div>
                             </div>
                         </div>
                     </div>

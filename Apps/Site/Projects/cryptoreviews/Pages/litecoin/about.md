@@ -8,7 +8,7 @@
     </div>
     <div class="span4">
         <p></p>
-        <p>Hello!</p>
+        <p>Hello! LTC</p>
         <p>ddd</p>
         <p></p>
         <br>

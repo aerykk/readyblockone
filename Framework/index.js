@@ -303,20 +303,6 @@ if (typeof global !== 'undefined' && global.Framework) {
 
     // ===============
 
-    if (Framework.Platform.Env.isBrowser) {
-        Framework.getStyles = () => {
-            return {}
-        }
-    } else if (Framework.Platform.Env.isNative) {
-        Framework.getStyles = () => {
-            return {}
-        }
-    } else if (Framework.Platform.Env.isServer) {
-        Framework.getStyles = () => {
-            return { }
-        }
-    }
-
     // On web, we want a React Look wrapper so we can inject the styles
     // On other platforms we will use inline styles, so it isn't necessary
     if (Framework.Platform.OS === 'web') {

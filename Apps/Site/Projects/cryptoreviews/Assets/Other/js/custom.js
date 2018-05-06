@@ -274,22 +274,21 @@ function widget() {
 
 
 
-// $(document).ready(function() {
-//     owlcarousel(),
-//         backtotop(),
-//         wow(),
-//         header(),
-//         counter(),
-//         progress(),
-//         jarallax(),
-//         charts(),
-//         search(),
-//         countdown(),
-//         popupgallery(),
-//         widget(),
-//         preloader();
-// });
+$(document).ready(function() {
+});
 
-// $(window).on('load', function() {
-
-// });
+$(window).on('load', function () {
+    owlcarousel(),
+        backtotop(),
+        wow(),
+        header(),
+        counter(),
+        progress(),
+        jarallax(),
+        charts(),
+        search(),
+        countdown(),
+        popupgallery(),
+        widget(),
+        preloader();
+});

@@ -34,37 +34,29 @@ class Layout extends Component {
             <View>
                 <header className="header">
                     <div className="header__logo">
-                        <a href="index.html">
+                        <a href="/">
                             <img src="img/logo.png" alt="" />
                         </a>
                     </div>
 
                     <ul className="header__nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
                         <li className="dropdown header__dropdown">
-                            <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+                            <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Network</a>
 
-                            <ul className="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                <li><a href="index.html">Home 1</a></li>
-                                <li><a href="index2.html">Home 2</a></li>
+                            <ul className="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuLink2" style={{width: '200px'}}>
+                                <li><a href="/network">Overview</a></li>
+                                <li><a href="/network/reviews">Crypto Quick Reviews</a></li>
+                                <li><a href="/network/in5mins">Crypto In 5 Mins</a></li>
                             </ul>
                         </li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li className="dropdown header__dropdown">
-                            <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-
-                            <ul className="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuLink2">
-                                <li><a href="article.html">Article</a></li>
-                                <li><a href="faq.html">Help</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/blog">Blog</a></li>
                     </ul>
 
                     <div className="header__btns">
-                        <a href="login.html" className="btn btn--transparent btn--header">log in</a>
-                        <a href="signup.html" className="btn btn--white btn--header">sign up</a>
+                        <a href="/members" className="btn btn--white btn--header">member access</a>
                     </div>
 
                     <button className="header__menu" type="button">
@@ -80,9 +72,9 @@ class Layout extends Component {
                         <div className="row">
                             <div className="col-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-5 offset-xl-0">
                                 <div className="home__content">
-                                    <h1 className="home__title">Start Bitcoin mining today!</h1>
-                                    <p className="home__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias dicta ratione expedita blanditiis.</p>
-                                    <a href="#" className="btn btn--shadow">get started</a>
+                                    <h1 className="home__title">Ready Block One</h1>
+                                    <p className="home__text">One of the biggest movements in history is happening now. Are you ready?</p>
+                                    <a href="#" className="btn btn--shadow">learn more</a>
                                 </div>
                             </div>
 
@@ -487,7 +479,7 @@ class Layout extends Component {
                         <div className="row">
                             <div className="col-12 col-sm-6 col-md-4 col-lg-3">
                                 <div className="footer__logo">
-                                    <a href="index.html">
+                                    <a href="/">
                                         <img src="img/logo.png" alt="" />
                                     </a>
                                 </div>
@@ -532,8 +524,8 @@ class Layout extends Component {
                                     <small>© 2018 Ready Block One.</small>
 
                                     <ul>
-                                        <li><a href="#">About</a></li>
-                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="/about">About</a></li>
+                                        <li><a href="/privacy">Privacy Policy</a></li>
                                     </ul>
                                 </div>
                             </div>

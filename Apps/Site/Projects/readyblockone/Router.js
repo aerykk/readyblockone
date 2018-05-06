@@ -15,22 +15,6 @@ if (typeof require.include !== "function") require.include = function() {}
 
 let middleware = []
 
-function redirectToLogin(nextState, replace) {
-    if (!Auth.loggedIn()) {
-        replace({
-            pathname: '/login',
-            state: { nextPathname: nextState.location.pathname }
-        })
-    }
-}
-
-function redirectToDashboard(nextState, replace) {
-    if (Auth.loggedIn()) {
-        replace('/')
-    }
-}
-
-
 const Loading = () => <div>Loading</div>
 
 const routes = [
@@ -38,15 +22,17 @@ const routes = [
         path: '/',
         component: Loadable({
             loader: function loader() {
-                return report(new Promise((resolve) => {
-                    return require.ensure([], (require) => {
-                        resolve(require('./UI/Screens/Home').default)
-                    })
-                }), {
+                return report(
+                    new Promise((resolve) => {
+                        return require.ensure([], (require) => {
+                            resolve(require('./UI/Screens/Home').default)
+                        })
+                    }), {
                         currentModuleFileName: path.join(__dirname, './Router.js'),
                         importedModulePath: './UI/Screens/Home',
                         serverSideRequirePath: path.join(__dirname, './UI/Screens/Home')
-                    });
+                    }
+                )
             },
             loading: Loading
         })

@@ -136,7 +136,7 @@ class Server {
             const dataClient = new DataClient()
             const history = createMemoryHistory(req.originalUrl)
             const reduxRouterMiddleware = routerMiddleware(history)
-            const reducers = {...SiteRouter.reducers}
+            const reducers = { ...SiteRouter.getReducers(req.get('host')) }
             const middleware = [clientMiddleware(dataClient), reduxRouterMiddleware, ...SiteRouter.middleware]
             const store = SiteRouter.store.configure(reducers, middleware, data)
             //const history = syncHistoryWithStore(memoryHistory, store)

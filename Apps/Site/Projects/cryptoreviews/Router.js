@@ -7,7 +7,7 @@ import { report } from 'import-inspector'
 import Auth from '../../Core/Utils/Auth'
 import DevTools from '../../Shared/UI/Components/DevTools'
 import store from './Store'
-import reducers from './Reducers'
+import getReducers from './Reducers'
 
 // Polyfill for nodejs /w babel
 if (typeof require.ensure !== "function") require.ensure = function(d, c) { c(require) }
@@ -20,6 +20,7 @@ const Loading = () => <div>Loading</div>
 const routes = [
     {
         path: '/',
+        exact: true,
         component: Loadable({
             loader: function loader() {
                 return report(new Promise((resolve) => {
@@ -34,6 +35,23 @@ const routes = [
             },
             loading: Loading
         })
+    },
+    {
+        path: '/about',
+        component: Loadable({
+            loader: function loader() {
+                return report(new Promise((resolve) => {
+                    return require.ensure([], (require) => {
+                        resolve(require('./UI/Screens/Page').default)
+                    })
+                }), {
+                        currentModuleFileName: path.join(__dirname, './Router.js'),
+                        importedModulePath: './UI/Screens/Page',
+                        serverSideRequirePath: path.join(__dirname, './UI/Screens/Page')
+                    });
+            },
+            loading: Loading
+        })
     }
 ]
 
@@ -41,5 +59,5 @@ export default {
     routes: routes,
     store: store,
     middleware: middleware,
-    reducers: reducers
+    getReducers: getReducers
 }

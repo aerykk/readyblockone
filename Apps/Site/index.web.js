@@ -31,7 +31,7 @@ if (typeof document !== 'undefined' && typeof window !== 'undefined') {
     // if (!container || !container.children.length || !container.children[0].attributes || !container.children[0].attributes['data-react-checksum']) {
     //     console.error('Server-side React render was discarded. Make sure that your initial render does not contain any client-side code.')
     // }
-
+debugger;
     const routes = SiteRouter.routes
     const location = document.location.pathname
     const dataClient = new DataClient()
@@ -43,56 +43,56 @@ if (typeof document !== 'undefined' && typeof window !== 'undefined') {
 
     // Setup anchor routing
 
-    function setupDynamicLinking() {
-      const dummyLink = document.createElement('a')
+    // function setupDynamicLinking() {
+    //   const dummyLink = document.createElement('a')
 
-      const absolutify = function (url) {
-          dummyLink.href = url
-          return dummyLink
-      }
+    //   const absolutify = function (url) {
+    //       dummyLink.href = url
+    //       return dummyLink
+    //   }
 
-      // http://stackoverflow.com/questions/30880757/javascript-equivalent-to-on
-      function delegate(el, evt, sel, handler) {
-          el.addEventListener(evt, function(event) {
-              var t = event.target;
-              while (t && t !== this) {
-                  if (t.matches(sel)) {
-                      handler.call(t, event);
-                  }
-                  t = t.parentNode;
-              }
-          });
-      }
+    //   // http://stackoverflow.com/questions/30880757/javascript-equivalent-to-on
+    //   function delegate(el, evt, sel, handler) {
+    //       el.addEventListener(evt, function(event) {
+    //           var t = event.target;
+    //           while (t && t !== this) {
+    //               if (t.matches(sel)) {
+    //                   handler.call(t, event);
+    //               }
+    //               t = t.parentNode;
+    //           }
+    //       });
+    //   }
 
-      delegate(document, 'click', 'a', function(e) {
-          const anchor = this
-          var href = anchor.attributes.href.nodeValue
+    //   delegate(document, 'click', 'a', function(e) {
+    //       const anchor = this
+    //       var href = anchor.attributes.href.nodeValue
 
-          if (!href) { return }
+    //       if (!href) { return }
 
-          // Don't process hash changes
-          if (href[0] === '#') { return }
+    //       // Don't process hash changes
+    //       if (href[0] === '#') { return }
 
-          const parsed = absolutify(href)
-          href = parsed.href
+    //       const parsed = absolutify(href)
+    //       href = parsed.href
 
-          if (!href) { return }
+    //       if (!href) { return }
 
-          const siteUrl = window.location.origin
+    //       const siteUrl = window.location.origin
 
-          if (href.substr(0, siteUrl.length) === siteUrl) {
-              const path = parsed.pathname
+    //       if (href.substr(0, siteUrl.length) === siteUrl) {
+    //           const path = parsed.pathname
 
-              if (!path) { return }
+    //           if (!path) { return }
 
-              e.preventDefault()
+    //           e.preventDefault()
 
-              history.push(path)
-          }
-      });
-    }
+    //           history.push(path)
+    //       }
+    //   });
+    // }
 
-    setupDynamicLinking()
+    // setupDynamicLinking()
 
     ReactDOM.render((
         <BrowserRouter>
