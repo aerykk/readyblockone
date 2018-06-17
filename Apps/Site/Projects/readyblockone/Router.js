@@ -71,7 +71,26 @@ const routes = [
             },
             loading: Loading
         })
-    }
+    },
+    // Exchanges
+    { path: '/go/binance', component: () => window.location = 'https://www.binance.com/?ref=10031868' },
+    { path: '/go/bittrex', component: () => window.location = '' },
+    { path: '/go/bitfinex', component: () => window.location = '' },
+    { path: '/go/bitstamp', component: () => window.location = '' },
+    { path: '/go/gemini', component: () => window.location = '' },
+    { path: '/go/coinbase', component: () => window.location = '' },
+    { path: '/go/kraken', component: () => window.location = '' },
+    { path: '/go/bitflyer', component: () => window.location = '' },
+    { path: '/go/bitthumb', component: () => window.location = '' },
+    { path: '/go/bitthumb', component: () => window.location = '' },
+    { path: '/go/etoro', component: () => window.location = '' },
+    // Wallets
+    { path: '/go/trezor', component: () => window.location = '' },
+    { path: '/go/ledger', component: () => window.location = '' },
+    { path: '/go/jaxx', component: () => window.location = '' },
+    { path: '/go/metamask', component: () => window.location = '' },
+    // Other
+    { path: '/go/cmc', component: () => window.location = '' },
 ]
 
 export default {

@@ -80,7 +80,7 @@ Header
 *************************/
 function header() {
     $(window).on('scroll', function() {
-        if ($(this).scrollTop() > 20) {
+        if ($(this).scrollTop() > 180) {
             $('header').addClass('menu-sticky');
         } else {
             $('header').removeClass('menu-sticky');
