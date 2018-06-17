@@ -231,6 +231,7 @@ ul {
   -webkit-transition: 0.3s ease;
   -moz-transition: 0.3s ease;
   transition: 0.3s ease;
+  background: #fff;
 }
 .header__logo {
   flex: 0 1 50%;
@@ -433,7 +434,7 @@ ul {
     position: relative;
   }
   .header__nav {
-    flex: 0 1 50%;
+    flex: 0 1 100%;
     text-align: center;
     white-space: nowrap;
     border: none;
@@ -2602,4 +2603,19 @@ ul {
   100% {
     bottom: 0;
   }
+}
+
+
+footer, header, section {
+  position: relative;
+  width: 1200px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+header {
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
 }

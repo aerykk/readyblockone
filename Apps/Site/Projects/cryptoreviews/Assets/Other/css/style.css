@@ -78,12 +78,12 @@ NOTE: This is main stylesheet of template, This file contains the styling for th
 /*---------------------------------------------------------------------
                                General
 -----------------------------------------------------------------------*/
-body { font-family: 'PT Sans', sans-serif; font-weight: normal; font-style: normal; font-size: 16px; line-height: 24px; color: #666666; overflow-x: hidden; background: #e0e6ea; }
+body { font-family: 'sofia-pro', sans-serif; font-weight: normal; font-style: normal; font-size: 16px; line-height: 24px; color: #666666; overflow-x: hidden; background: #e0e6ea; }
 a, .button { transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; color: #151d2e; }
 a:focus { text-decoration: none !important; }
 a:focus, a:hover { color: #f9b707; text-decoration: none !important; }
 a, .button, input { outline: medium none !important; color: #666666; }
-h1, h2, h3, h4, h5, h6 { font-family: 'Ubuntu', sans-serif; font-weight: normal; color: #151d2e; margin-top: 0px; margin-bottom: 0px; }
+h1, h2, h3, h4, h5, h6 { font-family: 'sofia-pro', sans-serif; font-weight: normal; color: #151d2e; margin-top: 0px; margin-bottom: 0px; }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: inherit; }
 h1 { font-size: 70px; line-height: 80px; }
 h2 { font-size: 54px; line-height: 64px; }
@@ -620,16 +620,22 @@ ul.listing-mark li:after { content: "\f0a4"; font-size: 22px }
 /*---------------------------------------------------------------------
                                 Header
 ---------------------------------------------------------------------*/
-header { display: inline-block; width: 100%; float: left; position: relative; z-index: 99; background: #fff; -webkit-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
+header { display: inline-block; width: 100%; float: left; position: relative; z-index: 99; -webkit-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
 header .logo { display: inline-block; float: left; margin-top: 20px; }
 header .logo a { text-transform: uppercase; color: #1a1a1a; font-size: 30px; letter-spacing: 2px; }
 header .logo a img { height: 40px; }
+header .header-org { font-size: 16px; 
+     padding: 7px;
+    margin-left: 36px; transition: all 0.3s ease-in-out;}
+header .header-org img { width: 200px; }
 header .iq-header nav { display: inline-block; float: right; }
-header .menu { display: inline-block; float: right; width: 100%; }
+header .menu { display: inline-block; float: right; width: 100%; margin-top: 10px;  }
 header .iq-header { display: inline-block; width: 100%; float: left; }
 .menu li { display: inline-block; position: relative; float: left; line-height: normal; }
 .menu li:last-child a { padding-right: 0; }
-.menu li a { text-decoration: none; padding: 30px 25px; display: block; font-family: 'Ubuntu', sans-serif; color: #1a1a1a; text-transform: uppercase; font-size: 16px; transition: all 0.2s ease-in-out 0s; }
+.menu li a { text-decoration: none; 
+     padding: 17px 21px;
+    border-radius: 5px; display: block; margin-left: 10px; font-family: 'Ubuntu', sans-serif; color: #1a1a1a; text-transform: uppercase; font-size: 16px; transition: all 0.2s ease-in-out 0s; }
 .menu li a:hover, .menu li:hover>a, .menu li a.active { color: #f9b707; }
 .menu ul { visibility: hidden; opacity: 0; margin: 0; padding: 0; width: 175px; text-align: left; position: absolute; left: 0px; background: #fff; z-index: 99; -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1); box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1); transform: translate(0, 20px); transition: all 0.2s ease-out; }
 .menu ul li { display: block; float: none; background: none; margin: 0; padding: 0; }
@@ -642,8 +648,17 @@ header .iq-header { display: inline-block; width: 100%; float: left; }
 .responsive-menu { display: none; width: 100%; padding: 0 15px 17px 0; font-size: 18px; color: #151d2e; text-transform: uppercase; }
 .responsive-menu:hover { color: #f9b707; text-decoration: none; }
 
+
+.background-gradient-1{
+	    background-image: -webkit-linear-gradient(0deg, #575f72 0%, #c4cbda 100%);
+	    background-image: -o-linear-gradient(0deg, #575f72 0%, #c4cbda 100%);
+	    background-image: linear-gradient(0deg, #575f72 0%, #c4cbda 100%);
+}
+
 /*---- Header Sticky ----*/
+header.menu-sticky .menu { margin-top: 0; }
 header.menu-sticky .iq-header { background: #fff; display: inline-block; width: 100%; position: fixed; top: 0; -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2); box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2); -webkit-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
+header.menu-sticky .header-org { display: none; }
 header.menu-sticky .logo a img { height: 30px; }
 header.menu-sticky .logo { margin-top: 15px; }
 header.menu-sticky .iq-header .menu li a { padding: 22px 25px; }
@@ -828,7 +843,7 @@ header.fancy.menu-sticky .iq-header .row { background: transparent; margin-top: 
 /* banner From */
 .banner-form { background: #fff; display: inline-block; float: right; width: 80%; padding: 30px 30px 40px; position: relative; -webkit-border-top-right-radius: 20px; -moz-border-radius-topright: 20px; border-top-right-radius: 20px; }
 .banner-form:before { position: absolute; bottom: 0px; right: 0; background: url('../images/banner/02.png') no-repeat 0 0; background-size: 100%; width: 100%; height: 87px; content: ""; }
-.banner-form .form-icon { background: #f9b707; display: inline-block; width: 80px; height: 80px; line-height: 80px; text-align: center; position: absolute; top: 30px; right: 89%; -webkit-box-shadow: -8px 6px 10px 0px rgba(0, 0, 0, 0.15); -moz-box-shadow: -8px 6px 10px 0px rgba(0, 0, 0, 0.15); box-shadow: -8px 6px 10px 0px rgba(0, 0, 0, 0.15); }
+.banner-form .form-icon { border-radius: 12px; background: #f9b707; display: inline-block; width: 80px; height: 80px; line-height: 80px; text-align: center; position: absolute; top: 30px; right: 89%; -webkit-box-shadow: -8px 6px 10px 0px rgba(0, 0, 0, 0.15); -moz-box-shadow: -8px 6px 10px 0px rgba(0, 0, 0, 0.15); box-shadow: -8px 6px 10px 0px rgba(0, 0, 0, 0.15); }
 .banner-form h2 { margin-left: 30px; line-height: 36px; font-size: 40px; }
 .banner-form h2 small { display: inline-block; width: 100%; color: #666666; font-weight: 500; font-size: 20px; }
 .calculator .cryptonatorwidget { padding: 0 !important; border: none !important; }
@@ -837,13 +852,23 @@ header.fancy.menu-sticky .iq-header .row { background: transparent; margin-top: 
 .calculator .cryptonatorwidget div { display: none; }
 
 /* Price Silder */
-.price-silder { bottom: 0; background: rgba(255, 255, 255, 0.2); padding: 15px 0; position: relative; overflow: hidden; }
-.price-silder .media img { width: 40px; }
-.price-silder .media-body { line-height: 12px; }
-.price-silder .media-body span { font-size: 14px; }
+.price-silder { font-family: 'PT Sans', sans-serif; height: 94px; bottom: 0; background: rgba(255, 255, 255, 0.2); padding: 15px 0; position: relative; overflow: hidden; }
+.price-silder .media img { width: 64px; }
+.price-silder .media-body { line-height: 14px; }
+.price-silder .media-body span { font-size: 18px; line-height: 20px; }
 .price-silder .media-body small { font-size: 12px; display: inline-block; width: 100%; }
-.price-silder .price-title { position: absolute; z-index: 9; padding: 28px 200px 15px 60px; top: 0; background: -moz-linear-gradient(180deg, rgba(249, 183, 7, 0) 0%, rgba(249, 183, 7, 1) 51%, rgba(249, 183, 7, 1) 100%); /* ff3.6+ */ background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(249, 183, 7, 1)), color-stop(49%, rgba(249, 183, 7, 1)), color-stop(100%, rgba(249, 183, 7, 0))); /* safari4+,chrome */ background: -webkit-linear-gradient(180deg, rgba(249, 183, 7, 0) 0%, rgba(249, 183, 7, 1) 51%, rgba(249, 183, 7, 1) 100%); /* safari5.1+,chrome10+ */ background: -o-linear-gradient(180deg, rgba(249, 183, 7, 0) 0%, rgba(249, 183, 7, 1) 51%, rgba(249, 183, 7, 1) 100%); /* opera 11.10+ */ background: -ms-linear-gradient(180deg, rgba(249, 183, 7, 0) 0%, rgba(249, 183, 7, 1) 51%, rgba(249, 183, 7, 1) 100%); /* ie10+ */ background: linear-gradient(270deg, rgba(249, 183, 7, 0) 0%, rgba(249, 183, 7, 1) 51%, rgba(249, 183, 7, 1) 100%); /* w3c */ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9b707', endColorstr='#f9b707', GradientType=1); /* ie6-9 */ }
-.price-silder .price-title h6 { color: #ffffff; }
+.price-silder .price-title { position: absolute; z-index: 9; padding: 20px 200px 15px 60px; top: 0; background: -moz-linear-gradient(180deg, rgba(249, 183, 7, 0) 0%, rgba(249, 183, 7, 1) 51%, rgba(249, 183, 7, 1) 100%); /* ff3.6+ */ background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(249, 183, 7, 1)), color-stop(49%, rgba(249, 183, 7, 1)), color-stop(100%, rgba(249, 183, 7, 0))); /* safari4+,chrome */ background: -webkit-linear-gradient(180deg, rgba(249, 183, 7, 0) 0%, rgba(249, 183, 7, 1) 51%, rgba(249, 183, 7, 1) 100%); /* safari5.1+,chrome10+ */ background: -o-linear-gradient(180deg, rgba(249, 183, 7, 0) 0%, rgba(249, 183, 7, 1) 51%, rgba(249, 183, 7, 1) 100%); /* opera 11.10+ */ background: -ms-linear-gradient(180deg, rgba(249, 183, 7, 0) 0%, rgba(249, 183, 7, 1) 51%, rgba(249, 183, 7, 1) 100%); /* ie10+ */ background: linear-gradient(270deg, rgba(249, 183, 7, 0) 0%, rgba(249, 183, 7, 1) 51%, rgba(249, 183, 7, 1) 100%); /* w3c */ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9b707', endColorstr='#f9b707', GradientType=1); /* ie6-9 */ }
+
+.price-silder .price-main-img {
+
+    width: 240px;
+    clear: both;
+}
+.price-silder .price-main-title {
+     padding-left: 65px;
+    font-weight: bold;
+    color: #68604f;
+}
 
 /*---------------------------------------------------------------------
                          Banner Stars
@@ -1514,6 +1539,15 @@ footer.iq-footer-4 .newsletter-form .input-group .form-control { border: 1px sol
 /*---------------------------------------------------------------------
                           Footer 5
 -----------------------------------------------------------------------*/
+.iq-footer-5 {
+  
+  position: relative;
+  width: 1200px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
 .iq-footer-5 .logo img { width: 300px; }
 .iq-footer-5 .iq-logo { width: 150px; }
 .iq-footer-5 ul li a { color: #fff; }

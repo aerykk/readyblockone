@@ -6,7 +6,7 @@ import Loadable from 'react-loadable'
 import Auth from '../../Core/Utils/Auth'
 import DevTools from '../../Shared/UI/Components/DevTools'
 import store from './Store'
-import reducers from './Reducers'
+import getReducers from './Reducers'
 import { report } from 'import-inspector'
 
 // Polyfill for nodejs /w babel
@@ -20,6 +20,7 @@ const Loading = () => <div>Loading</div>
 const routes = [
     {
         path: '/',
+        exact: true,
         component: Loadable({
             loader: function loader() {
                 return report(
@@ -37,11 +38,45 @@ const routes = [
             loading: Loading
         })
     },
+    {
+        path: '/network',
+        component: Loadable({
+            loader: function loader() {
+                return report(new Promise((resolve) => {
+                    return require.ensure([], (require) => {
+                        resolve(require('./UI/Screens/Network').default)
+                    })
+                }), {
+                        currentModuleFileName: path.join(__dirname, './Router.js'),
+                        importedModulePath: './UI/Screens/Network',
+                        serverSideRequirePath: path.join(__dirname, './UI/Screens/Network')
+                    });
+            },
+            loading: Loading
+        })
+    },
+    {
+        path: '/about',
+        component: Loadable({
+            loader: function loader() {
+                return report(new Promise((resolve) => {
+                    return require.ensure([], (require) => {
+                        resolve(require('./UI/Screens/Network').default)
+                    })
+                }), {
+                        currentModuleFileName: path.join(__dirname, './Router.js'),
+                        importedModulePath: './UI/Screens/Network',
+                        serverSideRequirePath: path.join(__dirname, './UI/Screens/Network')
+                    });
+            },
+            loading: Loading
+        })
+    }
 ]
 
 export default {
     routes: routes,
     store: store,
     middleware: middleware,
-    reducers: reducers
+    getReducers: getReducers
 }

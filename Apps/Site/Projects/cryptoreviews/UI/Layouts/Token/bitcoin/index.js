@@ -29,11 +29,13 @@ class Layout extends Component {
             <View>
                 <header className="simpal">
                     <div className="iq-header">
-                        <div className="container">
+                        <div className="container white-bg" style={{'max-width': '1200px'}}>
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="logo">
                                         <a href="/"><img className="img-fluid" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/logos/bitcoin.png" alt="" /></a>
+                                        <br />
+                                        <div className="header-org">By <img className="price-main-img" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/rbo-logo-with-title.png" alt="" /></div>
                                     </div>
                                     <nav>
                                         <a id="resp-menu" className="responsive-menu" href="/"><i className="fa fa-reorder"></i> Menu</a>
@@ -47,13 +49,6 @@ class Layout extends Component {
                                                     <li><a href="#exchanges">Exchanges</a></li>
                                                     <li><a href="#history">History</a></li>
                                                     <li><a href="#social">Social</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="javascript:void(0)">Company</a>
-                                                <ul className="sub-menu">
-                                                    <li><a href="https://readyblock.one/about">About Us</a></li>
-                                                    <li><a href="https://readyblock.one/contact">Contact Us</a></li>
-                                                    <li><a href="https://readyblock.one/login">Client Area</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="javascript:void(0)">Network</a>
@@ -70,6 +65,13 @@ class Layout extends Component {
                                                     <li><a href="https://crypto.in5mins.com">Crypto In 5 Mins</a></li>
                                                 </ul>
                                             </li>
+                                            <li><a href="javascript:void(0)">Company</a>
+                                                <ul className="sub-menu">
+                                                    <li><a href="https://readyblock.one/about">About Us</a></li>
+                                                    <li><a href="https://readyblock.one/contact">Contact Us</a></li>
+                                                    <li><a href="https://readyblock.one/login">Client Area</a></li>
+                                                </ul>
+                                            </li>
                                             <li style={{ display: 'none' }}>
                                                 <div className="iq-search"> <a className="search-btn not_click" href="javascript:void(0);"> <span>Search Button</span></a>
                                                     <div className="search-box not-click">
@@ -84,6 +86,8 @@ class Layout extends Component {
                         </div>
                     </div>
                 </header>
+
+
                 <section id="iq-home" className="iq-banner overview-block-pt iq-bg iq-bg-fixed iq-over-blue-90" style={{ background: "url(/Apps/Site/Projects/cryptoreviews/Assets/Other/images/banner/01.jpg)" }}>
                     <div className="container">
                         <div className="banner-text">
@@ -121,7 +125,7 @@ class Layout extends Component {
                     </div>
                     <div className="price-silder">
                         <div className="price-title">
-                            <h6>Bitcoin Price</h6>
+                            <h6><img className="price-main-img" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/rbo-logo-with-title.png" alt="" /><br /><div className="price-main-title">Review Network</div></h6>
                         </div>
                         <div className="container-fluid">
                             <div className="row">
@@ -129,121 +133,65 @@ class Layout extends Component {
                                     <div className="owl-carousel" data-nav-dots="false" data-nav-arrow="false" data-items="7" data-sm-items="4" data-lg-items="7" data-md-items="5" data-autoplay="true">
                                         <div className="item">
                                             <div className="media">
-                                                <img className="mr-2" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/flag/01.jpg" alt="#" />
                                                 <div className="media-body">
                                                     <span className="iq-font-white ">
-                                                        <small>1 Bitcoin</small>16750.01 US Dollar
-            </span>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="item">
                                             <div className="media">
-                                                <img className="mr-2" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/flag/02.jpg" alt="#" />
                                                 <div className="media-body">
                                                     <span className="iq-font-white ">
-                                                        <small>1 Bitcoin</small>16750.01 US Dollar
-            </span>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="item">
                                             <div className="media">
-                                                <img className="mr-2" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/flag/03.jpg" alt="#" />
                                                 <div className="media-body">
                                                     <span className="iq-font-white ">
-                                                        <small>1 Bitcoin</small>16750.01 US Dollar
-            </span>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="item">
                                             <div className="media">
-                                                <img className="mr-2" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/flag/04.jpg" alt="#" />
+                                                <img className="mr-2" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="#" />
                                                 <div className="media-body">
                                                     <span className="iq-font-white ">
-                                                        <small>1 Bitcoin</small>16750.01 US Dollar
-            </span>
+                                                        <small>RANK 1</small>Bitcoin
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="item">
                                             <div className="media">
-                                                <img className="mr-2" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/flag/05.jpg" alt="#" />
+                                                <img className="mr-2" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="#" />
                                                 <div className="media-body">
                                                     <span className="iq-font-white ">
-                                                        <small>1 Bitcoin</small>16750.01 US Dollar
-            </span>
+                                                        <small>RANK 1</small>Bitcoin
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="item">
                                             <div className="media">
-                                                <img className="mr-2" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/flag/06.jpg" alt="#" />
+                                                <img className="mr-2" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="#" />
                                                 <div className="media-body">
                                                     <span className="iq-font-white ">
-                                                        <small>1 Bitcoin</small>16750.01 US Dollar
-            </span>
+                                                        <small>RANK 1</small>Bitcoin
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="item">
                                             <div className="media">
-                                                <img className="mr-2" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/flag/01.jpg" alt="#" />
+                                                <img className="mr-2" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="#" />
                                                 <div className="media-body">
                                                     <span className="iq-font-white ">
-                                                        <small>1 Bitcoin</small>16750.01 US Dollar
-            </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="item">
-                                            <div className="media">
-                                                <img className="mr-2" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/flag/02.jpg" alt="#" />
-                                                <div className="media-body">
-                                                    <span className="iq-font-white ">
-                                                        <small>1 Bitcoin</small>16750.01 US Dollar
-            </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="item">
-                                            <div className="media">
-                                                <img className="mr-2" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/flag/03.jpg" alt="#" />
-                                                <div className="media-body">
-                                                    <span className="iq-font-white ">
-                                                        <small>1 Bitcoin</small>16750.01 US Dollar
-            </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="item">
-                                            <div className="media">
-                                                <img className="mr-2" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/flag/04.jpg" alt="#" />
-                                                <div className="media-body">
-                                                    <span className="iq-font-white ">
-                                                        <small>1 Bitcoin</small>16750.01 US Dollar
-            </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="item">
-                                            <div className="media">
-                                                <img className="mr-2" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/flag/05.jpg" alt="#" />
-                                                <div className="media-body">
-                                                    <span className="iq-font-white ">
-                                                        <small>1 Bitcoin</small>16750.01 US Dollar
-            </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="item">
-                                            <div className="media">
-                                                <img className="mr-2" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/flag/06.jpg" alt="#" />
-                                                <div className="media-body">
-                                                    <span className="iq-font-white ">
-                                                        <small>1 Bitcoin</small>16750.01 US Dollar
-            </span>
+                                                        <small>RANK 1</small>Bitcoin
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -253,6 +201,8 @@ class Layout extends Component {
                         </div>
                     </div>
                 </section>
+
+
                 <div className="main-content">
                     <section className="overview-block-ptb iq-need">
                         <div className="container">
@@ -276,6 +226,8 @@ class Layout extends Component {
                             </div>
                         </div>
                     </section>
+
+
                     <section className="overview-block-ptb iq-bg iq-over-black-80 jarallax" style={{ 'background-image': "url('http://via.placeholder.com/1800x1200')", 'background-position': "center center" }}>
                         <div className="container">
                             <div className="row">
@@ -295,12 +247,14 @@ class Layout extends Component {
                             </div>
                         </div>
                     </section>
-                    <section className="overview-block-ptb iq-feature4 iq-additional">
+
+
+                    <section id="history" className="overview-block-ptb iq-feature4 iq-additional">
                         <div className="container">
                             <div className="row">
                                 <div className="col-sm-12">
                                     <div className="heading-title iq-mb-0">
-                                        <h3 className="title iq-tw-5 iq-mb-20">How it Work</h3>
+                                        <h3 className="title iq-tw-5 iq-mb-20">History</h3>
                                         <p className="iq-mb-30">Here is 3 Easy Steps to Busy & Sell Bitcoin. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
                                     </div>
                                 </div>
@@ -339,6 +293,8 @@ class Layout extends Component {
                             </div>
                         </div>
                     </section>
+
+
                     <section className="overview-block-pt iq-feature4 iq-bg iq-over-black-80 jarallax particles-bg" style={{ 'background-image': "url('http://via.placeholder.com/1800x1200')", 'background-position': "center center" }}>
                         <div className="container">
                             <div className="row">
@@ -356,45 +312,9 @@ class Layout extends Component {
                             </div>
                         </div>
                     </section>
-                    <section className="overview-block-ptb">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-sm-12 col-lg-6 iq-bg">
-                                    <div className="owl-carousel arrow-1" data-nav-dots="false" data-nav-arrow="true" data-items="1" data-sm-items="1" data-lg-items="1" data-md-items="1" data-autoplay="true">
-                                        <div className="item"> <a href="clients.html"><img className="img-fluid" src="http://via.placeholder.com/800x541" alt="#" /></a></div>
-                                        <div className="item"> <a href="clients.html"><img className="img-fluid" src="http://via.placeholder.com/800x541" alt="#" /></a></div>
-                                        <div className="item"> <a href="clients.html"><img className="img-fluid" src="http://via.placeholder.com/800x541" alt="#" /></a></div>
-                                        <div className="item"> <a href="clients.html"><img className="img-fluid" src="http://via.placeholder.com/800x541" alt="#" /></a></div>
-                                        <div className="item"> <a href="clients.html"><img className="img-fluid" src="http://via.placeholder.com/800x541" alt="#" /></a></div>
-                                    </div>
-                                </div>
-                                <div className="col-sm-12 col-lg-6 iq-r-mt-40">
-                                    <div className="heading-left">
-                                        <h3 className="title iq-tw-5">Why Choose Us</h3>
-                                        <p> when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                                    </div>
-                                    <div className="iq-feature3 iq-mt-30">
-                                        <div className="iq-icon yellow-bg">
-                                            <i aria-hidden="true" className="ion-social-bitcoin-outline"></i>
-                                        </div>
-                                        <div className="fancy-content">
-                                            <h5 className="iq-tw-5">Responsive Design</h5>
-                                            <p>Lorem ipsum madolor sit, consectetur adipisicing elit, eiusmod tempor sicing elit, eiusmod tempor.</p>
-                                        </div>
-                                    </div>
-                                    <div className="iq-feature3 iq-mt-25">
-                                        <div className="iq-icon yellow-bg">
-                                            <i aria-hidden="true" className="ion-social-bitcoin-outline"></i>
-                                        </div>
-                                        <div className="fancy-content">
-                                            <h5 className="iq-tw-5">Responsive Design</h5>
-                                            <p>Lorem ipsum madolor sit, consectetur adipisicing elit, eiusmod tempor sicing elit, eiusmod tempor.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+
+
+
                     <section className="iq-about1 iq-bg iq-over-black-80 jarallax quote-form quote-form-2 iq-mt-30" style={{
                         'background-image': "url('http://via.placeholder.com/2000x1080')",
                         'background-position': "left center"
@@ -408,125 +328,295 @@ class Layout extends Component {
                                         </div>
                                         <div className="col-sm-7 iq-ptb-60 ">
                                             <div className="heading-left iq-font-white">
-                                                <h3 className="title iq-tw-5 iq-mb-20 iq-font-white">Request for call</h3>
-                                                <p>Integer quis turpis magna. Suspendisse tincidunt elit at erat tincidunt, vel vulputate arcu dapibus. Etiam accumsan ornare posuere. </p>
+                                                <h3 className="title iq-tw-5 iq-mb-20 iq-font-white">Trading Simplified</h3>
+                                                <p>There are any number of ways to trade cryptocurrencies. However, as a new &amp; emerging market, most are complicated. <br /><br />
+                                                    That's why eToro created an all-in-one platform, to simplify trading for the average investor. <br /><br />
+                                                    They're unique value prop is they let you follow and copy the strategies of experienced traders, what they call "social trading". <br /><br />
+                                                    It's really easy to get started. As with anything, please do your own due diligence and only invest what you can afford to lose. <br /><br />
+                                                    As a best practice, we recommend depositing and withdrawing, just so you know you can get funds in &amp; out without hassle. <br /><br />
+                                                    Try eToro out, and if you like or don't like it let us know. 
+                                                    <br /><br />
+                                                    <a className="button iq-mt-25 float-right" href="https://readyblock.one/go/etoro">Go to eToro</a>
+                                                </p>
                                             </div>
-                                            <form className="form-horizontal" id="contactform" method="post" action="../php/contact-form.php">
-                                                <div className="section-field iq-mb-20">
-                                                    <input id="name" type="text" placeholder="Name*" name="name" />
-                                                </div>
-                                                <div className="section-field iq-mb-20">
-                                                    <input id="email" type="text" placeholder="Email*" name="email" />
-                                                </div>
-                                                <div className="section-field iq-mb-20">
-                                                    <select className="form-control" id="exampleFormControlSubject1">
-                                                        <option>Subject 1</option>
-                                                        <option>Subject 2</option>
-                                                        <option>Subject 3</option>
-                                                        <option>Subject 4</option>
-                                                        <option>Subject 5</option>
-                                                    </select>
-                                                </div>
-                                                <div className="section-field">
-                                                    <textarea className="input-message iq-mb-10" placeholder="Comment*" name="message"></textarea>
-                                                    <input type="hidden" name="action" value="sendEmail" />
-                                                    <button id="submit" name="submit" type="submit" value="Send" className="button">Submit</button>
-                                                </div>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <section className="">
+
+
+                    <section hidden>
                         <a href="http://partners.etoro.com/B10521_A73660_TClick.aspx" Target="_Top"><img src="https://etoro-production.s3.amazonaws.com/partners/ads/1%20(3).JPG" style={{width: '100%'}} /></a>
                     </section>
 
 
                     <img border="0" src="http://partners.etoro.com/B10521_A73660_TGet.aspx" />
 
-
-                    <section className="overview-block-ptb iq-feature4 iq-additional">
+                    <section className="overview-block-ptb" style={{ "background-image": "url('images/bg/bg.png');", "background-position": "center center;" }}>
                         <div className="container">
                             <div className="row">
                                 <div className="col-sm-12">
                                     <div className="heading-title">
-                                        <h3 className="title iq-tw-5 iq-mb-20">Pricing Plan</h3>
-                                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                                        <h3 className="title iq-tw-5 iq-mb-20">Education</h3>
+                                        <p>Here are the most highly rated books on Bitcoin.</p>
                                     </div>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-sm-6 col-lg-3 iq-r-mt-40">
-                                    <div className="pricing-small grey-bg">
-                                        <h5 className="iq-font-yellow">1 Bitcoin</h5>
-                                        <h3 className="iq-tw-6  iq-mtb-10">$1190</h3>
-                                        <span className="iq-mt-15 text-uppercase">*you get 1 Bitcoin*</span>
-                                        <a className="button iq-mt-25" href="#">Buy Now</a>
-                                    </div>
-                                </div>
-                                <div className="col-sm-6 col-lg-3 iq-r-mt-40">
-                                    <div className="pricing-small grey-bg">
-                                        <h5 className="iq-font-yellow">5 Bitcoin</h5>
-                                        <h3 className="iq-tw-6  iq-mtb-10">$1190</h3>
-                                        <span className="iq-mt-15 text-uppercase">*you get 2 Bitcoin*</span>
-                                        <a className="button iq-mt-25" href="#">Buy Now</a>
-                                    </div>
-                                </div>
-                                <div className="col-sm-6 col-lg-3 iq-r-mt-40">
-                                    <div className="pricing-small active grey-bg">
-                                        <h5 className="iq-font-yellow">10 Bitcoin</h5>
-                                        <h3 className="iq-tw-6  iq-mtb-10">$1190</h3>
-                                        <span className="iq-mt-15 text-uppercase">*you get 5 Bitcoin*</span>
-                                        <a className="button iq-mt-25" href="#">Buy Now</a>
-                                    </div>
-                                </div>
-                                <div className="col-sm-6 col-lg-3 iq-r-mt-40">
-                                    <div className="pricing-small grey-bg">
-                                        <h5 className="iq-font-yellow">8 Bitcoin</h5>
-                                        <h3 className="iq-tw-6  iq-mtb-10">$1190</h3>
-                                        <span className="iq-mt-15 text-uppercase">*you get 2 Bitcoin*</span>
-                                        <a className="button iq-mt-25" href="#">Buy Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section className="iq-news overview-block-ptb grey-bg">
-                        <div className="container">
-                            <div className="row justify-content-center">
-                                <div className="col-lg-10 col-md-12 text-center">
-                                    <img src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/speack.png" alt="" />
-                                    <div className="iq-testimonial text-center">
-                                        <div id="testimonial-slider" className="owl-carousel owl-theme owl-loaded" data-nav-dots="true" data-nav-arrow="false" data-items="1" data-xs-items="1" data-sm-items="1" data-md-items="1" data-lg-items="1" data-autoplay="true">
-                                            <div className="testimonial ">
-                                                <p className="description ">
-                                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.
-                                                </p>
-                                                <h5 className="iq-tw-6 ">Rinks Cooper</h5>
-                                                <span>CEO, CoinEx</span>
+                                <div className="col-sm-12 col-md-6 col-lg-6 iq-mt-30">
+                                    <div className="iq-product grey-bg">
+                                        <div className="pdt-image">
+                                            <img src="https://www.cryptocompare.com/media/351372/mb.png" alt="" />
+                                            <ul className="pdt-icon">
+                                                <li><a href="#"><i className="fa fa-cart-plus" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div className="pdt-dec">
+                                            <h5 className="iq-tw-5"><a href="#">Mastering Bitcoin</a></h5>
+                                            <h6><em>By: Andreas Antonopoulos</em></h6>
+                                            <p dir="ltr"><span>Our first book is from Andreas Antonopoulos and is called "Mastering Bitcoin" and it does exactly what is says on the tin. This is a great way to ease yourself into the more complex terminology under the hood of&nbsp;</span><a href="https://www.cryptocompare.com/coins/btc/overview">bitcoin</a><span>. The author's clear mastery of the topic goes a long way in his clear explanations to readers. You learn the basics of&nbsp;</span><a href="https://www.cryptocompare.com/coins/guides/how-does-a-bitcoin-transaction-work/">how bitcoin works and move through into the different transaction types&nbsp;</a><span>and why they are used - also a good look at multi-signature wallets and other such key bitcoin tech. Another bonus in the book are the clear diagrams the are easy to follow. A key primer for those wanting to get to grips with the tech in bitcoin and cryptocurrencies. New versions are updated all the time to stay up to date with the fast moving world of bitcoin.</span></p>
+                                            <div className="shop-price float-left iq-mt-10">
+                                                <strong className="iq-font-yellow">$98.50</strong>
                                             </div>
-                                            <div className="testimonial ">
-                                                <p className="description ">
-                                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.
-                                                </p>
-                                                <h5 className="iq-tw-6 ">JD Scot</h5>
-                                                <span>CEO, CoinEx</span>
+                                            <div className="iq-rating float-right iq-mt-10">
+                                                <ul className="list-inline float-right iq-ml-10">
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star-half-o" aria-hidden="true"></i></li>
+                                                </ul>
                                             </div>
-                                            <div className="testimonial ">
-                                                <p className="description ">
-                                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.
-                                                </p>
-                                                <h5 className="iq-tw-6 ">Haris Morgan</h5>
-                                                <span>CEO, CoinEx</span>
+                                            <br clear="both" />
+                                            <a className="button iq-mt-25 float-right bt-lg" href="https://readyblock.one/go/mb">Buy on Amazon</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-sm-12 col-md-6 col-lg-6 iq-mt-30">
+                                    <div className="iq-product grey-bg">
+                                        <div className="pdt-image">
+                                            <img src="https://www.cryptocompare.com/media/351372/mb.png" alt="" />
+                                            <ul className="pdt-icon">
+                                                <li><a href="#"><i className="fa fa-cart-plus" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div className="pdt-dec">
+                                            <h5 className="iq-tw-5"><a href="#">Mastering Bitcoin</a></h5>
+                                            <h6><em>By: Andreas Antonopoulos</em></h6>
+                                            <p dir="ltr"><span>Our first book is from Andreas Antonopoulos and is called "Mastering Bitcoin" and it does exactly what is says on the tin. This is a great way to ease yourself into the more complex terminology under the hood of&nbsp;</span><a href="https://www.cryptocompare.com/coins/btc/overview">bitcoin</a><span>. The author's clear mastery of the topic goes a long way in his clear explanations to readers. You learn the basics of&nbsp;</span><a href="https://www.cryptocompare.com/coins/guides/how-does-a-bitcoin-transaction-work/">how bitcoin works and move through into the different transaction types&nbsp;</a><span>and why they are used - also a good look at multi-signature wallets and other such key bitcoin tech. Another bonus in the book are the clear diagrams the are easy to follow. A key primer for those wanting to get to grips with the tech in bitcoin and cryptocurrencies. New versions are updated all the time to stay up to date with the fast moving world of bitcoin.</span></p>
+                                            <div className="shop-price float-left iq-mt-10">
+                                                <strong className="iq-font-yellow">$98.50</strong>
                                             </div>
+                                            <div className="iq-rating float-right iq-mt-10">
+                                                <ul className="list-inline float-right iq-ml-10">
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star-half-o" aria-hidden="true"></i></li>
+                                                </ul>
+                                            </div>
+                                            <br clear="both" />
+                                            <a className="button iq-mt-25 float-right bt-lg" href="https://readyblock.one/go/mb">Buy on Amazon</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-sm-12 col-md-6 col-lg-6 iq-mt-30">
+                                    <div className="iq-product grey-bg">
+                                        <div className="pdt-image">
+                                            <img src="https://www.cryptocompare.com/media/351372/mb.png" alt="" />
+                                            <ul className="pdt-icon">
+                                                <li><a href="#"><i className="fa fa-cart-plus" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div className="pdt-dec">
+                                            <h5 className="iq-tw-5"><a href="#">Mastering Bitcoin</a></h5>
+                                            <h6><em>By: Andreas Antonopoulos</em></h6>
+                                            <p dir="ltr"><span>Our first book is from Andreas Antonopoulos and is called "Mastering Bitcoin" and it does exactly what is says on the tin. This is a great way to ease yourself into the more complex terminology under the hood of&nbsp;</span><a href="https://www.cryptocompare.com/coins/btc/overview">bitcoin</a><span>. The author's clear mastery of the topic goes a long way in his clear explanations to readers. You learn the basics of&nbsp;</span><a href="https://www.cryptocompare.com/coins/guides/how-does-a-bitcoin-transaction-work/">how bitcoin works and move through into the different transaction types&nbsp;</a><span>and why they are used - also a good look at multi-signature wallets and other such key bitcoin tech. Another bonus in the book are the clear diagrams the are easy to follow. A key primer for those wanting to get to grips with the tech in bitcoin and cryptocurrencies. New versions are updated all the time to stay up to date with the fast moving world of bitcoin.</span></p>
+                                            <div className="shop-price float-left iq-mt-10">
+                                                <strong className="iq-font-yellow">$98.50</strong>
+                                            </div>
+                                            <div className="iq-rating float-right iq-mt-10">
+                                                <ul className="list-inline float-right iq-ml-10">
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star-half-o" aria-hidden="true"></i></li>
+                                                </ul>
+                                            </div>
+                                            <br clear="both" />
+                                            <a className="button iq-mt-25 float-right bt-lg" href="https://readyblock.one/go/mb">Buy on Amazon</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-sm-12 col-md-6 col-lg-6 iq-mt-30">
+                                    <div className="iq-product grey-bg">
+                                        <div className="pdt-image">
+                                            <img src="https://www.cryptocompare.com/media/351372/mb.png" alt="" />
+                                            <ul className="pdt-icon">
+                                                <li><a href="#"><i className="fa fa-cart-plus" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div className="pdt-dec">
+                                            <h5 className="iq-tw-5"><a href="#">Mastering Bitcoin</a></h5>
+                                            <h6><em>By: Andreas Antonopoulos</em></h6>
+                                            <p dir="ltr"><span>Our first book is from Andreas Antonopoulos and is called "Mastering Bitcoin" and it does exactly what is says on the tin. This is a great way to ease yourself into the more complex terminology under the hood of&nbsp;</span><a href="https://www.cryptocompare.com/coins/btc/overview">bitcoin</a><span>. The author's clear mastery of the topic goes a long way in his clear explanations to readers. You learn the basics of&nbsp;</span><a href="https://www.cryptocompare.com/coins/guides/how-does-a-bitcoin-transaction-work/">how bitcoin works and move through into the different transaction types&nbsp;</a><span>and why they are used - also a good look at multi-signature wallets and other such key bitcoin tech. Another bonus in the book are the clear diagrams the are easy to follow. A key primer for those wanting to get to grips with the tech in bitcoin and cryptocurrencies. New versions are updated all the time to stay up to date with the fast moving world of bitcoin.</span></p>
+                                            <div className="shop-price float-left iq-mt-10">
+                                                <strong className="iq-font-yellow">$98.50</strong>
+                                            </div>
+                                            <div className="iq-rating float-right iq-mt-10">
+                                                <ul className="list-inline float-right iq-ml-10">
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star-half-o" aria-hidden="true"></i></li>
+                                                </ul>
+                                            </div>
+                                            <br clear="both" />
+                                            <a className="button iq-mt-25 float-right bt-lg" href="https://readyblock.one/go/mb">Buy on Amazon</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
+
+
+                    <section id="exchanges" className="iq-clients overview-block-ptb">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-sm-12">
+                                    <div className="heading-title">
+                                        <h3 className="title iq-tw-5 iq-mb-20">Exchanges</h3>
+                                        <p>So where can we buy &amp; sell Bitcoin? Which is most popular? Which is safest?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-sm-6">
+                                    <div className="iq-clients-blog iq-mtb-15">
+                                        <div className="media iq-pall-20">
+                                            <img className="client-img" src="http://via.placeholder.com/300x100" alt="" />
+                                            <div className="media-body">
+                                                <h4 className="mt-0 iq-tw-5">Binance</h4>
+                                                <p>Binance is one of the newest contenders, but it's quickly become the largest cryptocurrency exchange in the world.</p>
+                                            </div>
+                                        </div>
+                                        <ul className="list-inline">
+                                            <li className="list-inline-item"><a href="#"></a></li>
+                                            <li className="list-inline-item"><a href="#">www.binance.com</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="col-sm-6">
+                                    <div className="iq-clients-blog iq-mtb-15">
+                                        <div className="media iq-pall-20">
+                                            <img className="client-img" src="http://via.placeholder.com/300x100" alt="" />
+                                            <div className="media-body">
+                                                <h4 className="mt-0 iq-tw-5">JD Scot</h4>
+                                                <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                            </div>
+                                        </div>
+                                        <ul className="list-inline">
+                                            <li className="list-inline-item"><a href="#"></a></li>
+                                            <li className="list-inline-item"><a href="https://readyblock.one/go/bittrex">www.bittrex.com</a></li>
+                                            <li><a className="button iq-mt-25 float-right" href="https://readyblock.one/go/bittrex">Go</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-sm-12">
+                                    <div className="table-responsive">
+                                        <table className="table table-bordered iq-shopping-cart-table text-center">
+                                            <thead>
+                                                <tr>
+                                                    <th>Rank</th>
+                                                    <th>Exchange</th>
+                                                    <th>Age</th>
+                                                    <th>Hacks</th>
+                                                    <th>Safety Rating</th>
+                                                    <th>Details</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td className="text-center">1</td>
+                                                    <td><a href="#"><img src="http://via.placeholder.com/50x50" alt="img" /> Binance</a></td>
+                                                    <td className="align-middle">2017</td>
+                                                    <td className="align-middle">0</td>
+                                                    <td className="align-middle">
+                                                        9
+                                                    </td>
+                                                    <td>
+                                                        Moved from Hong Kong to Singapore to Malta. Relies on USDT (shady). Still relatively new and susceptible to hacks.
+                                                    </td>
+                                                    <td>
+                                                        <a className="button iq-mt-25" href="/">Go</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="text-center">1</td>
+                                                    <td><a href="#"><img src="http://via.placeholder.com/50x50" alt="img" /> Gemini</a></td>
+                                                    <td className="align-middle">2016</td>
+                                                    <td className="align-middle">0</td>
+                                                    <td className="align-middle">
+                                                        10
+                                                    </td>
+                                                    <td>
+                                                        Based in USA. Works directly with SEC. Holds own USD. No major problems yet. Has gone offline randomly during high activity.
+                                                    </td>
+                                                    <td>
+                                                        <a className="button iq-mt-25" href="/">Go</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+                    <section id="wallets" className="iq-clients overview-block-ptb">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-sm-12">
+                                    <div className="heading-title">
+                                        <h3 className="title iq-tw-5 iq-mb-20">Wallets</h3>
+                                        <p>So where can we buy &amp; sell Bitcoin? Which is most popular? Which is safest?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-sm-6">
+                                    <div className="iq-clients-blog iq-mtb-15">
+                                        <div className="media iq-pall-20">
+                                            <img className="client-img" src="http://via.placeholder.com/300x100" alt="" />
+                                            <div className="media-body">
+                                                <h4 className="mt-0 iq-tw-5">Jaxx</h4>
+                                                <p>Binance is one of the newest contenders, but it's quickly become the largest cryptocurrency exchange in the world.</p>
+                                            </div>
+                                        </div>
+                                        <ul className="list-inline">
+                                            <li className="list-inline-item"><a href="#"></a></li>
+                                            <li className="list-inline-item"><a href="#">www.binance.com</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
                     <section className="iq-our-clients particles-bg yellow-bg iq-ptb-40">
                         <canvas id="canvas"></canvas>
                         <div className="container ">
@@ -562,7 +652,7 @@ class Layout extends Component {
                                 <ul className="iq-menu">
                                     <li><a href="http://readyblock.one/">Home</a></li>
                                     <li><a href="http://readyblock.one/network">Network</a></li>
-                                    <li><a href="http://readyblock.one/services">Services</a></li>
+                                    <li><a href="http://readyblock.one/company">Company</a></li>
                                 </ul>
                             </div>
                         </div>
