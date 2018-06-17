@@ -14,3 +14,8 @@
         <br>
     </div>
 </div>
+
+
+* Created in 2014 by Charlie Lee
+Not much happened from 2014-2016
+* Charlie Lee sold everything in December of 2017

@@ -31,7 +31,7 @@ if (typeof document !== 'undefined' && typeof window !== 'undefined') {
     // if (!container || !container.children.length || !container.children[0].attributes || !container.children[0].attributes['data-react-checksum']) {
     //     console.error('Server-side React render was discarded. Make sure that your initial render does not contain any client-side code.')
     // }
-debugger;
+
     const routes = SiteRouter.routes
     const location = document.location.pathname
     const dataClient = new DataClient()

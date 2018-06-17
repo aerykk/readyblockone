@@ -1,7 +1,7 @@
 const Framework = require('../../../../../../../Framework')
 const {React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
 
-import Layout from '../../Layouts/Default'
+//import Layout from '../../Layouts/Default'
 import Markdown from '../../../../../Shared/UI/Components/Markdown'
 
 import { testStuff } from '../../../Actions'
@@ -29,13 +29,15 @@ class Screen extends Component {
     render() {
         const { site, location } = this.props
 
-        const token = 'litecoin'
+        const token = site.title.replace(' | Crypto Reviews', '')
 
         const content = (
-            <Markdown src={"/Apps/Site/Projects/cryptoreviews/Pages/" + token + "/" + (location || 'home') + ".md"} onChange={(state) => this.onPageChange(state)} />
+            <Markdown src={'/Apps/Site/Projects/cryptoreviews/Pages/' + token + '/' + (location || 'home') + '.md'} onChange={(state) => this.onPageChange(state)} />
         )
 
         const page = this.state.page
+
+        const Layout = require('../../Layouts/Token/' + token).default
 
         return (
             <Layout>
