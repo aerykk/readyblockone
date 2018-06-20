@@ -6,6 +6,10 @@ import Markdown from '../../../../../Shared/UI/Components/Markdown'
 
 import { testStuff } from '../../../Actions'
 
+const supportedTokens = [
+    'bitcoin'
+]
+
 class Screen extends Component {
     static propTypes = {
     }
@@ -31,19 +35,30 @@ class Screen extends Component {
 
         const token = site.title.replace(' | Crypto Reviews', '')
 
-        const content = (
-            <Markdown src={'/Apps/Site/Projects/cryptoreviews/Pages/' + token + '/' + (location || 'home') + '.md'} onChange={(state) => this.onPageChange(state)} />
-        )
+        if (supportedTokens.includes(token)) {
+            const content = (
+                <Markdown src={'/Apps/Site/Projects/cryptoreviews/Pages/' + token + '/' + (location || 'home') + '.md'} onChange={(state) => this.onPageChange(state)} />
+            )
 
-        const page = this.state.page
+            const page = this.state.page
 
-        const Layout = require('../../Layouts/Token/' + token).default
+            const Layout = require('../../Layouts/Token/' + token).default
 
-        return (
-            <Layout>
-                {content}
-            </Layout>
-        )
+            return (
+                <Layout>
+                    {content}
+                </Layout>
+            )
+        } else {
+            const Layout = require('../../Layouts/TokenUnavailable').default
+
+            return (
+                <Layout>
+                    Token not found
+                </Layout>
+            )
+        }
+
     }
 }
 

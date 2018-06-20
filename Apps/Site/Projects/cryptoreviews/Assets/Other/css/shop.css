@@ -91,7 +91,7 @@ Design and Developed by: iqonicthemes.in
 
 /*SideBar - Tags*/
 .iq-tags li { padding-left: 2px; display: inline-block; padding-right: 2px; margin: 0 0 15px; }
-.iq-tags li a { background: transparent; color: #666; padding: 4px 8px; border: 1px solid #666; border-radius: 0; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
+.iq-tags li a, .iq-tags li span { background: transparent; color: #666; padding: 4px 8px; border: 1px solid #666; border-radius: 0; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
 .iq-tags li a:hover { border-color: #f9b707; background: none; color: #f9b707; }
 
 /* Meta - SideBar */
@@ -114,7 +114,10 @@ Design and Developed by: iqonicthemes.in
 .iq-post-info .iq-rating { width: 100%; display: inline-block; }
 .iq-page-shop .second-carousel .owl-carousel .owl-controls .owl-nav .owl-prev i, .iq-page-shop .second-carousel .owl-carousel .owl-controls .owl-nav .owl-next i { font-size: 18px; background: #eee; height: 40px; width: 40px; line-height: 40px; text-align: center; border-radius: 100px; display: inline-block; }
 .iq-page-shop  .second-carousel .owl-carousel .owl-controls .owl-nav .owl-prev i:hover, .iq-page-shop .owl-carousel .owl-controls .owl-nav .owl-next i:hover { background: #f9b707; color: #fff; }
-.iq-page-shop .second-carousel .owl-carousel .owl-controls .owl-nav { position: absolute; width: 100%; top: 50%; margin-top: -20px; }
+.iq-page-shop .second-carousel .owl-carousel .owl-controls .owl-nav {     position: absolute;
+    width: 100%;
+    top: 100%;
+    margin-top: -20px; }
 .iq-page-shop .form .input-border { padding: 7px; }
 .iq-page-shop .add-cart-btn .button { margin-left: -40px; width: 265px; text-align: center; }
 .iq-page-shop .product_meta b { color: #151d2e; }
