@@ -46,6 +46,17 @@ class HTML extends Component {
 
                     <script src="/Build/Release/site.web.bundle.js"></script>
 
+                    <script async src={"https://www.googletagmanager.com/gtag/js?id=" + state.site.analytics.GA.id}></script>
+                    <script dangerouslySetInnerHTML={{
+                        __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+
+                            gtag('config', '${state.site.analytics.GA.id}');
+                        `
+                    }}>
+                    </script>
                 </body>
             </html>
         )
