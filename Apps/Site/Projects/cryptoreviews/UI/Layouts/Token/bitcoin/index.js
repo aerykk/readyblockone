@@ -158,14 +158,6 @@ class Layout extends Component {
                                             </div>
                                         </div>
                                         <div className="item">
-                                            <div className="media">
-                                                <div className="media-body">
-                                                    <span className="iq-font-white ">
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="item">
                                             <a className="media" href="https://readyblock.one/review/btc">
                                                 <img className="mr-2" src="/Apps/Site/Core/Assets/Tokens/btc.png" style={{width: '40px'}} />
                                                 <div className="media-body">
