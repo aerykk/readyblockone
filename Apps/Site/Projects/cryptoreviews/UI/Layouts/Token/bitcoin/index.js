@@ -252,7 +252,7 @@ class Layout extends Component {
                                             <div class="row">
                                                 <div class="col-12">
                                                     <h5>2008: The Year It All Began</h5>
-                                                    <br /><p><strong>August 2008</strong><br />Neil Kin, Vladimir Oksman and Charles Bry apply for an encryption patent application. Not only, did the deny any connection to Satoshi Nakamoto, the alleged mastermind behind Bitcoin, but they also registered the site Bitcoin.org in the same month itself, buying the domain name anonymously over anonymousspeech.com</p>
+                                                    <br /><p><strong>August 2008</strong><br />Neil Kin, Vladimir Oksman and Charles Bry apply for an encryption patent application. Not only did they deny any connection to Satoshi Nakamoto, the alleged mastermind behind Bitcoin, but they also registered the site Bitcoin.org in the same month itself, buying the domain name anonymously over anonymousspeech.com</p>
                                                     <br /><p><strong>October 2008</strong><br />Despite Kin, Oksman and Bry trying to sabotage Bitcoin, Nakamoto went ahead to release his white paper which depicted his idea for a purely peer-to peer version of electronic cash. He provided the basic fundamental solution to the problem of virtual money being copied, giving electronic cash like Bitcoin the indispensable foundation to grow legitimately.</p>
                                                     <br /><br /><h5>2009: The Rise of Mining</h5>
                                                     <br /><p><strong>January 2009</strong><br />The initial mining of Bitcoins began with the first block ‘Genesis’ being launched. Later in the month, the first transaction took place between Satoshi and Hal Finney who is a developer and a cryptographic artist.</p>
@@ -339,9 +339,9 @@ class Layout extends Component {
                                         <table className="table table-bordered iq-shopping-cart-table">
                                             <thead>
                                                 <tr>
-                                                    <th width="30%">Name</th>
+                                                    <th width="20%">Name</th>
                                                     <th>Rating</th>
-                                                    <th width="400">Categories</th>
+                                                    <th>Categories</th>
                                                     <th width="50%">Notes</th>
                                                 </tr>
                                             </thead>
@@ -414,9 +414,9 @@ class Layout extends Component {
                                         <table className="table table-bordered iq-shopping-cart-table">
                                             <thead>
                                                 <tr>
-                                                    <th width="30%">Name</th>
+                                                    <th width="20%">Name</th>
                                                     <th>Rating</th>
-                                                    <th width="400">Categories</th>
+                                                    <th>Categories</th>
                                                     <th width="50%">Notes</th>
                                                 </tr>
                                             </thead>
@@ -548,7 +548,7 @@ class Layout extends Component {
                     </section>
 
 
-                    <section id="compare" className="overview-block-ptb iq-feature4 iq-additional">
+                    <section id="compare" className="overview-block-ptb iq-feature4 iq-additional iq-page-shop">
                         <div className="container">
                             <div className="row">
                                 <div className="col-sm-12">
@@ -560,47 +560,54 @@ class Layout extends Component {
                             </div>
 
                             <div class="row">
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="iq-pricing">
-                                        <span class="icon"><img src="/Apps/Site/Core/Assets/Tokens/btc.png" style={{width: '50px', marginTop: '-4px'}} /></span>
-                                        <div class="pricing-header">
-                                            <h3 class="title">BTC</h3>
-                                            <span class="price-value">Bitcoin</span>
+                                <div class="col-12 second-carousel">
+                                    <div class="owl-carousel popup-gallery" data-nav-dots="true" data-nav-arrow="true" data-items="3" data-sm-items="3" data-lg-items="3" data-md-items="3" data-autoplay="false">
+                                        <div class="item">
+                                            <div class="iq-pricing">
+                                                <span class="icon"><img src="/Apps/Site/Core/Assets/Tokens/btc.png" style={{width: '50px', marginTop: '-4px'}} /></span>
+                                                <div class="pricing-header">
+                                                    <h3 class="title">BTC</h3>
+                                                    <span class="price-value">Bitcoin</span>
+                                                </div>
+                                                <ul class="pricing-content" style={{height: '200px'}}>
+                                                    <li><i aria-hidden="true" class="iq-mr-10 ion-checkmark-round"></i>Oldest</li>
+                                                    <li><i aria-hidden="true" class="iq-mr-10 ion-checkmark-round"></i>Core Team</li>
+                                                    <li><i aria-hidden="true" class="iq-mr-10 ion-close-round"></i>Visa-level Scale</li>
+                                                    <li><i aria-hidden="true" class="iq-mr-10 ion-close-round"></i>Smart Contracts</li>
+                                                    <li><i aria-hidden="true" class="iq-mr-10 ion-close-round"></i>Expensive Transactions (relatively)</li>
+                                                </ul>
+                                                <a class="button" href="https://readyblock.one/review/btc">Learn More</a>
+                                            </div>
                                         </div>
-                                        <ul class="pricing-content" style={{height: '200px'}}>
-                                            <li><i aria-hidden="true" class="iq-mr-10 ion-checkmark-round"></i>Oldest</li>
-                                            <li><i aria-hidden="true" class="iq-mr-10 ion-checkmark-round"></i>Core Team</li>
-                                            <li><i aria-hidden="true" class="iq-mr-10 ion-close-round"></i>Scaleable</li>
-                                            <li><i aria-hidden="true" class="iq-mr-10 ion-close-round"></i>Smart Contracts</li>
-                                        </ul>
-                                        <a class="button" href="https://readyblock.one/review/btc">Learn More</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="iq-pricing">
-                                        <span class="icon"><img src="/Apps/Site/Core/Assets/Tokens/iota.png" style={{width: '50px', marginTop: '-4px'}} /></span>
-                                        <div class="pricing-header">
-                                            <h3 class="title">IOTA</h3>
-                                            <span class="price-value">IOTA</span>
+                                        <div class="item">
+                                            <div class="iq-pricing">
+                                                <span class="icon"><img src="/Apps/Site/Core/Assets/Tokens/iota.png" style={{width: '50px', marginTop: '-4px'}} /></span>
+                                                <div class="pricing-header">
+                                                    <h3 class="title">IOTA</h3>
+                                                    <span class="price-value">IOTA</span>
+                                                </div>
+                                                <ul class="pricing-content" style={{height: '200px'}}>
+                                                    <li><i aria-hidden="true" class="iq-mr-10 ion-checkmark-round"></i>Visa-level Scale (theoretically)</li>
+                                                    <li><i aria-hidden="true" class="iq-mr-10 ion-checkmark-round"></i>Free Transactions</li>
+                                                </ul>
+                                                <a class="button" href="https://readyblock.one/review/iota">Learn More</a>
+                                            </div>
                                         </div>
-                                        <ul class="pricing-content" style={{height: '200px'}}>
-                                            <li><i aria-hidden="true" class="iq-mr-10 ion-checkmark-round"></i>Theoretically Scaleable</li>
-                                        </ul>
-                                        <a class="button" href="https://readyblock.one/review/iota">Learn More</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="iq-pricing">
-                                        <span class="icon"><img src="/Apps/Site/Core/Assets/Tokens/bch.png" style={{width: '50px', marginTop: '-4px'}} /></span>
-                                        <div class="pricing-header">
-                                            <h3 class="title">BCH</h3>
-                                            <span class="price-value">Bitcoin Cash</span>
+                                        <div class="item">
+                                            <div class="iq-pricing">
+                                                <span class="icon"><img src="/Apps/Site/Core/Assets/Tokens/bch.png" style={{width: '50px', marginTop: '-4px'}} /></span>
+                                                <div class="pricing-header">
+                                                    <h3 class="title">BCH</h3>
+                                                    <span class="price-value">Bitcoin Cash</span>
+                                                </div>
+                                                <ul class="pricing-content" style={{height: '200px'}}>
+                                                    <li><i aria-hidden="true" class="iq-mr-10 ion-checkmark-round"></i>Theoretically Scaleable</li>
+                                                    <li><i aria-hidden="true" class="iq-mr-10 ion-checkmark-round"></i>Cheap Transactions</li>
+                                                    <li><i aria-hidden="true" class="iq-mr-10 ion-close-round"></i>Core Team</li>
+                                                </ul>
+                                                <a class="button" href="https://readyblock.one/review/bch">Learn More</a>
+                                            </div>
                                         </div>
-                                        <ul class="pricing-content" style={{height: '200px'}}>
-                                            <li><i aria-hidden="true" class="iq-mr-10 ion-checkmark-round"></i>Theoretically Scaleable</li>
-                                            <li><i aria-hidden="true" class="iq-mr-10 ion-close-round"></i>Core Team</li>
-                                        </ul>
-                                        <a class="button" href="https://readyblock.one/review/bch">Learn More</a>
                                     </div>
                                 </div>
                             </div>

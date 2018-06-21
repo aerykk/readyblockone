@@ -1183,26 +1183,25 @@ header.fancy.menu-sticky .iq-header .row { background: transparent; margin-top: 
 /*---------------------------------------------------------------------
                         Pricing
 -----------------------------------------------------------------------*/
-.iq-pricing { box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1); padding: 50px 15px; text-align: center; margin-top: 30px; color: #292929; perspective: 700px; z-index: 1; position: relative; transition: all 0.3s ease-in-out 0s; }
-.iq-pricing:hover { color: #fff; }
+.iq-pricing { padding: 50px 15px; text-align: center; margin-top: 30px; color: #292929; perspective: 700px; z-index: 1; position: relative; transition: all 0.3s ease-in-out 0s; 
+     border: 2px solid #eee;
+    border-radius: 7px; }
+
 .iq-pricing:after { content: ""; width: 100%; height: 100%; background: #f9b707; position: absolute; top: 0; left: 0; opacity: 0; z-index: -1; transform: rotateY(70deg); transition: all 0.3s ease-in-out 0s; }
-.iq-pricing:hover:after { opacity: 1; transform: rotateY(0deg); }
-.iq-pricing .icon { width: 50px; height: 80px; line-height: 80px; border-radius: 50%; background: #fff; margin: 0 auto; font-size: 36px; color: #f9b707; position: absolute; top: -40px; left: 0; right: 0; }
+
+.iq-pricing .icon { width: 50px; height: 80px; line-height: 80px; border-radius: 50%; background: #fff; margin: 0 auto; font-size: 36px; color: #f9b707; position: absolute; top: -23px; left: 0; right: 0; }
 .iq-pricing .pricing-header { margin-bottom: 30px; }
 .iq-pricing .title { display: block; font-size: 18px; font-weight: 600; text-transform: uppercase; margin: 0 0 10px 0; }
 .iq-pricing .price-value { display: inline-block; font-size: 40px; font-weight: 600; transition: all 0.3s ease-in-out 0s; }
-.iq-pricing:hover .price-value { border-bottom-color: #fff; }
+
 .iq-pricing .pricing-content { list-style: none; padding: 0; margin: 0 0 20px 0; }
 .iq-pricing .pricing-content li { line-height: 40px; }
 .iq-pricing .pricing-signup { display: inline-block; padding: 9px 23px; background: #f9b707; font-size: 14px; font-weight: 600; color: #fff; text-transform: uppercase; position: relative; transition: all 0.25s ease-in-out 0s; }
-.iq-pricing:hover .pricing-signup { background: #fff; color: #f9b707; }
+
 .iq-pricing .pricing-signup:before, .iq-pricing .pricing-signup:after { content: ""; height: 100%; position: absolute; top: 0; border-top: 18px solid transparent; border-bottom: 18px solid transparent; transition: all 0.25s ease-in-out 0s; }
 .iq-pricing .pricing-signup:before { left: -12px; border-right: 12px solid #f9b707; }
 .iq-pricing .pricing-signup:after { right: -12px; border-left: 12px solid #f9b707; }
-.iq-pricing:hover .pricing-signup:before { border-right-color: #fff; }
-.iq-pricing:hover .pricing-signup:after { border-left-color: #fff; }
-.iq-pricing:hover .button { background: #151d2e; }
-.iq-pricing:hover .button:hover { background: #ffffff; color: #151d2e; }
+
 .iq-pricing .pricing-content li i { font-size: 12px; }
 @media only screen and (max-width:990px) {
   .iq-pricing { margin-bottom: 30px; }
