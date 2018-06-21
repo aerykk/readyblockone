@@ -166,7 +166,7 @@ class Layout extends Component {
                                             </div>
                                         </div>
                                         <div className="item">
-                                            <a className="media" href="#">
+                                            <a className="media" href="https://readyblock.one/review/btc">
                                                 <img className="mr-2" src="/Apps/Site/Core/Assets/Tokens/btc.png" style={{width: '40px'}} />
                                                 <div className="media-body">
                                                     <span className="iq-font-white ">
@@ -176,7 +176,7 @@ class Layout extends Component {
                                             </a>
                                         </div>
                                         <div className="item">
-                                            <a className="media" href="#">
+                                            <a className="media" href="https://readyblock.one/review/eth">
                                                 <img className="mr-2" src="/Apps/Site/Core/Assets/Tokens/eth.png" style={{width: '40px'}} />
                                                 <div className="media-body">
                                                     <span className="iq-font-white ">
@@ -186,7 +186,7 @@ class Layout extends Component {
                                             </a>
                                         </div>
                                         <div className="item">
-                                            <a className="media" href="#">
+                                            <a className="media" href="https://readyblock.one/review/xrp">
                                                 <img className="mr-2" src="/Apps/Site/Core/Assets/Tokens/xrp.png" style={{width: '40px'}} />
                                                 <div className="media-body">
                                                     <span className="iq-font-white ">
@@ -196,7 +196,7 @@ class Layout extends Component {
                                             </a>
                                         </div>
                                         <div className="item">
-                                            <a className="media" href="#">
+                                            <a className="media" href="https://readyblock.one/review/bch">
                                                 <img className="mr-2" src="/Apps/Site/Core/Assets/Tokens/bch.png" style={{width: '40px'}} />
                                                 <div className="media-body">
                                                     <span className="iq-font-white ">
@@ -386,6 +386,43 @@ class Layout extends Component {
                                                 </tr>
                                                 <tr>
                                                     <td>
+                                                        <a href="https://readyblock.one/go/bitcointalk">
+                                                            BitcoinTalk Forum
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        10/10
+                                                    </td>
+                                                    <td className="align-middle">
+                                                        <ul class="iq-tags list-inline">
+                                                            <li><span>SA</span></li>
+                                                            <li><span>Communities</span></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        Every token has its own forum topic.
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div className="col-12 iq-cart_total">
+                                    <h4 class="iq-mb-30 title iq-tw-5">Other</h4>
+                                    <div className="table-responsive">
+                                        <table className="table table-bordered iq-shopping-cart-table">
+                                            <thead>
+                                                <tr>
+                                                    <th width="30%">Name</th>
+                                                    <th>Rating</th>
+                                                    <th width="400">Categories</th>
+                                                    <th width="50%">Notes</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
                                                         <a href="https://readyblock.one/go/cryptocurrencycalendar">
                                                             Cryptocurrency Calendar
                                                         </a>
@@ -419,25 +456,6 @@ class Layout extends Component {
                                                     </td>
                                                     <td>
                                                         Their mining profit calculator is incorrect (doesn't consider increasing difficulty). They also exaggerate Japanese trading volume, as they're missing many exchanges.
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="https://readyblock.one/go/bitcointalk">
-                                                            BitcoinTalk Forum
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        10/10
-                                                    </td>
-                                                    <td className="align-middle">
-                                                        <ul class="iq-tags list-inline">
-                                                            <li><span>SA</span></li>
-                                                            <li><span>Communities</span></li>
-                                                        </ul>
-                                                    </td>
-                                                    <td>
-                                                        Every token has its own forum topic.
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -827,7 +845,7 @@ class Layout extends Component {
                                 <div className="col-sm-6">
                                     <div className="iq-clients-blog iq-mtb-15">
                                         <div className="media iq-pall-20" style={{ height: '220px' }}>
-                                            <a href="https://readyblock.one/go/bittrex"><img className="client-img" src="data:image/jpeg;base64,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" alt="" /></a>
+                                            <a href="https://readyblock.one/go/bittrex"><img className="client-img" src="/Apps/Site/Core/Assets/Exchanges/bittrex.png" /></a>
                                             <div className="media-body">
                                                 <h4 className="mt-0 iq-tw-5">Bittrex</h4>
                                                 <p>Bittrex was the most popular exchange (by volume) until Binance dethrowned them in late 2017. They still have one of the widest selection of altcoins to trade.</p>
@@ -932,6 +950,25 @@ class Layout extends Component {
                                                     </td>
                                                     <td>
                                                         <a className="button iq-mt-25 background-gradient-3" href="https://readyblock.one/go/coinbase">Go</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="text-center">6</td>
+                                                    <td>
+                                                        <a href="https://readyblock.one/go/bitfinex">
+                                                            Bitfinex
+                                                        </a>
+                                                    </td>
+                                                    <td className="align-middle">2015</td>
+                                                    <td className="align-middle">1</td>
+                                                    <td className="align-middle">
+                                                        6/10
+                                                    </td>
+                                                    <td className="text-left">
+                                                        Based in ???. Never sure where they are as they keep relocating. Internal connection to Tether (USDT) with potentially shady behaviour.
+                                                    </td>
+                                                    <td>
+                                                        <a className="button iq-mt-25 background-gradient-3" href="https://readyblock.one/go/bitfinex">Go</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
