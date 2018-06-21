@@ -627,7 +627,7 @@ header .logo a img { height: 40px; }
 header .header-org { font-size: 16px; 
      padding: 7px;
     margin-left: 36px; transition: all 0.3s ease-in-out;}
-header .header-org img { width: 200px; }
+header .header-org img { width: 260px; }
 header .iq-header nav { display: inline-block; float: right; }
 header .menu { display: inline-block; float: right; width: 100%; margin-top: 10px;  }
 header .iq-header { display: inline-block; width: 100%; float: left; }

@@ -27,7 +27,7 @@ class Layout extends Component {
 
         return (
             <View>
-                <a href="https://www.futuretechpodcast.com/podcasts/hyperbridge-org/" target="_blank" class="topdisplay"></a>
+                <a href="https://readyblock.one" target="_blank" class="topdisplay"></a>
 
                 <header className="simpal">
                     <div className="iq-header">
@@ -44,24 +44,27 @@ class Layout extends Component {
                                         <ul className="menu text-right">
                                             <li><a href="javascript:void(0)">Home</a>
                                                 <ul className="sub-menu">
-                                                    <li><a href="#intro">Intro</a></li>
-                                                    <li><a href="#history">History</a></li>
-                                                    <li><a href="#quick">Quick Links</a></li>
-                                                    <li><a href="#compare">Compare</a></li>
-                                                    <li><a href="#media">Media Centre</a></li>
-                                                    <li><a href="#education">Education Centre</a></li>
-                                                    <li><a href="#exchanges">Exchanges</a></li>
-                                                    <li><a href="#wallets">Wallets</a></li>
-                                                    <li><a href="#market">Market</a></li>
-                                                    <li><a href="#faq">FAQ</a></li>
+                                                    <li><a href="/#intro">Intro</a></li>
+                                                    <li><a href="/#history">History</a></li>
+                                                    <li><a href="/#quick">Quick Links</a></li>
+                                                    <li><a href="/#compare">Compare</a></li>
+                                                    <li><a href="/#media">Media Centre</a></li>
+                                                    <li><a href="/#education">Education Centre</a></li>
+                                                    <li><a href="/#exchanges">Exchanges</a></li>
+                                                    <li><a href="/#wallets">Wallets</a></li>
+                                                    <li><a href="/#market">Market</a></li>
+                                                    <li><a href="/#faq">FAQ</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="javascript:void(0)">Network</a>
                                                 <ul className="sub-menu">
                                                     <li><a href="javascript:void(0)">Reviews <i className="fa fa-angle-right" aria-hidden="true"></i></a>
                                                         <ul>
-                                                            <li><a href="https://bitcoin-btc.review">Bitcoin (BTC)</a></li>
-                                                            <li><a href="https://litecoin-btc.review">Litecoin (LTC)</a></li>
+                                                            <li><a href="https://readyblock.one/review/btc">Bitcoin (BTC)</a></li>
+                                                            <li><a href="https://readyblock.one/review/eth">Ethereum (ETH)</a></li>
+                                                            <li><a href="https://readyblock.one/review/xrp">Ripple (XRP)</a></li>
+                                                            <li><a href="https://readyblock.one/review/bch">Bitcoin Cash (BCH)</a></li>
+                                                            <li><a href="https://readyblock.one/review/ltc">Litecoin (LTC)</a></li>
                                                             <li><a href="https://readyblock.one/reviews">More</a></li>
                                                         </ul>
                                                     </li>
@@ -193,6 +196,16 @@ class Layout extends Component {
                                                 <div className="media-body">
                                                     <span className="iq-font-white ">
                                                         <small>RANK 4</small>Bitcoin Cash
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div className="item">
+                                            <a className="media" href="https://readyblock.one/review/ltc">
+                                                <img className="mr-2" src="/Apps/Site/Core/Assets/Tokens/ltc.png" style={{ width: '40px' }} />
+                                                <div className="media-body">
+                                                    <span className="iq-font-white ">
+                                                        <small>RANK 5</small>Litecoin
                                                     </span>
                                                 </div>
                                             </a>
@@ -562,7 +575,7 @@ class Layout extends Component {
                                                     <span class="price-value">Bitcoin</span>
                                                 </div>
                                                 <ul class="pricing-content" style={{height: '200px'}}>
-                                                    <li><i aria-hidden="true" class="iq-mr-10 ion-checkmark-round"></i>Oldest</li>
+                                                    <li><i aria-hidden="true" class="iq-mr-10 ion-checkmark-round"></i>Proven Secure (Oldest)</li>
                                                     <li><i aria-hidden="true" class="iq-mr-10 ion-checkmark-round"></i>Core Team</li>
                                                     <li><i aria-hidden="true" class="iq-mr-10 ion-close-round"></i>Visa-level Scale</li>
                                                     <li><i aria-hidden="true" class="iq-mr-10 ion-close-round"></i>Smart Contracts</li>
