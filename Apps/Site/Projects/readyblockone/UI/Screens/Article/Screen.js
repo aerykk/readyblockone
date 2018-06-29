@@ -30,7 +30,7 @@ class Screen extends Component {
         const { site, location } = this.props
 
         const content = (
-            <Markdown src={"/Apps/Site/Projects/cryptoreviews/Pages/" + (location || 'home') + ".md"} onChange={(state) => this.onPageChange(state)} />
+            <Markdown src={"/Apps/Site/Projects/readyblockone/Pages/" + (location || 'home') + ".md"} onChange={(state) => this.onPageChange(state)} />
         )
 
         const page = this.state.page

@@ -8,8 +8,7 @@
     </div>
     <div class="span4">
         <p></p>
-        <p>Hello!</p>
-        <p>stuff</p>
+        <p>Coming soon!</p>
         <br>
     </div>
 </div>

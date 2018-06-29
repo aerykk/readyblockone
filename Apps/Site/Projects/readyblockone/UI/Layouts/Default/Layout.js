@@ -45,8 +45,8 @@ class Layout extends Component {
 
                             <ul className="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuLink2" style={{width: '200px'}}>
                                 <li><a href="/network">Overview</a></li>
-                                <li><a href="/network/reviews">Crypto Quick Reviews</a></li>
-                                <li><a href="/network/in5mins">Crypto In 5 Mins</a></li>
+                                <li><a href="/network/#reviews">Crypto Quick Reviews</a></li>
+                                <li><a href="/network/#in5mins">Crypto In 5 Mins</a></li>
                             </ul>
                         </li>
                         <li><a href="/services">Services</a></li>

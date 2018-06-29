@@ -62,8 +62,6 @@ function site(host) {
                     { src: '/Apps/Site/Projects/readyblockone/Assets/Other/js/owl.carousel.min.js'},
                     { src: '/Apps/Site/Projects/readyblockone/Assets/Other/js/smooth-scroll.min.js'},
                     { src: '/Apps/Site/Projects/readyblockone/Assets/Other/js/jquery.magnific-popup.min.js'},
-                    { src: '/Apps/Site/Projects/readyblockone/Assets/Other/js/particles.min.js'},
-                    { src: '/Apps/Site/Projects/readyblockone/Assets/Other/js/particles-app.js'},
                     { src: '/Apps/Site/Projects/readyblockone/Assets/Other/js/main.js'}
                 ]
             }

@@ -28,7 +28,7 @@ class Screen extends Component {
 
     render() {
         const { site, location } = this.props
-
+        
         const content = (
             <Markdown src={"/Apps/Site/Projects/readyblockone/Pages/" + (location || 'home') + ".md"} onChange={(state) => this.onPageChange(state)} />
         )
@@ -49,11 +49,11 @@ function mapStateToProps(state) {
     // TODO: Figure out WTF is going on here. Server is string, browser is object
     var location = null
     if (typeof routing.locationBeforeTransitions === 'string') {
-        location = routing.locationBeforeTransitions.replace('/', '')
+        location = routing.locationBeforeTransitions.replace(/\//g, '')
     } else if (typeof routing.locationBeforeTransitions === 'object' && routing.locationBeforeTransitions) {
         location = routing.locationBeforeTransitions.pathname.replace(/^\//, '').replace(/\/$/, '')
     } else if (typeof window !== 'undefined') {
-        location = window.location.pathname.replace('/', '')
+        location = window.location.pathname.replace(/\//g, '')
     }
 
     return {
