@@ -1,5 +1,6 @@
 import * as DB from '../../../../DB'
 
+
 const Framework = require('../../../../../../../../Framework')
 const { React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString } = Framework
 
@@ -17,11 +18,9 @@ export default {
         }
     },
     tokens: {
-        items: [
-            // DB.tokens.find({ 'symbol': 'btc' }).data,
-            // DB.tokens.find({ 'symbol': 'eth' }).data,
-            // DB.tokens.find({ 'symbol': 'xrp' }).data
-        ]
+        items: DB.tokens.find({
+            'symbol': { '$in' : ['btc', 'eth', 'xrp', 'bch', 'ltc'] }
+        })
     },
     social: {
         content: <p>Bitcoin has <strong>no official website or social networks</strong>, as it's ownerless. It has a core development team, but no organization management. Bitcoin.com is an unofficial portal by Roger Ver.</p>
@@ -133,88 +132,15 @@ export default {
     },
     compare: {
         content: <p>No cryptocurrencies are exactly alike. Each have pros and cons. We'll touch on some of those, but ultimately you'll have to do your own research to figure out which one is for you. But don't worry, we'll be here to guide you along with way.</p>,
-        items: [
-            {
-                symbol: 'btc',
-                name: 'Bitcoin',
-                link: "https://readyblock.one/review/btc",
-                notes: [
-                    {
-                        checked: true,
-                        text: "Proven Secure (Oldest)"
-                    },
-                    {
-                        checked: true,
-                        text: "Core Team"
-                    },
-                    {
-                        checked: false,
-                        text: "Visa-level Scale"
-                    },
-                    {
-                        checked: false,
-                        text: "Smart Contracts"
-                    },
-                    {
-                        checked: false,
-                        text: "Expensive Transactions (relatively)"
-                    }
-                ]
-            },
-            {
-                symbol: 'iota',
-                name: 'IOTA',
-                link: "https://readyblock.one/review/iota",
-                notes: [
-                    {
-                        checked: true,
-                        text: "Visa-level Scale (theoretically)"
-                    },
-                    {
-                        checked: true,
-                        text: "Free Transactions"
-                    }
-                ]
-            },
-            {
-                symbol: 'bch',
-                name: 'Bitcoin Cash',
-                link: "https://readyblock.one/review/bch",
-                notes: [
-                    {
-                        checked: true,
-                        text: "Theoretically Scaleable"
-                    },
-                    {
-                        checked: true,
-                        text: "Cheap Transactions"
-                    },
-                    {
-                        checked: false,
-                        text: "Core Team"
-                    }
-                ]
-            }
-        ]
+        items: DB.tokens.find({
+            'symbol': { '$in': ['btc', 'iota', 'bch'] }
+        })
     },
     media: {
         content: <p>Bitcoin and blockchain can be confusing at times. We promise these videos will make it clearer.</p>,
-        items: [
-            {
-                video: "https://www.youtube.com/watch?v=RplnSVTzvnU",
-                thumbnail: "http://i3.ytimg.com/vi/RplnSVTzvnU/hqdefault.jpg",
-                title: "How the blockchain will radically transform the economy",
-                subtitle: "By Bettina Warburg",
-                content: <p>Say hello to the decentralized economy -- the blockchain is about to change everything. In this lucid explainer of the complex (and confusing) technology, Bettina Warburg describes how the blockchain will eliminate the need for centralized institutions like banks or governments to facilitate trade, evolving age-old models of commerce and finance into something far more interesting: a distributed, transparent, autonomous system for exchanging value.</p>
-            },
-            {
-                video: "https://www.youtube.com/watch?v=97ufCT6lQcY",
-                thumbnail: "http://i3.ytimg.com/vi/97ufCT6lQcY/hqdefault.jpg",
-                title: "The future will be decentralized",
-                subtitle: "By Charles Hoskinson",
-                content: <p>This talk was given at a local TEDx event, produced independently of the TED Conferences. Tech entrepreneur and mathematician Charles Hoskinson says Bitcoin-related technology is about to revolutionise property rights, banking, remote education, private law and crowd-funding for the developing world.</p>
-            }
-        ]
+        items: DB.videos.find({
+            'id': { '$in': ['bettinablockchain', 'charlesdecentralized'] }
+        })
     },
     education: {
         content: <p>We've compiled a list of the only the top rated books on Bitcoin.</p>,
@@ -287,189 +213,28 @@ export default {
     },
     exchanges: {
         content: <p>So where can we buy &amp; sell Bitcoin? Which is most popular? Which is safest?</p>,
-        spotlight: [
-            {
-                title: "Binance",
-                thumbnail: "/Apps/Site/Core/Assets/Exchanges/binance.svg",
-                link: "https://readyblock.one/go/binance",
-                content: <p>Binance is one of the newest contenders, but it's quickly become the largest cryptocurrency exchange in the world.</p>,
-                domain: "www.binance.com",
-            },
-            {
-                title: "Bittrex",
-                thumbnail: "/Apps/Site/Core/Assets/Exchanges/bittrex.svg",
-                link: "https://readyblock.one/go/bittrex",
-                content: <p>Bittrex was the most popular exchange (by volume) until Binance dethrowned them in late 2017. They still have one of the widest selection of altcoins to trade.</p>,
-                domain: "www.bittrex.com",
-            }
-        ],
-        items: [
-            {
-                title: "Binance",
-                rank: "1",
-                link: "https://readyblock.one/go/binance",
-                thumbnail: "/Apps/Site/Core/Assets/Exchanges/binance.svg",
-                age: "2017",
-                hacks: "0",
-                safety: "9/10",
-                notes: <p>Moved from Hong Kong to Singapore to Malta. Relies on USDT (shady). Still relatively new and susceptible to hacks.</p>,
-            },
-            {
-                title: "Gemini",
-                rank: "2",
-                link: "https://readyblock.one/go/gemini",
-                thumbnail: "/Apps/Site/Core/Assets/Exchanges/gemini.svg",
-                age: "2016",
-                hacks: "0",
-                safety: "10/10",
-                notes: <p>Based in USA (pretty safe). Works directly with SEC (good). Holds own USD (good). No major problems yet. Has gone offline randomly during high activity.</p>,
-            },
-            {
-                title: "Kraken",
-                rank: "3",
-                link: "https://readyblock.one/go/kraken",
-                thumbnail: "/Apps/Site/Core/Assets/Exchanges/kraken.svg",
-                age: "2014",
-                hacks: "0",
-                safety: "10/10",
-                notes: <p>Based in USA (pretty safe). Holds own USD (good). No major problems yet. Focus on security. Goes offline often. Really slow trading. Really slow support.</p>,
-            },
-            {
-                title: "Coinbase (GDAX)",
-                rank: "3",
-                link: "https://readyblock.one/go/coinbase",
-                thumbnail: "/Apps/Site/Core/Assets/Exchanges/coinbase.svg",
-                age: "2014",
-                hacks: "0",
-                safety: "10/10",
-                notes: <p>Based in USA (pretty safe). Works directly with SEC (good). Holds own USD (good). Keeps going offline during bitcoin crashes but not surges (suggesting manipulation). Typically more expensive during booms.</p>,
-            },
-            {
-                title: "Bitfinex",
-                rank: "4",
-                link: "https://readyblock.one/go/bitfinex",
-                thumbnail: "/Apps/Site/Core/Assets/Exchanges/bitfinex.svg",
-                age: "2014",
-                hacks: "1",
-                safety: "6/10",
-                notes: <p>Based in ???. Never sure where they are as they keep relocating. Internal connection to Tether (USDT) with potentially shady behaviour.</p>,
-            },
-            {
-                title: "Bitstamp",
-                rank: "5",
-                link: "https://readyblock.one/go/bitstamp",
-                thumbnail: "/Apps/Site/Core/Assets/Exchanges/bitstamp.svg",
-                age: "2014",
-                hacks: "1",
-                safety: "8/10",
-                notes: <p>Based in UK (pretty safe). Holds own USD (good). Focus on security. Hot wallet hacked once.</p>,
-            },
-            {
-                title: "Bitflyer",
-                rank: "6",
-                link: "https://readyblock.one/go/bitflyer",
-                thumbnail: "/Apps/Site/Core/Assets/Exchanges/bitflyer.svg",
-                age: "2016",
-                hacks: "0",
-                safety: "8/10",
-                notes: <p>Based in Japan. Accepts international customers. Licensed by government.</p>,
-            },
-            {
-                title: "Bitthumb",
-                rank: "7",
-                link: "https://readyblock.one/go/bitthumb",
-                thumbnail: "/Apps/Site/Core/Assets/Exchanges/bitthumb.svg",
-                age: "2016",
-                hacks: "0",
-                safety: "8/10",
-                notes: <p>Based in South Korea. Accepts international. Not much known yet. Has been audited by gov (good).</p>,
-            },
-            {
-                title: "Kucoin",
-                rank: "8",
-                link: "https://readyblock.one/go/kucoin",
-                thumbnail: "/Apps/Site/Core/Assets/Exchanges/kucoin.svg",
-                age: "2016",
-                hacks: "0",
-                safety: "8/10",
-                notes: <p>Very new, susceptible to hacks. Offers rev share. Trading engine is a bit slow during high load.</p>,
-            },
-            {
-                title: "Huobi",
-                rank: "9",
-                link: "https://readyblock.one/go/huobi",
-                thumbnail: "/Apps/Site/Core/Assets/Exchanges/huobi.svg",
-                age: "2016",
-                hacks: "0",
-                safety: "8/10",
-                notes: <p>Based in Singapore. Very new, susceptible to hacks. Offers rev share. Good volume, unique tokens. Being chinese focused is concerning.</p>,
-            },
-            {
-                title: "IDEX",
-                rank: "10",
-                link: "https://readyblock.one/go/idex",
-                thumbnail: "/Apps/Site/Core/Assets/Exchanges/idex.svg",
-                age: "2017",
-                hacks: "0",
-                safety: "10/10",
-                notes: <p>Decentralized exchange (DEX). Generally safe from sweeping hacks, but potientally susceptible to phishing hacks so be careful clicking links.</p>,
-            },
-            {
-                title: "EtherDelta",
-                age: "2016",
-                hacks: "2",
-                safety: "0/10",
-                notes: <p><strong>Do not use.</strong> It was originally created by a single developer, Zach, and sold to new management. They did not update it for a while, were hacked, ignored victims and did not reimburse. They then proceeded to do an ICO and disappear for months.</p>,
-            }
-        ]
+        spotlight: DB.exchanges.find({
+            'title': { '$in': ['Binance', 'Bittrex'] }
+        }),
+        items: DB.exchanges.data
     },
     softwareWallets: {
         content: <div>
             <p>What are the best software wallets to store Bitcoin?</p>
             <p><strong>Software Wallet:</strong> an app for desktop or mobile that stores cryptocurrency (usually less safe than a hardware wallet unless the device has TEE (trusted execution environment).</p>
         </div>,
-        items: [
-            {
-                title: "Jaxx",
-                company: "Jaxx",
-                link: "https://readyblock.one/go/jaxx",
-                thumbnail: "/Apps/Site/Core/Assets/Wallets/jaxx.png",
-                domain: "jaxx.io",
-                content: <p>Binance is one of the newest contenders, but it's quickly become the largest cryptocurrency exchange in the world.</p>
-            },
-            {
-                title: "Exodus",
-                company: "Exodus",
-                link: "https://readyblock.one/go/exodus",
-                thumbnail: "/Apps/Site/Core/Assets/Wallets/exodus.png",
-                domain: "exodus.io",
-                content: <p>Binance is one of the newest contenders, but it's quickly become the largest cryptocurrency exchange in the world.</p>
-            },
-        ]
+        items: DB.softwareWallets.find({
+            'company': { '$in': ['Jaxx', 'Exodus'] }
+        })
     },
     hardwareWallets: {
         content: <div>
             <p>What are the best hardware wallets to store Bitcoin?</p>
             <p><strong>Hardware Wallet:</strong> a device dedicated to storing cryptocurrency (usually pretty safe).</p>
         </div>,
-        items: [
-            {
-                title: "Trezor",
-                company: "Trezor",
-                link: "https://readyblock.one/go/trezor",
-                thumbnail: "/Apps/Site/Core/Assets/Wallets/trezor.png",
-                domain: "trezor.io",
-                content: <p>Binance is one of the newest contenders, but it's quickly become the largest cryptocurrency exchange in the world.</p>
-            },
-            {
-                title: "Ledger Nano S",
-                company: "Ledger",
-                link: "https://readyblock.one/go/ledger",
-                thumbnail: "/Apps/Site/Core/Assets/Wallets/ledger.png",
-                domain: "ledgerwallet.com",
-                content: <p>Binance is one of the newest contenders, but it's quickly become the largest cryptocurrency exchange in the world.</p>
-            }
-        ]
+        items: DB.hardwareWallets.find({
+            'company': { '$in': ['Trezor', 'Ledger'] }
+        })
     },
     faq: {
         content: <p></p>,

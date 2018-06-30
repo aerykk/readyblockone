@@ -1,3 +1,5 @@
-export default {
-    
-}
+const React = require('react')
+
+export default [
+
+]
