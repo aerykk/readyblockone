@@ -36,6 +36,15 @@ class Screen extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+                                <h2 className="section__title">Overview</h2>
+                                <p className="section__text">Ready Block One is dedicated to bringing people useful and impactful information within the crypto space.</p>
+                            </div>
+                        </div>
+                        <br /><br /><br />
+
+
+                        <div className="row">
+                            <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
                                 <h2 className="section__title">Review Network</h2>
                                 <p className="section__text">Visit our expansive review network</p>
                             </div>
@@ -50,7 +59,39 @@ class Screen extends Component {
                                     <p className="price__text"></p>
                                     <a href="/review/btc" className="btn btn--border btn--center">Go</a>
                                 </div>
+                                <div className="price">
+                                    <h3 className="price__title">Ethereum (ETH)</h3>
+                                    <ul className="price__list">
+                                    </ul>
+                                    <p className="price__text"></p>
+                                    <a href="/review/eth" className="btn btn--border btn--center">Coming soon</a>
+                                </div>
+                                <div className="price">
+                                    <h3 className="price__title">Ripple (XRP)</h3>
+                                    <ul className="price__list">
+                                    </ul>
+                                    <p className="price__text"></p>
+                                    <a href="/review/xrp" className="btn btn--border btn--center">Coming soon</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br /><br /><br />
 
+
+                        <div className="row">
+                            <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+                                <h2 className="section__title">Faucet</h2>
+                                <p className="section__text">Coming soon</p>
+                                <br /><br /><br />
+                            </div>
+                        </div>
+
+
+                        <div className="row">
+                            <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+                                <h2 className="section__title">Dictionary</h2>
+                                <p className="section__text">Coming soon</p>
+                                <br /><br /><br />
                             </div>
                         </div>
                     </div>
