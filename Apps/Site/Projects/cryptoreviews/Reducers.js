@@ -15,7 +15,7 @@ function site(host) {
             symbol = key
 
         return {
-            title: key + ' | Crypto Reviews',
+            title: host.split('.review')[0],
             isLocal: isLocal,
             copyright: {
                 date: '2017-' + new Date().getFullYear(),
