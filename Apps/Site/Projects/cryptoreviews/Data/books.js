@@ -13,7 +13,7 @@ export default [
         tags: [
             {
                 title: "Blockchain",
-                link: "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=blockchain"
+                link: "https://www.amazon.com/s/ref=rbo0a-20?url=search-alias%3Daps&field-keywords=blockchain"
             }
         ]
     },
@@ -29,7 +29,7 @@ export default [
         tags: [
             {
                 title: "Blockchain",
-                link: "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=blockchain"
+                link: "https://www.amazon.com/s/ref=rbo0a-20?url=search-alias%3Daps&field-keywords=blockchain"
             }
         ]
     },
@@ -45,7 +45,7 @@ export default [
         tags: [
             {
                 title: "Blockchain",
-                link: "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=blockchain"
+                link: "https://www.amazon.com/s/ref=rbo0a-20?url=search-alias%3Daps&field-keywords=blockchain"
             }
         ]
     },
@@ -61,11 +61,27 @@ export default [
         tags: [
             {
                 title: "Blockchain",
-                link: "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=blockchain"
+                link: "https://www.amazon.com/s/ref=rbo0a-20?url=search-alias%3Daps&field-keywords=blockchain"
             },
             {
                 title: "Technical",
-                link: "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=blockchain+technical"
+                link: "https://www.amazon.com/s/ref=rbo0a-20?url=search-alias%3Daps&field-keywords=blockchain+technical"
+            }
+        ]
+    },
+    {
+        id: 'mb',
+        link: "https://readyblock.one/go/book/mb",
+        thumbnail: "/Apps/Site/Projects/cryptoreviews/Assets/Other/images/books/mb.png",
+        subtitle: "By: Imran Bashir",
+        title: "Mastering Blockchain",
+        content: <p dir="ltr" style={{ height: '290px' }}>Get to grips with the underlying technical principles and implementations of blockchain. Build powerful applications using Ethereum to secure transactions and create smart contracts. Explore cryptography, mine cryptocurrencies, and solve scalability issues with this comprehensive guide</p>,
+        price: "$49.99",
+        rating: 3,
+        tags: [
+            {
+                title: "Blockchain",
+                link: "https://www.amazon.com/Mastering-Blockchain-decentralization-cryptography-frameworks/dp/1787125440/ref=rbo0a-20?ie=UTF8&qid=1530418793&sr=8-1-spons&keywords=Mastering+Blockchain&psc=1"
             }
         ]
     }
