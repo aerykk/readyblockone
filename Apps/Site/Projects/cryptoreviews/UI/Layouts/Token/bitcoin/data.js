@@ -76,7 +76,7 @@ export default {
     },
     education: {
         content: <p>We've compiled a list of the only the top rated books on Bitcoin.</p>,
-        books: DB.videos.find({
+        books: DB.books.find({
             'id': { '$in': ['mb', 'btfom', 'tbb', 'tsotb'] }
         })
     },

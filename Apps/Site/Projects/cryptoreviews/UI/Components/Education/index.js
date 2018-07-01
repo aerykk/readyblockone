@@ -37,7 +37,7 @@ export default (props) => (
                                                     <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
                                                 ))}
                                                 {[...Array(5 - Math.floor(item.rating))].map(() => (
-                                                    <li className="list-inline-item"><i className="fa fa-star" aria-hidden="true"></i></li>
+                                                    <li className="list-inline-item"><i className="fa fa-star-o" aria-hidden="true"></i></li>
                                                 ))}
                                             </ul>
                                         </div>
