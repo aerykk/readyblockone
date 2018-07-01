@@ -46,7 +46,7 @@ class Screen extends Component {
                         <div className="row">
                             <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
                                 <h2 className="section__title">Review Network</h2>
-                                <p className="section__text">Visit our expansive review network</p>
+                                <p className="section__text">Visit our expansive review network. Our review network gives users one simple page to reference to learn about & understand different decentralized technology software, such as Bitcoin. With easy to understand, accurate and up-to-date information It makes it easy to share with family & friends.</p>
                             </div>
                         </div>
 
