@@ -5,7 +5,7 @@ let loki = null
 
 export let tokens = null
 export let books = null
-export let communities = null
+export let sites = null
 export let courses = null
 export let exchanges = null
 export let faq = null
@@ -25,7 +25,7 @@ export const instance = () => {
 export const clean = () => {
     loki.getCollection('tokens') && loki.getCollection('tokens').chain().remove()
     loki.getCollection('books') && loki.getCollection('books').chain().remove()
-    loki.getCollection('communities') && loki.getCollection('communities').chain().remove()
+    loki.getCollection('sites') && loki.getCollection('sites').chain().remove()
     loki.getCollection('courses') && loki.getCollection('courses').chain().remove()
     loki.getCollection('exchanges') && loki.getCollection('exchanges').chain().remove()
     loki.getCollection('faq') && loki.getCollection('faq').chain().remove()
@@ -43,8 +43,8 @@ export const reload = () => {
     books = loki.addCollection('books')
     books.insert(data.books)
 
-    communities = loki.addCollection('communities')
-    communities.insert(data.communities)
+    sites = loki.addCollection('sites')
+    sites.insert(data.sites)
 
     courses = loki.addCollection('courses')
     courses.insert(data.courses)

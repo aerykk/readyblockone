@@ -3,7 +3,7 @@ import exchanges from './exchanges'
 import softwareWallets from './softwareWallets'
 import hardwareWallets from './hardwareWallets'
 import books from './books'
-import communities from './communities'
+import sites from './sites'
 import courses from './courses'
 import faq from './faq'
 import videos from './videos'
@@ -14,7 +14,7 @@ export default {
     softwareWallets: softwareWallets,
     hardwareWallets: hardwareWallets,
     books: books,
-    communities: communities,
+    sites: sites,
     courses: courses,
     faq: faq,
     videos: videos

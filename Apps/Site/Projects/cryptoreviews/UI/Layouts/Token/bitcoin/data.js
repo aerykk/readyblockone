@@ -1,5 +1,7 @@
 import * as DB from '../../../../DB'
 
+const React = require('react')
+
 export default {
     name: "Bitcoin",
     header: {
@@ -29,72 +31,14 @@ export default {
             content: <p>Bitcoin has <strong>no official website or social networks</strong>, as it's ownerless. It has a core development team, but no organization management. Bitcoin.com is an unofficial portal by Roger Ver.</p>
         },
         forums: {
-            items: [
-                {
-                    link: "https://readyblock.one/go/rcryptocurrency",
-                    name: "Reddit r/cryptocurrency",
-                    rating: "7/10",
-                    tags: [
-                        "Community",
-                        "Market Info"
-                    ],
-                    notes: <p></p>
-                },
-                {
-                    link: "https://readyblock.one/go/rbitcoinmarkets",
-                    name: "Reddit r/rbitcoinmarkets",
-                    rating: "9/10",
-                    tags: [
-                        "Community",
-                        "Market Info"
-                    ],
-                    notes: <p></p>
-                },
-                {
-                    link: "https://readyblock.one/go/bitcointalk",
-                    name: "BitcoinTalk Forum",
-                    rating: "10/10",
-                    tags: [
-                        "SA",
-                        "Communities"
-                    ],
-                    notes: <p>Every token has its own forum topic.</p>
-                },
-            ]
+            items: DB.sites.find({
+                'id': { '$in': ['rcryptocurrency', 'rbitcoinmarkets', 'bitcointalk'] }
+            })
         },
         other: {
-            items: [
-                {
-                    link: "https://readyblock.one/go/cryptocurrencycalendar",
-                    name: "Cryptocurrency Calendar",
-                    rating: "9/10",
-                    tags: [
-                        "Market Info"
-                    ],
-                    notes: <p>Good for finding news before it hits reddit</p>
-                },
-                {
-                    link: "https://readyblock.one/go/cryptocompare",
-                    name: "CryptoCompare",
-                    rating: "6/10",
-                    tags: [
-                        "Market Info",
-                        "Tools"
-                    ],
-                    notes: <p>Their mining profit calculator is incorrect (doesn't consider increasing difficulty). They also exaggerate Japanese trading volume, as they're missing many exchanges.</p>
-                },
-                {
-                    link: "https://readyblock.one/go/coinmastery",
-                    name: "Coin Mastery",
-                    rating: "10/10",
-                    tags: [
-                        "FA",
-                        "SA",
-                        "TA"
-                    ],
-                    notes: <p>Fundament, sentiment &amp; technical analysis</p>
-                }
-            ]
+            items: DB.sites.find({
+                'id': { '$in': ['cryptocurrencycalendar', 'cryptocompare', 'coinmastery'] }
+            })
         }
     },
     notifications: {
@@ -132,72 +76,9 @@ export default {
     },
     education: {
         content: <p>We've compiled a list of the only the top rated books on Bitcoin.</p>,
-        books: [
-            {
-                link: "https://readyblock.one/go/book/mb",
-                thumbnail: "/Apps/Site/Projects/cryptoreviews/Assets/Other/images/books/mb.png",
-                subtitle: "By: Andreas Antonopoulos",
-                title: "Mastering Bitcoin",
-                content: <p dir="ltr" style={{ height: '290px' }}><span>This is a great way to ease yourself into the more complex terminology under the hood of&nbsp;</span><a href="https://www.cryptocompare.com/coins/btc/overview">bitcoin</a><span>. The author's clear mastery of the topic goes a long way in his clear explanations to readers. You learn the basics of&nbsp;</span><a href="https://www.cryptocompare.com/coins/guides/how-does-a-bitcoin-transaction-work/">how bitcoin works and move through into the different transaction types&nbsp;</a><span>and why they are used - also a good look at multi-signature wallets and other such key bitcoin tech. Another bonus in the book are the clear diagrams the are easy to follow. A key primer for those wanting to get to grips with the tech in bitcoin and cryptocurrencies. New versions are updated all the time to stay up to date with the fast moving world of bitcoin.</span></p>,
-                price: "$22.50",
-                rating: 5,
-                tags: [
-                    {
-                        title: "Blockchain",
-                        link: "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=blockchain"
-                    }
-                ]
-            },
-            {
-                link: "https://readyblock.one/go/book/btfom",
-                thumbnail: "/Apps/Site/Projects/cryptoreviews/Assets/Other/images/books/btfom.png",
-                subtitle: "By: Dominic Frisby",
-                title: "Bitcoin The Future of Money",
-                content: <p dir="ltr" style={{ height: '290px' }}>Another key book on the Bitcoin space from the Author Dominic Frisby. The book tries to unravel the mystery of who exactly is Satoshi Nakamoto. Printed before Craig Wrights attempt at usurping the title - Dominic Frisby searches the length and breadth of the bitcoin world from meet ups to interviews with key people in the industry. As he unravels and explains how the industry works he moves through various participants giving the arguments for and against them being Satoshi Nakamoto - through insightful detective work and even looking at linguistic analysis. A thrilling read all round that gets to grips with Bitcoin's genesis and gently explains to the reader its potential and history.</p>,
-                price: "$18.99",
-                rating: 4,
-                tags: [
-                    {
-                        title: "Blockchain",
-                        link: "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=blockchain"
-                    }
-                ]
-            },
-            {
-                link: "https://readyblock.one/go/book/tbb",
-                thumbnail: "/Apps/Site/Projects/cryptoreviews/Assets/Other/images/books/tbb.png",
-                subtitle: "By: Benjamin Guttmann",
-                title: "The Bitcoin Bible",
-                content: <p dir="ltr" style={{ height: '290px' }}>This is a sort of almanac of bitcoin stories with various angles and short but information-rich stories and snippets - various contributing authors BitcoinMagasine.com and Motherboard.com give the book its style and flavor. The book covers key people - the nature of VC funding in the industry - key partnerships that industry players have made - a look at mining chips - the wealth distribution effect in bitcoin and more. Again a clear style means the book is a pick up - read a chapter and learn something new to flesh out your understanding of another small corner of the bitcoin ecosystem. Well worth sticking on your shelf.</p>,
-                price: "$33.90",
-                rating: 3.5,
-                tags: [
-                    {
-                        title: "Blockchain",
-                        link: "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=blockchain"
-                    }
-                ]
-            },
-            {
-                link: "https://readyblock.one/go/book/tsotb",
-                thumbnail: "/Apps/Site/Projects/cryptoreviews/Assets/Other/images/books/tsotb.png",
-                subtitle: "By: Roger Wattenhofer",
-                title: "The Science of the Blockchain",
-                content: <p dir="ltr" style={{ height: '290px' }}>If you want to learn the <strong>mathematical foundations about the blockchain</strong> then the must read is: The Science of the Blockchain. But be warned: that book is very mathematical. It uses heavy mathematical notation and it does not explain too much in plain language.</p>,
-                price: "$19.90",
-                rating: 3.5,
-                tags: [
-                    {
-                        title: "Blockchain",
-                        link: "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=blockchain"
-                    },
-                    {
-                        title: "Technical",
-                        link: "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=blockchain+technical"
-                    }
-                ]
-            }
-        ]
+        books: DB.videos.find({
+            'id': { '$in': ['mb', 'btfom', 'tbb', 'tsotb'] }
+        })
     },
     exchanges: {
         content: <p>So where can we buy &amp; sell Bitcoin? Which is most popular? Which is safest?</p>,

@@ -1,4 +1,5 @@
 import data from './data'
+
 import EtoroBlock1 from '../../../Components/EtoroBlock1'
 import Header from '../../../Components/Header'
 import Footer from '../../../Components/Footer'
@@ -15,37 +16,12 @@ import NetworkSlider from '../../../Components/NetworkSlider'
 import QuickLinks from '../../../Components/QuickLinks'
 import TopDisplay from '../../../Components/TopDisplay'
 
+const React = require('react')
 
-const Framework = require('../../../../../../../../Framework')
-const { React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString } = Framework
-
-
-class Layout extends Component {
-    static propTypes = {
-        breadcrumb: T.element,
-        site: T.object.isRequired
-    }
-
-    static defaultProps = {
-        breadcrumb: null,
-        site: {}
-    }
-
-    constructor() {
-        super()
-
-        this.state = {
-        }
-    }
-
-    componentDidMount() {
-    }
-
+class Layout extends React.Component {
     render() {
-        const { children, site } = this.props
-
         return (
-            <View>
+            <div>
                 <TopDisplay />
                 <Header {...data.header} />
 
@@ -237,17 +213,9 @@ class Layout extends Component {
                     </section>
                 </div>
                 <Footer />
-            </View>
-        );
+            </div>
+        )
     }
 }
 
-function mapStateToProps(state) {
-    const { site } = state
-
-    return {
-        site
-    }
-}
-
-export default connect(mapStateToProps)(Layout)
+export default Layout
