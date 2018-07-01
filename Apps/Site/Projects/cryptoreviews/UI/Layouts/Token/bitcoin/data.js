@@ -45,20 +45,12 @@ export default {
         content: <p>If there's big news or problems with Bitcoin, we'll let you know here first.</p>,
         alerts: {
             items: [
-                {
-                    date: "June 2, 2018",
-                    type: "Exchange Notice",
-                    content: <p>Both Binance and Bittrex are experimenting with their own USD pair (not based on Tether)</p>
-                }
+                DB.notifications.findOne({ 'id': 'binancebittrexusdpair' })
             ]
         },
         warnings: {
             items: [
-                {
-                    date: "May 10, 2018",
-                    type: "Scam Notice",
-                    content: <p>Giza ICO</p>
-                }
+                DB.notifications.findOne({ 'id': 'gizascam' })
             ]
         }
     },

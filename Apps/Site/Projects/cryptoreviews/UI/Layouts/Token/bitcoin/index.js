@@ -27,7 +27,7 @@ class Layout extends React.Component {
                 <Header {...data.header} />
 
                 <section id="iq-home" className="iq-banner overview-block-pt iq-over-blue-90">
-                    <Intro data={data} />
+                    <Intro data={data} showIcon={true} />
                     <NetworkSlider tokens={data.tokens} />
                 </section>
 

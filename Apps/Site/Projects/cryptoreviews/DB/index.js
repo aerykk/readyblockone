@@ -12,6 +12,7 @@ export let faq = null
 export let hardwareWallets = null
 export let softwareWallets = null
 export let videos = null
+export let notifications = null
 
 
 export const init = (cb) => {
@@ -32,6 +33,7 @@ export const clean = () => {
     loki.getCollection('hardwareWallets') && loki.getCollection('hardwareWallets').chain().remove()
     loki.getCollection('softwareWallets') && loki.getCollection('softwareWallets').chain().remove()
     loki.getCollection('videos') && loki.getCollection('videos').chain().remove()
+    loki.getCollection('notifications') && loki.getCollection('notifications').chain().remove()
 }
 
 export const reload = () => {
@@ -63,6 +65,9 @@ export const reload = () => {
 
     videos = loki.addCollection('videos')
     videos.insert(data.videos)
+
+    notifications = loki.addCollection('notifications')
+    notifications.insert(data.notifications)
 }
 
 init()

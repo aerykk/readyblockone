@@ -7,6 +7,7 @@ import sites from './sites'
 import courses from './courses'
 import faq from './faq'
 import videos from './videos'
+import notifications from './notifications'
 
 export default {
     tokens: tokens,
@@ -17,5 +18,6 @@ export default {
     sites: sites,
     courses: courses,
     faq: faq,
-    videos: videos
+    videos: videos,
+    notifications: notifications
 }

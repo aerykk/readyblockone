@@ -6,9 +6,11 @@ export default (props) => (
             <div className="row flex-row-reverse">
                 <div className="col-lg-5 col-md-12">
                     <div className="banner-form">
-                        <div className="form-icon background-gradient-3">
-                            <img className="img-fluid" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/icon.png" alt="#" />
-                        </div>
+                        {props.showIcon && (
+                            <div className="form-icon background-gradient-3">
+                                <img className="img-fluid" src="/Apps/Site/Projects/cryptoreviews/Assets/Other/images/icon.png" alt="#" />
+                            </div>
+                        )}
                         <h2 className="iq-tw-6">{props.data.name} <small>Stats</small></h2>
                         <p></p>
                         <ul className="listing-hand iq-mt-15 iq-tw-5">
