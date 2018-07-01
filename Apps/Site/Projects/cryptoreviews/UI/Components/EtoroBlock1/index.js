@@ -1,6 +1,4 @@
-const Framework = require('../../../../../../../Framework')
-const { React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString } = Framework
-
+const React = require('react')
 
 export default (props) => (
     <section className="iq-about1 iq-bg iq-mt-30 background-gradient-2" style={{
