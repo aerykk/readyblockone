@@ -28,7 +28,45 @@ export default {
     },
     quickLinks: {
         social: {
-            content: <p></p>
+            content: <p>Ethereum is maintained by the Ethereum Foundation. Here are the official social channels to reach them:</p>,
+            items: [
+                {
+                    link: "https://blog.ethereum.org/",
+                    name: "Official Blog"
+                },
+                {
+                    link: "https://twitter.com/ethereum",
+                    name: "Official Twitter"
+                },
+                {
+                    link: "https://www.facebook.com/ethereumproject",
+                    name: "Official Facebook Page"
+                },
+                {
+                    link: "https://www.youtube.com/user/ethereumproject",
+                    name: "Official YouTube Channel"
+                },
+                {
+                    link: "https://www.reddit.com/r/ethereum/",
+                    name: "Official Reddit"
+                },
+                {
+                    link: "https://www.meetup.com/topics/ethereum/",
+                    name: "Official Meetup"
+                },
+                {
+                    link: "https://github.com/ethereum",
+                    name: "Official Github (Dev)"
+                },
+                {
+                    link: "https://gitter.im/ethereum/home",
+                    name: "Official Gitter (Dev Support)"
+                },
+                {
+                    link: "https://ethereum.stackexchange.com/",
+                    name: "Official StackExchange (Dev Support)"
+                },
+            ]
         },
         forums: {
             items: DB.sites.find({
@@ -45,20 +83,12 @@ export default {
         content: <p>If there's big news or problems with Ethereum, we'll let you know here first.</p>,
         alerts: {
             items: [
-                {
-                    date: "June 2, 2018",
-                    type: "Exchange Notice",
-                    content: <p>Both Binance and Bittrex are experimenting with their own USD pair (not based on Tether)</p>
-                }
+                DB.notifications.findOne({ 'id': 'binancebittrexusdpair' })
             ]
         },
         warnings: {
             items: [
-                {
-                    date: "May 10, 2018",
-                    type: "Scam Notice",
-                    content: <p>Giza ICO</p>
-                }
+                DB.notifications.findOne({ 'id': 'gizascam' })
             ]
         }
     },
