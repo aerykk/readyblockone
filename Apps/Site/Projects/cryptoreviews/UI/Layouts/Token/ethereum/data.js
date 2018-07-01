@@ -70,12 +70,23 @@ export default {
     },
     media: {
         content: <p>Ethereum and blockchain can be confusing at times. We promise these videos will make it clearer.</p>,
-        items: DB.videos.find({
-            'id': { '$in': ['bettinablockchain', 'charlesdecentralized'] }
-        })
+        items: [
+            DB.videos.findOne({ 'id': 'gavinworldcomputer' }),
+            {
+                id: 'decentralizedisrupt17',
+                video: "https://www.youtube.com/watch?v=WSN5BaCzsbo",
+                thumbnail: "http://i3.ytimg.com/vi/WSN5BaCzsbo/hqdefault.jpg",
+                title: "Decentralizing Everything",
+                subtitle: "By Vitalik Buterin",
+                content: <p>AngelList's Naval Ravikant brings Ethereum's Vitalik Buterin onstage to explain what it is and why it's useful.</p>
+            },
+            DB.videos.findOne({ 'id': 'bettinablockchain' }),
+            DB.videos.findOne({ 'id': 'charlesdecentralized' })
+        ]
     },
+    // https://www.reddit.com/r/ethereum/comments/7d9wvd/best_books_on_ethereum/
     education: {
-        content: <p>We've compiled a list of the only the top rated books on Ethereum.</p>,
+        content: <p>We've compiled a list of the best resources to learn Ethereum. You should always reference <a href="https://www.reddit.com/r/ethereum/comments/4ws9um/rethereum_rules_and_getting_started_guide/" target="_blank"><strong>the official /r/Ethereum Rules and Getting Started Guide</strong></a></p>,
         books: DB.books.find({
             'id': { '$in': ['mb', 'tsotb'] }
         })
