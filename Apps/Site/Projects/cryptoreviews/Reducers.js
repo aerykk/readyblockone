@@ -1,13 +1,16 @@
 const Framework = require('../../../../Framework')
 const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, combineReducers, renderToString} = Framework
 
-import {
-    TEST_STUFF
-} from './Actions'
-
 function site(host) {
     return function reducer() {
         let isLocal = host.indexOf('.local') !== -1
+        let token = host.replace('.local', '').split('.review')[0]
+        let color = '1'
+
+        if (token === 'aion-token')
+            color = '4'
+        else if (token === 'ethereum-eth')
+            color = '11'
 
         return {
             title: host,
@@ -54,6 +57,17 @@ function site(host) {
                     { rel: 'stylesheet', type: 'text/css', media: 'all', href: '/Apps/Site/Projects/cryptoreviews/Assets/Other/css/style.css' },
                     { rel: 'stylesheet', type: 'text/css', media: 'all', href: '/Apps/Site/Projects/cryptoreviews/Assets/Other/css/responsive.css' },
                     { rel: 'stylesheet', type: 'text/css', media: 'all', href: '/Apps/Site/Projects/cryptoreviews/Assets/Other/css/custom.css' },
+                    // 1 = orange
+                    // 2 = deep orange
+                    // 3 = green
+                    // 4 = cyan
+                    // 5 = red
+                    // 6 = pale orange
+                    // 7 = pale green
+                    // 8 = pale red
+                    // 9 = pale purple
+                    // 10 = pale green
+                    { rel: 'stylesheet', type: 'text/css', media: 'all', href: '/Apps/Site/Projects/cryptoreviews/Assets/Other/css/color/color-' + color + '.css' },
                     { rel: 'stylesheet', type: 'text/css', media: 'all', href: 'https://fonts.googleapis.com/css?family=PT+Sans&amp;Ubuntu:400,500,700' }
                 ],
                 script: [
