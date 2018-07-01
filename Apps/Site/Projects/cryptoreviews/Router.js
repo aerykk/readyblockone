@@ -35,23 +35,6 @@ const routes = [
             },
             loading: Loading
         })
-    },
-    {
-        path: '/about',
-        component: Loadable({
-            loader: function loader() {
-                return report(new Promise((resolve) => {
-                    return require.ensure([], (require) => {
-                        resolve(require('./UI/Screens/Page').default)
-                    })
-                }), {
-                        currentModuleFileName: path.join(__dirname, './Router.js'),
-                        importedModulePath: './UI/Screens/Page',
-                        serverSideRequirePath: path.join(__dirname, './UI/Screens/Page')
-                    });
-            },
-            loading: Loading
-        })
     }
 ]
 

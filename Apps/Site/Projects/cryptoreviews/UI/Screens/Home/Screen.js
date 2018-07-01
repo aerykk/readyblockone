@@ -7,7 +7,9 @@ import Markdown from '../../../../../Shared/UI/Components/Markdown'
 import { testStuff } from '../../../Actions'
 
 const supportedTokens = [
-    'bitcoin'
+    'bitcoin',
+    'ethereum',
+    'aion'
 ]
 
 class Screen extends Component {

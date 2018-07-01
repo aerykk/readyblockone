@@ -9,7 +9,7 @@ export default [
         notes: [
             {
                 checked: true,
-                text: "Proven Secure (Oldest)"
+                text: "Proven Secure (oldest)"
             },
             {
                 checked: true,
@@ -25,19 +25,69 @@ export default [
             },
             {
                 checked: false,
-                text: "Expensive Transactions (relatively)"
+                text: "Cheap Transactions (relatively)"
             }
         ]
     },
     {
         rank: "2",
         symbol: "eth",
-        name: "Ethereum"
+        name: "Ethereum",
+        link: "https://readyblock.one/review/eth",
+        notes: [
+            {
+                checked: true,
+                text: "Pretty old (2014)"
+            },
+            {
+                checked: true,
+                text: "Core Team"
+            },
+            {
+                checked: false,
+                text: "Visa-level Scale"
+            },
+            {
+                checked: false,
+                text: "Smart Contracts"
+            },
+            {
+                checked: false,
+                text: "Cheap Transactions (relatively)"
+            }
+        ]
     },
     {
         rank: "3",
         symbol: "xrp",
-        name: "Ripple"
+        name: "Ripple",
+        link: "https://readyblock.one/review/eth",
+        notes: [
+            {
+                checked: true,
+                text: "Pretty old (2013)"
+            },
+            {
+                checked: true,
+                text: "Core Team"
+            },
+            {
+                checked: true,
+                text: "Visa-level Scale"
+            },
+            {
+                checked: true,
+                text: "Cheap Transactions (relatively)"
+            },
+            {
+                checked: false,
+                text: "Smart Contracts"
+            },
+            {
+                checked: false,
+                text: "Decentralized"
+            }
+        ]
     },
     {
         rank: "4",
@@ -76,6 +126,10 @@ export default [
             {
                 checked: true,
                 text: "Visa-level Scale (theoretically)"
+            },
+            {
+                checked: true,
+                text: "Core Team"
             },
             {
                 checked: true,

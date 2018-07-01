@@ -8,14 +8,9 @@ import {
 function site(host) {
     return function reducer() {
         let isLocal = host.indexOf('.local') !== -1
-        let key = host.split('.review')[0].split('-')[0]
-        let symbol = host.split('.review')[0].split('-')[1]
-
-        if (symbol === 'token')
-            symbol = key
 
         return {
-            title: host.split('.review')[0],
+            title: host,
             isLocal: isLocal,
             copyright: {
                 date: '2017-' + new Date().getFullYear(),
@@ -68,7 +63,6 @@ function site(host) {
                     { src: '/Apps/Site/Projects/cryptoreviews/Assets/Other/js/bootstrap.min.js ' },
                     { src: '/Apps/Site/Projects/cryptoreviews/Assets/Other/js/widget.js' },
                     { src: '/Apps/Site/Projects/cryptoreviews/Assets/Other/js/all-plugins.js' },
-                    { src: '/Apps/Site/Projects/cryptoreviews/Assets/Other/js/particles.js' },
                     { src: '/Apps/Site/Projects/cryptoreviews/Assets/Other/js/custom.js' }
                 ]
             }
