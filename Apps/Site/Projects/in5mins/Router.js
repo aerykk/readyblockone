@@ -15,11 +15,11 @@ let middleware = []
 
 const Loading = () => <div>Loading</div>
 
-const validPaths = {
-    'crypto': {
-        'storage': true
-    }
-}
+// const validPaths = {
+//     'crypto': {
+//         'storage': true
+//     },
+// }
 
 const routes = [
     {
