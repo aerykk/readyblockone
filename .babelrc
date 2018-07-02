@@ -9,6 +9,7 @@
         "transform-exponentiation-operator",
         "dynamic-import-node",
         "syntax-dynamic-import",
+        "react-loadable/babel",
         [
             "import-inspector",
             {

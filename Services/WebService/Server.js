@@ -1,5 +1,6 @@
 import createMemoryHistory from 'history/createMemoryHistory'
 import { StaticRouter } from 'react-router'
+import Loadable from 'react-loadable'
 
 const express = require('express')
 const webpack = require('webpack')
@@ -195,10 +196,12 @@ class Server {
         //     console.log('Host: ', this.hostClient.player.id)
         // }, 2000)
 
-        this.server.listen(this.port, this.host, (err) => {
-            if (err) { console.log(err) }
+        Loadable.preloadAll().then(() => {
+            this.server.listen(this.port, this.host, (err) => {
+                if (err) { console.log(err) }
 
-            console.info('==> Web Service running on port %s (env: ' + this.env + '). Open up http://0.0.0.0:%s/ in your browser.', this.port, this.port)
+                console.info('==> Web Service running on port %s (env: ' + this.env + '). Open up http://0.0.0.0:%s/ in your browser.', this.port, this.port)
+            })
         })
     }
 

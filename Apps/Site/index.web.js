@@ -9,6 +9,7 @@ import clientMiddleware from '../../Services/WebService/middleware/clientMiddlew
 import { BrowserRouter } from 'react-router-dom'
 import HTML from '../../Services/WebService/HTML'
 import UI from '../../Apps/Site/UI'
+import Loadable from 'react-loadable'
 
 if (typeof document !== 'undefined' && typeof window !== 'undefined') {
     //
@@ -94,11 +95,13 @@ if (typeof document !== 'undefined' && typeof window !== 'undefined') {
 
     // setupDynamicLinking()
 
-    ReactDOM.render((
-        <BrowserRouter>
-            <UI store={store} history={history} routes={routes} />
-        </BrowserRouter>
-    ), container)
+    Loadable.preloadReady().then(() => {
+        ReactDOM.hydrate((
+            <BrowserRouter>
+                <UI store={store} history={history} routes={routes} />
+            </BrowserRouter>
+        ), container)
+    })
 }
 
 
