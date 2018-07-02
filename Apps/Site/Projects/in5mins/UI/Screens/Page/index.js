@@ -1,12 +1,10 @@
 const Framework = require('../../../../../../../Framework')
-const {React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
+const { React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString } = Framework
 
 import Markdown from '../../../../../Shared/UI/Components/Markdown'
 
-const supportedTokens = [
-    'bitcoin',
-    'ethereum',
-    'aion'
+const supportedSubsites = [
+    'crypto'
 ]
 
 class Screen extends Component {
@@ -32,16 +30,16 @@ class Screen extends Component {
     render() {
         const { site, location } = this.props
 
-        let token = site.title.split('.review')[0].split('-')[0] // TODO: solve mutli-words like "bitcoin-cash"
-        
-        if (supportedTokens.includes(token)) {
+        let subsite = site.title.split('.in5mins.com')[0].split('-')[0] // TODO: solve mutli-words like "bitcoin-cash"
+
+        if (supportedSubsites.includes(subsite)) {
             const content = (
-                <Markdown src={'/Apps/Site/Projects/cryptoreviews/Pages/' + token + '/' + (location || 'home') + '.md'} onChange={(state) => this.onPageChange(state)} />
+                <Markdown src={'/Apps/Site/Projects/in5mins/Pages/' + subsite + '/' + (location || 'home') + '.md'} onChange={(state) => this.onPageChange(state)} />
             )
 
             const page = this.state.page
 
-            const Layout = require('../../Layouts/Token/' + token).default
+            const Layout = require('../../Layouts/Subsites/' + subsite).default
 
             return (
                 <Layout>
@@ -49,7 +47,7 @@ class Screen extends Component {
                 </Layout>
             )
         } else {
-            const Layout = require('../../Layouts/TokenUnavailable').default
+            const Layout = require('../../Layouts/SubsiteUnavailable').default
 
             return (
                 <Layout>
@@ -57,7 +55,6 @@ class Screen extends Component {
                 </Layout>
             )
         }
-
     }
 }
 

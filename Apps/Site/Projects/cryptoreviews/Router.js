@@ -4,8 +4,6 @@ const path = require('path')
 
 import Loadable from 'react-loadable'
 import { report } from 'import-inspector'
-import Auth from '../../Core/Utils/Auth'
-import DevTools from '../../Shared/UI/Components/DevTools'
 import store from './Store'
 import getReducers from './Reducers'
 

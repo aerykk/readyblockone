@@ -55,3 +55,7 @@ a:focus, a:hover { color: #f9b707; }
 .iq-page-shop .nav-tabs li a.active, .iq-page-shop .nav-tabs li a:hover{border-bottom: 3px solid #f9b707;}
 
 @media(max-width:767px) { }
+
+a, .button, input {
+    color: #ff9e00;
+}

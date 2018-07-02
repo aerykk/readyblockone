@@ -4,8 +4,6 @@ const {React, ReactDOM, ReactNative, PropTypes, T, connect, AppWrapper, AppConfi
 import Layout from '../../Layouts/Default'
 import Markdown from '../../../../../Shared/UI/Components/Markdown'
 
-import { testStuff } from '../../../Actions'
-
 class Screen extends Component {
     static propTypes = {
     }
@@ -29,7 +27,7 @@ class Screen extends Component {
     render() {
         const { site, location } = this.props
 
-        const token = 'litecoin'
+        let token = site.title.split('.review')[0].split('-')[0] // TODO: solve mutli-words like "bitcoin-cash"
 
         const content = (
             <Markdown src={"/Apps/Site/Projects/cryptoreviews/Pages/" + token + "/" + (location || 'home') + ".md"} onChange={(state) => this.onPageChange(state)} />

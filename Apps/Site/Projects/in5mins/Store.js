@@ -1,8 +1,8 @@
 const Framework = require('../../../../Framework')
-const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString} = Framework
+const { React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, compose, applyMiddleware, thunkMiddleware, Provider, syncHistoryWithStore, routerReducer, combineReducers, createLogger, renderToString } = Framework
 
 const loggerMiddleware = createLogger()
-const {persistState} = require('redux-devtools')
+const { persistState } = require('redux-devtools')
 
 import DevTools from '../../Shared/UI/Components/DevTools'
 
@@ -15,17 +15,11 @@ export default {
             otherMiddleware.push(persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/)))
         }
 
-        let appliedMiddleware = []
-        appliedMiddleware.push(thunkMiddleware)
-
-        if (Platform.Env.isBrowser) {
-            appliedMiddleware.push(loggerMiddleware)
-        }
-
         let createFinalStore = compose(
             applyMiddleware(
                 ...middleware,
-                ...appliedMiddleware
+                thunkMiddleware,
+                loggerMiddleware
             ),
             ...otherMiddleware
         )(createStore)
