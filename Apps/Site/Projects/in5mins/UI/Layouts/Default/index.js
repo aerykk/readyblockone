@@ -27,7 +27,7 @@ class Layout extends Component {
 
         return (
             <View>
-                <p>Testttting</p>
+                <p>Welcome</p>
             </View>
         );
     }

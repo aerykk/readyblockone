@@ -5,6 +5,7 @@ import Layout from '../../Layouts/Default'
 import Markdown from '../../../../../Shared/UI/Components/Markdown'
 
 const supportedSubsites = [
+    'main',
     'crypto'
 ]
 
@@ -31,7 +32,10 @@ class Screen extends Component {
     render() {
         const { site, location } = this.props
 
-        let subsite = site.title.split('.in5mins.com')[0].split('-')[0] // TODO: solve mutli-words like "bitcoin-cash"
+        let subsite = site.title.split('in5mins.com')[0].split('-')[0].replace('.', '') // TODO: solve mutli-words like "bitcoin-cash"
+
+        if (!subsite)
+            subsite = 'main'
 
         if (supportedSubsites.includes(subsite)) {
             const content = (
@@ -52,7 +56,7 @@ class Screen extends Component {
 
             return (
                 <Layout>
-                    Token not found
+                    Subsite not found
                 </Layout>
             )
         }
