@@ -40,9 +40,9 @@ export default (props) => (
                                                 <li><a href="https://readyblock.one/reviews">More</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="https://readyblock.one/dictionary">Crypto Dictionary</a></li>
-                                        <li><a href="https://readyblock.one/faucet">Crypto Faucet</a></li>
-                                        <li><a href="https://readyblock.one/in5mins">Crypto In 5 Mins</a></li>
+                                        <li><a href="https://readyblock.one/go/dictionary">Crypto Dictionary</a></li>
+                                        <li><a href="https://readyblock.one/go/faucet">Crypto Faucet</a></li>
+                                        <li><a href="https://readyblock.one/go/in5mins">Crypto In 5 Mins</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="javascript:void(0)">Company</a>

@@ -157,6 +157,10 @@ const routes = [
             loading: Loading
         })
     },
+    // Internal
+    { path: '/go/faucet', component: () => <script dangerouslySetInnerHTML={{ __html: `window.location = 'https://crypto.in5mins.com/faucet'` }} /> },
+    { path: '/go/dictionary', component: () => <script dangerouslySetInnerHTML={{ __html: `window.location = 'https://crypto.in5mins.com/dictionary'` }} /> },
+    { path: '/go/in5mins', component: () => <script dangerouslySetInnerHTML={{ __html: `window.location = 'https://crypto.in5mins.com/'` }} /> },
     // Exchanges
     { path: '/go/binance', component: () => <script dangerouslySetInnerHTML={{ __html: `window.location = 'https://www.binance.com/?ref=10031868'` }} /> },
     { path: '/go/bittrex', component: () => <script dangerouslySetInnerHTML={{ __html: `window.location = 'https://bittrex.com/Home/Markets'` }} /> },

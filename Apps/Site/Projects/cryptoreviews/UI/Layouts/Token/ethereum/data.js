@@ -94,9 +94,11 @@ export default {
     },
     compare: {
         content: <p>No cryptocurrencies are exactly alike. Each have pros and cons. We'll touch on some of those, but ultimately you'll have to do your own research to figure out which one is for you. But don't worry, we'll be here to guide you along with way.</p>,
-        items: DB.tokens.find({
-            'symbol': { '$in': ['eth', 'btc', 'iota'] }
-        })
+        items: [
+            DB.tokens.findOne({ 'symbol': 'eth' }),
+            DB.tokens.findOne({ 'symbol': 'btc' }),
+            DB.tokens.findOne({ 'symbol': 'iota' }),
+        ]
     },
     media: {
         content: <p>Ethereum and blockchain can be confusing at times. We promise these videos will make it clearer.</p>,
