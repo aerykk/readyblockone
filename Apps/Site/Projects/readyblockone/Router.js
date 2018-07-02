@@ -146,12 +146,12 @@ const routes = [
             loader: function loader() {
                 return report(new Promise((resolve) => {
                     return require.ensure([], (require) => {
-                        resolve(require('./UI/Screens/Home').default)
+                        resolve(require('./UI/Screens/Page').default)
                     })
                 }), {
                         currentModuleFileName: path.join(__dirname, './Router.js'),
-                        importedModulePath: './UI/Screens/Home',
-                        serverSideRequirePath: path.join(__dirname, './UI/Screens/Home')
+                        importedModulePath: './UI/Screens/Page',
+                        serverSideRequirePath: path.join(__dirname, './UI/Screens/Page')
                     });
             },
             loading: Loading

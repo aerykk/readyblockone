@@ -64,7 +64,7 @@ class Screen extends Component {
                                     <ul className="price__list">
                                     </ul>
                                     <p className="price__text"></p>
-                                    <a href="/review/eth" className="btn btn--border btn--center">Coming soon</a>
+                                    <a href="/review/eth" className="btn btn--border btn--center">Go</a>
                                 </div>
                                 <div className="price">
                                     <h3 className="price__title">Ripple (XRP)</h3>
@@ -79,19 +79,27 @@ class Screen extends Component {
 
 
                         <div className="row">
-                            <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
-                                <h2 className="section__title">Faucet</h2>
-                                <p className="section__text">Coming soon</p>
-                                <br /><br /><br />
+                            <div className="col-12 col-lg-10 offset-lg-1 col-xl-12 offset-xl-0">
+                                <div className="price">
+                                    <h3 className="price__title">Faucet Listing</h3>
+                                    <ul className="price__list">
+                                    </ul>
+                                    <p className="price__text"></p>
+                                    <a href="/go/faucet" className="btn btn--border btn--center">Go</a>
+                                </div>
                             </div>
                         </div>
 
 
                         <div className="row">
-                            <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
-                                <h2 className="section__title">Dictionary</h2>
-                                <p className="section__text">Coming soon</p>
-                                <br /><br /><br />
+                            <div className="col-12 col-lg-10 offset-lg-1 col-xl-12 offset-xl-0">
+                                <div className="price">
+                                    <h3 className="price__title">Dictionary</h3>
+                                    <ul className="price__list">
+                                    </ul>
+                                    <p className="price__text"></p>
+                                    <a href="/go/dictionary" className="btn btn--border btn--center">Go</a>
+                                </div>
                             </div>
                         </div>
                     </div>

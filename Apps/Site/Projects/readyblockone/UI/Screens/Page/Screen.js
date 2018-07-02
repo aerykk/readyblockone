@@ -37,7 +37,15 @@ class Screen extends Component {
 
         return (
             <Layout>
-                {content}
+                <section className="section">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12">
+                                {content}
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </Layout>
         )
     }

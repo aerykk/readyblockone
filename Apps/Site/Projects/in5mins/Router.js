@@ -45,19 +45,22 @@ const routes = [
         component: Loadable({
             loader: function loader() {
                 return report(new Promise((resolve, reject) => {
-                    let subsite = location.hostname.split('.in5mins.com')[0].split('-')[0] // TODO: solve mutli-words like "bitcoin-cash"
-                    let page = location.pathname.substring(1)
+                    return require.ensure([], (require) => {
+                        resolve(require('./UI/Screens/Page').default)
+                    })
+                    // let subsite = location.hostname.split('.in5mins.com')[0].split('-')[0] // TODO: solve mutli-words like "bitcoin-cash"
+                    // let page = location.pathname.substring(1)
 
-                    if (validPaths[subsite][page]) {
-                        return require.ensure([], (require) => {
-                            resolve(require('./UI/Screens/Page').default)
-                        })
-                    } else {
-                        reject()
-                        // return require.ensure([], (require) => {
-                        //     resolve(require('./UI/Screens/NotFound').default)
-                        // })
-                    }
+                    // if (validPaths[subsite][page]) {
+                    //     return require.ensure([], (require) => {
+                    //         resolve(require('./UI/Screens/Page').default)
+                    //     })
+                    // } else {
+                    //     reject()
+                    //     // return require.ensure([], (require) => {
+                    //     //     resolve(require('./UI/Screens/NotFound').default)
+                    //     // })
+                    // }
                 }), {
                         currentModuleFileName: path.join(__dirname, './Router.js'),
                         importedModulePath: './UI/Screens/Page',

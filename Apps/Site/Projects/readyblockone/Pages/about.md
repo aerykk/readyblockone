@@ -1,14 +1,6 @@
-<ul class="breadcrumb">
-    <li><a href="/" address="true">Home</a></li>
-    <li><span class="divider">/</span></li>
-    <li class="active">About</li>
-</ul>
-<div class="post-2 page type-page status-publish hentry row-fluid" id="post-2">
-    <div class="span2">
-    </div>
-    <div class="span4">
-        <p></p>
-        <p>Coming soon!</p>
-        <br>
-    </div>
-</div>
+# Page
+
+## Content
+
+<br /><br /><br /><br />
+<p>Coming soon</p>
