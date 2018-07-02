@@ -37,7 +37,7 @@ export default (props) => (
                                                 <li><a href="https://readyblock.one/review/xrp">Ripple (XRP)</a></li>
                                                 <li><a href="https://readyblock.one/review/bch">Bitcoin Cash (BCH)</a></li>
                                                 <li><a href="https://readyblock.one/review/ltc">Litecoin (LTC)</a></li>
-                                                <li><a href="https://readyblock.one/reviews">More</a></li>
+                                                <li><a href="https://readyblock.one/network/#reviews">More</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="https://readyblock.one/go/dictionary">Crypto Dictionary</a></li>

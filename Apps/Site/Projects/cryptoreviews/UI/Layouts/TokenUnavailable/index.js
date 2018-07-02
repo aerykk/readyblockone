@@ -48,7 +48,7 @@ class Layout extends Component {
                                                         <ul>
                                                             <li><a href="https://bitcoin-btc.review">Bitcoin (BTC)</a></li>
                                                             <li><a href="https://litecoin-btc.review">Litecoin (LTC)</a></li>
-                                                            <li><a href="https://readyblock.one/reviews">More</a></li>
+                                                            <li><a href="https://readyblock.one/network/#reviews">More</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="https://readyblock.one/go/dictionary">Crypto Dictionary</a></li>
@@ -86,7 +86,7 @@ class Layout extends Component {
                                 <div className="col-12 align-self-center">
                                     <h1 className="iq-font-white iq-tw-6 iq-mb-10">We haven't reviewed that token yet, <span className="iq-font-yellow">but it may be on the way. </span></h1>
 
-                                    <a href="/#history" className="button white iq-mt-15 bt-lg"><strong>Click here</strong> for all reviewed tokens</a>
+                                    <a href="https://readyblock.one/network" className="button white iq-mt-15 bt-lg"><strong>Click here</strong> for all reviewed tokens</a>
                                 </div>
                             </div>
                         </div>
