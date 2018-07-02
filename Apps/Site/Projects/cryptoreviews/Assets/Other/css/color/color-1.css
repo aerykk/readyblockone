@@ -56,6 +56,6 @@ a:focus, a:hover { color: #f9b707; }
 
 @media(max-width:767px) { }
 
-a, .button, input {
+a {
     color: #ff9e00;
 }

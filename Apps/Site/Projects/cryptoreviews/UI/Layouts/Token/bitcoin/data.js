@@ -101,10 +101,16 @@ export default {
         content: <p></p>,
         items: [
             {
-                id: "howfast",
+                id: "created",
                 collapsed: false,
+                question: "Who created Bitcoin?",
+                answer: <p>Nobody knows for sure. Some believe it was the government (NSA), or a large corporation (Japan's Softbank). A common guess is Hal Finney, the first user aside from Satoshi, who lived in the same town as a Satoshi Nakamoto; Unforunately Hal passed away in 2014. Since then, Craig Wright has attempted to claim the fame, but others such as Vitalik Buterin have been quick to point of the unlikelihood of that being true.</p>
+            },
+            {
+                id: "howfast",
+                collapsed: true,
                 question: "How fast is Bitcoin?",
-                answer: <p>It depends on the day, but on average it's currently 7 transactions per second. This is considered quite low. In fact there is often thousands of pending transactions.</p>
+                answer: <p>It depends on the day, but on average it's currently 3 transactions per second. This is considered quite low. In fact there is often thousands of pending transactions.</p>
             },
             {
                 id: "forks",
@@ -123,12 +129,6 @@ export default {
                 collapsed: true,
                 question: "What is a Bitcoin maximalist?",
                 answer: <p>A maximalist is somebody who believes Bitcoin is the only solution needed. They are typically early adopters and see blockchain's major use case as a currency, and Bitcoin as the defacto implementation.</p>
-            },
-            {
-                id: "created",
-                collapsed: true,
-                question: "Who created Bitcoin?",
-                answer: <p>Nobody knows for sure. Some believe it was the government (NSA), or a large corporation (Softbank). A common guess is Hal Finney, the first user aside from Satoshi, who lived in the same town as a Satoshi Nakamoto; Unforunately Hal passed away in 2014. Since then, Craig Wright has attempted to claim the fame, but others such as Vitalik Buterin have been quick to point of the unlikelihood of that being true.</p>
             }
         ]
     }

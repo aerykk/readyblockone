@@ -33,7 +33,7 @@ class Screen extends Component {
         const { site, location } = this.props
 
         let token = site.title.split('.review')[0].split('-')[0] // TODO: solve mutli-words like "bitcoin-cash"
-        
+
         if (supportedTokens.includes(token)) {
             const content = (
                 <Markdown src={'/Apps/Site/Projects/cryptoreviews/Pages/' + token + '/' + (location || 'home') + '.md'} onChange={(state) => this.onPageChange(state)} />
