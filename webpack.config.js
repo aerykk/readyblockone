@@ -12,17 +12,9 @@ var config = {
     },
     optimization: {
         runtimeChunk: false,
-        splitChunks: {
+        splitChunks: process.env.NODE_ENV === 'production' ? {
             chunks: 'all',
-            cacheGroups: {
-                default: false,
-                commons: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: "vendor",
-                    chunks: "all"
-                }
-            }
-        }
+        } : {}
     },
     entry: {
         'site.web': ['./Apps/Site/index.web.js']

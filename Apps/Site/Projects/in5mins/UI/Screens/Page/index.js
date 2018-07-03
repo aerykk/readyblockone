@@ -28,22 +28,20 @@ class Screen extends Component {
     }
 
     render() {
-        const { site, location } = this.props
+        let { site, location } = this.props
+
+        if (location)
+            location = location.toLowerCase()
 
         let subsite = site.title.split('.in5mins.com')[0].split('-')[0] // TODO: solve mutli-words like "bitcoin-cash"
 
         if (supportedSubsites.includes(subsite)) {
-            const content = (
-                <Markdown src={'/Apps/Site/Projects/in5mins/Pages/' + subsite + '/' + (location || 'home') + '.md'} onChange={(state) => this.onPageChange(state)} />
-            )
-
-            const page = this.state.page
-
+            const Page = require('../../../Pages/' + subsite + '/' + (location || 'home')).default
             const Layout = require('../../Layouts/Subsites/' + subsite).default
 
             return (
                 <Layout>
-                    {content}
+                    <Page />
                 </Layout>
             )
         } else {
