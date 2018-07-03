@@ -10,12 +10,12 @@ var config = {
     stats: {
         warnings: false
     },
-    optimization: {
-        runtimeChunk: false,
-        splitChunks: process.env.NODE_ENV === 'production' ? {
-            chunks: 'all',
-        } : {}
-    },
+    // optimization: {
+    //     runtimeChunk: true,
+    //     splitChunks: {
+    //         chunks: 'all',
+    //     }
+    // },
     entry: {
         'site.web': ['./Apps/Site/index.web.js']
     },
