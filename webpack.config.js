@@ -13,7 +13,15 @@ var config = {
     optimization: {
         runtimeChunk: false,
         splitChunks: {
-            chunks: 'all'
+            chunks: 'all',
+            cacheGroups: {
+                default: false,
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: "vendor",
+                    chunks: "all"
+                }
+            }
         }
     },
     entry: {
