@@ -38,12 +38,15 @@ class Screen extends Component {
             subsite = 'main'
 
         if (supportedSubsites.includes(subsite)) {
-            const Page = require('../../../Pages/' + subsite + '/' + (location || 'home')).default
+            const content = (
+                <Markdown src={'/Apps/Site/Projects/in5mins/Pages/' + subsite + '/' + (location || 'home') + '.md'} onChange={(state) => this.onPageChange(state)} />
+            )
+
             const Layout = require('../../Layouts/Subsites/' + subsite).default
 
             return (
                 <Layout>
-                    <Page />
+                    {content}
                 </Layout>
             )
         } else {

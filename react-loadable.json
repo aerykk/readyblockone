@@ -2069,7 +2069,7 @@
       "publicPath": "/Build/Release/1.chunk.js"
     },
     {
-      "id": 701,
+      "id": 658,
       "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token sync recursive ^\\.\\/.*$",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -2137,12 +2137,6 @@
     {
       "id": 627,
       "name": "./Apps/Site/Projects/in5mins/UI/Layouts/Subsites sync recursive ^\\.\\/.*$",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    },
-    {
-      "id": 685,
-      "name": "./Apps/Site/Projects/in5mins/Pages sync recursive ^\\.\\/.*$",
       "file": "5.chunk.js",
       "publicPath": "/Build/Release/5.chunk.js"
     },
@@ -2977,7 +2971,7 @@
       "publicPath": "/Build/Release/3.chunk.js"
     },
     {
-      "id": 686,
+      "id": 643,
       "name": "./Apps/Site/Projects/in5mins/UI/Layouts/Default/index.js",
       "file": "5.chunk.js",
       "publicPath": "/Build/Release/5.chunk.js"
@@ -3249,7 +3243,7 @@
   ],
   "../../Layouts/TokenUnavailable": [
     {
-      "id": 687,
+      "id": 644,
       "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/TokenUnavailable/index.js",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -3257,7 +3251,7 @@
   ],
   "./notifications": [
     {
-      "id": 688,
+      "id": 645,
       "name": "./Apps/Site/Projects/cryptoreviews/Data/notifications.js",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -3265,7 +3259,7 @@
   ],
   "./videos": [
     {
-      "id": 689,
+      "id": 646,
       "name": "./Apps/Site/Projects/cryptoreviews/Data/videos.js",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -3273,7 +3267,7 @@
   ],
   "./faq": [
     {
-      "id": 690,
+      "id": 647,
       "name": "./Apps/Site/Projects/cryptoreviews/Data/faq.js",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -3281,7 +3275,7 @@
   ],
   "./courses": [
     {
-      "id": 691,
+      "id": 648,
       "name": "./Apps/Site/Projects/cryptoreviews/Data/courses.js",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -3289,7 +3283,7 @@
   ],
   "./sites": [
     {
-      "id": 692,
+      "id": 649,
       "name": "./Apps/Site/Projects/cryptoreviews/Data/sites.js",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -3297,7 +3291,7 @@
   ],
   "./books": [
     {
-      "id": 693,
+      "id": 650,
       "name": "./Apps/Site/Projects/cryptoreviews/Data/books.js",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -3305,7 +3299,7 @@
   ],
   "./hardwareWallets": [
     {
-      "id": 694,
+      "id": 651,
       "name": "./Apps/Site/Projects/cryptoreviews/Data/hardwareWallets.js",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -3313,7 +3307,7 @@
   ],
   "./softwareWallets": [
     {
-      "id": 695,
+      "id": 652,
       "name": "./Apps/Site/Projects/cryptoreviews/Data/softwareWallets.js",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -3321,7 +3315,7 @@
   ],
   "./exchanges": [
     {
-      "id": 696,
+      "id": 653,
       "name": "./Apps/Site/Projects/cryptoreviews/Data/exchanges.js",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -3329,7 +3323,7 @@
   ],
   "./tokens": [
     {
-      "id": 697,
+      "id": 654,
       "name": "./Apps/Site/Projects/cryptoreviews/Data/tokens.js",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -3337,7 +3331,7 @@
   ],
   "../Data": [
     {
-      "id": 698,
+      "id": 655,
       "name": "./Apps/Site/Projects/cryptoreviews/Data/index.js",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -3345,7 +3339,7 @@
   ],
   "./loki-indexed-adapter.js": [
     {
-      "id": 699,
+      "id": 656,
       "name": "./node_modules/lokijs/src/loki-indexed-adapter.js",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -3353,7 +3347,7 @@
   ],
   "lokijs": [
     {
-      "id": 700,
+      "id": 657,
       "name": "./node_modules/lokijs/src/lokijs.js",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
@@ -3405,342 +3399,6 @@
     {
       "id": 626,
       "name": "./Apps/Site/Projects/in5mins/UI/Layouts/SubsiteUnavailable/index.js",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/dictionary/asic.js": [
-    {
-      "id": 643,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/asic.js",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/dictionary/altcoin.js": [
-    {
-      "id": 644,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/altcoin.js",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./tech/home.md": [
-    {
-      "id": 645,
-      "name": "./Apps/Site/Projects/in5mins/Pages/tech/home.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./shopping/home.md": [
-    {
-      "id": 646,
-      "name": "./Apps/Site/Projects/in5mins/Pages/shopping/home.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./main/home.md": [
-    {
-      "id": 647,
-      "name": "./Apps/Site/Projects/in5mins/Pages/main/home.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./main/blog/welcome.md": [
-    {
-      "id": 648,
-      "name": "./Apps/Site/Projects/in5mins/Pages/main/blog/welcome.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./health/home.md": [
-    {
-      "id": 649,
-      "name": "./Apps/Site/Projects/in5mins/Pages/health/home.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./gaming/home.md": [
-    {
-      "id": 650,
-      "name": "./Apps/Site/Projects/in5mins/Pages/gaming/home.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/why-bubble.md": [
-    {
-      "id": 651,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/why-bubble.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/why-blockchain.md": [
-    {
-      "id": 652,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/why-blockchain.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/whitelists.md": [
-    {
-      "id": 653,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/whitelists.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/use-cases.md": [
-    {
-      "id": 654,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/use-cases.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/token-economics.md": [
-    {
-      "id": 655,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/token-economics.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/terminology.md": [
-    {
-      "id": 656,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/terminology.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/storage.md": [
-    {
-      "id": 657,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/storage.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/proof-of.md": [
-    {
-      "id": 658,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/proof-of.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/pains.md": [
-    {
-      "id": 659,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/pains.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/mining.md": [
-    {
-      "id": 660,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/mining.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/investment-analysis.md": [
-    {
-      "id": 661,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/investment-analysis.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/investing.md": [
-    {
-      "id": 662,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/investing.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/interopability.md": [
-    {
-      "id": 663,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/interopability.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/influencers.md": [
-    {
-      "id": 664,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/influencers.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/how-to-ico.md": [
-    {
-      "id": 665,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/how-to-ico.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/home.md": [
-    {
-      "id": 666,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/home.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/future-of-funding.md": [
-    {
-      "id": 667,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/future-of-funding.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/fiftyone-percent-attack.md": [
-    {
-      "id": 668,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/fiftyone-percent-attack.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/faucet.md": [
-    {
-      "id": 669,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/faucet.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/exchanges.md": [
-    {
-      "id": 670,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/exchanges.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/dictionary/kyc.md": [
-    {
-      "id": 671,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/kyc.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/dictionary/ico.md": [
-    {
-      "id": 672,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/ico.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/dictionary/hodl.md": [
-    {
-      "id": 673,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/hodl.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/dictionary/genesis-block.md": [
-    {
-      "id": 674,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/genesis-block.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/dictionary/fork.md": [
-    {
-      "id": 675,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/fork.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/dictionary/flippening.md": [
-    {
-      "id": 676,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/flippening.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/dictionary/faucet.md": [
-    {
-      "id": 677,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/faucet.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/dictionary/dao.md": [
-    {
-      "id": 678,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/dao.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/dictionary/block-halving.md": [
-    {
-      "id": 679,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/block-halving.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/dictionary/atomic-swap.md": [
-    {
-      "id": 680,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/atomic-swap.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/dictionary.md": [
-    {
-      "id": 681,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/daytrading.md": [
-    {
-      "id": 682,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/daytrading.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./crypto/community-groups.md": [
-    {
-      "id": 683,
-      "name": "./Apps/Site/Projects/in5mins/Pages/crypto/community-groups.md",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./adult/home.md": [
-    {
-      "id": 684,
-      "name": "./Apps/Site/Projects/in5mins/Pages/adult/home.md",
       "file": "5.chunk.js",
       "publicPath": "/Build/Release/5.chunk.js"
     }
