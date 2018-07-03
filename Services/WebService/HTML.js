@@ -44,6 +44,8 @@ class HTML extends Component {
 
                     <script dangerouslySetInnerHTML={{__html: `window.__data=${serialize(store.getState())};`}} />
 
+                    <script src={`/Build/Release/vendors~site.web.chunk.js`}></script>
+
                     {bundles.map(bundle => (
                         <script src={`/Build/Release/${bundle.file}`}></script>
                         // alternatively if you are using publicPath option in webpack config

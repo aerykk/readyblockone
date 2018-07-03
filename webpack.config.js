@@ -6,17 +6,18 @@ const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin'
 
 
 var config = {
+    cache: false,
     stats: {
         warnings: false
     },
     optimization: {
+        runtimeChunk: false,
         splitChunks: {
             chunks: 'all'
         }
     },
     entry: {
-        'site.web': ['./Apps/Site/index.web.js'],
-        'widget.web': ['./Apps/Widget/index.web.js']
+        'site.web': ['./Apps/Site/index.web.js']
     },
     output: {
         path: __dirname + '/Build/Release',
@@ -42,6 +43,7 @@ var config = {
         }
     },
     module: {
+        unsafeCache: false,
         rules: [
             {
                 test: /\.js(x?)$/,
