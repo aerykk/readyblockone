@@ -71,9 +71,9 @@ const routes = [
                         serverSideRequirePath: path.join(__dirname, './UI/Screens/Page')
                     });
             },
-            modules: ["./UI/Screens/Page"],
+            modules: ["./UI/Screens/Page", "./Pages/crypto/dictionary/altcoin"],
             webpack: function webpack() {
-                return [require.resolveWeak("./UI/Screens/Page")]
+                return [require.resolveWeak("./UI/Screens/Page"), require.resolveWeak("./Pages/crypto/dictionary/altcoin")]
             },
             loading: Loading
         })
@@ -105,9 +105,9 @@ const routes = [
                         serverSideRequirePath: path.join(__dirname, './UI/Screens/Page')
                     });
             },
-            modules: ["./UI/Screens/Page"],
+            modules: ["./UI/Screens/Page", "./Pages/crypto/dictionary/asic"],
             webpack: function webpack() {
-                return [require.resolveWeak("./UI/Screens/Page")]
+                return [require.resolveWeak("./UI/Screens/Page"), require.resolveWeak("./Pages/crypto/dictionary/asic")]
             },
             loading: Loading
         })
