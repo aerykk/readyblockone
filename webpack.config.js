@@ -1,10 +1,18 @@
+import { ReactLoadablePlugin } from 'react-loadable/webpack'
+
 const path = require('path')
 const webpack = require('webpack')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 
+
 var config = {
     stats: {
         warnings: false
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
     },
     entry: {
         'site.web': ['./Apps/Site/index.web.js'],
@@ -83,6 +91,9 @@ var config = {
         new webpack.IgnorePlugin(/^(react-native)$/),
         new webpack.DefinePlugin({
             'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
+        }),
+        new ReactLoadablePlugin({
+            filename: './react-loadable.json',
         })
     ]
 }

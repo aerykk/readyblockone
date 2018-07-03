@@ -13,7 +13,17 @@ if (typeof require.include !== "function") require.include = function() {}
 
 let middleware = []
 
-const Loading = () => <div>Loading</div>
+function Loading(props) {
+    if (props.error) {
+        return <div>Error! <button onClick={props.retry}>Retry</button></div>;
+    } else if (props.timedOut) {
+        return <div>Taking a long time... <button onClick={props.retry}>Retry</button></div>;
+    } else if (props.pastDelay) {
+        return <div>Loading...</div>;
+    } else {
+        return null;
+    }
+}
 
 const routes = [
     {
@@ -31,7 +41,13 @@ const routes = [
                     serverSideRequirePath: path.join(__dirname, './UI/Screens/Home')
                 });
             },
-            loading: Loading
+            modules: ["./UI/Screens/Home"],
+            webpack: function webpack() {
+                return [require.resolveWeak("./UI/Screens/Home")]
+            },
+            loading: Loading,
+            delay: 1000,
+            timeout: 10000
         })
     }
 ]

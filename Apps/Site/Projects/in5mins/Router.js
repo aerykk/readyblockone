@@ -37,6 +37,10 @@ const routes = [
                         serverSideRequirePath: path.join(__dirname, './UI/Screens/Home')
                     });
             },
+            modules: ["./UI/Screens/Home"],
+            webpack: function webpack() {
+                return [require.resolveWeak("./UI/Screens/Home")]
+            },
             loading: Loading
         })
     },
@@ -66,6 +70,10 @@ const routes = [
                         importedModulePath: './UI/Screens/Page',
                         serverSideRequirePath: path.join(__dirname, './UI/Screens/Page')
                     });
+            },
+            modules: ["./UI/Screens/Page"],
+            webpack: function webpack() {
+                return [require.resolveWeak("./UI/Screens/Page")]
             },
             loading: Loading
         })

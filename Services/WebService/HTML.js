@@ -18,7 +18,7 @@ class HTML extends Component {
     }
 
     render() {
-        const {ui, store} = this.props
+        const {ui, store, bundles} = this.props
         const state = store.getState()
 
         return (
@@ -44,6 +44,13 @@ class HTML extends Component {
 
                     <script dangerouslySetInnerHTML={{__html: `window.__data=${serialize(store.getState())};`}} />
 
+                    {bundles.map(bundle => (
+                        <script src={`/Build/Release/${bundle.file}`}></script>
+                        // alternatively if you are using publicPath option in webpack config
+                        // you can use the publicPath value from bundle, e.g:
+                        // return `<script src="${bundle.publicPath}"></script>`
+                    ))}
+                    
                     <script src="/Build/Release/site.web.bundle.js"></script>
 
                     <script async src={"https://www.googletagmanager.com/gtag/js?id=" + state.site.analytics.GA.id}></script>

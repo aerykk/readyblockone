@@ -15,7 +15,18 @@ if (typeof require.include !== "function") require.include = function() {}
 
 let middleware = []
 
-const Loading = () => <div>Loading</div>
+
+function Loading(props) {
+    if (props.error) {
+        return <div>Error! <button onClick={props.retry}>Retry</button></div>
+    } else if (props.timedOut) {
+        return <div>Taking a long time... <button onClick={props.retry}>Retry</button></div>
+    } else if (props.pastDelay) {
+        return <div>Loading...</div>
+    } else {
+        return null
+    }
+}
 
 const routes = [
     {
@@ -35,6 +46,10 @@ const routes = [
                     }
                 )
             },
+            modules: ["./UI/Screens/Home"],
+            webpack: function webpack() {
+                return [require.resolveWeak("./UI/Screens/Home")]
+            },
             loading: Loading
         })
     },
@@ -50,7 +65,11 @@ const routes = [
                         currentModuleFileName: path.join(__dirname, './Router.js'),
                         importedModulePath: './UI/Screens/Network',
                         serverSideRequirePath: path.join(__dirname, './UI/Screens/Network')
-                    });
+                    })
+            },
+            modules: ["./UI/Screens/Network"],
+            webpack: function webpack() {
+                return [require.resolveWeak("./UI/Screens/Network")]
             },
             loading: Loading
         })
@@ -67,7 +86,11 @@ const routes = [
                         currentModuleFileName: path.join(__dirname, './Router.js'),
                         importedModulePath: './UI/Screens/Page',
                         serverSideRequirePath: path.join(__dirname, './UI/Screens/Page')
-                    });
+                    })
+            },
+            modules: ["./UI/Screens/Page"],
+            webpack: function webpack() {
+                return [require.resolveWeak("./UI/Screens/Page")]
             },
             loading: Loading
         })
@@ -84,7 +107,11 @@ const routes = [
                         currentModuleFileName: path.join(__dirname, './Router.js'),
                         importedModulePath: './UI/Screens/Page',
                         serverSideRequirePath: path.join(__dirname, './UI/Screens/Page')
-                    });
+                    })
+            },
+            modules: ["./UI/Screens/Page"],
+            webpack: function webpack() {
+                return [require.resolveWeak("./UI/Screens/Page")]
             },
             loading: Loading
         })
@@ -101,7 +128,11 @@ const routes = [
                         currentModuleFileName: path.join(__dirname, './Router.js'),
                         importedModulePath: './UI/Screens/Page',
                         serverSideRequirePath: path.join(__dirname, './UI/Screens/Page')
-                    });
+                    })
+            },
+            modules: ["./UI/Screens/Page"],
+            webpack: function webpack() {
+                return [require.resolveWeak("./UI/Screens/Page")]
             },
             loading: Loading
         })
@@ -118,7 +149,11 @@ const routes = [
                         currentModuleFileName: path.join(__dirname, './Router.js'),
                         importedModulePath: './UI/Screens/Page',
                         serverSideRequirePath: path.join(__dirname, './UI/Screens/Page')
-                    });
+                    })
+            },
+            modules: ["./UI/Screens/Page"],
+            webpack: function webpack() {
+                return [require.resolveWeak("./UI/Screens/Page")]
             },
             loading: Loading
         })
@@ -135,7 +170,11 @@ const routes = [
                         currentModuleFileName: path.join(__dirname, './Router.js'),
                         importedModulePath: './UI/Screens/Page',
                         serverSideRequirePath: path.join(__dirname, './UI/Screens/Page')
-                    });
+                    })
+            },
+            modules: ["./UI/Screens/Page"],
+            webpack: function webpack() {
+                return [require.resolveWeak("./UI/Screens/Page")]
             },
             loading: Loading
         })
@@ -152,7 +191,11 @@ const routes = [
                         currentModuleFileName: path.join(__dirname, './Router.js'),
                         importedModulePath: './UI/Screens/Page',
                         serverSideRequirePath: path.join(__dirname, './UI/Screens/Page')
-                    });
+                    })
+            },
+            modules: ["./UI/Screens/Page"],
+            webpack: function webpack() {
+                return [require.resolveWeak("./UI/Screens/Page")]
             },
             loading: Loading
         })

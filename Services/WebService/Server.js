@@ -1,6 +1,8 @@
 import createMemoryHistory from 'history/createMemoryHistory'
 import { StaticRouter } from 'react-router'
 import Loadable from 'react-loadable'
+import { getBundles } from 'react-loadable/webpack'
+import stats from '../../react-loadable.json'
 
 const express = require('express')
 const webpack = require('webpack')
@@ -18,6 +20,8 @@ const httpProxy = require('http-proxy')
 const HTML = require('./HTML').default
 const UI = require('../../Apps/Site/UI').default
 const clientMiddleware = require('./middleware/clientMiddleware').default
+
+const MAKE_SURE_LOADABLE_GETS_INITIALIZED = require('../../Apps/Site/Router')
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -144,18 +148,23 @@ class Server {
             const routes = SiteRouter.routes
             const location = req.originalUrl
 
+            let modules = [];
             const context = {}
             const ui = renderToString(
-                <StaticRouter
-                    location={location}
-                    context={context}
-                >
-                    <UI store={store} history={history} routes={routes} />
-                </StaticRouter>
+                <Loadable.Capture report={moduleName => modules.push(moduleName)}>
+                    <StaticRouter
+                        location={location}
+                        context={context}
+                    >
+                        <UI store={store} history={history} routes={routes} />
+                    </StaticRouter>
+                </Loadable.Capture>
             )
 
+            let bundles = getBundles(stats, modules);
+
             const page = renderToString(
-                <HTML ui={ui} store={store} />
+                <HTML ui={ui} store={store} bundles={bundles} />
             )
 
             if (context.url) {
