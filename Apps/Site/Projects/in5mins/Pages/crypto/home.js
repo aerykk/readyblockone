@@ -11,7 +11,7 @@ export default (props) => (
         <h5 class="iq-mt-30">Dictionary</h5>
         <ul class="listing-hand iq-tw-6 iq-font-black">
             <li class="iq-mt-15 iq-mr-15"><a href="/dictionary/altcoin">Altcoin</a></li>
-            <li class="iq-mt-15 iq-mr-15"><a href="/dictionary/ASIC">ASIC</a></li>
+            <li class="iq-mt-15 iq-mr-15"><a href="/dictionary/asic">ASIC</a></li>
             <li class="iq-mt-15 iq-mr-15"><a href="/dictionary/atomic-swap">Atomic Swap</a></li>
             <li class="iq-mt-15 iq-mr-15"><a href="/dictionary/block-halving">Block Halving</a></li>
             <li class="iq-mt-15 iq-mr-15"><a href="/dictionary/dao">DAO</a></li>

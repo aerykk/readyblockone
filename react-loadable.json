@@ -7,10 +7,10 @@
       "publicPath": "/Build/Release/0.chunk.js"
     },
     {
-      "id": 229,
+      "id": 31,
       "name": "./Apps/Site/Projects/in5mins/UI/Screens/Page/index.js",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     }
   ],
   "lodash": [
@@ -29,8 +29,8 @@
     {
       "id": 524,
       "name": "./node_modules/lodash/lodash.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 524,
@@ -61,8 +61,8 @@
     {
       "id": 525,
       "name": "./node_modules/readable-stream/lib/_stream_duplex.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 525,
@@ -93,8 +93,8 @@
     {
       "id": 526,
       "name": "./node_modules/domutils/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 526,
@@ -125,8 +125,8 @@
     {
       "id": 527,
       "name": "./node_modules/inherits/inherits_browser.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 527,
@@ -163,8 +163,8 @@
     {
       "id": 528,
       "name": "./node_modules/htmlparser2/lib/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 528,
@@ -195,8 +195,8 @@
     {
       "id": 529,
       "name": "./node_modules/boolbase/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 529,
@@ -227,8 +227,8 @@
     {
       "id": 530,
       "name": "./node_modules/cheerio/lib/utils.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 530,
@@ -259,8 +259,8 @@
     {
       "id": 531,
       "name": "./node_modules/core-util-is/lib/util.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 531,
@@ -303,14 +303,14 @@
     {
       "id": 532,
       "name": "./node_modules/domelementtype/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 590,
       "name": "./node_modules/dom-serializer/node_modules/domelementtype/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 532,
@@ -353,8 +353,8 @@
     {
       "id": 533,
       "name": "./node_modules/safe-buffer/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 533,
@@ -385,8 +385,8 @@
     {
       "id": 534,
       "name": "./node_modules/process-nextick-args/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 534,
@@ -417,8 +417,8 @@
     {
       "id": 535,
       "name": "./node_modules/events/events.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 535,
@@ -449,8 +449,8 @@
     {
       "id": 536,
       "name": "./node_modules/cheerio/lib/parse.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 536,
@@ -481,8 +481,8 @@
     {
       "id": 537,
       "name": "./node_modules/css-select/lib/pseudos.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 537,
@@ -513,8 +513,8 @@
     {
       "id": 538,
       "name": "./node_modules/cheerio/lib/static.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 538,
@@ -545,8 +545,8 @@
     {
       "id": 539,
       "name": "./node_modules/dom-serializer/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 539,
@@ -577,8 +577,8 @@
     {
       "id": 540,
       "name": "./node_modules/readable-stream/lib/_stream_writable.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 540,
@@ -609,8 +609,8 @@
     {
       "id": 541,
       "name": "./node_modules/readable-stream/readable-browser.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 541,
@@ -641,8 +641,8 @@
     {
       "id": 542,
       "name": "./node_modules/buffer/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 542,
@@ -673,8 +673,8 @@
     {
       "id": 543,
       "name": "./node_modules/cheerio/lib/cheerio.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 543,
@@ -705,8 +705,8 @@
     {
       "id": 544,
       "name": "./node_modules/css-select/lib/procedure.json",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 544,
@@ -737,8 +737,8 @@
     {
       "id": 545,
       "name": "./node_modules/css-select/lib/attributes.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 545,
@@ -769,8 +769,8 @@
     {
       "id": 546,
       "name": "./node_modules/css-select/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 546,
@@ -801,8 +801,8 @@
     {
       "id": 547,
       "name": "./node_modules/entities/maps/entities.json",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 547,
@@ -833,8 +833,8 @@
     {
       "id": 548,
       "name": "./node_modules/entities/maps/xml.json",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 548,
@@ -865,8 +865,8 @@
     {
       "id": 549,
       "name": "./node_modules/readable-stream/lib/_stream_transform.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 549,
@@ -897,8 +897,8 @@
     {
       "id": 550,
       "name": "./node_modules/node-libs-browser/node_modules/string_decoder/lib/string_decoder.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 550,
@@ -929,8 +929,8 @@
     {
       "id": 551,
       "name": "./node_modules/readable-stream/lib/internal/streams/destroy.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 551,
@@ -961,8 +961,8 @@
     {
       "id": 552,
       "name": "./node_modules/readable-stream/lib/internal/streams/stream-browser.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 552,
@@ -993,8 +993,8 @@
     {
       "id": 553,
       "name": "./node_modules/readable-stream/lib/_stream_readable.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 553,
@@ -1025,8 +1025,8 @@
     {
       "id": 554,
       "name": "./node_modules/htmlparser2/lib/WritableStream.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 554,
@@ -1057,8 +1057,8 @@
     {
       "id": 555,
       "name": "./node_modules/domhandler/lib/node.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 555,
@@ -1089,8 +1089,8 @@
     {
       "id": 556,
       "name": "./node_modules/htmlparser2/lib/Tokenizer.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 556,
@@ -1121,8 +1121,8 @@
     {
       "id": 557,
       "name": "./node_modules/htmlparser2/lib/Parser.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 557,
@@ -1153,8 +1153,8 @@
     {
       "id": 563,
       "name": "./node_modules/fs/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 563,
@@ -1185,8 +1185,8 @@
     {
       "id": 566,
       "name": "./node_modules/cheerio/lib/api/forms.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 566,
@@ -1217,8 +1217,8 @@
     {
       "id": 567,
       "name": "./node_modules/cheerio/lib/api/css.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 567,
@@ -1249,8 +1249,8 @@
     {
       "id": 568,
       "name": "./node_modules/cheerio/lib/api/manipulation.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 568,
@@ -1281,8 +1281,8 @@
     {
       "id": 569,
       "name": "./node_modules/cheerio/lib/api/traversing.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 569,
@@ -1313,8 +1313,8 @@
     {
       "id": 570,
       "name": "./node_modules/css-select/lib/sort.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 570,
@@ -1345,8 +1345,8 @@
     {
       "id": 571,
       "name": "./node_modules/css-select/lib/general.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 571,
@@ -1377,8 +1377,8 @@
     {
       "id": 572,
       "name": "./node_modules/css-what/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 572,
@@ -1409,8 +1409,8 @@
     {
       "id": 573,
       "name": "./node_modules/css-select/lib/compile.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 573,
@@ -1441,8 +1441,8 @@
     {
       "id": 574,
       "name": "./node_modules/nth-check/compile.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 574,
@@ -1473,8 +1473,8 @@
     {
       "id": 575,
       "name": "./node_modules/nth-check/parse.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 575,
@@ -1505,8 +1505,8 @@
     {
       "id": 576,
       "name": "./node_modules/nth-check/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 576,
@@ -1537,8 +1537,8 @@
     {
       "id": 577,
       "name": "./node_modules/cheerio/lib/api/attributes.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 577,
@@ -1569,8 +1569,8 @@
     {
       "id": 578,
       "name": "./node_modules/htmlparser2/lib/CollectingHandler.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 578,
@@ -1601,8 +1601,8 @@
     {
       "id": 579,
       "name": "./node_modules/domutils/lib/helpers.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 579,
@@ -1633,8 +1633,8 @@
     {
       "id": 580,
       "name": "./node_modules/domutils/lib/legacy.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 580,
@@ -1665,8 +1665,8 @@
     {
       "id": 581,
       "name": "./node_modules/domutils/lib/querying.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 581,
@@ -1697,8 +1697,8 @@
     {
       "id": 582,
       "name": "./node_modules/domutils/lib/manipulation.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 582,
@@ -1729,8 +1729,8 @@
     {
       "id": 583,
       "name": "./node_modules/domutils/lib/traversal.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 583,
@@ -1773,14 +1773,14 @@
     {
       "id": 584,
       "name": "./node_modules/entities/maps/decode.json",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 614,
       "name": "./node_modules/htmlparser2/node_modules/entities/maps/decode.json",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 584,
@@ -1823,8 +1823,8 @@
     {
       "id": 585,
       "name": "./node_modules/entities/lib/decode_codepoint.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 585,
@@ -1855,8 +1855,8 @@
     {
       "id": 586,
       "name": "./node_modules/entities/maps/legacy.json",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 586,
@@ -1887,8 +1887,8 @@
     {
       "id": 587,
       "name": "./node_modules/entities/lib/decode.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 587,
@@ -1919,8 +1919,8 @@
     {
       "id": 588,
       "name": "./node_modules/entities/lib/encode.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 588,
@@ -1951,8 +1951,8 @@
     {
       "id": 589,
       "name": "./node_modules/entities/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 589,
@@ -1983,8 +1983,8 @@
     {
       "id": 591,
       "name": "./node_modules/domutils/lib/stringify.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 591,
@@ -2015,8 +2015,8 @@
     {
       "id": 592,
       "name": "./node_modules/htmlparser2/lib/ProxyHandler.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 592,
@@ -2069,28 +2069,40 @@
       "publicPath": "/Build/Release/1.chunk.js"
     },
     {
-      "id": 701,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token sync recursive ^\\.\\/.*$",
+      "id": 630,
+      "name": "./Apps/Site/Projects/in5mins/UI/Layouts/Subsites sync recursive ^\\.\\/.*$",
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
+    },
+    {
+      "id": 670,
+      "name": "./Apps/Site/Projects/in5mins/Pages sync recursive ^\\.\\/.*$",
       "file": "1.chunk.js",
       "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 593,
       "name": null,
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 602,
       "name": null,
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 604,
       "name": null,
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    },
+    {
+      "id": 701,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token sync recursive ^\\.\\/.*$",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 593,
@@ -2107,18 +2119,6 @@
     {
       "id": 604,
       "name": null,
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
-    },
-    {
-      "id": 630,
-      "name": "./Apps/Site/Projects/in5mins/UI/Layouts/Subsites sync recursive ^\\.\\/.*$",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
-    },
-    {
-      "id": 670,
-      "name": "./Apps/Site/Projects/in5mins/Pages sync recursive ^\\.\\/.*$",
       "file": "4.chunk.js",
       "publicPath": "/Build/Release/4.chunk.js"
     },
@@ -2175,8 +2175,8 @@
     {
       "id": 594,
       "name": "./node_modules/readable-stream/passthrough.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 594,
@@ -2207,8 +2207,8 @@
     {
       "id": 595,
       "name": "./node_modules/readable-stream/transform.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 595,
@@ -2239,8 +2239,8 @@
     {
       "id": 596,
       "name": "./node_modules/readable-stream/duplex-browser.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 596,
@@ -2271,8 +2271,8 @@
     {
       "id": 597,
       "name": "./node_modules/readable-stream/writable-browser.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 597,
@@ -2303,8 +2303,8 @@
     {
       "id": 598,
       "name": "./node_modules/readable-stream/lib/_stream_passthrough.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 598,
@@ -2335,8 +2335,8 @@
     {
       "id": 599,
       "name": "./node_modules/util-deprecate/browser.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 599,
@@ -2367,8 +2367,8 @@
     {
       "id": 600,
       "name": "./node_modules/setimmediate/setImmediate.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 600,
@@ -2399,8 +2399,8 @@
     {
       "id": 601,
       "name": "./node_modules/timers-browserify/main.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 601,
@@ -2431,8 +2431,8 @@
     {
       "id": 603,
       "name": "./node_modules/readable-stream/lib/internal/streams/BufferList.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 603,
@@ -2475,14 +2475,14 @@
     {
       "id": 605,
       "name": "./node_modules/readable-stream/node_modules/isarray/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 616,
       "name": "./node_modules/buffer/node_modules/isarray/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 605,
@@ -2531,8 +2531,8 @@
     {
       "id": 606,
       "name": "./node_modules/stream-browserify/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 606,
@@ -2563,8 +2563,8 @@
     {
       "id": 607,
       "name": "./node_modules/htmlparser2/lib/Stream.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 607,
@@ -2595,8 +2595,8 @@
     {
       "id": 608,
       "name": "./node_modules/htmlparser2/lib/FeedHandler.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 608,
@@ -2627,8 +2627,8 @@
     {
       "id": 609,
       "name": "./node_modules/domhandler/lib/element.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 609,
@@ -2659,8 +2659,8 @@
     {
       "id": 610,
       "name": "./node_modules/domhandler/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 610,
@@ -2691,8 +2691,8 @@
     {
       "id": 611,
       "name": "./node_modules/htmlparser2/node_modules/entities/maps/xml.json",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 611,
@@ -2723,8 +2723,8 @@
     {
       "id": 612,
       "name": "./node_modules/htmlparser2/node_modules/entities/maps/legacy.json",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 612,
@@ -2755,8 +2755,8 @@
     {
       "id": 613,
       "name": "./node_modules/htmlparser2/node_modules/entities/maps/entities.json",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 613,
@@ -2787,8 +2787,8 @@
     {
       "id": 615,
       "name": "./node_modules/htmlparser2/node_modules/entities/lib/decode_codepoint.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 615,
@@ -2819,8 +2819,8 @@
     {
       "id": 617,
       "name": "./node_modules/ieee754/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 617,
@@ -2851,8 +2851,8 @@
     {
       "id": 618,
       "name": "./node_modules/base64-js/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 618,
@@ -2883,8 +2883,8 @@
     {
       "id": 619,
       "name": "./node_modules/marked/lib/marked.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 619,
@@ -2915,8 +2915,8 @@
     {
       "id": 620,
       "name": "./Apps/Site/Shared/UI/Components/Markdown/Markdown.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 620,
@@ -2947,8 +2947,8 @@
     {
       "id": 621,
       "name": "./Apps/Site/Shared/UI/Components/Markdown/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 621,
@@ -2973,38 +2973,18 @@
     {
       "id": 625,
       "name": "./Apps/Site/Projects/readyblockone/UI/Layouts/Default/index.js",
-      "file": "2.chunk.js",
-      "publicPath": "/Build/Release/2.chunk.js"
+      "file": "3.chunk.js",
+      "publicPath": "/Build/Release/3.chunk.js"
     },
     {
       "id": 625,
       "name": "./Apps/Site/Projects/readyblockone/UI/Layouts/Default/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
+      "file": "4.chunk.js",
+      "publicPath": "/Build/Release/4.chunk.js"
     },
     {
       "id": 686,
       "name": "./Apps/Site/Projects/in5mins/UI/Layouts/Default/index.js",
-      "file": "5.chunk.js",
-      "publicPath": "/Build/Release/5.chunk.js"
-    }
-  ],
-  "./UI/Screens/Home": [
-    {
-      "id": 233,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Screens/Home/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    },
-    {
-      "id": 232,
-      "name": "./Apps/Site/Projects/readyblockone/UI/Screens/Home/index.js",
-      "file": "3.chunk.js",
-      "publicPath": "/Build/Release/3.chunk.js"
-    },
-    {
-      "id": 230,
-      "name": "./Apps/Site/Projects/in5mins/UI/Screens/Home/index.js",
       "file": "5.chunk.js",
       "publicPath": "/Build/Release/5.chunk.js"
     }
@@ -3019,8 +2999,8 @@
     {
       "id": 558,
       "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Intro/index.js",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 558,
@@ -3029,7 +3009,7 @@
       "publicPath": "/Build/Release/5.chunk.js"
     }
   ],
-  "../../../../../cryptoreviews/UI/Components/TopDisplay": [
+  "../../../../cryptoreviews/UI/Components/TopDisplay": [
     {
       "id": 559,
       "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/TopDisplay/index.js",
@@ -3039,8 +3019,8 @@
     {
       "id": 559,
       "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/TopDisplay/index.js",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 559,
@@ -3049,7 +3029,7 @@
       "publicPath": "/Build/Release/5.chunk.js"
     }
   ],
-  "../../../../../cryptoreviews/UI/Components/NetworkSlider": [
+  "../../../../cryptoreviews/UI/Components/NetworkSlider": [
     {
       "id": 560,
       "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/NetworkSlider/index.js",
@@ -3059,8 +3039,8 @@
     {
       "id": 560,
       "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/NetworkSlider/index.js",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 560,
@@ -3079,8 +3059,8 @@
     {
       "id": 561,
       "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Footer/index.js",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 561,
@@ -3099,8 +3079,8 @@
     {
       "id": 562,
       "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Header/index.js",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
     },
     {
       "id": 562,
@@ -3109,276 +3089,12 @@
       "publicPath": "/Build/Release/5.chunk.js"
     }
   ],
-  "./ethereum/index.js": [
-    {
-      "id": 626,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token/ethereum/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./bitcoin/index.js": [
-    {
-      "id": 627,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token/bitcoin/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./aion/index.js": [
-    {
-      "id": 628,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token/aion/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./ethereum/data.js": [
-    {
-      "id": 671,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token/ethereum/data.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./bitcoin/data.js": [
-    {
-      "id": 672,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token/bitcoin/data.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "../../../Components/QuickLinks": [
-    {
-      "id": 673,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/QuickLinks/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "../../../Components/Media": [
-    {
-      "id": 674,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Media/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "../../../Components/Market": [
-    {
-      "id": 675,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Market/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "../../../Components/SoftwareWallets": [
-    {
-      "id": 676,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/SoftwareWallets/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "../../../Components/HardwareWallets": [
-    {
-      "id": 677,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/HardwareWallets/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "../../../Components/Faq": [
-    {
-      "id": 678,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Faq/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "../../../Components/Exchanges": [
-    {
-      "id": 679,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Exchanges/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "../../../Components/Education": [
-    {
-      "id": 680,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Education/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "../../../Components/Compare": [
-    {
-      "id": 681,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Compare/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "../../../Components/Notifications": [
-    {
-      "id": 682,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Notifications/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "../../../Components/EtoroBlock1": [
-    {
-      "id": 683,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/EtoroBlock1/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "../../../../DB": [
-    {
-      "id": 684,
-      "name": "./Apps/Site/Projects/cryptoreviews/DB/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./aion/data.js": [
-    {
-      "id": 685,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token/aion/data.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "../../Layouts/TokenUnavailable": [
-    {
-      "id": 687,
-      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/TokenUnavailable/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./notifications": [
-    {
-      "id": 688,
-      "name": "./Apps/Site/Projects/cryptoreviews/Data/notifications.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./videos": [
-    {
-      "id": 689,
-      "name": "./Apps/Site/Projects/cryptoreviews/Data/videos.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./faq": [
-    {
-      "id": 690,
-      "name": "./Apps/Site/Projects/cryptoreviews/Data/faq.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./courses": [
-    {
-      "id": 691,
-      "name": "./Apps/Site/Projects/cryptoreviews/Data/courses.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./sites": [
-    {
-      "id": 692,
-      "name": "./Apps/Site/Projects/cryptoreviews/Data/sites.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./books": [
-    {
-      "id": 693,
-      "name": "./Apps/Site/Projects/cryptoreviews/Data/books.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./hardwareWallets": [
-    {
-      "id": 694,
-      "name": "./Apps/Site/Projects/cryptoreviews/Data/hardwareWallets.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./softwareWallets": [
-    {
-      "id": 695,
-      "name": "./Apps/Site/Projects/cryptoreviews/Data/softwareWallets.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./exchanges": [
-    {
-      "id": 696,
-      "name": "./Apps/Site/Projects/cryptoreviews/Data/exchanges.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./tokens": [
-    {
-      "id": 697,
-      "name": "./Apps/Site/Projects/cryptoreviews/Data/tokens.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "../Data": [
-    {
-      "id": 698,
-      "name": "./Apps/Site/Projects/cryptoreviews/Data/index.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./loki-indexed-adapter.js": [
-    {
-      "id": 699,
-      "name": "./node_modules/lokijs/src/loki-indexed-adapter.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "lokijs": [
-    {
-      "id": 700,
-      "name": "./node_modules/lokijs/src/lokijs.js",
-      "file": "1.chunk.js",
-      "publicPath": "/Build/Release/1.chunk.js"
-    }
-  ],
-  "./UI/Screens/Network": [
-    {
-      "id": 231,
-      "name": "./Apps/Site/Projects/readyblockone/UI/Screens/Network/index.js",
-      "file": "2.chunk.js",
-      "publicPath": "/Build/Release/2.chunk.js"
-    }
-  ],
   "./main/index.js": [
     {
       "id": 564,
       "name": "./Apps/Site/Projects/in5mins/UI/Layouts/Subsites/main/index.js",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 564,
@@ -3391,8 +3107,8 @@
     {
       "id": 565,
       "name": "./Apps/Site/Projects/in5mins/UI/Layouts/Subsites/crypto/index.js",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 565,
@@ -3405,8 +3121,8 @@
     {
       "id": 622,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/home.js",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 622,
@@ -3419,8 +3135,8 @@
     {
       "id": 623,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/asic.js",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 623,
@@ -3433,8 +3149,8 @@
     {
       "id": 624,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/altcoin.js",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 624,
@@ -3447,8 +3163,8 @@
     {
       "id": 629,
       "name": "./Apps/Site/Projects/in5mins/UI/Layouts/SubsiteUnavailable/index.js",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 629,
@@ -3461,8 +3177,8 @@
     {
       "id": 631,
       "name": "./Apps/Site/Projects/in5mins/Pages/tech/home.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 631,
@@ -3475,8 +3191,8 @@
     {
       "id": 632,
       "name": "./Apps/Site/Projects/in5mins/Pages/shopping/home.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 632,
@@ -3489,8 +3205,8 @@
     {
       "id": 633,
       "name": "./Apps/Site/Projects/in5mins/Pages/main/home.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 633,
@@ -3503,8 +3219,8 @@
     {
       "id": 634,
       "name": "./Apps/Site/Projects/in5mins/Pages/main/blog/welcome.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 634,
@@ -3517,8 +3233,8 @@
     {
       "id": 635,
       "name": "./Apps/Site/Projects/in5mins/Pages/health/home.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 635,
@@ -3531,8 +3247,8 @@
     {
       "id": 636,
       "name": "./Apps/Site/Projects/in5mins/Pages/gaming/home.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 636,
@@ -3545,8 +3261,8 @@
     {
       "id": 637,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/why-bubble.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 637,
@@ -3559,8 +3275,8 @@
     {
       "id": 638,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/why-blockchain.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 638,
@@ -3573,8 +3289,8 @@
     {
       "id": 639,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/whitelists.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 639,
@@ -3587,8 +3303,8 @@
     {
       "id": 640,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/use-cases.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 640,
@@ -3601,8 +3317,8 @@
     {
       "id": 641,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/token-economics.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 641,
@@ -3615,8 +3331,8 @@
     {
       "id": 642,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/terminology.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 642,
@@ -3629,8 +3345,8 @@
     {
       "id": 643,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/storage.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 643,
@@ -3643,8 +3359,8 @@
     {
       "id": 644,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/proof-of.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 644,
@@ -3657,8 +3373,8 @@
     {
       "id": 645,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/pains.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 645,
@@ -3671,8 +3387,8 @@
     {
       "id": 646,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/mining.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 646,
@@ -3685,8 +3401,8 @@
     {
       "id": 647,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/investment-analysis.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 647,
@@ -3699,8 +3415,8 @@
     {
       "id": 648,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/investing.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 648,
@@ -3713,8 +3429,8 @@
     {
       "id": 649,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/interopability.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 649,
@@ -3727,8 +3443,8 @@
     {
       "id": 650,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/influencers.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 650,
@@ -3741,8 +3457,8 @@
     {
       "id": 651,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/how-to-ico.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 651,
@@ -3755,8 +3471,8 @@
     {
       "id": 652,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/future-of-funding.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 652,
@@ -3769,8 +3485,8 @@
     {
       "id": 653,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/fiftyone-percent-attack.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 653,
@@ -3783,8 +3499,8 @@
     {
       "id": 654,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/faucet.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 654,
@@ -3797,8 +3513,8 @@
     {
       "id": 655,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/exchanges.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 655,
@@ -3811,8 +3527,8 @@
     {
       "id": 656,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/kyc.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 656,
@@ -3825,8 +3541,8 @@
     {
       "id": 657,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/ico.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 657,
@@ -3839,8 +3555,8 @@
     {
       "id": 658,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/hodl.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 658,
@@ -3853,8 +3569,8 @@
     {
       "id": 659,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/genesis-block.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 659,
@@ -3867,8 +3583,8 @@
     {
       "id": 660,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/fork.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 660,
@@ -3881,8 +3597,8 @@
     {
       "id": 661,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/flippening.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 661,
@@ -3895,8 +3611,8 @@
     {
       "id": 662,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/faucet.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 662,
@@ -3909,8 +3625,8 @@
     {
       "id": 663,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/dao.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 663,
@@ -3923,8 +3639,8 @@
     {
       "id": 664,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/block-halving.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 664,
@@ -3937,8 +3653,8 @@
     {
       "id": 665,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary/atomic-swap.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 665,
@@ -3951,8 +3667,8 @@
     {
       "id": 666,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/dictionary.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 666,
@@ -3965,8 +3681,8 @@
     {
       "id": 667,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/daytrading.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 667,
@@ -3979,8 +3695,8 @@
     {
       "id": 668,
       "name": "./Apps/Site/Projects/in5mins/Pages/crypto/community-groups.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 668,
@@ -3993,14 +3709,298 @@
     {
       "id": 669,
       "name": "./Apps/Site/Projects/in5mins/Pages/adult/home.md",
-      "file": "4.chunk.js",
-      "publicPath": "/Build/Release/4.chunk.js"
+      "file": "1.chunk.js",
+      "publicPath": "/Build/Release/1.chunk.js"
     },
     {
       "id": 669,
       "name": "./Apps/Site/Projects/in5mins/Pages/adult/home.md",
       "file": "5.chunk.js",
       "publicPath": "/Build/Release/5.chunk.js"
+    }
+  ],
+  "./UI/Screens/Home": [
+    {
+      "id": 233,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Screens/Home/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    },
+    {
+      "id": 232,
+      "name": "./Apps/Site/Projects/readyblockone/UI/Screens/Home/index.js",
+      "file": "4.chunk.js",
+      "publicPath": "/Build/Release/4.chunk.js"
+    },
+    {
+      "id": 230,
+      "name": "./Apps/Site/Projects/in5mins/UI/Screens/Home/index.js",
+      "file": "5.chunk.js",
+      "publicPath": "/Build/Release/5.chunk.js"
+    }
+  ],
+  "./ethereum/index.js": [
+    {
+      "id": 626,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token/ethereum/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./bitcoin/index.js": [
+    {
+      "id": 627,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token/bitcoin/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./aion/index.js": [
+    {
+      "id": 628,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token/aion/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./ethereum/data.js": [
+    {
+      "id": 671,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token/ethereum/data.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./bitcoin/data.js": [
+    {
+      "id": 672,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token/bitcoin/data.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "../../../Components/QuickLinks": [
+    {
+      "id": 673,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/QuickLinks/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "../../../Components/Media": [
+    {
+      "id": 674,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Media/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "../../../Components/Market": [
+    {
+      "id": 675,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Market/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "../../../Components/SoftwareWallets": [
+    {
+      "id": 676,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/SoftwareWallets/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "../../../Components/HardwareWallets": [
+    {
+      "id": 677,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/HardwareWallets/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "../../../Components/Faq": [
+    {
+      "id": 678,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Faq/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "../../../Components/Exchanges": [
+    {
+      "id": 679,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Exchanges/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "../../../Components/Education": [
+    {
+      "id": 680,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Education/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "../../../Components/Compare": [
+    {
+      "id": 681,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Compare/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "../../../Components/Notifications": [
+    {
+      "id": 682,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/Notifications/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "../../../Components/EtoroBlock1": [
+    {
+      "id": 683,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Components/EtoroBlock1/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "../../../../DB": [
+    {
+      "id": 684,
+      "name": "./Apps/Site/Projects/cryptoreviews/DB/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./aion/data.js": [
+    {
+      "id": 685,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/Token/aion/data.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "../../Layouts/TokenUnavailable": [
+    {
+      "id": 687,
+      "name": "./Apps/Site/Projects/cryptoreviews/UI/Layouts/TokenUnavailable/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./notifications": [
+    {
+      "id": 688,
+      "name": "./Apps/Site/Projects/cryptoreviews/Data/notifications.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./videos": [
+    {
+      "id": 689,
+      "name": "./Apps/Site/Projects/cryptoreviews/Data/videos.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./faq": [
+    {
+      "id": 690,
+      "name": "./Apps/Site/Projects/cryptoreviews/Data/faq.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./courses": [
+    {
+      "id": 691,
+      "name": "./Apps/Site/Projects/cryptoreviews/Data/courses.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./sites": [
+    {
+      "id": 692,
+      "name": "./Apps/Site/Projects/cryptoreviews/Data/sites.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./books": [
+    {
+      "id": 693,
+      "name": "./Apps/Site/Projects/cryptoreviews/Data/books.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./hardwareWallets": [
+    {
+      "id": 694,
+      "name": "./Apps/Site/Projects/cryptoreviews/Data/hardwareWallets.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./softwareWallets": [
+    {
+      "id": 695,
+      "name": "./Apps/Site/Projects/cryptoreviews/Data/softwareWallets.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./exchanges": [
+    {
+      "id": 696,
+      "name": "./Apps/Site/Projects/cryptoreviews/Data/exchanges.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./tokens": [
+    {
+      "id": 697,
+      "name": "./Apps/Site/Projects/cryptoreviews/Data/tokens.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "../Data": [
+    {
+      "id": 698,
+      "name": "./Apps/Site/Projects/cryptoreviews/Data/index.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./loki-indexed-adapter.js": [
+    {
+      "id": 699,
+      "name": "./node_modules/lokijs/src/loki-indexed-adapter.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "lokijs": [
+    {
+      "id": 700,
+      "name": "./node_modules/lokijs/src/lokijs.js",
+      "file": "2.chunk.js",
+      "publicPath": "/Build/Release/2.chunk.js"
+    }
+  ],
+  "./UI/Screens/Network": [
+    {
+      "id": 231,
+      "name": "./Apps/Site/Projects/readyblockone/UI/Screens/Network/index.js",
+      "file": "3.chunk.js",
+      "publicPath": "/Build/Release/3.chunk.js"
     }
   ],
   "prop-types": [
@@ -4243,7 +4243,7 @@
   ],
   "./isObjectLike": [
     {
-      "id": 32,
+      "id": 33,
       "name": "./node_modules/lodash/isObjectLike.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4251,7 +4251,7 @@
   ],
   "./_getNative": [
     {
-      "id": 33,
+      "id": 34,
       "name": "./node_modules/lodash/_getNative.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4259,7 +4259,7 @@
   ],
   "./_has": [
     {
-      "id": 35,
+      "id": 36,
       "name": "./node_modules/core-js/library/modules/_has.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4267,7 +4267,7 @@
   ],
   "./_descriptors": [
     {
-      "id": 36,
+      "id": 37,
       "name": "./node_modules/core-js/library/modules/_descriptors.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4275,7 +4275,7 @@
   ],
   "./_object-dp": [
     {
-      "id": 37,
+      "id": 38,
       "name": "./node_modules/core-js/library/modules/_object-dp.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4283,7 +4283,7 @@
   ],
   "./_hide": [
     {
-      "id": 38,
+      "id": 39,
       "name": "./node_modules/core-js/library/modules/_hide.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4291,7 +4291,7 @@
   ],
   "lodash-es/toString": [
     {
-      "id": 39,
+      "id": 40,
       "name": "./node_modules/lodash-es/toString.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4299,7 +4299,7 @@
   ],
   "./_getNative.js": [
     {
-      "id": 40,
+      "id": 41,
       "name": "./node_modules/lodash-es/_getNative.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4307,7 +4307,7 @@
   ],
   "./_toSource.js": [
     {
-      "id": 41,
+      "id": 42,
       "name": "./node_modules/lodash-es/_toSource.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4315,7 +4315,7 @@
   ],
   "./_baseGetTag": [
     {
-      "id": 42,
+      "id": 43,
       "name": "./node_modules/lodash/_baseGetTag.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4323,7 +4323,7 @@
   ],
   "redux-devtools": [
     {
-      "id": 43,
+      "id": 44,
       "name": "./node_modules/redux-devtools/lib/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4331,7 +4331,7 @@
   ],
   "./_iterators": [
     {
-      "id": 44,
+      "id": 45,
       "name": "./node_modules/core-js/library/modules/_iterators.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4339,7 +4339,7 @@
   ],
   "babel-runtime/helpers/objectWithoutProperties": [
     {
-      "id": 45,
+      "id": 46,
       "name": "./node_modules/babel-runtime/helpers/objectWithoutProperties.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4347,7 +4347,7 @@
   ],
   "./_to-iobject": [
     {
-      "id": 46,
+      "id": 47,
       "name": "./node_modules/core-js/library/modules/_to-iobject.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4355,7 +4355,7 @@
   ],
   "./_fails": [
     {
-      "id": 47,
+      "id": 48,
       "name": "./node_modules/core-js/library/modules/_fails.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4363,13 +4363,13 @@
   ],
   "./Route": [
     {
-      "id": 48,
+      "id": 49,
       "name": "./node_modules/react-router/es/Route.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
     },
     {
-      "id": 123,
+      "id": 124,
       "name": "./node_modules/react-router/Route.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4377,7 +4377,7 @@
   ],
   "react-router": [
     {
-      "id": 49,
+      "id": 50,
       "name": "./node_modules/react-router/es/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4385,7 +4385,7 @@
   ],
   "is-promise": [
     {
-      "id": 50,
+      "id": 51,
       "name": "./node_modules/is-promise/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4393,7 +4393,7 @@
   ],
   "./isArrayLike.js": [
     {
-      "id": 51,
+      "id": 52,
       "name": "./node_modules/lodash-es/isArrayLike.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4401,7 +4401,7 @@
   ],
   "lodash-es/isSymbol": [
     {
-      "id": 52,
+      "id": 53,
       "name": "./node_modules/lodash-es/isSymbol.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4409,7 +4409,7 @@
   ],
   "react-pure-render/function": [
     {
-      "id": 53,
+      "id": 54,
       "name": "./node_modules/react-pure-render/function.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4417,7 +4417,7 @@
   ],
   "./_Symbol": [
     {
-      "id": 54,
+      "id": 55,
       "name": "./node_modules/lodash/_Symbol.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4425,7 +4425,7 @@
   ],
   "babel-runtime/core-js/object/keys": [
     {
-      "id": 55,
+      "id": 56,
       "name": "./node_modules/babel-runtime/core-js/object/keys.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4433,7 +4433,7 @@
   ],
   "./_cof": [
     {
-      "id": 56,
+      "id": 57,
       "name": "./node_modules/core-js/library/modules/_cof.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4441,7 +4441,7 @@
   ],
   "./_object-keys": [
     {
-      "id": 57,
+      "id": 58,
       "name": "./node_modules/core-js/library/modules/_object-keys.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4449,7 +4449,7 @@
   ],
   "./_ctx": [
     {
-      "id": 58,
+      "id": 59,
       "name": "./node_modules/core-js/library/modules/_ctx.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4457,7 +4457,7 @@
   ],
   "redux-connect": [
     {
-      "id": 59,
+      "id": 60,
       "name": "./node_modules/redux-connect/lib/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4465,7 +4465,7 @@
   ],
   "./../../webpack/buildin/harmony-module.js": [
     {
-      "id": 60,
+      "id": 61,
       "name": "./node_modules/webpack/buildin/harmony-module.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4473,7 +4473,7 @@
   ],
   "./isArguments.js": [
     {
-      "id": 61,
+      "id": 62,
       "name": "./node_modules/lodash-es/isArguments.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4481,7 +4481,7 @@
   ],
   "./_WeakMap.js": [
     {
-      "id": 62,
+      "id": 63,
       "name": "./node_modules/lodash-es/_WeakMap.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4489,7 +4489,7 @@
   ],
   "./_Map.js": [
     {
-      "id": 63,
+      "id": 64,
       "name": "./node_modules/lodash-es/_Map.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4497,7 +4497,7 @@
   ],
   "./isBuffer.js": [
     {
-      "id": 64,
+      "id": 65,
       "name": "./node_modules/lodash-es/isBuffer.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4505,7 +4505,7 @@
   ],
   "./_toKey": [
     {
-      "id": 65,
+      "id": 66,
       "name": "./node_modules/lodash/_toKey.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4513,7 +4513,7 @@
   ],
   "lodash/identity": [
     {
-      "id": 66,
+      "id": 67,
       "name": "./node_modules/lodash/identity.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4521,7 +4521,7 @@
   ],
   "./_getMapData": [
     {
-      "id": 67,
+      "id": 68,
       "name": "./node_modules/lodash/_getMapData.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4529,7 +4529,7 @@
   ],
   "./_assocIndexOf": [
     {
-      "id": 68,
+      "id": 69,
       "name": "./node_modules/lodash/_assocIndexOf.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4537,7 +4537,7 @@
   ],
   "./_ListCache": [
     {
-      "id": 69,
+      "id": 70,
       "name": "./node_modules/lodash/_ListCache.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4545,7 +4545,7 @@
   ],
   "./_nativeCreate": [
     {
-      "id": 70,
+      "id": 71,
       "name": "./node_modules/lodash/_nativeCreate.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4553,7 +4553,7 @@
   ],
   "react-loadable": [
     {
-      "id": 72,
+      "id": 73,
       "name": "./node_modules/react-loadable/lib/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4561,7 +4561,7 @@
   ],
   "babel-runtime/helpers/inherits": [
     {
-      "id": 73,
+      "id": 74,
       "name": "./node_modules/babel-runtime/helpers/inherits.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4569,7 +4569,7 @@
   ],
   "babel-runtime/helpers/possibleConstructorReturn": [
     {
-      "id": 74,
+      "id": 75,
       "name": "./node_modules/babel-runtime/helpers/possibleConstructorReturn.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4577,7 +4577,7 @@
   ],
   "babel-runtime/helpers/classCallCheck": [
     {
-      "id": 75,
+      "id": 76,
       "name": "./node_modules/babel-runtime/helpers/classCallCheck.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4585,7 +4585,7 @@
   ],
   "./helpers/state": [
     {
-      "id": 76,
+      "id": 77,
       "name": "./node_modules/redux-connect/lib/helpers/state.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4593,7 +4593,7 @@
   ],
   "./store": [
     {
-      "id": 77,
+      "id": 78,
       "name": "./node_modules/redux-connect/lib/store.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4601,7 +4601,7 @@
   ],
   "babel-runtime/helpers/typeof": [
     {
-      "id": 78,
+      "id": 79,
       "name": "./node_modules/babel-runtime/helpers/typeof.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4609,7 +4609,7 @@
   ],
   "../modules/web.dom.iterable": [
     {
-      "id": 79,
+      "id": 80,
       "name": "./node_modules/core-js/library/modules/web.dom.iterable.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4617,7 +4617,7 @@
   ],
   "./_set-to-string-tag": [
     {
-      "id": 80,
+      "id": 81,
       "name": "./node_modules/core-js/library/modules/_set-to-string-tag.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4625,7 +4625,7 @@
   ],
   "./_library": [
     {
-      "id": 81,
+      "id": 82,
       "name": "./node_modules/core-js/library/modules/_library.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4633,7 +4633,7 @@
   ],
   "../modules/es6.string.iterator": [
     {
-      "id": 82,
+      "id": 83,
       "name": "./node_modules/core-js/library/modules/es6.string.iterator.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4641,7 +4641,7 @@
   ],
   "./_object-pie": [
     {
-      "id": 83,
+      "id": 84,
       "name": "./node_modules/core-js/library/modules/_object-pie.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4649,7 +4649,7 @@
   ],
   "./_uid": [
     {
-      "id": 84,
+      "id": 85,
       "name": "./node_modules/core-js/library/modules/_uid.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4657,7 +4657,7 @@
   ],
   "./_property-desc": [
     {
-      "id": 85,
+      "id": 86,
       "name": "./node_modules/core-js/library/modules/_property-desc.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4665,7 +4665,7 @@
   ],
   "./_a-function": [
     {
-      "id": 86,
+      "id": 87,
       "name": "./node_modules/core-js/library/modules/_a-function.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4673,7 +4673,7 @@
   ],
   "fbjs/lib/emptyFunction": [
     {
-      "id": 87,
+      "id": 88,
       "name": "./node_modules/fbjs/lib/emptyFunction.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4681,7 +4681,7 @@
   ],
   "fbjs/lib/invariant": [
     {
-      "id": 88,
+      "id": 89,
       "name": "./node_modules/fbjs/lib/invariant.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4689,7 +4689,7 @@
   ],
   "./Redirect": [
     {
-      "id": 89,
+      "id": 90,
       "name": "./node_modules/react-router/es/Redirect.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4697,7 +4697,7 @@
   ],
   "./withRouter": [
     {
-      "id": 90,
+      "id": 91,
       "name": "./node_modules/react-router/es/withRouter.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4705,7 +4705,7 @@
   ],
   "./Switch": [
     {
-      "id": 91,
+      "id": 92,
       "name": "./node_modules/react-router/es/Switch.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4713,7 +4713,7 @@
   ],
   "./StaticRouter": [
     {
-      "id": 92,
+      "id": 93,
       "name": "./node_modules/react-router/es/StaticRouter.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4721,7 +4721,7 @@
   ],
   "./Prompt": [
     {
-      "id": 93,
+      "id": 94,
       "name": "./node_modules/react-router/es/Prompt.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4729,7 +4729,7 @@
   ],
   "./MemoryRouter": [
     {
-      "id": 94,
+      "id": 95,
       "name": "./node_modules/react-router/es/MemoryRouter.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4737,7 +4737,7 @@
   ],
   "symbol-observable": [
     {
-      "id": 95,
+      "id": 96,
       "name": "./node_modules/symbol-observable/es/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4745,7 +4745,7 @@
   ],
   "./isTypedArray.js": [
     {
-      "id": 96,
+      "id": 97,
       "name": "./node_modules/lodash-es/isTypedArray.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4753,7 +4753,7 @@
   ],
   "./_getTag.js": [
     {
-      "id": 97,
+      "id": 98,
       "name": "./node_modules/lodash-es/_getTag.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4761,7 +4761,7 @@
   ],
   "./keys.js": [
     {
-      "id": 98,
+      "id": 99,
       "name": "./node_modules/lodash-es/keys.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4769,7 +4769,7 @@
   ],
   "./_isIndex.js": [
     {
-      "id": 99,
+      "id": 100,
       "name": "./node_modules/lodash-es/_isIndex.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4777,7 +4777,7 @@
   ],
   "./_defineProperty.js": [
     {
-      "id": 100,
+      "id": 101,
       "name": "./node_modules/lodash-es/_defineProperty.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4785,7 +4785,7 @@
   ],
   "./_copyArray.js": [
     {
-      "id": 101,
+      "id": 102,
       "name": "./node_modules/lodash-es/_copyArray.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4793,7 +4793,7 @@
   ],
   "./_baseCreate.js": [
     {
-      "id": 102,
+      "id": 103,
       "name": "./node_modules/lodash-es/_baseCreate.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4801,7 +4801,7 @@
   ],
   "./_isPrototype.js": [
     {
-      "id": 103,
+      "id": 104,
       "name": "./node_modules/lodash-es/_isPrototype.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4809,7 +4809,7 @@
   ],
   "./_nodeUtil.js": [
     {
-      "id": 104,
+      "id": 105,
       "name": "./node_modules/lodash-es/_nodeUtil.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4817,7 +4817,7 @@
   ],
   "./../node_modules/process/browser.js": [
     {
-      "id": 105,
+      "id": 106,
       "name": "./node_modules/process/browser.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4825,7 +4825,7 @@
   ],
   "redux-form": [
     {
-      "id": 106,
+      "id": 107,
       "name": "./node_modules/redux-form/es/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4833,7 +4833,7 @@
   ],
   "path": [
     {
-      "id": 107,
+      "id": 108,
       "name": "./node_modules/path-browserify/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4841,7 +4841,7 @@
   ],
   "../util/clamp": [
     {
-      "id": 108,
+      "id": 109,
       "name": "./node_modules/pure-color/util/clamp.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4849,7 +4849,7 @@
   ],
   "babel-runtime/core-js/get-iterator": [
     {
-      "id": 109,
+      "id": 110,
       "name": "./node_modules/babel-runtime/core-js/get-iterator.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4857,7 +4857,7 @@
   ],
   "./JSONNestedNode": [
     {
-      "id": 110,
+      "id": 111,
       "name": "./node_modules/react-json-tree/lib/JSONNestedNode.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4865,7 +4865,7 @@
   ],
   "./isSymbol": [
     {
-      "id": 111,
+      "id": 112,
       "name": "./node_modules/lodash/isSymbol.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4873,7 +4873,7 @@
   ],
   "./_isKey": [
     {
-      "id": 112,
+      "id": 113,
       "name": "./node_modules/lodash/_isKey.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4881,7 +4881,7 @@
   ],
   "./keys": [
     {
-      "id": 113,
+      "id": 114,
       "name": "./node_modules/lodash/keys.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4889,7 +4889,7 @@
   ],
   "./_setToArray": [
     {
-      "id": 114,
+      "id": 115,
       "name": "./node_modules/lodash/_setToArray.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4897,7 +4897,7 @@
   ],
   "./isLength": [
     {
-      "id": 115,
+      "id": 116,
       "name": "./node_modules/lodash/isLength.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4905,7 +4905,7 @@
   ],
   "./isArguments": [
     {
-      "id": 116,
+      "id": 117,
       "name": "./node_modules/lodash/isArguments.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4913,7 +4913,7 @@
   ],
   "./_cacheHas": [
     {
-      "id": 117,
+      "id": 118,
       "name": "./node_modules/lodash/_cacheHas.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4921,7 +4921,7 @@
   ],
   "./_Map": [
     {
-      "id": 118,
+      "id": 119,
       "name": "./node_modules/lodash/_Map.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4929,7 +4929,7 @@
   ],
   "./isObject": [
     {
-      "id": 119,
+      "id": 120,
       "name": "./node_modules/lodash/isObject.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4937,7 +4937,7 @@
   ],
   "./_MapCache": [
     {
-      "id": 120,
+      "id": 121,
       "name": "./node_modules/lodash/_MapCache.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4945,7 +4945,7 @@
   ],
   "./_SetCache": [
     {
-      "id": 121,
+      "id": 122,
       "name": "./node_modules/lodash/_SetCache.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4953,7 +4953,7 @@
   ],
   "import-inspector": [
     {
-      "id": 122,
+      "id": 123,
       "name": "./node_modules/import-inspector/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4961,7 +4961,7 @@
   ],
   "react-router/matchPath": [
     {
-      "id": 124,
+      "id": 125,
       "name": "./node_modules/react-router/matchPath.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4969,7 +4969,7 @@
   ],
   "./_wks-define": [
     {
-      "id": 125,
+      "id": 126,
       "name": "./node_modules/core-js/library/modules/_wks-define.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4977,7 +4977,7 @@
   ],
   "../../modules/_wks-ext": [
     {
-      "id": 126,
+      "id": 127,
       "name": "./node_modules/core-js/library/modules/_wks-ext.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4985,7 +4985,7 @@
   ],
   "./_new-promise-capability": [
     {
-      "id": 127,
+      "id": 128,
       "name": "./node_modules/core-js/library/modules/_new-promise-capability.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -4993,7 +4993,7 @@
   ],
   "./_classof": [
     {
-      "id": 128,
+      "id": 129,
       "name": "./node_modules/core-js/library/modules/_classof.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5001,7 +5001,7 @@
   ],
   "./_object-create": [
     {
-      "id": 129,
+      "id": 130,
       "name": "./node_modules/core-js/library/modules/_object-create.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5009,7 +5009,7 @@
   ],
   "./helpers/utils": [
     {
-      "id": 130,
+      "id": 131,
       "name": "./node_modules/redux-connect/lib/helpers/utils.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5017,7 +5017,7 @@
   ],
   "./_to-object": [
     {
-      "id": 131,
+      "id": 132,
       "name": "./node_modules/core-js/library/modules/_to-object.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5025,7 +5025,7 @@
   ],
   "./_object-gops": [
     {
-      "id": 132,
+      "id": 133,
       "name": "./node_modules/core-js/library/modules/_object-gops.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5033,7 +5033,7 @@
   ],
   "./_enum-bug-keys": [
     {
-      "id": 133,
+      "id": 134,
       "name": "./node_modules/core-js/library/modules/_enum-bug-keys.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5041,7 +5041,7 @@
   ],
   "./_shared": [
     {
-      "id": 134,
+      "id": 135,
       "name": "./node_modules/core-js/library/modules/_shared.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5049,7 +5049,7 @@
   ],
   "./_shared-key": [
     {
-      "id": 135,
+      "id": 136,
       "name": "./node_modules/core-js/library/modules/_shared-key.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5057,7 +5057,7 @@
   ],
   "./_to-integer": [
     {
-      "id": 136,
+      "id": 137,
       "name": "./node_modules/core-js/library/modules/_to-integer.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5065,7 +5065,7 @@
   ],
   "./_defined": [
     {
-      "id": 137,
+      "id": 138,
       "name": "./node_modules/core-js/library/modules/_defined.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5073,7 +5073,7 @@
   ],
   "./_to-primitive": [
     {
-      "id": 138,
+      "id": 139,
       "name": "./node_modules/core-js/library/modules/_to-primitive.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5081,7 +5081,7 @@
   ],
   "./_dom-create": [
     {
-      "id": 139,
+      "id": 140,
       "name": "./node_modules/core-js/library/modules/_dom-create.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5089,7 +5089,7 @@
   ],
   "./createTransitionManager": [
     {
-      "id": 140,
+      "id": 141,
       "name": "./node_modules/history/createTransitionManager.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5097,7 +5097,7 @@
   ],
   "./LocationUtils": [
     {
-      "id": 141,
+      "id": 142,
       "name": "./node_modules/history/LocationUtils.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5105,7 +5105,7 @@
   ],
   "fbjs/lib/emptyObject": [
     {
-      "id": 142,
+      "id": 143,
       "name": "./node_modules/fbjs/lib/emptyObject.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5113,7 +5113,7 @@
   ],
   "object-assign": [
     {
-      "id": 143,
+      "id": 144,
       "name": "./node_modules/object-assign/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5121,7 +5121,7 @@
   ],
   "path-to-regexp": [
     {
-      "id": 144,
+      "id": 145,
       "name": "./node_modules/react-router/node_modules/path-to-regexp/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5129,7 +5129,7 @@
   ],
   "value-equal": [
     {
-      "id": 145,
+      "id": 146,
       "name": "./node_modules/value-equal/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5137,7 +5137,7 @@
   ],
   "resolve-pathname": [
     {
-      "id": 146,
+      "id": 147,
       "name": "./node_modules/resolve-pathname/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5145,7 +5145,7 @@
   ],
   "./util/isHotReloading": [
     {
-      "id": 147,
+      "id": 148,
       "name": "./node_modules/redux-form/es/util/isHotReloading.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5153,7 +5153,7 @@
   ],
   "./_apply.js": [
     {
-      "id": 148,
+      "id": 149,
       "name": "./node_modules/lodash-es/_apply.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5161,7 +5161,7 @@
   ],
   "./_arrayMap.js": [
     {
-      "id": 149,
+      "id": 150,
       "name": "./node_modules/lodash-es/_arrayMap.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5169,7 +5169,7 @@
   ],
   "./isLength.js": [
     {
-      "id": 150,
+      "id": 151,
       "name": "./node_modules/lodash-es/isLength.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5177,7 +5177,7 @@
   ],
   "lodash-es/isEmpty": [
     {
-      "id": 151,
+      "id": 152,
       "name": "./node_modules/lodash-es/isEmpty.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5185,7 +5185,7 @@
   ],
   "./../webpack/buildin/module.js": [
     {
-      "id": 152,
+      "id": 153,
       "name": "./node_modules/webpack/buildin/module.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5193,7 +5193,7 @@
   ],
   "react-router-redux": [
     {
-      "id": 153,
+      "id": 154,
       "name": "./node_modules/react-router-redux/es/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5201,13 +5201,13 @@
   ],
   "./actions": [
     {
-      "id": 154,
+      "id": 155,
       "name": "./node_modules/redux-devtools-dock-monitor/lib/actions.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
     },
     {
-      "id": 162,
+      "id": 163,
       "name": "./node_modules/redux-devtools-log-monitor/lib/actions.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5215,7 +5215,7 @@
   ],
   "./constants": [
     {
-      "id": 155,
+      "id": 156,
       "name": "./node_modules/redux-devtools-dock-monitor/lib/constants.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5223,7 +5223,7 @@
   ],
   "./extractComponents": [
     {
-      "id": 156,
+      "id": 157,
       "name": "./node_modules/pure-color/parse/extractComponents.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5231,7 +5231,7 @@
   ],
   "react-base16-styling": [
     {
-      "id": 157,
+      "id": 158,
       "name": "./node_modules/react-base16-styling/lib/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5239,7 +5239,7 @@
   ],
   "./JSONArrow": [
     {
-      "id": 158,
+      "id": 159,
       "name": "./node_modules/react-json-tree/lib/JSONArrow.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5247,7 +5247,7 @@
   ],
   "babel-runtime/core-js/object/get-own-property-names": [
     {
-      "id": 159,
+      "id": 160,
       "name": "./node_modules/babel-runtime/core-js/object/get-own-property-names.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5255,7 +5255,7 @@
   ],
   "./JSONNode": [
     {
-      "id": 160,
+      "id": 161,
       "name": "./node_modules/react-json-tree/lib/JSONNode.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5263,7 +5263,7 @@
   ],
   "react-json-tree": [
     {
-      "id": 161,
+      "id": 162,
       "name": "./node_modules/react-json-tree/lib/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5271,7 +5271,7 @@
   ],
   "base16": [
     {
-      "id": 163,
+      "id": 164,
       "name": "./node_modules/base16/lib/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5279,7 +5279,7 @@
   ],
   "./_castPath": [
     {
-      "id": 164,
+      "id": 165,
       "name": "./node_modules/lodash/_castPath.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5287,7 +5287,7 @@
   ],
   "./_baseGet": [
     {
-      "id": 165,
+      "id": 166,
       "name": "./node_modules/lodash/_baseGet.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5295,7 +5295,7 @@
   ],
   "./_matchesStrictComparable": [
     {
-      "id": 166,
+      "id": 167,
       "name": "./node_modules/lodash/_matchesStrictComparable.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5303,7 +5303,7 @@
   ],
   "./_isStrictComparable": [
     {
-      "id": 167,
+      "id": 168,
       "name": "./node_modules/lodash/_isStrictComparable.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5311,7 +5311,7 @@
   ],
   "./_equalArrays": [
     {
-      "id": 168,
+      "id": 169,
       "name": "./node_modules/lodash/_equalArrays.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5319,7 +5319,7 @@
   ],
   "./_baseIsEqual": [
     {
-      "id": 169,
+      "id": 170,
       "name": "./node_modules/lodash/_baseIsEqual.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5327,7 +5327,7 @@
   ],
   "./_Stack": [
     {
-      "id": 170,
+      "id": 171,
       "name": "./node_modules/lodash/_Stack.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5335,7 +5335,7 @@
   ],
   "./isTypedArray": [
     {
-      "id": 171,
+      "id": 172,
       "name": "./node_modules/lodash/isTypedArray.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5343,7 +5343,7 @@
   ],
   "./_isIndex": [
     {
-      "id": 172,
+      "id": 173,
       "name": "./node_modules/lodash/_isIndex.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5351,7 +5351,7 @@
   ],
   "./isBuffer": [
     {
-      "id": 173,
+      "id": 174,
       "name": "./node_modules/lodash/isBuffer.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5359,7 +5359,7 @@
   ],
   "./_overArg": [
     {
-      "id": 174,
+      "id": 175,
       "name": "./node_modules/lodash/_overArg.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5367,7 +5367,7 @@
   ],
   "./_Set": [
     {
-      "id": 175,
+      "id": 176,
       "name": "./node_modules/lodash/_Set.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5375,7 +5375,7 @@
   ],
   "./isArrayLike": [
     {
-      "id": 176,
+      "id": 177,
       "name": "./node_modules/lodash/isArrayLike.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5383,7 +5383,7 @@
   ],
   "./isArrayLikeObject": [
     {
-      "id": 177,
+      "id": 178,
       "name": "./node_modules/lodash/isArrayLikeObject.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5391,7 +5391,7 @@
   ],
   "./_defineProperty": [
     {
-      "id": 178,
+      "id": 179,
       "name": "./node_modules/lodash/_defineProperty.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5399,7 +5399,7 @@
   ],
   "./_baseRest": [
     {
-      "id": 179,
+      "id": 180,
       "name": "./node_modules/lodash/_baseRest.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5407,7 +5407,7 @@
   ],
   "./_arrayPush": [
     {
-      "id": 180,
+      "id": 181,
       "name": "./node_modules/lodash/_arrayPush.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5415,7 +5415,7 @@
   ],
   "./_baseFlatten": [
     {
-      "id": 181,
+      "id": 182,
       "name": "./node_modules/lodash/_baseFlatten.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5423,7 +5423,7 @@
   ],
   "./_baseUnary": [
     {
-      "id": 182,
+      "id": 183,
       "name": "./node_modules/lodash/_baseUnary.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5431,7 +5431,7 @@
   ],
   "./_arrayMap": [
     {
-      "id": 183,
+      "id": 184,
       "name": "./node_modules/lodash/_arrayMap.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5439,7 +5439,7 @@
   ],
   "./_arrayIncludesWith": [
     {
-      "id": 184,
+      "id": 185,
       "name": "./node_modules/lodash/_arrayIncludesWith.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5447,7 +5447,7 @@
   ],
   "./_arrayIncludes": [
     {
-      "id": 185,
+      "id": 186,
       "name": "./node_modules/lodash/_arrayIncludes.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5455,7 +5455,7 @@
   ],
   "./eq": [
     {
-      "id": 186,
+      "id": 187,
       "name": "./node_modules/lodash/eq.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5463,7 +5463,7 @@
   ],
   "./_toSource": [
     {
-      "id": 187,
+      "id": 188,
       "name": "./node_modules/lodash/_toSource.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5471,7 +5471,7 @@
   ],
   "./_freeGlobal": [
     {
-      "id": 188,
+      "id": 189,
       "name": "./node_modules/lodash/_freeGlobal.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5479,7 +5479,7 @@
   ],
   "./isFunction": [
     {
-      "id": 189,
+      "id": 190,
       "name": "./node_modules/lodash/isFunction.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5487,7 +5487,7 @@
   ],
   "redux-devtools-instrument": [
     {
-      "id": 190,
+      "id": 191,
       "name": "./node_modules/redux-devtools-instrument/lib/instrument.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5495,7 +5495,7 @@
   ],
   "./DOMUtils": [
     {
-      "id": 191,
+      "id": 192,
       "name": "./node_modules/history/DOMUtils.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5503,7 +5503,7 @@
   ],
   "./is-object": [
     {
-      "id": 192,
+      "id": 193,
       "name": "./node_modules/superagent/lib/is-object.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5511,7 +5511,7 @@
   ],
   "./_object-gopd": [
     {
-      "id": 193,
+      "id": 194,
       "name": "./node_modules/core-js/library/modules/_object-gopd.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5519,7 +5519,7 @@
   ],
   "./_object-gopn": [
     {
-      "id": 194,
+      "id": 195,
       "name": "./node_modules/core-js/library/modules/_object-gopn.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5527,7 +5527,7 @@
   ],
   "./_object-gopn-ext": [
     {
-      "id": 195,
+      "id": 196,
       "name": "./node_modules/core-js/library/modules/_object-gopn-ext.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5535,7 +5535,7 @@
   ],
   "../../modules/es6.symbol": [
     {
-      "id": 196,
+      "id": 197,
       "name": "./node_modules/core-js/library/modules/es6.symbol.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5543,7 +5543,7 @@
   ],
   "../core-js/symbol": [
     {
-      "id": 197,
+      "id": 198,
       "name": "./node_modules/babel-runtime/core-js/symbol.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5551,7 +5551,7 @@
   ],
   "../core-js/symbol/iterator": [
     {
-      "id": 198,
+      "id": 199,
       "name": "./node_modules/babel-runtime/core-js/symbol/iterator.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5559,7 +5559,7 @@
   ],
   "./_promise-resolve": [
     {
-      "id": 199,
+      "id": 200,
       "name": "./node_modules/core-js/library/modules/_promise-resolve.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5567,7 +5567,7 @@
   ],
   "./_perform": [
     {
-      "id": 200,
+      "id": 201,
       "name": "./node_modules/core-js/library/modules/_perform.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5575,7 +5575,7 @@
   ],
   "./_task": [
     {
-      "id": 201,
+      "id": 202,
       "name": "./node_modules/core-js/library/modules/_task.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5583,7 +5583,7 @@
   ],
   "./_species-constructor": [
     {
-      "id": 202,
+      "id": 203,
       "name": "./node_modules/core-js/library/modules/_species-constructor.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5591,7 +5591,7 @@
   ],
   "./core.get-iterator-method": [
     {
-      "id": 203,
+      "id": 204,
       "name": "./node_modules/core-js/library/modules/core.get-iterator-method.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5599,7 +5599,7 @@
   ],
   "./_html": [
     {
-      "id": 204,
+      "id": 205,
       "name": "./node_modules/core-js/library/modules/_html.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5607,7 +5607,7 @@
   ],
   "./_redefine": [
     {
-      "id": 205,
+      "id": 206,
       "name": "./node_modules/core-js/library/modules/_redefine.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5615,7 +5615,7 @@
   ],
   "./_iter-define": [
     {
-      "id": 206,
+      "id": 207,
       "name": "./node_modules/core-js/library/modules/_iter-define.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5623,7 +5623,7 @@
   ],
   "../modules/es6.object.to-string": [
     {
-      "id": 207,
+      "id": 208,
       "name": "./node_modules/core-js/library/modules/es6.object.to-string.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5631,7 +5631,7 @@
   ],
   "./_object-sap": [
     {
-      "id": 208,
+      "id": 209,
       "name": "./node_modules/core-js/library/modules/_object-sap.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5639,7 +5639,7 @@
   ],
   "./_to-length": [
     {
-      "id": 209,
+      "id": 210,
       "name": "./node_modules/core-js/library/modules/_to-length.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5647,7 +5647,7 @@
   ],
   "./_iobject": [
     {
-      "id": 210,
+      "id": 211,
       "name": "./node_modules/core-js/library/modules/_iobject.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5655,7 +5655,7 @@
   ],
   "./_object-keys-internal": [
     {
-      "id": 211,
+      "id": 212,
       "name": "./node_modules/core-js/library/modules/_object-keys-internal.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5663,7 +5663,7 @@
   ],
   "./_ie8-dom-define": [
     {
-      "id": 212,
+      "id": 213,
       "name": "./node_modules/core-js/library/modules/_ie8-dom-define.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5671,7 +5671,7 @@
   ],
   "history/createHashHistory": [
     {
-      "id": 213,
+      "id": 214,
       "name": "./node_modules/history/createHashHistory.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5679,7 +5679,7 @@
   ],
   "history/createBrowserHistory": [
     {
-      "id": 214,
+      "id": 215,
       "name": "./node_modules/history/createBrowserHistory.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5687,7 +5687,7 @@
   ],
   "reduce-reducers": [
     {
-      "id": 215,
+      "id": 216,
       "name": "./node_modules/reduce-reducers/dist/index.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5695,7 +5695,7 @@
   ],
   "history/createMemoryHistory": [
     {
-      "id": 216,
+      "id": 217,
       "name": "./node_modules/history/createMemoryHistory.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5703,7 +5703,7 @@
   ],
   "./ponyfill.js": [
     {
-      "id": 217,
+      "id": 218,
       "name": "./node_modules/symbol-observable/es/ponyfill.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5711,7 +5711,7 @@
   ],
   "./_arrayLikeKeys.js": [
     {
-      "id": 218,
+      "id": 219,
       "name": "./node_modules/lodash-es/_arrayLikeKeys.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5719,7 +5719,7 @@
   ],
   "./_baseKeys.js": [
     {
-      "id": 219,
+      "id": 220,
       "name": "./node_modules/lodash-es/_baseKeys.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5727,7 +5727,7 @@
   ],
   "./_setToString.js": [
     {
-      "id": 220,
+      "id": 221,
       "name": "./node_modules/lodash-es/_setToString.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5735,7 +5735,7 @@
   ],
   "./_shortOut.js": [
     {
-      "id": 221,
+      "id": 222,
       "name": "./node_modules/lodash-es/_shortOut.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5743,7 +5743,7 @@
   ],
   "./_baseUnary.js": [
     {
-      "id": 222,
+      "id": 223,
       "name": "./node_modules/lodash-es/_baseUnary.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5751,7 +5751,7 @@
   ],
   "./_overArg.js": [
     {
-      "id": 223,
+      "id": 224,
       "name": "./node_modules/lodash-es/_overArg.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5759,7 +5759,7 @@
   ],
   "./_getPrototype.js": [
     {
-      "id": 224,
+      "id": 225,
       "name": "./node_modules/lodash-es/_getPrototype.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5767,7 +5767,7 @@
   ],
   "./_freeGlobal.js": [
     {
-      "id": 225,
+      "id": 226,
       "name": "./node_modules/lodash-es/_freeGlobal.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5775,7 +5775,7 @@
   ],
   "util": [
     {
-      "id": 226,
+      "id": 227,
       "name": "./node_modules/util/util.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -5783,7 +5783,7 @@
   ],
   "whatwg-fetch": [
     {
-      "id": 227,
+      "id": 228,
       "name": "./node_modules/whatwg-fetch/fetch.js",
       "file": "6.chunk.js",
       "publicPath": "/Build/Release/6.chunk.js"
@@ -7971,7 +7971,7 @@
   ],
   "./Projects/in5mins/Router": [
     {
-      "id": 31,
+      "id": 32,
       "name": "./Apps/Site/Projects/in5mins/Router.js",
       "file": "site.web.bundle.js",
       "publicPath": "/Build/Release/site.web.bundle.js"
@@ -7979,7 +7979,7 @@
   ],
   "./Projects/cryptoreviews/Router": [
     {
-      "id": 34,
+      "id": 35,
       "name": "./Apps/Site/Projects/cryptoreviews/Router.js",
       "file": "site.web.bundle.js",
       "publicPath": "/Build/Release/site.web.bundle.js"
@@ -7987,7 +7987,7 @@
   ],
   "../../Shared/UI/Components/DevTools": [
     {
-      "id": 71,
+      "id": 72,
       "name": "./Apps/Site/Shared/UI/Components/DevTools/index.js",
       "file": "site.web.bundle.js",
       "publicPath": "/Build/Release/site.web.bundle.js"
@@ -7995,7 +7995,7 @@
   ],
   "./Actions": [
     {
-      "id": 228,
+      "id": 229,
       "name": "./Apps/Site/Projects/readyblockone/Actions.js",
       "file": "site.web.bundle.js",
       "publicPath": "/Build/Release/site.web.bundle.js"
