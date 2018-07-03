@@ -61,10 +61,8 @@ function mapStateToProps(state) {
 
     // TODO: Figure out WTF is going on here. Server is string, browser is object
     var location = null
-    if (typeof routing.locationBeforeTransitions === 'string') {
-        location = routing.locationBeforeTransitions.replace('/', '')
-    } else if (typeof routing.locationBeforeTransitions === 'object' && routing.locationBeforeTransitions) {
-        location = routing.locationBeforeTransitions.pathname.replace(/^\//, '').replace(/\/$/, '')
+    if (site.fullUrl) {
+        location = site.fullUrl.replace(site.host, '').replace('https://', '').replace('http://', '')
     } else if (typeof window !== 'undefined') {
         location = window.location.pathname.replace('/', '')
     }

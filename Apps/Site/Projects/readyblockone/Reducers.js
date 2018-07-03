@@ -1,16 +1,14 @@
 const Framework = require('../../../../Framework')
 const {React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, combineReducers, renderToString} = Framework
 
-import {
-    TEST_STUFF
-} from './Actions'
-
-function site(host) {
+function site(host, fullUrl) {
     return function reducer() {
         const isLocal = host.indexOf('.local') !== -1
 
         return {
             title: 'Ready Block One',
+            host: host,
+            fullUrl: fullUrl,
             isLocal: isLocal,
             copyright: {
                 date: '2017-' + new Date().getFullYear(),
@@ -72,7 +70,7 @@ function site(host) {
 import {reducer as reduxAsyncConnect} from 'redux-connect'
 import {reducer as form} from 'redux-form'
 
-export default function (host) {
+export default function (host, fullUrl) {
     return {
         routing: routerReducer,
         reduxAsyncConnect,

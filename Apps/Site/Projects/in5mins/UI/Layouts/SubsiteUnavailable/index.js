@@ -8,7 +8,7 @@ const React = require('react')
 
 const data = {
     header: {
-        logo: "/Apps/Site/Projects/cryptoreviews/Assets/Other/images/logos/ethereum.png"
+        logo: "/Apps/Site/Projects/in5mins/Assets/images/logos/main.png"
     }
 }
 

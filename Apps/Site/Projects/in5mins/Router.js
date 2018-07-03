@@ -46,7 +46,7 @@ const routes = [
     },
     {
         path: '*',
-        component: Loadable({
+        component: Framework.Platform.Env.isServer ? require('./UI/Screens/Page').default : Loadable({
             loader: function loader() {
                 return report(new Promise((resolve, reject) => {
                     return require.ensure([], (require) => {

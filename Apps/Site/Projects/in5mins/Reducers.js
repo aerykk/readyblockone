@@ -1,7 +1,7 @@
 const Framework = require('../../../../Framework')
 const { React, ReactDOM, ReactNative, AppWrapper, AppConfig, Platform, Component, AppRegistry, Navigator, StyleSheet, Text, View, TouchableHighlight, WebView, Animated, Dimensions, Router, Route, Link, createStore, browserHistory, Provider, syncHistoryWithStore, routerReducer, combineReducers, renderToString } = Framework
 
-function site(host) {
+function site(host, fullUrl) {
     return function reducer() {
         let isLocal = host.indexOf('.local') !== -1
         let subsite = host.replace('.local', '').split('.in5mins.com')[0]
@@ -15,6 +15,8 @@ function site(host) {
         return {
             title: host,
             isLocal: isLocal,
+            host: host,
+            fullUrl: fullUrl,
             copyright: {
                 date: '2017-' + new Date().getFullYear(),
                 company: 'In 5 Mins | Ready Block One'
@@ -87,11 +89,11 @@ function site(host) {
 import { reducer as reduxAsyncConnect } from 'redux-connect'
 import { reducer as form } from 'redux-form'
 
-export default function (host) {
+export default function (host, fullUrl) {
     return {
         routing: routerReducer,
         reduxAsyncConnect,
-        site: site(host)
+        site: site(host, fullUrl)
     }
 }
 
