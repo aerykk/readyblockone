@@ -50,14 +50,14 @@ const routes = [
             loader: function loader() {
                 return report(new Promise((resolve, reject) => {
                     return require.ensure([], (require) => {
-                        resolve(require('./UI/Screens/Page').default)
+                        resolve(require('./Pages/crypto/dictionary/altcoin').default)
                     })
                     // let subsite = location.hostname.split('.in5mins.com')[0].split('-')[0] // TODO: solve mutli-words like "bitcoin-cash"
                     // let page = location.pathname.substring(1)
 
                     // if (validPaths[subsite][page]) {
                     //     return require.ensure([], (require) => {
-                    //         resolve(require('./UI/Screens/Page').default)
+                    //         resolve(require('./Pages/crypto/dictionary/altcoin').default)
                     //     })
                     // } else {
                     //     reject()
@@ -67,13 +67,13 @@ const routes = [
                     // }
                 }), {
                         currentModuleFileName: path.join(__dirname, './Router.js'),
-                        importedModulePath: './UI/Screens/Page',
-                        serverSideRequirePath: path.join(__dirname, './UI/Screens/Page')
+                        importedModulePath: './Pages/crypto/dictionary/altcoin',
+                        serverSideRequirePath: path.join(__dirname, './Pages/crypto/dictionary/altcoin')
                     });
             },
-            modules: ["./UI/Screens/Page", "./Pages/crypto/dictionary/altcoin"],
+            modules: ["./Pages/crypto/dictionary/altcoin"],
             webpack: function webpack() {
-                return [require.resolveWeak("./UI/Screens/Page"), require.resolveWeak("./Pages/crypto/dictionary/altcoin")]
+                return [require.resolveWeak("./Pages/crypto/dictionary/altcoin")]
             },
             loading: Loading
         })
@@ -84,14 +84,14 @@ const routes = [
             loader: function loader() {
                 return report(new Promise((resolve, reject) => {
                     return require.ensure([], (require) => {
-                        resolve(require('./UI/Screens/Page').default)
+                        resolve(require('./Pages/crypto/dictionary/asic').default)
                     })
                     // let subsite = location.hostname.split('.in5mins.com')[0].split('-')[0] // TODO: solve mutli-words like "bitcoin-cash"
                     // let page = location.pathname.substring(1)
 
                     // if (validPaths[subsite][page]) {
                     //     return require.ensure([], (require) => {
-                    //         resolve(require('./UI/Screens/Page').default)
+                    //         resolve(require('./Pages/crypto/dictionary/asic').default)
                     //     })
                     // } else {
                     //     reject()
@@ -101,13 +101,13 @@ const routes = [
                     // }
                 }), {
                         currentModuleFileName: path.join(__dirname, './Router.js'),
-                        importedModulePath: './UI/Screens/Page',
-                        serverSideRequirePath: path.join(__dirname, './UI/Screens/Page')
+                        importedModulePath: './Pages/crypto/dictionary/asic',
+                        serverSideRequirePath: path.join(__dirname, './Pages/crypto/dictionary/asic')
                     });
             },
-            modules: ["./UI/Screens/Page", "./Pages/crypto/dictionary/asic"],
+            modules: ["./Pages/crypto/dictionary/asic"],
             webpack: function webpack() {
-                return [require.resolveWeak("./UI/Screens/Page"), require.resolveWeak("./Pages/crypto/dictionary/asic")]
+                return [require.resolveWeak("./Pages/crypto/dictionary/asic")]
             },
             loading: Loading
         })
